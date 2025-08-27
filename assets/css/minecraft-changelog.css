@@ -56,7 +56,7 @@ hr {
 /* Optional: Minecraft-typische Schriftart einbinden */
 @font-face {
   font-family: 'Minecraftia';
-  src: url('/vinc-custom-changelog.github.io/fonts/Minecraftia.woff2') format('woff2');
+  src: url('/custom-changelog/fonts/Minecraftia.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 }
