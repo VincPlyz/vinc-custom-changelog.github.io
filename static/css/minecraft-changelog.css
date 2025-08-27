@@ -1,0 +1,62 @@
+/* Minecraft Changelog Farbschema für Blowfish Theme - mit Überschreiben der Theme-Variablen */
+:root {
+  --color-neutral-900: #181818 !important;
+  --color-neutral-800: #232323 !important;
+  --color-neutral-700: #232323 !important;
+  --color-neutral-50: #fff !important;
+  --color-accent: #ffd800 !important;
+  --color-accent-2: #5e9c3f !important;
+  --color-link: #62a4da !important;
+  --color-muted: #bdbdbd !important;
+  --color-news: #232323 !important;
+  --color-news-label: #ffd800 !important;
+}
+
+body {
+  background: var(--color-neutral-900) !important;
+  color: var(--color-neutral-50) !important;
+}
+
+.main-content, .content, .single, .list {
+  background: var(--color-neutral-800) !important;
+  color: var(--color-neutral-50) !important;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px #000a;
+  padding: 2rem;
+}
+
+a, a:visited {
+  color: var(--color-link) !important;
+}
+
+a:hover {
+  color: var(--color-accent-2) !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-accent) !important;
+  font-family: 'Minecraftia', 'Arial Black', Arial, sans-serif;
+  letter-spacing: 1px;
+}
+
+.news-label {
+  background: var(--color-news-label) !important;
+  color: #232323 !important;
+  font-weight: bold;
+  padding: 0.2em 0.7em;
+  border-radius: 6px;
+  font-size: 1.1em;
+  display: inline-block;
+  margin-bottom: 1em;
+}
+
+hr {
+  border-color: var(--color-accent-2) !important;
+}
+
+@font-face {
+  font-family: 'Minecraftia';
+  src: url('/vinc-custom-changelog.github.io/fonts/Minecraftia.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}

@@ -1,0 +1,62 @@
+/* Minecraft Changelog Farbschema für Blowfish Theme */
+:root {
+  --mc-bg: #181818;
+  --mc-panel: #232323;
+  --mc-accent: #ffd800;
+  --mc-accent2: #5e9c3f;
+  --mc-text: #fff;
+  --mc-muted: #bdbdbd;
+  --mc-link: #62a4da;
+  --mc-news: #232323;
+  --mc-news-label: #ffd800;
+}
+
+body {
+  background: var(--mc-bg) !important;
+  color: var(--mc-text) !important;
+}
+
+.main-content, .content, .single, .list {
+  background: var(--mc-panel) !important;
+  color: var(--mc-text) !important;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px #000a;
+  padding: 2rem;
+}
+
+a, a:visited {
+  color: var(--mc-link);
+}
+
+a:hover {
+  color: var(--mc-accent2);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--mc-accent);
+  font-family: 'Minecraftia', 'Arial Black', Arial, sans-serif;
+  letter-spacing: 1px;
+}
+
+.news-label {
+  background: var(--mc-news-label);
+  color: #232323;
+  font-weight: bold;
+  padding: 0.2em 0.7em;
+  border-radius: 6px;
+  font-size: 1.1em;
+  display: inline-block;
+  margin-bottom: 1em;
+}
+
+hr {
+  border-color: var(--mc-accent2);
+}
+
+/* Optional: Minecraft-typische Schriftart einbinden */
+@font-face {
+  font-family: 'Minecraftia';
+  src: url('/vinc-custom-changelog.github.io/fonts/Minecraftia.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}

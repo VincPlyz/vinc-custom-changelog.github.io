@@ -1,0 +1,8 @@
+# Ignore Python scripts and reports
+*.py
+missing_assets_report.*
+
+# Ignore images in static/images (optional, falls nicht ins Repo)
+# static/images/
+
+temp images/
