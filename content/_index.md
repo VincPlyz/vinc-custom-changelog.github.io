@@ -28,6 +28,7 @@ Viel Spaß beim Erstellen deiner eigenen Inhalte!
 - [25w33a](/vinc-custom-changelog.github.io/changelog/25w33a/)
 - [25w34a](/vinc-custom-changelog.github.io/changelog/25w34a/)
 - [25w35a](/vinc-custom-changelog.github.io/changelog/25w35a/)
+- [25w36a](/vinc-custom-changelog.github.io/changelog/25w36a/)
 - [Mojang FAQ](/vinc-custom-changelog.github.io/changelog/Mojang-FAQ/)
 
 > Die Liste wird automatisch aus den vorhandenen Changelog-Dateien generiert. Neue Versionen einfach als neue Datei ablegen!

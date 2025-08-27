@@ -99,6 +99,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>http://localhost:1313/vinc-custom-changelog.github.io/changelog/25w36a/</loc>
+    <lastmod>2025-08-27T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>http://localhost:1313/vinc-custom-changelog.github.io/changelog/</loc>
     <lastmod>2025-08-27T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
@@ -113,6 +119,16 @@
   <url>
     <loc>http://localhost:1313/vinc-custom-changelog.github.io/changelog/testseite/</loc>
     <lastmod>2025-08-27T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:1313/vinc-custom-changelog.github.io/file_share/images/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:1313/vinc-custom-changelog.github.io/file_share/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
