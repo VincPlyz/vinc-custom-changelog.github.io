@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://vincplyz.github.io/custom-changelog/sitemap.xml
+Sitemap: https://vincplyz.github.io/vinc-custom-changelog.github.io/sitemap.xml
