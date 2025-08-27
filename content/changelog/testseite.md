@@ -1,6 +1,8 @@
 ---
 title: "Testseite"
 date: 2025-08-27
+showReadingTime: false
+showWordCount: false
 ---
 
 # Testseite

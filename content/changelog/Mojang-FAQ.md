@@ -1,6 +1,8 @@
 ---
 title: "Mojang FAQ"
 date: 2025-08-27
+showReadingTime: false
+showWordCount: false
 ---
 
 # Mojang FAQ
