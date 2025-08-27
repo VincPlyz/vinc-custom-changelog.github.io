@@ -1,7 +1,6 @@
 ---
 title: "Mojang FAQ"
 date: 2025-08-27
-customCSS: "css/minecraft-changelog.css"
 ---
 
 # Mojang FAQ

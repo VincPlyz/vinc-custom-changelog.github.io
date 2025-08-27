@@ -1,0 +1,162 @@
+/*
+    Bereinigte Version der Minecraft-Stile
+    - Fonts mit korrektem Pfad
+    - Inhalt zentriert ohne Body-Flex
+*/
+
+/* Fonts – Dateien müssen in static/fonts/ liegen */
+@font-face {
+  font-family: 'Minecraft-Tenv2';
+  src: url('fonts/Minecraft-Fivev2.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+/* Falls du einen zweiten Font brauchst, analog ergänzen:
+@font-face {
+  font-family: 'MinecraftFive';
+  src: url('/fonts/MinecraftFive-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+*/
+
+:root {
+    /* Farbvariablen aus custom.css */
+    --mc-bg: #181818;
+    --mc-panel: #232323;
+    --mc-accent: #ffd800;
+    --mc-accent2: #6cc349;
+    --mc-text: #fff;
+    --mc-muted: #bdbdbd;
+    --mc-news: #232323;
+    --mc-news-label: #ffd800;
+    --mc-code-block: #c736ff;
+
+    /* Farbvariablen aus mc-components.min.css und snipped.css */
+    --mc-core-rich-black: #000;
+    --mc-core-off-black: #171615;
+    --mc-core-white: #fff;
+    --mc-core-off-white: #fcf5f1;
+    --mc-core-grey-2: #d0c5c0;
+    --mc-theme-secondary-color: var(--mc-core-grey-2);
+    --mc-vanilla-green-3: #6cc349;
+    --mc-vanilla-green-link-color: var(--mc-vanilla-green-3);
+    --mc-legends-light-blue-4: #4ad5ff;
+    --mc-legends-blue-link-color: var(--mc-legends-light-blue-4);
+    --mc-dungeons-orange-4: #ffa41f;
+
+    /* Schriftartvariablen */
+    --mc-body-font: 'Noto Sans', sans-serif;
+    --mc-heading-font: 'Minecraft-Tenv2', sans-serif;
+    --mc-secondary-heading-font: 'Minecraft-Tenv2', sans-serif;
+    --mc-default--fontlist: var(--mc-body-font);
+}
+
+body {
+  background: var(--mc-bg);
+  color: var(--mc-text);
+  font-family: var(--mc-default--fontlist);
+  margin: 20%;
+  font-size: 1.25rem;  /* vorher 1rem – 1.25rem ≈ 20px statt 16px */
+  line-height: 1.6;
+}
+
+.container,
+main,
+.main-content,
+.content,
+.single,
+.list {
+    width: 100%;
+    max-width: 1600px; /* statt 960px, kann auch größer oder weggelassen werden */
+    margin: 0 auto;    /* zentriert bei großen Screens */
+    padding: 3rem;     /* etwas mehr Innenabstand */
+    background: var(--mc-panel);
+    color: var(--mc-text);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px #000a;
+}
+
+html {
+  font-size: clamp(16px, 1vw + 0.5rem, 22px);
+}
+
+/* Alle Links sind jetzt grün */
+a, a:visited {
+    color: var(--mc-accent2);
+}
+a:hover {
+    color: var(--mc-text);
+}
+
+/* Fokus-Umrandung entfernt (Achtung Barrierefreiheit) */
+a:focus, button:focus {
+    outline: none;
+}
+
+/* Überschriften */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--mc-text);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    font-weight: normal;
+}
+
+h1 {
+    font-family: var(--mc-heading-font);
+    font-size: 2.5rem;
+    line-height: 1.2;
+}
+
+h2 {
+    font-family: var(--mc-secondary-heading-font);
+}
+
+.MC_imageGridA_text_caption h4 {
+    color: var(--mc-core-white) !important;
+    font-weight: 400;
+    letter-spacing: .6px;
+    line-height: 24px;
+    padding-bottom: 2px;
+    font-family: var(--mc-secondary-heading-font);
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 5px;
+}
+
+ul li {
+    position: relative;
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+}
+
+ul li::before {
+    content: "■";
+    color: var(--mc-text);
+    font-size: 0.75em;
+    position: absolute;
+    left: 6px;
+    top: 0;
+    line-height: 2.2;
+}
+
+.news-label {
+    background-color: var(--mc-news-label);
+    color: var(--mc-panel);
+    font-weight: bold;
+    padding: 0.2em 0.7em;
+    border-radius: 6px;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 0.5em;
+    letter-spacing: 0.5px;
+}
+
+code {
+    color: var(--mc-code-block);
+    background-color: rgba(255, 255, 255, 0);
+}
