@@ -167,12 +167,12 @@ code {
 .command-block {
   background-color: rgba(94, 94, 94, 0.285);
   color: var(--mc-text);
-  padding: 0% 20px;
+  padding: 15px 20px;
   border-radius: 8px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-family: 'Minecraft-Tenv2', monospace; /* Nutze die Minecraft-Schriftart */
+  font-family: 'Minecraft-Tenv2', monospace;
   font-size: 0.95em;
   margin-bottom: 20px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -188,7 +188,7 @@ code {
 
 .command-copy-btn {
   background-color: rgba(43, 43, 43, 0.984);
-  color: var(--mc-panel); /* Textfarbe, die auf dem Akzent-Hintergrund gut sichtbar ist */
+  color: var(--mc-panel);
   border: none;
   padding: 8px 12px;
   border-radius: 5px;
@@ -201,7 +201,7 @@ code {
 }
 
 .command-copy-btn:hover {
-  background-color: var(--mc-accent2); /* Ändere die Farbe beim Hovern */
+  background-color: var(--mc-accent2);
   color: var(--mc-text);
 }
 
