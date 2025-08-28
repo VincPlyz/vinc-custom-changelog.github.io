@@ -1,0 +1,24 @@
+<div class="command-block">
+  <span class="command-text">{{ .Inner }}</span>
+  <button class="command-copy-btn" onclick="copyCommand(this)" title="Kopieren">
+    <i class="fas fa-copy"></i> </button>
+</div>
+
+<script>
+  function copyCommand(button) {
+    const commandText = button.previousElementSibling.textContent;
+    const originalTitle = button.title; // Ursprünglichen Titel speichern
+    const originalIconClass = button.querySelector('i').className; // Ursprüngliche Icon-Klasse speichern
+
+    navigator.clipboard.writeText(commandText).then(() => {
+      button.title = "Kopiert!"; // Tooltip ändern
+      button.querySelector('i').className = "fas fa-check"; // Icon auf Haken ändern
+      setTimeout(() => {
+        button.title = originalTitle; // Tooltip zurücksetzen
+        button.querySelector('i').className = originalIconClass; // Icon zurücksetzen
+      }, 2000);
+    }).catch(err => {
+      console.error("Fehler beim Kopieren: ", err);
+    });
+  }
+</script>

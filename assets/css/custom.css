@@ -160,3 +160,52 @@ code {
     color: var(--mc-code-block);
     background-color: rgba(255, 255, 255, 0);
 }
+
+/*
+* Custom CSS für den Minecraft Command Block
+*/
+.command-block {
+  background-color: rgba(94, 94, 94, 0.285);
+  color: var(--mc-text);
+  padding: 0% 20px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Minecraft-Tenv2', monospace; /* Nutze die Minecraft-Schriftart */
+  font-size: 0.95em;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  overflow-x: auto;
+}
+
+.command-text {
+  flex-grow: 1;
+  margin-right: 15px;
+  word-break: break-all;
+  white-space: pre-wrap;
+}
+
+.command-copy-btn {
+  background-color: rgba(43, 43, 43, 0.984);
+  color: var(--mc-panel); /* Textfarbe, die auf dem Akzent-Hintergrund gut sichtbar ist */
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.command-copy-btn:hover {
+  background-color: var(--mc-accent2); /* Ändere die Farbe beim Hovern */
+  color: var(--mc-text);
+}
+
+.command-copy-btn i {
+  font-size: 1.1em;
+  color: rgb(255, 255, 255);
+}
