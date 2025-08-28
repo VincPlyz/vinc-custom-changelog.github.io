@@ -10,16 +10,17 @@
                 .then(data => {
                     const latestSnapshot = data.latest.snapshot;
                     if (latestSnapshot) {
-                        const redirectUrl = `/changelog/${latestSnapshot}/`;
+                        // ÄNDERUNG HIER: Verwende den absoluten Pfad
+                        const redirectUrl = "{{ .Site.BaseURL }}changelog/${latestSnapshot}/";
                         window.location.href = redirectUrl;
                     } else {
                         console.error('Neuester Snapshot nicht gefunden.');
-                        window.location.href = '/';
+                        window.location.href = "{{ .Site.BaseURL }}";
                     }
                 })
                 .catch(error => {
                     console.error('Fehler beim Abrufen der API:', error);
-                    window.location.href = '/';
+                    window.location.href = "{{ .Site.BaseURL }}";
                 });
         });
     </script>
@@ -27,7 +28,7 @@
 <body>
     <p>Du wirst zur neuesten Minecraft Snapshot Changelog-Seite weitergeleitet...</p>
     <noscript>
-        <p>Bitte aktiviere JavaScript, um zur neuesten Version weitergeleitet zu werden. <a href="/">Zur Startseite</a></p>
+        <p>Bitte aktiviere JavaScript, um zur neuesten Version weitergeleitet zu werden. <a href="{{ .Site.BaseURL }}">Zur Startseite</a></p>
     </noscript>
 </body>
 </html>
