@@ -2,9 +2,8 @@
 title: "Website Changelog"
 showReadingTime: false
 showWordCount: false
-showDate: false
+showdate: false
 ---
-
 
 28.08.25
 - Custom Shortcode um commands kopierbar zu machen
