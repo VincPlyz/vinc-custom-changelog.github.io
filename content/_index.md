@@ -29,3 +29,6 @@ draft: false
 
 - [Mojang FAQ](/vinc-custom-changelog.github.io/changelog/Mojang-FAQ/)
 
+
+
+- [Website Changelog](/vinc-custom-changelog.github.io/changelog/website-changelog/)
