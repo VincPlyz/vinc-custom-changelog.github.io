@@ -10,25 +10,22 @@
                 .then(data => {
                     const latestSnapshot = data.latest.snapshot;
                     if (latestSnapshot) {
-                        // ÄNDERUNG HIER: Verwende die neue Variable für den Pfad
-                        const redirectUrl = `https://vincplyz.github.io/{{ .Site.Params.repoPath }}/changelog/${latestSnapshot}/`;
+                        const repoPath = "vinc-custom-changelog.github.io";
+                        const protocol = window.location.protocol;
+                        const host = window.location.host;
+                        const redirectUrl = `${protocol}//${host}/${repoPath}/changelog/${latestSnapshot}/`;
                         window.location.href = redirectUrl;
                     } else {
-                        console.error('Neuester Snapshot nicht gefunden.');
-                        window.location.href = `https://vincplyz.github.io/{{ .Site.Params.repoPath }}/`;
+                        window.location.href = 'https://vincplyz.github.io/vinc-custom-changelog.github.io/';
                     }
                 })
                 .catch(error => {
-                    console.error('Fehler beim Abrufen der API:', error);
-                    window.location.href = `https://vincplyz.github.io/{{ .Site.Params.repoPath }}/`;
+                    window.location.href = 'https://vincplyz.github.io/vinc-custom-changelog.github.io/';
                 });
         });
     </script>
 </head>
 <body>
     <p>Du wirst zur neuesten Minecraft Snapshot Changelog-Seite weitergeleitet...</p>
-    <noscript>
-        <p>Bitte aktiviere JavaScript, um zur neuesten Version weitergeleitet zu werden. <a href="https://vincplyz.github.io/{{ .Site.Params.repoPath }}/">Zur Startseite</a></p>
-    </noscript>
 </body>
 </html>
