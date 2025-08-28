@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <title>{{ .Title }}</title>
+    <meta charset="utf-8">
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            fetch('https://piston-meta.mojang.com/mc/game/version_manifest.json')
+                .then(response => response.json())
+                .then(data => {
+                    const latestSnapshot = data.latest.snapshot;
+                    if (latestSnapshot) {
+                        const redirectUrl = `/changelog/${latestSnapshot}/`;
+                        window.location.href = redirectUrl;
+                    } else {
+                        console.error('Neuester Snapshot nicht gefunden.');
+                        window.location.href = '/';
+                    }
+                })
+                .catch(error => {
+                    console.error('Fehler beim Abrufen der API:', error);
+                    window.location.href = '/';
+                });
+        });
+    </script>
+</head>
+<body>
+    <p>Du wirst zur neuesten Minecraft Snapshot Changelog-Seite weitergeleitet...</p>
+    <noscript>
+        <p>Bitte aktiviere JavaScript, um zur neuesten Version weitergeleitet zu werden. <a href="/">Zur Startseite</a></p>
+    </noscript>
+</body>
+</html>
