@@ -1,13 +1,7 @@
-/*
-    Bereinigte Version der Minecraft-Stile
-    - Fonts mit korrektem Pfad
-    - Inhalt zentriert ohne Body-Flex
-*/
-
 /* Fonts – Dateien müssen in static/fonts/ liegen */
 @font-face {
-  font-family: 'Minecraft-Tenv2';
-  src: url('fonts/Minecraft-Fivev2.woff2') format('woff2');
+  font-family: 'MinecraftTen';
+  src: url('/fonts/Minecraft-Tenv2.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -59,7 +53,7 @@ body {
   color: var(--mc-text);
   font-family: var(--mc-default--fontlist);
   margin: 20%;
-  font-size: 1.25rem;  /* vorher 1rem – 1.25rem ≈ 20px statt 16px */
+  font-size: 1.25rem;
   line-height: 1.6;
 }
 
@@ -101,6 +95,7 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--mc-text);
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
     font-weight: normal;
+    font-family: "MinecraftTen", sans-serif;
 }
 
 h1 {
