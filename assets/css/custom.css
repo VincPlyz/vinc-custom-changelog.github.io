@@ -1,7 +1,7 @@
 /* Fonts – Dateien müssen in static/fonts/ liegen */
 @font-face {
   font-family: 'MinecraftTen';
-  src: url('/fonts/Minecraft-Tenv2.woff2') format('woff2');
+  src: url('/vinc-custom-changelog.github.io/fonts/Minecraft-Tenv2.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
