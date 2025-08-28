@@ -70,4 +70,3 @@ enableEmoji = true
 
 [params]
   customCSS = ["css/minecraft-changelog.css"]
-  repoPath = "vinc-custom-changelog.github.io"
