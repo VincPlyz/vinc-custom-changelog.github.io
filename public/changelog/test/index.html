@@ -14,15 +14,15 @@
   <meta name="theme-color">
 
   
-  <title>25w35a &middot; Custom Changelog</title>
-    <meta name="title" content="25w35a &middot; Custom Changelog">
+  <title>25w37a &middot; Custom Changelog</title>
+    <meta name="title" content="25w37a &middot; Custom Changelog">
 
   
   
   
   
   
-  <link rel="canonical" href="http://localhost:1313/vinc-custom-changelog.github.io/changelog/25w35a/">
+  <link rel="canonical" href="http://localhost:1313/vinc-custom-changelog.github.io/changelog/test/">
   
   
   
@@ -97,9 +97,9 @@
   
 
   
-  <meta property="og:url" content="http://localhost:1313/vinc-custom-changelog.github.io/changelog/25w35a/">
+  <meta property="og:url" content="http://localhost:1313/vinc-custom-changelog.github.io/changelog/test/">
   <meta property="og:site_name" content="Custom Changelog">
-  <meta property="og:title" content="25w35a">
+  <meta property="og:title" content="25w37a">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="changelog">
@@ -108,19 +108,19 @@
 
   
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="25w35a">
+  <meta name="twitter:title" content="25w37a">
 
   <script type="application/ld+json">
   [{
     "@context": "https://schema.org",
     "@type": "Article",
     "articleSection": "Changelog Übersicht",
-    "name": "25w35a",
-    "headline": "25w35a",
+    "name": "25w37a",
+    "headline": "25w37a",
     
     
     "inLanguage": "en",
-    "url" : "http:\/\/localhost:1313\/vinc-custom-changelog.github.io\/changelog\/25w35a\/",
+    "url" : "http:\/\/localhost:1313\/vinc-custom-changelog.github.io\/changelog\/test\/",
     "author" : {
       "@type": "Person",
       "name": ""
@@ -134,7 +134,7 @@
     
     
     "mainEntityOfPage": "true",
-    "wordCount": "933"
+    "wordCount": "1425"
   }]
   </script>
 
@@ -333,7 +333,7 @@
     <header id="single_header" class="mt-5 max-w-prose">
       
       <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-        25w35a
+        25w37a
       </h1>
       <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
         
@@ -448,18 +448,8 @@
         
 
         <div class="article-content max-w-prose mb-20">
-          
-<h1 class="relative group">25w35a 
-    <div id="25w35a" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#25w35a" aria-label="Anchor">#</a>
-    </span>        
-    
-</h1>
-<p>&ldquo;In this week&rsquo;s snapshot we are adding a Minecraft Server Management Protocol which lets servers query players, tweak game rules, update server settings, and listen for real-time server event notifications. Some server properties have been moved to game rules, allowing them to be updated while the server is running. Additionally, player icons can now be used in chat, the copper golem has received some improvements and we are shipping a bunch of bug fixes.</p>
-<p>Happy mining!&rdquo;</p>
+          <p>In this week&rsquo;s snapshot we are adding a Minecraft Server Management Protocol which lets servers query players, tweak game rules, update server settings, and listen for real-time server event notifications. Some server properties have been moved to game rules, allowing them to be updated while the server is running. Additionally, player icons can now be used in chat, the copper golem has received some improvements and we are shipping a bunch of bug fixes.
+Happy mining!</p>
 
 <h2 class="relative group">New Features 
     <div id="new-features" class="anchor"></div>
@@ -472,63 +462,6 @@
 </h2>
 <ul>
 <li>Added Halychian language support</li>
-<li>Added Minecraft Server Management Protocol</li>
-</ul>
-
-<h3 class="relative group">Minecraft Server Management Protocol 
-    <div id="minecraft-server-management-protocol" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#minecraft-server-management-protocol" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>Added a server management API (JSON-RPC over WebSocket) for dedicated servers</p>
-<ul>
-<li>The API is disabled by default and can be enabled in the server properties file
-<ul>
-<li>management-server-enabled=true</li>
-<li>management-server-host=localhost</li>
-<li>management-server-port=25585</li>
-</ul>
-</li>
-<li>The API is accessible at <code>ws://&gt;management-server-host&lt;:&gt;management-server-port&lt;</code> when enabled</li>
-<li>Supports querying and updating of server state (players, allowlist, operators, settings, game rules)</li>
-<li>Sends notifications on state changes (e.g. player joins, game rule updates)</li>
-<li>Calling <code>{&quot;id&quot;:1,&quot;method&quot;:&quot;rpc.discover&quot;}</code> returns an API schema containing supported methods and notifications of the currently running server</li>
-<li>The Data Generator produces an API schema (json-rpc-api-schema.json) in the reports output folder mirroring the contents returned by the rpc.discover method</li>
-<li>The API adheres to the <a
-  href="https://www.jsonrpc.org/specification"
-    target="_blank"
-  >JSON-RPC 2.0 specification</a></li>
-<li>Uses namespaced methods and the reserved namespaces are minecraft (e.g. minecraft:players, minecraft:allowlist/add) and notification (e.g. notification:players/joined)
-<ul>
-<li>Extensible via custom namespaces for additional methods and events</li>
-</ul>
-</li>
-<li>Core method groups: players, allowlist, operators, server (save, stop), server settings, game rules</li>
-<li>Example method call:
-<ul>
-<li>Request: <code>{&quot;method&quot;:&quot;minecraft:allowlist/add&quot;,&quot;id&quot;:1,&quot;params&quot;:[[{&quot;name&quot;:&quot;jeb_&quot;}]]}</code></li>
-<li>Response: <code>{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;id&quot;:1,&quot;result&quot;:[{&quot;id&quot;:&quot;853c80ef-3c37-49fd-aa49-938b674adae6&quot;,&quot;name&quot;:&quot;jeb_&quot;}]}</code></li>
-</ul>
-</li>
-<li>Example notification:
-<ul>
-<li><code>{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;notification:players/joined&quot;,&quot;params&quot;:[{&quot;id&quot;:&quot;853c80ef-3c37-49fd-aa49-938b674adae6&quot;,&quot;name&quot;:&quot;jeb_&quot;}]}</code></li>
-</ul>
-</li>
-<li>Example error:
-<ul>
-<li>Request: <code>{&quot;method&quot;: &quot;minecraft:foo/bar&quot;,&quot;id&quot;: 1}</code></li>
-<li>Response: <code>{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;id&quot;:1,&quot;result&quot;:{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;id&quot;:1,&quot;error&quot;:{&quot;code&quot;:-32601,&quot;message&quot;:&quot;Method not found&quot;,&quot;data&quot;:&quot;Method not found: minecraft:foo/bar&quot;}}}</code></li>
-<li>Errors and error codes follow <a
-  href="https://www.jsonrpc.org/specification#error_object"
-    target="_blank"
-  >JSON-RPC 2.0 error object format</a></li>
-</ul>
-</li>
 </ul>
 
 <h2 class="relative group">Changes 
@@ -540,214 +473,41 @@
     </span>        
     
 </h2>
-
-<h3 class="relative group">UI 
-    <div id="ui" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#ui" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
+<p>Recipes</p>
 <ul>
-<li>When adding a new server to the server list, the name is no longer prefilled. When left empty the default name is used.</li>
-<li>More text inputs now support selecting text by mouse dragging</li>
+<li>Hanging Signs can now only be crafted using Iron Chains</li>
 </ul>
-
-<h4 class="relative group">Mouse cursor 
-    <div id="mouse-cursor" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#mouse-cursor" aria-label="Anchor">#</a>
-    </span>        
-    
-</h4>
-<ul>
-<li>Some UI components will now change shape of mouse cursor
-<ul>
-<li>Examples: text inputs, numeric sliders, buttons, scroll bars</li>
-</ul>
-</li>
-<li>Additionally, clickable parts of text labels (like links) will now change cursor to the &ldquo;hand&rdquo; shape</li>
-<li>This feature can be disabled with &ldquo;Allow Cursor Changes&rdquo; option in &ldquo;Mouse Settings&hellip;&rdquo; menu
-
-
-
-
-
-
-
-<figure>
-    <img class="my-0 rounded-md" loading="lazy" alt="" src="/vinc-custom-changelog.github.io/images/25w35a/mouse-setting.png">
-
-  
-</figure>
-</li>
-</ul>
-
-<h3 class="relative group">Minor Tweaks to Blocks, Items and Entities 
-    <div id="minor-tweaks-to-blocks-items-and-entities" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#minor-tweaks-to-blocks-items-and-entities" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
+<p>UI</p>
 <ul>
 <li>
-<p>Copper Golems hitbox has been tweaked</p>
-<ul>
-<li>The hitbox is now 0.98 blocks in height to be able to pathfind in one block high spaces</li>
+<p>When adding a new server to the server list, the name is no longer prefilled. When left empty the default name is used.</p>
+</li>
+<li>
+<p>More text inputs now support selecting text by mouse dragging</p>
+</li>
 </ul>
+<p>Mouse cursor</p>
+<ul>
+<li>
+<p>Some UI components will now change shape of mouse cursorExamples: text inputs, numeric sliders, buttons, scroll bars</p>
+</li>
+<li>
+<p>Additionally, clickable parts of text labels (like links) will now change cursor to the &ldquo;hand&rdquo; shape</p>
+</li>
+<li>
+<p>This feature can be disabled with &ldquo;Allow Cursor Changes&rdquo; option in &ldquo;Mouse Settings&hellip;&rdquo; menu</p>
+</li>
+</ul>
+<p>Minor Tweaks to Blocks, Items and Entities</p>
+<ul>
+<li>
+<p>Copper Golems hitbox has been tweakedThe hitbox is now 0.98 blocks in height to be able to pathfind in one block high spaces</p>
 </li>
 <li>
 <p>Copper Chests created from spawning a Copper Golem now correctly connect to nearby Copper Chests</p>
 </li>
 <li>
-<p>The Copper Golem now uses the Saddle equipment slot for blocks placed atop of its Lightning Rod</p>
-<ul>
-<li>Its Head equipment slot will now function like a regular head slot, akin to its functionality for humanoid mobs
-<ul>
-<li>Items rendern nun ganz normal auf dem kopf eines copper golems (incl Custom Items die via Resourcepack hinzugefügt wurden)
-
-
-
-
-
-
-
-<figure>
-    <img class="my-0 rounded-md" loading="lazy" alt="" src="/vinc-custom-changelog.github.io/images/25w35a/copper_golem_custom_item.png">
-
-  
-</figure>
-</li>
-</ul>
-</li>
-</ul>
-<p>Head Slot vorher:
-
-
-
-
-
-
-
-<figure>
-    <img class="my-0 rounded-md" loading="lazy" alt="" src="/vinc-custom-changelog.github.io/images/25w35a/2025-08-26_17.19.58.png">
-
-  
-</figure>
-</p>
-<div class="command-block">
-  <span class="command-text">
-/summon copper_golem ~ ~ ~ {equipment:{head:{id:"minecraft:oak_slab",count:1}}}
-     </span>
-  <button class="command-copy-btn" onclick="copyCommand(this)" title="Kopieren">
-    <i class="fas fa-copy"></i> </button>
-</div>
-
-<script>
-  function copyCommand(button) {
-    const commandText = button.previousElementSibling.textContent;
-    const originalTitle = button.title; 
-    const originalIconClass = button.querySelector('i').className; 
-
-    navigator.clipboard.writeText(commandText).then(() => {
-      button.title = "Kopiert!"; 
-      button.querySelector('i').className = "fas fa-check"; 
-      setTimeout(() => {
-        button.title = originalTitle; 
-        button.querySelector('i').className = originalIconClass; 
-      }, 2000);
-    }).catch(err => {
-      console.error("Fehler beim Kopieren: ", err);
-    });
-  }
-</script>
-<p>Head slot jetzt (nicht mehr für die blume benutzt):
-
-
-
-
-
-
-
-<figure>
-    <img class="my-0 rounded-md" loading="lazy" alt="" src="/vinc-custom-changelog.github.io/images/25w35a/2025-08-26_17.20.16.png">
-
-  
-</figure>
-</p>
-<div class="command-block">
-  <span class="command-text">
-/summon copper_golem ~ ~ ~ {equipment:{head:{id:"minecraft:oak_slab",count:1}}}
-     </span>
-  <button class="command-copy-btn" onclick="copyCommand(this)" title="Kopieren">
-    <i class="fas fa-copy"></i> </button>
-</div>
-
-<script>
-  function copyCommand(button) {
-    const commandText = button.previousElementSibling.textContent;
-    const originalTitle = button.title; 
-    const originalIconClass = button.querySelector('i').className; 
-
-    navigator.clipboard.writeText(commandText).then(() => {
-      button.title = "Kopiert!"; 
-      button.querySelector('i').className = "fas fa-check"; 
-      setTimeout(() => {
-        button.title = originalTitle; 
-        button.querySelector('i').className = originalIconClass; 
-      }, 2000);
-    }).catch(err => {
-      console.error("Fehler beim Kopieren: ", err);
-    });
-  }
-</script>
-<p>Blumen Slot ist jetzt der Saddle slot:
-
-
-
-
-
-
-
-<figure>
-    <img class="my-0 rounded-md" loading="lazy" alt="" src="/vinc-custom-changelog.github.io/images/25w35a/2025-08-26_17.23.37.png">
-
-  
-</figure>
-</p>
-<div class="command-block">
-  <span class="command-text">
-/summon copper_golem ~ ~ ~ {equipment:{saddle:{id:"minecraft:oak_slab",count:1}}}
-     </span>
-  <button class="command-copy-btn" onclick="copyCommand(this)" title="Kopieren">
-    <i class="fas fa-copy"></i> </button>
-</div>
-
-<script>
-  function copyCommand(button) {
-    const commandText = button.previousElementSibling.textContent;
-    const originalTitle = button.title; 
-    const originalIconClass = button.querySelector('i').className; 
-
-    navigator.clipboard.writeText(commandText).then(() => {
-      button.title = "Kopiert!"; 
-      button.querySelector('i').className = "fas fa-check"; 
-      setTimeout(() => {
-        button.title = originalTitle; 
-        button.querySelector('i').className = originalIconClass; 
-      }, 2000);
-    }).catch(err => {
-      console.error("Fehler beim Kopieren: ", err);
-    });
-  }
-</script>
+<p>The Copper Golem now uses the Saddle equipment slot for blocks placed atop of its Lightning RodIts Head equipment slot will now function like a regular head slot, akin to its functionality for humanoid mobs</p>
 </li>
 </ul>
 
@@ -761,44 +521,82 @@
     
 </h2>
 <ul>
-<li>The Data Pack version is now 85.0</li>
-<li>The Resource Pack version is now 67.0</li>
-</ul>
-
-<h3 class="relative group">Server Properties 
-    <div id="server-properties" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#server-properties" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>Several server properties were removed in favour of making them into game rules, allowing these settings to be changed while the server is running.</p>
-<ul>
-<li>Removed server property allow-nether in favour of new game rule</li>
-<li>Removed server property spawn-monsters in favour of new game rule</li>
-<li>Removed server property enable-command-block in favour of new game rule</li>
-<li>Removed server property pvp in favour of new game rule</li>
-<li>Added server property management-server-enabled controlling whether the new Minecraft Server Management Protocol is enabled or not
-<ul>
-<li>Defaults to <code>false</code></li>
-</ul>
+<li>
+<p>The Data Pack version is now 85.0</p>
 </li>
-<li>Added server property management-server-port controlling on what port the Minecraft Server Management Protocol is started
-<ul>
-<li>Defaults to <code>25585</code></li>
-</ul>
+<li>
+<p>The Resource Pack version is now 67.0</p>
 </li>
-<li>Added server property management-server-host controlling with what host the new Minecraft Server Management Protocol is started
-<ul>
-<li>Defaults to <code>localhost</code></li>
-</ul>
+<li>
+<p>Added Minecraft Server Management Protocol</p>
 </li>
-<li>Added server property status-heartbeat-interval controlling the interval the management server sends heartbeat notifications to connected clients
-<ul>
-<li>Defaults to 0, meaning it’s disabled</li>
 </ul>
+<p>Server Properties
+Several server properties were removed in favour of making them into game rules, allowing these settings to be changed while the server is running.</p>
+<ul>
+<li>
+<p>Removed server propertyallow-netherin favour of new game rule</p>
+</li>
+<li>
+<p>Removed server propertyspawn-monstersin favour of new game rule</p>
+</li>
+<li>
+<p>Removed server propertyenable-command-blockin favour of new game rule</p>
+</li>
+<li>
+<p>Removed server propertypvpin favour of new game rule</p>
+</li>
+<li>
+<p>Added server propertymanagement-server-enabledcontrolling whether the new Minecraft Server Management Protocol is enabled or notDefaults tofalse</p>
+</li>
+<li>
+<p>Added server propertymanagement-server-portcontrolling on what port the Minecraft Server Management Protocol is startedDefaults to25585</p>
+</li>
+<li>
+<p>Added server propertymanagement-server-hostcontrolling with what host the new Minecraft Server Management Protocol is startedDefaults tolocalhost</p>
+</li>
+<li>
+<p>Added server propertystatus-heartbeat-intervalcontrolling the interval the management server sends heartbeat notifications to connected clientsDefaults to0, meaning it’s disabled</p>
+</li>
+</ul>
+<p>Minecraft Server Management Protocol
+Added a server management API (JSON-RPC over WebSocket) for dedicated servers</p>
+<ul>
+<li>
+<p>The API is disabled by default and can be enabled in the server properties filemanagement-server-enabled=truemanagement-server-host=localhostmanagement-server-port=25585</p>
+</li>
+<li>
+<p>The API is accessible atws://<management-server-host>:<management-server-port>when enabled</p>
+</li>
+<li>
+<p>Supports querying and updating of server state (players, allowlist, operators, settings, game rules)</p>
+</li>
+<li>
+<p>Sends notifications on state changes (e.g. player joins, game rule updates)</p>
+</li>
+<li>
+<p>Calling{&ldquo;id&rdquo;:1,&ldquo;method&rdquo;:&ldquo;rpc.discover&rdquo;}returns an API schema containing supported methods and notifications of the currently running server</p>
+</li>
+<li>
+<p>The Data Generator produces an API schema (json-rpc-api-schema.json) in the reports output folder mirroring the contents returned by therpc.discovermethod</p>
+</li>
+<li>
+<p>The API adheres to theJSON-RPC 2.0 specification</p>
+</li>
+<li>
+<p>Uses namespaced methods and the reserved namespaces areminecraft(e.g.minecraft:players,minecraft:allowlist/add) andnotification(e.g.notification:players/joined)Extensible via custom namespaces for additional methods and events</p>
+</li>
+<li>
+<p>Core method groups: players, allowlist, operators, server (save, stop), server settings, game rules</p>
+</li>
+<li>
+<p>Example method call:Request:{&ldquo;method&rdquo;:&ldquo;minecraft:allowlist/add&rdquo;,&ldquo;id&rdquo;:1,&ldquo;params&rdquo;:[[{&ldquo;name&rdquo;:&ldquo;jeb_&rdquo;}]]}Response:{&ldquo;jsonrpc&rdquo;:&ldquo;2.0&rdquo;,&ldquo;id&rdquo;:1,&ldquo;result&rdquo;:[{&ldquo;id&rdquo;:&ldquo;853c80ef-3c37-49fd-aa49-938b674adae6&rdquo;,&ldquo;name&rdquo;:&ldquo;jeb_&rdquo;}]}</p>
+</li>
+<li>
+<p>Example notification:{&ldquo;jsonrpc&rdquo;:&ldquo;2.0&rdquo;,&ldquo;method&rdquo;:&ldquo;notification:players/joined&rdquo;,&ldquo;params&rdquo;:[{&ldquo;id&rdquo;:&ldquo;853c80ef-3c37-49fd-aa49-938b674adae6&rdquo;,&ldquo;name&rdquo;:&ldquo;jeb_&rdquo;}]}</p>
+</li>
+<li>
+<p>Example error:Request:{&ldquo;method&rdquo;: &ldquo;minecraft:foo/bar&rdquo;,&ldquo;id&rdquo;: 1}Response:{&ldquo;jsonrpc&rdquo;:&ldquo;2.0&rdquo;,&ldquo;id&rdquo;:1,&ldquo;result&rdquo;:{&ldquo;jsonrpc&rdquo;:&ldquo;2.0&rdquo;,&ldquo;id&rdquo;:1,&ldquo;error&rdquo;:{&ldquo;code&rdquo;:-32601,&ldquo;message&rdquo;:&ldquo;Method not found&rdquo;,&ldquo;data&rdquo;:&ldquo;Method not found: minecraft:foo/bar&rdquo;}}}Errors and error codes followJSON-RPC 2.0 error object format</p>
 </li>
 </ul>
 
@@ -812,171 +610,56 @@
     
 </h2>
 <ul>
-<li>chain wurde zu iron_chain umbenannt</li>
+<li>Renamedchaintoiron_chain</li>
 </ul>
-
-<h3 class="relative group">Game Rules 
-    <div id="game-rules" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#game-rules" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<ul>
-<li>Added pvp game rule controlling whether players can deal damage to other players
-<ul>
-<li>Defaults to true</li>
-</ul>
-</li>
-<li>Added allowEnteringNetherUsingPortals game rule controlling if the Nether can be entered through portals
-<ul>
-<li>Defaults to true</li>
-</ul>
-</li>
-<li>Added spawnMonsters game rule controlling if monsters should spawn naturally
-<ul>
-<li>Defaults to true</li>
-</ul>
-</li>
-<li>Added enableCommandBlocks game rule controlling if Command Blocks should be enabled or not
-<ul>
-<li>Defaults to true</li>
-</ul>
-</li>
-</ul>
-
-<h3 class="relative group">Text rendering 
-    <div id="text-rendering" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#text-rendering" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-
-<h4 class="relative group">object Text Component 
-    <div id="objecttext-component" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#objecttext-component" aria-label="Anchor">#</a>
-    </span>        
-    
-</h4>
-<ul>
-<li>This component has been updated to support displaying other non-character objects as a part of text</li>
-<li>New format:
-<ul>
-<li>object: type of object, string, see below for values</li>
-<li>
-<blockquote>
-<p>type-specific&lt;: additional fields depending on object type</p></blockquote>
-</li>
-</ul>
-</li>
-<li>Similarly to nbt text component object field can be omitted
-<ul>
-<li>However, it&rsquo;s recommended to provide it for error checking</li>
-</ul>
-</li>
-</ul>
-
-<h5 class="relative group">atlas Object Type 
-    <div id="atlasobject-type" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#atlasobject-type" aria-label="Anchor">#</a>
-    </span>        
-    
-</h5>
-<ul>
-<li>Behaves the same way as the object component did previously, but is now a separate object type</li>
-<li>Uses the same format as before</li>
-</ul>
-
-<h5 class="relative group">player Object Type 
-    <div id="playerobject-type" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#playerobject-type" aria-label="Anchor">#</a>
-    </span>        
-    
-</h5>
-<ul>
-<li>Renders player head</li>
-<li>If partial profile is given, skin is resolved in the same way as minecraft:profile component on player head</li>
-<li>Format:
+<p>Game Rules</p>
 <ul>
 <li>
-<p><code>player</code>: player profile</p>
-<ul>
-<li><code>name</code>: player name, optional string</li>
-<li><code>id</code>: player uuid, optional UUID</li>
-<li><code>properties</code>: profile properties, optional map</li>
-</ul>
+<p>Addedpvpgame rule controlling whether players can deal damage to other playersDefaults totrue</p>
 </li>
 <li>
-<p><code>hat</code>: controls rendering of a hat layer, boolean, default false
-
-
-
-
-
-
-
-<figure>
-    <img class="my-0 rounded-md" loading="lazy" alt="" src="/vinc-custom-changelog.github.io/images/25w35a/playerhead-icon.png">
-
-  
-</figure>
-</p>
-<div class="command-block">
-  <span class="command-text">
-        /tellraw @a {player:{name:Castcrafter}}
-        </span>
-  <button class="command-copy-btn" onclick="copyCommand(this)" title="Kopieren">
-    <i class="fas fa-copy"></i> </button>
-</div>
-
-<script>
-  function copyCommand(button) {
-    const commandText = button.previousElementSibling.textContent;
-    const originalTitle = button.title; 
-    const originalIconClass = button.querySelector('i').className; 
-
-    navigator.clipboard.writeText(commandText).then(() => {
-      button.title = "Kopiert!"; 
-      button.querySelector('i').className = "fas fa-check"; 
-      setTimeout(() => {
-        button.title = originalTitle; 
-        button.querySelector('i').className = originalIconClass; 
-      }, 2000);
-    }).catch(err => {
-      console.error("Fehler beim Kopieren: ", err);
-    });
-  }
-</script>
+<p>AddedallowEnteringNetherUsingPortalsgame rule controlling if the Nether can be entered through portalsDefaults totrue</p>
+</li>
+<li>
+<p>AddedspawnMonstersgame rule controlling if monsters should spawn naturallyDefaults totrue</p>
+</li>
+<li>
+<p>AddedenableCommandBlocksgame rule controlling if Command Blocks should be enabled or notDefaults totrue</p>
 </li>
 </ul>
-</li>
-</ul>
-
-<h3 class="relative group">Recipes 
-    <div id="recipes" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#recipes" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
+<p>Text rendering
+object Text Component</p>
 <ul>
-<li>Hanging Signs können nun ausschließlich mit Iron Chains gecraftet werden</li>
+<li>
+<p>This component has been updated to support displaying other non-character objects as a part of text</p>
+</li>
+<li>
+<p>New format:object: type of object, string, see below for values<type-specific>: additional fields depending on object type</p>
+</li>
+<li>
+<p>Similarly tonbttext componentobjectfield can be omittedHowever, it&rsquo;s recommended to provide it for error checking</p>
+</li>
+</ul>
+<p>atlas Object Type</p>
+<ul>
+<li>
+<p>Behaves the same way as theobjectcomponent did previously, but is now a separate object type</p>
+</li>
+<li>
+<p>Uses the same format as before</p>
+</li>
+</ul>
+<p>player Object Type</p>
+<ul>
+<li>
+<p>Renders player head</p>
+</li>
+<li>
+<p>If partial profile is given, skin is resolved in the same way asminecraft:profilecomponent on player head</p>
+</li>
+<li>
+<p>Format:player: player profilename: player name, optional stringid: player uuid, optional UUIDproperties: profile properties, optional maphat: controls rendering of a hat layer, boolean, defaulttrue</p>
+</li>
 </ul>
 
 <h2 class="relative group">Resource Pack Version 67.0 
@@ -988,126 +671,337 @@
     </span>        
     
 </h2>
-
-<h3 class="relative group">Block Sprites 
-    <div id="block-sprites" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#block-sprites" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>Folgende block sprites wurden umbenannt:</p>
+<p>Block Sprites
+Renamed the following block sprites:</p>
 <ul>
-<li>chain zu iron_chain</li>
+<li>chaintoiron_chain</li>
+</ul>
+<p>Item Sprites
+Renamed the following item sprites:</p>
+<ul>
+<li>chaintoiron_chain</li>
 </ul>
 
-<h3 class="relative group">Item Sprites 
-    <div id="item-sprites" class="anchor"></div>
+<h2 class="relative group">Fixed bugs in 25w35a 
+    <div id="fixed-bugs-in-25w35a" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#item-sprites" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>Folgende item sprites wurden umbenannt:</p>
-<ul>
-<li>chain zu iron_chain</li>
-</ul>
-
-<h2 class="relative group">Dev Informationen: 
-    <div id="dev-informationen" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#dev-informationen" aria-label="Anchor">#</a>
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#fixed-bugs-in-25w35a" aria-label="Anchor">#</a>
     </span>        
     
 </h2>
+<ul>
+<li>
+<p><a
+  href="https://bugs.mojang.com/browse/MC-MC-278550"
+    target="_blank"
+  >MC-278550</a>- While flying in creative or spectator mode, the surface of water can prevent you from sprinting</p>
+</li>
+<li>
+<p><a
+  href="https://bugs.mojang.com/browse/MC-MC-297126"
+    target="_blank"
+  >MC-297126</a>- &ldquo;Failed to read field&hellip;&rdquo; error spam when upgrading a 25w15a or 25w16a world</p>
+</li>
+<li>
+<p><a
+  href="https://bugs.mojang.com/browse/MC-MC-300044"
+    target="_blank"
+  >MC-300044</a>- Z-fighting occurs when the heads of copper golems intersect their bodies</p>
+</li>
+<li>
+<p><a
+  href="https://bugs.mojang.com/browse/MC-MC-300049"
+    target="_blank"
+  >MC-300049</a>- The debug text is rendered on top of the debug options</p>
+</li>
+<li>
+<p><a
+  href="https://bugs.mojang.com/browse/MC-MC-300054"
+    target="_blank"
+  >MC-300054</a>- Double oxidized copper chest texture UV is missing pixels</p>
+</li>
+<li>
+<p><a
+  href="https://bugs.mojang.com/browse/MC-MC-300067"
+    target="_blank"
+  >MC-300067</a>- Copper golems continue their chest searching animations while dying</p>
+</li>
+<li>
+<p><a
+  href="https://bugs.mojang.com/browse/MC-MC-300074"
+    target="_blank"
+  >MC-300074</a>- No particles are produced when scraping oxidation off copper golems</p>
+</li>
+<li>
+<p><a
+  href="https://bugs.mojang.com/browse/MC-MC-300077"
+    target="_blank"
+  >MC-300077</a>- Copper golems can interact with chests diagonally through solid blocks</p>
+</li>
+<li>
+<p><a
+  href="https://bugs.mojang.com/browse/MC-MC-300089"
+    target="_blank"
+  >MC-300089</a>- Chests sometimes get stuck in inverted states after being interacted with by copper golems</p>
+</li>
+<li>
+<p><a
+  href="https://bugs.mojang.com/browse/MC-MC-300102"
+    target="_blank"
+  >MC-300102</a>- Shelves float when held in the player&rsquo;s hand in third person</p>
+</li>
+<li>
+<p><a
+  href="https://bugs.mojang.com/browse/MC-MC-300103"
+    target="_blank"
+  >MC-300103</a>- Removing items from a shelf uses the &ldquo;Item placed&rdquo; caption</p>
+</li>
+<li>
+<p><a
+  href="https://bugs.mojang.com/browse/MC-MC-300119"
+    target="_blank"
+  >MC-300119</a>- Copper golems don’t always avoid dangerous blocks when pathfinding to chests</p>
+</li>
+<li>
+<p><a
+  href="https://bugs.mojang.com/browse/MC-MC-300124"
+    target="_blank"
+  >MC-300124</a>- All the oxidation states of the lightning rod are listed in the redstone tab of the creative inventory</p>
+</li>
+<li>
+<p><a
+  href="https://bugs.mojang.com/browse/MC-MC-300129"
+    target="_blank"
+  >MC-300129</a>- Copper golems can&rsquo;t put items into chests above them</p>
+</li>
+<li>
+<p><a
+  href="https://bugs.mojang.com/browse/MC-MC-300173"
+    target="_blank"
+  >MC-300173</a>- The Copper Chest textures&rsquo; diagonal glint direction doesn&rsquo;t match the large chest variants&rsquo; on some sides</p>
+</li>
+<li>
+<p><a
+  href="https://bugs.mojang.com/browse/MC-MC-300229"
+    target="_blank"
+  >MC-300229</a>- Z-fighting on antenna when putting certain blocks above a copper golem statue</p>
+</li>
+<li>
+<p><a
+  href="https://bugs.mojang.com/browse/MC-MC-300267"
+    target="_blank"
+  >MC-300267</a>- The miniature mobs inside spawners and trial spawners are sometimes lit incorrectly</p>
+</li>
+<li>
+<p><a
+  href="https://bugs.mojang.com/browse/MC-MC-300301"
+    target="_blank"
+  >MC-300301</a>- Shelves produce unusually high-resolution particles due to having a 32x32 texture</p>
+</li>
+<li>
+<p><a
+  href="https://bugs.mojang.com/browse/MC-MC-300304"
+    target="_blank"
+  >MC-300304</a>- Comparators can stay active when measuring the pose of a copper golem statue block which is revived</p>
+</li>
+<li>
+<p><a
+  href="https://bugs.mojang.com/browse/MC-MC-300462"
+    target="_blank"
+  >MC-300462</a>- Copper golems attached to leads still attempt to pathfind toward chests</p>
+</li>
+<li>
+<p><a
+  href="https://bugs.mojang.com/browse/MC-MC-300501"
+    target="_blank"
+  >MC-300501</a>- Variants of copper chests are not included in the &ldquo;Redstone Blocks&rdquo; tab in the creative inventory whereas normal chests are</p>
+</li>
+<li>
+<p><a
+  href="https://bugs.mojang.com/browse/MC-MC-300568"
+    target="_blank"
+  >MC-300568</a>- Copper golems don&rsquo;t open chests if given room to walk about</p>
+</li>
+<li>
+<p><a
+  href="https://bugs.mojang.com/browse/MC-MC-300688"
+    target="_blank"
+  >MC-300688</a>- The iron chain&rsquo;s block/item ID is still &ldquo;chain&rdquo;</p>
+</li>
+<li>
+<p><a
+  href="https://bugs.mojang.com/browse/MC-MC-300703"
+    target="_blank"
+  >MC-300703</a>- The underside of double copper chests does not use a merged texture</p>
+</li>
+<li>
+<p><a
+  href="https://bugs.mojang.com/browse/MC-MC-300744"
+    target="_blank"
+  >MC-300744</a>- The copper and iron nuggets are inverted and arranged incorrectly in the Creative mode inventory</p>
+</li>
+<li>
+<p><a
+  href="https://bugs.mojang.com/browse/MC-MC-300762"
+    target="_blank"
+  >MC-300762</a>- Copper golems require at least 3 blocks of space above a chest to place anything</p>
+</li>
+<li>
+<p><a
+  href="https://bugs.mojang.com/browse/MC-MC-300797"
+    target="_blank"
+  >MC-300797</a>- The glowing effect causes entities to render incorrectly inside of inventories</p>
+</li>
+<li>
+<p><a
+  href="https://bugs.mojang.com/browse/MC-MC-300827"
+    target="_blank"
+  >MC-300827</a>- Pressing F3+Q in certain screens does not show help, despite F3 suggesting it</p>
+</li>
+<li>
+<p><a
+  href="https://bugs.mojang.com/browse/MC-MC-300977"
+    target="_blank"
+  >MC-300977</a>- Clocks function in the recipe book/villager/crafter UI</p>
+</li>
+<li>
+<p><a
+  href="https://bugs.mojang.com/browse/MC-MC-301023"
+    target="_blank"
+  >MC-301023</a>- When a warden applies the darkness effect to you, the chat interface, item bar, and items become dark</p>
+</li>
+<li>
+<p><a
+  href="https://bugs.mojang.com/browse/MC-MC-301025"
+    target="_blank"
+  >MC-301025</a>- End flash purplish light saturation is affected by brightness values</p>
+</li>
+<li>
+<p><a
+  href="https://bugs.mojang.com/browse/MC-MC-301026"
+    target="_blank"
+  >MC-301026</a>- End flash purplish light becomes extremely saturated when the player is affected by darkness</p>
+</li>
+<li>
+<p><a
+  href="https://bugs.mojang.com/browse/MC-MC-301048"
+    target="_blank"
+  >MC-301048</a>- In the &ldquo;sitting&rdquo; pose, the copper statue’s rod becomes shorter</p>
+</li>
+<li>
+<p><a
+  href="https://bugs.mojang.com/browse/MC-MC-301101"
+    target="_blank"
+  >MC-301101</a>- Certain similar blocks are positioned differently on copper golems&rsquo; heads</p>
+</li>
+<li>
+<p><a
+  href="https://bugs.mojang.com/browse/MC-MC-301224"
+    target="_blank"
+  >MC-301224</a>- The first few stages of block cracks are not rendered on chests</p>
+</li>
+<li>
+<p><a
+  href="https://bugs.mojang.com/browse/MC-MC-301225"
+    target="_blank"
+  >MC-301225</a>- Game crashes when quitting creating new world menu without other worlds created before</p>
+</li>
+<li>
+<p><a
+  href="https://bugs.mojang.com/browse/MC-MC-301226"
+    target="_blank"
+  >MC-301226</a>- Block cracks no longer render on banners</p>
+</li>
+<li>
+<p><a
+  href="https://bugs.mojang.com/browse/MC-MC-301228"
+    target="_blank"
+  >MC-301228</a>- Block cracks no longer render on heads and skulls</p>
+</li>
+<li>
+<p><a
+  href="https://bugs.mojang.com/browse/MC-MC-301230"
+    target="_blank"
+  >MC-301230</a>- The word &ldquo;resolve&rdquo; is misspelled as &ldquo;resolved&rdquo; within the &ldquo;commands.profile_fetch.id.failure&rdquo; string</p>
+</li>
+<li>
+<p><a
+  href="https://bugs.mojang.com/browse/MC-MC-301231"
+    target="_blank"
+  >MC-301231</a>- Enchanting table book animations are not independent</p>
+</li>
+<li>
+<p><a
+  href="https://bugs.mojang.com/browse/MC-MC-301236"
+    target="_blank"
+  >MC-301236</a>- Enchantment glint is no longer visible on held tridents</p>
+</li>
+<li>
+<p><a
+  href="https://bugs.mojang.com/browse/MC-MC-301242"
+    target="_blank"
+  >MC-301242</a>- Enchantment glint is no longer visible on shields</p>
+</li>
+<li>
+<p><a
+  href="https://bugs.mojang.com/browse/MC-MC-301273"
+    target="_blank"
+  >MC-301273</a>- Clicking on the join server hover button now selects the server, unless any server is already selected</p>
+</li>
+<li>
+<p><a
+  href="https://bugs.mojang.com/browse/MC-MC-301290"
+    target="_blank"
+  >MC-301290</a>- Game crashes when trying to render a glowing enchanted item</p>
+</li>
+<li>
+<p><a
+  href="https://bugs.mojang.com/browse/MC-MC-301295"
+    target="_blank"
+  >MC-301295</a>- TTF font provider oversample increases width of characters</p>
+</li>
+<li>
+<p><a
+  href="https://bugs.mojang.com/browse/MC-MC-301328"
+    target="_blank"
+  >MC-301328</a>- Glowing item entities briefly turn white upon pickup</p>
+</li>
+<li>
+<p><a
+  href="https://bugs.mojang.com/browse/MC-MC-301339"
+    target="_blank"
+  >MC-301339</a>- Miniature mobs inside spawners always render fully lit</p>
+</li>
+</ul>
 
-<h4 class="relative group">Planned Performance Improvments? : 
-    <div id="planned-performance-improvments-" class="anchor"></div>
+<h2 class="relative group">Get the Snapshot 
+    <div id="get-the-snapshot" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#planned-performance-improvments-" aria-label="Anchor">#</a>
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#get-the-snapshot" aria-label="Anchor">#</a>
     </span>        
     
-</h4>
-<p>
-
-
-
-
-
-
-<figure>
-    <img class="my-0 rounded-md" loading="lazy" alt="" src="/vinc-custom-changelog.github.io/images/25w35a/dev-comment-1.png">
-
-  
-</figure>
-</p>
-
-<h4 class="relative group">Datadriving? : 
-    <div id="datadriving-" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#datadriving-" aria-label="Anchor">#</a>
-    </span>        
-    
-</h4>
-<p>
-
-
-
-
-
-
-<figure>
-    <img class="my-0 rounded-md" loading="lazy" alt="" src="/vinc-custom-changelog.github.io/images/25w35a/dev-comment-2.png">
-
-  
-</figure>
-
-
-
-
-
-
-
-
-<figure>
-    <img class="my-0 rounded-md" loading="lazy" alt="" src="/vinc-custom-changelog.github.io/images/25w35a/dev-comment-3.png">
-
-  
-</figure>
-</p>
-
-<h3 class="relative group">Better translucency? : 
-    <div id="better-translucency-" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#better-translucency-" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>
-
-
-
-
-
-
-<figure>
-    <img class="my-0 rounded-md" loading="lazy" alt="" src="/vinc-custom-changelog.github.io/images/25w35a/dev-comment-4.png">
-
-  
-</figure>
-</p>
+</h2>
+<p>Snapshots are available for Minecraft: Java Edition. To install the Snapshot, open up the <a
+  href="https://www.minecraft.net/content/minecraft-net/language-masters/download"
+    target="_blank"
+  >Minecraft Launcher</a> and enable snapshots in the &ldquo;Installations&rdquo; tab.
+Testing versions can corrupt your world, so please backup and/or run them in a different folder from your main worlds.
+Cross-platform server jar:</p>
+<ul>
+<li>Minecraft server jar</li>
+</ul>
+<p>Report bugs here:</p>
+<ul>
+<li>Minecraft issue tracker!</li>
+</ul>
+<p>Want to give feedback?</p>
+<ul>
+<li>For any feedback and suggestions, head over to theFeedback site. If you&rsquo;re feeling chatty, join us over at theofficial Minecraft Discord.</li>
+</ul>
 
           
           
@@ -1135,8 +1029,8 @@
           type="text/javascript"
           src="/vinc-custom-changelog.github.io/js/page.min.54b6f4371722649edbe871e431d8670d670878c22be8f36e229fe53cc9b786fe25a834def5e6de621f7a3e37b72bc8cd73839aa5ed907ed6cbd45cd3e1b0fa20.js"
           integrity="sha512-VLb0NxciZJ7b6HHkMdhnDWcIeMIr6PNuIp/lPMm3hv4lqDTe9ebeYh96Pje3K8jNc4Oape2QftbL1FzT4bD6IA=="
-          data-oid="views_changelog\25w35a.md"
-          data-oid-likes="likes_changelog\25w35a.md"></script>
+          data-oid="views_changelog\test.md"
+          data-oid-likes="likes_changelog\test.md"></script>
       
     </section>
 
@@ -1152,7 +1046,7 @@
       <div class="flex justify-between pt-3">
         <span>
           
-            <a class="flex group mr-3" href="/vinc-custom-changelog.github.io/changelog/25w36a/">
+            <a class="flex group mr-3" href="/vinc-custom-changelog.github.io/changelog/mojang-faq/">
               <span
                 class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
                 >&larr;</span
@@ -1163,7 +1057,7 @@
               >
               <span class="flex flex-col">
                 <span class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >25w36a</span
+                  >Mojang FAQ</span
                 >
                 <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
                   
@@ -1176,10 +1070,10 @@
         </span>
         <span>
           
-            <a class="flex text-right group ml-3" href="/vinc-custom-changelog.github.io/changelog/25w34a/">
+            <a class="flex text-right group ml-3" href="/vinc-custom-changelog.github.io/changelog/25w36a/">
               <span class="flex flex-col">
                 <span class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >25w34a</span
+                  >25w36a</span
                 >
                 <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
                   
