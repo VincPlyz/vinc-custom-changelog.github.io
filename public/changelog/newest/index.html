@@ -1,118 +1,39 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lade die neueste Version...</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #1a202c; /* Dunkler Hintergrund */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            color: #e2e8f0; /* Heller Text für Kontrast */
-        }
-        .container {
-            background-color: #2d3748; /* Etwas hellerer Container-Hintergrund */
-            border-radius: 1.5rem; /* Stärker abgerundete Ecken */
-            padding: 2.5rem; /* Mehr Polsterung */
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.08); /* Stärkerer Schatten */
-            max-width: 500px;
-            text-align: center;
-            animation: fadeIn 0.8s ease-out; /* Fade-In Animation */
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        h1 {
-            font-size: 2.5rem; /* Größerer Titel */
-            font-weight: 700;
-            color: #90cdf4; /* Ein auffälliger Blauton */
-            margin-bottom: 1rem;
-        }
-        p {
-            font-size: 1.15rem; /* Leicht größerer Text */
-            color: #cbd5e0;
-            line-height: 1.6;
-        }
-        .spinner-wrapper {
-            margin-top: 2.5rem;
-            margin-bottom: 2.5rem;
-        }
-        .spinner {
-            height: 4rem; /* Größerer Spinner */
-            width: 4rem; /* Größerer Spinner */
-            border-color: #63b3ed; /* Blauer Spinner */
-            border-top-color: transparent;
-            animation: spin 1s linear infinite;
-        }
-        @keyframes spin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-        .fallback-link {
-            margin-top: 2rem;
-            font-size: 0.95rem;
-            color: #a0aec0;
-        }
-        .fallback-link a {
-            color: #90cdf4; /* Blauer Link */
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-        .fallback-link a:hover {
-            color: #63b3ed; /* Hellerer Blauton beim Hover */
-            text-decoration: underline;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>Lade die neueste Version...</h1>
-        <p>
-            Du wirst in Kürze automatisch weitergeleitet.
-            Bitte hab einen Moment Geduld, während wir die Inhalte für dich vorbereiten.
-        </p>
-        <div class="spinner-wrapper">
-            <svg class="spinner mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-            </svg>
-        </div>
-        <p class="fallback-link">
-            Wenn die Weiterleitung nicht funktioniert oder du zu lange wartest,
-            <a href="https://vincplyz.github.io/vinc-custom-changelog.github.io/">klicke hier</a>.
-        </p>
+<script src="/vinc-custom-changelog.github.io/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=vinc-custom-changelog.github.io/livereload" data-no-instant defer></script><div class="flex flex-col items-center justify-center p-6 text-center bg-neutral-800 rounded-lg shadow-xl">
+    <h1 class="text-3xl font-extrabold text-neutral-100 dark:text-neutral">
+        Lade die neueste Version...
+    </h1>
+    <p class="mt-4 text-lg text-neutral-300 dark:text-neutral-300">
+        Du wirst in Kürze automatisch weitergeleitet.
+    </p>
+    <div class="mt-8">
+        <svg class="h-12 w-12 animate-spin text-primary-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+        </svg>
     </div>
-
-    <script src="/vinc-custom-changelog.github.io/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=vinc-custom-changelog.github.io/livereload" data-no-instant defer></script>
-    <script>
-        if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
-            fetch('https://piston-meta.mojang.com/mc/game/version_manifest.json')
-                .then(response => response.json())
-                .then(data => {
-                    const latestSnapshot = data.latest.snapshot;
-                    if (latestSnapshot) {
-                        const repoPath = "vinc-custom-changelog.github.io";
-                        const protocol = window.location.protocol;
-                        const host = window.location.host;
-                        const redirectUrl = `${protocol}//${host}/${repoPath}/changelog/${latestSnapshot}/`;
-                        window.location.href = redirectUrl;
-                    } else {
-                        window.location.href = 'https://vincplyz.github.io/vinc-custom-changelog.github.io/';
-                    }
-                })
-                .catch(() => {
+    <p class="mt-6 text-sm text-neutral-400 dark:text-neutral-400">
+        Wenn die Weiterleitung nicht funktioniert,
+        <a href="https://vincplyz.github.io/vinc-custom-changelog.github.io/" class="underline text-primary-400">klicke hier</a>.
+    </p>
+</div>
+<script>
+    if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
+        fetch('https://piston-meta.mojang.com/mc/game/version_manifest.json')
+            .then(response => response.json())
+            .then(data => {
+                const latestSnapshot = data.latest.snapshot;
+                if (latestSnapshot) {
+                    const repoPath = "vinc-custom-changelog.github.io";
+                    const protocol = window.location.protocol;
+                    const host = window.location.host;
+                    const redirectUrl = `${protocol}//${host}/${repoPath}/changelog/${latestSnapshot}/`;
+                    window.location.href = redirectUrl;
+                } else {
                     window.location.href = 'https://vincplyz.github.io/vinc-custom-changelog.github.io/';
-                });
-        }
-    </script>
-</body>
-</html>
+                }
+            })
+            .catch(() => {
+                window.location.href = 'https://vincplyz.github.io/vinc-custom-changelog.github.io/';
+            });
+    }
+</script>
