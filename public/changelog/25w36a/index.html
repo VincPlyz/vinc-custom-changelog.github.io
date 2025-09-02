@@ -103,6 +103,8 @@
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="changelog">
+    <meta property="article:published_time" content="2025-09-02T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-09-02T00:00:00+00:00">
 
   
   <meta name="twitter:card" content="summary">
@@ -124,16 +126,16 @@
       "@type": "Person",
       "name": ""
     },
+    "copyrightYear": "2025",
+    "dateCreated": "2025-09-02T00:00:00\u002b00:00",
+    "datePublished": "2025-09-02T00:00:00\u002b00:00",
     
-    
-    
-    
-    
+    "dateModified": "2025-09-02T00:00:00\u002b00:00",
     
     
     
     "mainEntityOfPage": "true",
-    "wordCount": "1535"
+    "wordCount": "1582"
   }]
   </script>
 
@@ -385,7 +387,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="0001-01-01T00:00:00&#43;00:00">1 January 0001</time>
+      <time datetime="2025-09-02T00:00:00&#43;00:00">2 September 2025</time>
     
 
     
@@ -451,7 +453,8 @@
         
 
         <div class="article-content max-w-prose mb-20">
-          <p>&ldquo;Snapshot 25w36a is out and it includes mannequins, a new technical entity that is spawned with commands and can be used as an NPC. Conflicting key binds will now function together allowing you to bind a key to multiple actions. And as always, this snapshot also includes technical tweaks and bug fixes.&rdquo;</p>
+          <img src="https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/screenshots/25w36a_1170x500.jpg"/>
+<p>&ldquo;Snapshot 25w36a is out and it includes mannequins, a new technical entity that is spawned with commands and can be used as an NPC. Conflicting key binds will now function together allowing you to bind a key to multiple actions. And as always, this snapshot also includes technical tweaks and bug fixes.&rdquo;</p>
 <blockquote>
 <p><strong>Developer&rsquo;s Note</strong>: <em>This snapshot brings a large change to how we collect and draw block entities and particles. We don&rsquo;t anticipate any change of behaviors so please keep an eye out and report anything suspicious as a bug, thank you!</em></p></blockquote>
 
@@ -530,15 +533,21 @@
     </span>        
     
 </h3>
-<iframe
-  src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=cc3d1dda-881a-11f0-bb24-0936e1cb08fb"
-  frameborder="0"
-  webkitallowfullscreen
-  mozallowfullscreen
-  allowfullscreen
-></iframe>
 <ul>
-<li>Die Farben von Copper Torches und Copper Lanterns wurden angepasst, damit sie für farbenblinde Spieler besser erkennbar sind.</li>
+<li>
+<p>Die Farben von Copper Torches und Copper Lanterns wurden angepasst, damit sie für farbenblinde Spieler besser erkennbar sind.</p>
+<p>Total gut Funktionierende Image Compare Embeds:</p>
+<ul>
+<li><a
+  href="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=cc3d1dda-881a-11f0-bb24-0936e1cb08fb"
+    target="_blank"
+  >Lantern</a></li>
+<li><a
+  href="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=ada2c718-881e-11f0-bb24-0936e1cb08fb"
+    target="_blank"
+  >Torch</a></li>
+</ul>
+</li>
 </ul>
 
 <h3 class="relative group">UI 
@@ -619,7 +628,7 @@
 <p>Added a new type of technical entity called minecraft:mannequin which can only be spawned with summon commands.</p>
 <ul>
 <li>A Mannequin is a Player Avatar without a connected Player</li>
-<li>Mannequins always show an &ldquo;NPC&rdquo; text where a Player&rsquo;s below_score score would show</li>
+<li>Mannequins always show an &ldquo;NPC&rdquo; text where a Player&rsquo;s below/score score would show</li>
 <li>Mannequins function as Living Entities - they can hold and wear equipment, have attributes &amp; effects, take damage, etc</li>
 </ul>
 <div class="command-block">
@@ -720,40 +729,49 @@
 </script>
 <p>Data Fields:</p>
 <ul>
-<li>profile - Which profile to show on the entity. This is either a Player profile (same format as a minecraft:profile component) or a Mannequin profile with the following fields:
+<li><code>profile</code> - Which profile to show on the entity. This is either a Player profile (same format as a minecraft:profile component) or a Mannequin profile with the following fields:
 <ul>
-<li>texture - Namespaced ID of the skin texture to use
+<li><code>texture</code> - Namespaced ID of the skin texture to use
 <ul>
 <li>The skin is specified relative to the textures folder and with a .png suffix</li>
 <li>e.g. entity/player/wide/steve will use the default wide Steve skin</li>
 </ul>
 </li>
-<li>cape - Optional namespaced ID of the cape texture to use
+<li><code>cape</code> - Optional namespaced ID of the cape texture to use
 <ul>
 <li>When specified, uses the same format as the texture field</li>
 <li>Omitting this field means the Mannequin has no cape</li>
 </ul>
 </li>
-<li>elytra - Optional namespaced ID of the elytra texture to use
+<li><code>elytra</code> - Optional namespaced ID of the elytra texture to use
 <ul>
 <li>When specified, uses the same format as the texture field</li>
 <li>Omitting this field means the Mannequin uses the cape texture, or if that is also omitted, the default Elytra texture when wearing Elytra</li>
 </ul>
 </li>
-<li>model - Optional model type, one of wide and slim
+<li><code>model</code> - Optional model type, one of wide and slim
 <ul>
 <li>If omitted, wide is used</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>hidden_layers - List of outer skin layers to hide
+<li><code>hidden_layers</code> - List of outer skin layers to hide
 <ul>
 <li>Valid entries: cape, jacket, left_sleeve, right_sleeve, left_pants_leg, right_pants_leg, hat</li>
 </ul>
 </li>
-<li>main_hand - Which hand is the main hand of the Mannequn - one of left and right</li>
+<li><code>main_hand</code> - Which hand is the main hand of the Mannequn - one of left and right</li>
 </ul>
+<ul>
+<li>
+<blockquote>
+<p>Dev Comments über die Mannequins/NPC&rsquo;s und dem &ldquo;NPC&rdquo; Tag den man nicht entfernen können soll (in Vanilla zumindest)</p></blockquote>
+</li>
+</ul>
+<img src="/vinc-custom-changelog.github.io/images/25w36a/dev_about_NPC_name_6.png" alt="" style="width:600px;"/>
+<img src="/vinc-custom-changelog.github.io/images/25w36a/dev_about_NPC_name_2.png" alt="" style="width:600px;"/>
+<img src="/vinc-custom-changelog.github.io/images/25w36a/dev_about_NPC_name_5.png" alt="" style="width:600px;"/>
 
 <h3 class="relative group">Particles 
     <div id="particles" class="anchor"></div>
@@ -798,6 +816,26 @@
 <li>core/position_color_tex_lightmap.fsh</li>
 </ul>
 </li>
+</ul>
+
+<h2 class="relative group">Fixed bugs in 25w36b 
+    <div id="fixed-bugs-in-25w36b" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#fixed-bugs-in-25w36b" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<ul>
+<li><a
+  href="https://bugs.mojang.com/browse/MC-301745"
+    target="_blank"
+  >MC-301745</a> - Placing an Ender chest in the world crashes the game</li>
+<li><a
+  href="https://bugs.mojang.com/browse/MC-301749"
+    target="_blank"
+  >MC-301749</a> - Multiplayer Crash</li>
 </ul>
 
 <h2 class="relative group">Fixed bugs in 25w36a 
@@ -1091,7 +1129,7 @@
       <div class="flex justify-between pt-3">
         <span>
           
-            <a class="flex group mr-3" href="/vinc-custom-changelog.github.io/changelog/website-changelog/">
+            <a class="flex group mr-3" href="/vinc-custom-changelog.github.io/changelog/1.21.6-pre1/">
               <span
                 class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
                 >&larr;</span
@@ -1102,23 +1140,7 @@
               >
               <span class="flex flex-col">
                 <span class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >Website Changelog</span
-                >
-                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
-                  
-                    <time datetime="0001-01-01T00:00:00&#43;00:00">1 January 0001</time>
-                  
-                </span>
-              </span>
-            </a>
-          
-        </span>
-        <span>
-          
-            <a class="flex text-right group ml-3" href="/vinc-custom-changelog.github.io/changelog/testseite/">
-              <span class="flex flex-col">
-                <span class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >Testseite</span
+                  >1.21.6-pre1</span
                 >
                 <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
                   
@@ -1126,15 +1148,10 @@
                   
                 </span>
               </span>
-              <span
-                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
-                >&rarr;</span
-              >
-              <span
-                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
-                >&larr;</span
-              >
             </a>
+          
+        </span>
+        <span>
           
         </span>
       </div>

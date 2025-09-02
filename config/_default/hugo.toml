@@ -70,8 +70,3 @@ enableEmoji = true
 
 [params]
   customCSS = ["css/minecraft-changelog.css"]
-
-[markup]
-  [markup.goldmark]
-    [markup.goldmark.renderer]
-      unsafe = true
