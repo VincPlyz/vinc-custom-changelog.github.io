@@ -135,7 +135,7 @@
     
     
     "mainEntityOfPage": "true",
-    "wordCount": "1582"
+    "wordCount": "1595"
   }]
   </script>
 
@@ -631,8 +631,9 @@
 <li>Mannequins always show an &ldquo;NPC&rdquo; text where a Player&rsquo;s below/score score would show</li>
 <li>Mannequins function as Living Entities - they can hold and wear equipment, have attributes &amp; effects, take damage, etc</li>
 </ul>
+<p><video src="/vinc-custom-changelog.github.io/videos/25w36a/npc_1.mp4" controls></video></p>
 <div class="command-block">
-  <span class="command-text"> /summon minecraft:mannequin </span>
+  <span class="command-text">/summon minecraft:mannequin</span>
   <button class="command-copy-btn" onclick="copyCommand(this)" title="Kopieren">
     <i class="fas fa-copy"></i> </button>
 </div>
@@ -656,7 +657,7 @@
   }
 </script>
 <div class="command-block">
-  <span class="command-text"> /summon minecraft:mannequin ~ ~ ~ {profile:Castcrafter} </span>
+  <span class="command-text">/summon minecraft:mannequin ~ ~ ~ {profile:Castcrafter}</span>
   <button class="command-copy-btn" onclick="copyCommand(this)" title="Kopieren">
     <i class="fas fa-copy"></i> </button>
 </div>
@@ -680,7 +681,7 @@
   }
 </script>
 <div class="command-block">
-  <span class="command-text"> /summon minecraft:mannequin ~ ~ ~ {profile:{texture:"entity/creeper/creeper"}} </span>
+  <span class="command-text">/summon minecraft:mannequin ~ ~ ~ {profile:{texture:"entity/creeper/creeper"}}</span>
   <button class="command-copy-btn" onclick="copyCommand(this)" title="Kopieren">
     <i class="fas fa-copy"></i> </button>
 </div>
@@ -704,7 +705,7 @@
   }
 </script>
 <div class="command-block">
-  <span class="command-text"> /summon minecraft:mannequin ~ ~ ~ {profile:{texture:"entity/creeper/creeper",cape:"block/sea_lantern"}} </span>
+  <span class="command-text">/summon minecraft:mannequin ~ ~ ~ {profile:{texture:"entity/player/slim/efe",cape:"block/dirt",model:"slim"}}</span>
   <button class="command-copy-btn" onclick="copyCommand(this)" title="Kopieren">
     <i class="fas fa-copy"></i> </button>
 </div>
@@ -785,7 +786,31 @@
 <ul>
 <li>dragon_breath now optionally takes a power parameter (float, default 1.0), which is multiplied onto its initial velocity, after all randomness</li>
 <li>instant_effect and effect now optionally take power (float, default 1.0) and color (rgb, default 0xFFFFFF) parameters</li>
-<li>flash now requires a color parameter (argb)</li>
+<li>flash now requires a color parameter (argb)
+<div class="command-block">
+  <span class="command-text">/execute at @s positioned ^ ^2 ^3 run particle flash{color:[0.5,0.0,0.5,0]} ~ ~ ~</span>
+  <button class="command-copy-btn" onclick="copyCommand(this)" title="Kopieren">
+    <i class="fas fa-copy"></i> </button>
+</div>
+
+<script>
+  function copyCommand(button) {
+    const commandText = button.previousElementSibling.textContent;
+    const originalTitle = button.title; 
+    const originalIconClass = button.querySelector('i').className; 
+
+    navigator.clipboard.writeText(commandText).then(() => {
+      button.title = "Kopiert!"; 
+      button.querySelector('i').className = "fas fa-check"; 
+      setTimeout(() => {
+        button.title = originalTitle; 
+        button.querySelector('i').className = originalIconClass; 
+      }, 2000);
+    }).catch(err => {
+      console.error("Fehler beim Kopieren: ", err);
+    });
+  }
+</script></li>
 </ul>
 
 <h2 class="relative group">Resource Pack Version 68.0 
