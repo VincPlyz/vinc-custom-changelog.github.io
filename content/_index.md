@@ -24,6 +24,7 @@ draft: false
 - [25w34a](/vinc-custom-changelog.github.io/changelog/25w34a/)
 - [25w35a](/vinc-custom-changelog.github.io/changelog/25w35a/)
 - [25w36a](/vinc-custom-changelog.github.io/changelog/25w36a/)
+- [25w36b](/vinc-custom-changelog.github.io/changelog/25w36b/)
 
 --- 
 
