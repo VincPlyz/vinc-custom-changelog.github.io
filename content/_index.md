@@ -28,8 +28,10 @@ draft: false
 
 --- 
 
-- [Mojang FAQ](/vinc-custom-changelog.github.io/changelog/Mojang-FAQ/)
+- [Recent Bugfixes](https://mojira-viewer.jacobsjo.eu/browse/MC-301891?jql=project%20%3D%20MC%20AND%20resolution%20%3D%20Fixed%20AND%20%22fixVersion%22%20%3D%20earliestUnreleasedVersion()%20ORDER%20BY%20created%20DESC)
 
+
+- [Mojang FAQ](/vinc-custom-changelog.github.io/changelog/Mojang-FAQ/)
 
 
 - [Website Changelog](/vinc-custom-changelog.github.io/changelog/website-changelog/)

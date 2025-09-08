@@ -9,6 +9,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>http://localhost:1313/vinc-custom-changelog.github.io/changelog/25w36b/</loc>
+    <lastmod>2025-09-02T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>http://localhost:1313/vinc-custom-changelog.github.io/changelog/</loc>
     <lastmod>2025-09-02T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
