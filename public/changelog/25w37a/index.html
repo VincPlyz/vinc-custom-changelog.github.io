@@ -135,7 +135,7 @@
     
     
     "mainEntityOfPage": "true",
-    "wordCount": "1393"
+    "wordCount": "1428"
   }]
   </script>
 
@@ -490,9 +490,8 @@ Happy mining!&quot;</p></blockquote>
 <p>Ambient lighting on entities has been adjusted to be more visually in line with blocks and other parts of the gameThe underside of flat surfaces will now be lit from that direction, instead of the opposite directionThis mainly affects models containing cubes that are either flat or &ldquo;hollow&rdquo; such as:Worn armorWorn ElytraThe outside layers on player skinsThe ribcages of Skeletons or Skeleton HorsesThe feet of Chickens or FrogsThe wings of Phantoms or the Ender DragonThe fins on fishAnd more!</p>
 </li>
 </ul>
-<img src="/vinc-custom-changelog.github.io/images/25w37a/light_new.png" alt="" style="width:600px;"/> 
-<img src="/vinc-custom-changelog.github.io/images/25w37a/light_old.png" alt="" style="width:600px;"/>
-<img src="/vinc-custom-changelog.github.io/images/25w37a/lighting_2.png" alt="" style="width:600px;"/>
+<img src="/vinc-custom-changelog.github.io/images/25w37a/lighting_1.png" alt="" style="width:600px;"/>
+<img src="/vinc-custom-changelog.github.io/images/25w37a/lighting_skell.png" alt="" style="width:600px;"/>
 <p>Game Mode Switching</p>
 <ul>
 <li>Switching from Spectator Mode to Creative Mode no longer causes the player to stop flyingInstead, flight now only gets disabled when switching game modes if the player is near the groundA player is considered to be near the ground if there is a collidable surface (i.e. blocks, Happy Ghasts, boats&hellip;) within 1 block below themFlight will not get disabled if the player was inside a block or collidable entityThis is to prevent players from suddenly falling through the ground</li>
@@ -570,24 +569,14 @@ Happy mining!&quot;</p></blockquote>
 <p>Individual values can be enabled with JVM properties:First, a global debug flag must be enabled with <code>-DMC_DEBUG_ENABLED</code> or <code>-DMC_DEBUG_ENABLED=true</code> Then, a specific feature can be enabled, for example <code>-DMC_DEBUG_BRAIN</code> or <code>-DMC_DEBUG_BRAIN=true</code> To get the list of all available debug properties, add<code>-DMC_DEBUG_PRINT_PROPERTIES</code></p>
 </li>
 </ul>
-<p>Debug Argument Tutorial:
+<p>JVM Arg Tutorial:
 <video src="/vinc-custom-changelog.github.io/videos/25w37a/java_arg_2.mp4" controls></video>
 <img src="/vinc-custom-changelog.github.io/images/25w37a/debug_tuto_1.png" alt=""/></p>
 <blockquote>
 <p>Warning: this is debug code. Handle with extreme care! This is an advanced feature, meant to help modders - it should not be used for normal play Features not guaranteed to work as intended It might crash your game or corrupt your worlds Individual options might be added, changed or removed without a notice</p></blockquote>
+<hr>
 <ul>
-<li>
-
-<h6 class="relative group">F3 + F <video src="/vinc-custom-changelog.github.io/videos/25w37a/debug_key_1.mp4" controls></video> 
-    <div id="f3--f" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#f3--f" aria-label="Anchor">#</a>
-    </span>        
-    
-</h6>
-</li>
+<li>F3 + F - Fog Toggle <video src="/vinc-custom-changelog.github.io/videos/25w37a/debug_key_1.mp4" controls></video></li>
 </ul>
 <div class="command-block">
   <span class="command-text">-DMC_DEBUG_ENABLED=true -DMC_DEBUG_HOTKEYS
@@ -614,6 +603,128 @@ Happy mining!&quot;</p></blockquote>
     });
   }
 </script>
+<hr>
+<ul>
+<li>Pathfinding visualizer <video src="/vinc-custom-changelog.github.io/videos/25w37a/debug_path.mp4" controls></video></li>
+</ul>
+<div class="command-block">
+  <span class="command-text">-DMC_DEBUG_ENABLED=true -DMC_DEBUG_PATHFINDING
+</span>
+  <button class="command-copy-btn" onclick="copyCommand(this)" title="Kopieren">
+    <i class="fas fa-copy"></i> </button>
+</div>
+
+<script>
+  function copyCommand(button) {
+    const commandText = button.previousElementSibling.textContent;
+    const originalTitle = button.title; 
+    const originalIconClass = button.querySelector('i').className; 
+
+    navigator.clipboard.writeText(commandText).then(() => {
+      button.title = "Kopiert!"; 
+      button.querySelector('i').className = "fas fa-check"; 
+      setTimeout(() => {
+        button.title = originalTitle; 
+        button.querySelector('i').className = originalIconClass; 
+      }, 2000);
+    }).catch(err => {
+      console.error("Fehler beim Kopieren: ", err);
+    });
+  }
+</script>
+<hr>
+<ul>
+<li>Ctrl + F2 - Panorama Screenshot</li>
+</ul>
+<p>[Funktioniert leider (noch?) nicht]</p>
+<div class="command-block">
+  <span class="command-text">-DMC_DEBUG_ENABLED=true -DMC_DEBUG_PANORAMA_SCREENSHOT
+</span>
+  <button class="command-copy-btn" onclick="copyCommand(this)" title="Kopieren">
+    <i class="fas fa-copy"></i> </button>
+</div>
+
+<script>
+  function copyCommand(button) {
+    const commandText = button.previousElementSibling.textContent;
+    const originalTitle = button.title; 
+    const originalIconClass = button.querySelector('i').className; 
+
+    navigator.clipboard.writeText(commandText).then(() => {
+      button.title = "Kopiert!"; 
+      button.querySelector('i').className = "fas fa-check"; 
+      setTimeout(() => {
+        button.title = originalTitle; 
+        button.querySelector('i').className = originalIconClass; 
+      }, 2000);
+    }).catch(err => {
+      console.error("Fehler beim Kopieren: ", err);
+    });
+  }
+</script>
+<hr>
+<ul>
+<li>Fake Latency <video src="/vinc-custom-changelog.github.io/videos/25w37a/debug_latency.mp4" controls></video></li>
+</ul>
+<div class="command-block">
+  <span class="command-text">-DMC_DEBUG_ENABLED=true -DMC_DEBUG_FAKE_LATENCY_MS=1000
+</span>
+  <button class="command-copy-btn" onclick="copyCommand(this)" title="Kopieren">
+    <i class="fas fa-copy"></i> </button>
+</div>
+
+<script>
+  function copyCommand(button) {
+    const commandText = button.previousElementSibling.textContent;
+    const originalTitle = button.title; 
+    const originalIconClass = button.querySelector('i').className; 
+
+    navigator.clipboard.writeText(commandText).then(() => {
+      button.title = "Kopiert!"; 
+      button.querySelector('i').className = "fas fa-check"; 
+      setTimeout(() => {
+        button.title = originalTitle; 
+        button.querySelector('i').className = originalIconClass; 
+      }, 2000);
+    }).catch(err => {
+      console.error("Fehler beim Kopieren: ", err);
+    });
+  }
+</script>
+<hr>
+<ul>
+<li>UI Debug Helper <video src="/vinc-custom-changelog.github.io/videos/25w37a/debug_ui_helper.mp4" controls></video></li>
+</ul>
+<div class="command-block">
+  <span class="command-text">-DMC_DEBUG_ENABLED=true -DMC_DEBUG_RENDER_UI_LAYERING_RECTANGLES
+</span>
+  <button class="command-copy-btn" onclick="copyCommand(this)" title="Kopieren">
+    <i class="fas fa-copy"></i> </button>
+</div>
+
+<script>
+  function copyCommand(button) {
+    const commandText = button.previousElementSibling.textContent;
+    const originalTitle = button.title; 
+    const originalIconClass = button.querySelector('i').className; 
+
+    navigator.clipboard.writeText(commandText).then(() => {
+      button.title = "Kopiert!"; 
+      button.querySelector('i').className = "fas fa-check"; 
+      setTimeout(() => {
+        button.title = originalTitle; 
+        button.querySelector('i').className = originalIconClass; 
+      }, 2000);
+    }).catch(err => {
+      console.error("Fehler beim Kopieren: ", err);
+    });
+  }
+</script>
+<hr>
+<ul>
+<li>Liste mit allen Debug Flags: <a
+  href="/vinc-custom-changelog.github.io/file_share/all_debug_flags.txt">Debug Flag List </a></li>
+</ul>
 
 <h2 class="relative group">Data Pack Version 87.0 
     <div id="data-pack-version-870" class="anchor"></div>
