@@ -9,7 +9,7 @@
 
 @font-face {
   font-family: 'MinecraftSeven';
-  src: url('/vinc-custom-changelog.github.io/fonts/Minecraft-Fivev2.woff2') format('woff2');
+  src: url('/vinc-custom-changelog.github.io/fonts/Minecraft-Seven_v2.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -42,8 +42,8 @@
 
     /* Schriftartvariablen */
     --mc-body-font: 'Noto Sans', sans-serif;
-    --mc-heading-font: 'Minecraft-Tenv2', sans-serif;
-    --mc-secondary-heading-font: 'Minecraft-Tenv2', sans-serif;
+    --mc-heading-font: 'MinecraftTen', sans-serif;
+    --mc-secondary-heading-font: 'MinecraftTen', sans-serif;
     --mc-default--fontlist: var(--mc-body-font);
 }
 

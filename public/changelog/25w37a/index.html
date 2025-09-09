@@ -42,8 +42,8 @@
   <link
     type="text/css"
     rel="stylesheet"
-    href="/vinc-custom-changelog.github.io/css/main.bundle.min.8fd0194547cd2aa7ba2f76873ee09659abc489039efe8b5cbca939a9bb367b225c4b2621b4a45510d32e9a2d52fda46cf57548d04b4e237f800f242df590818d.css"
-    integrity="sha512-j9AZRUfNKqe6L3aHPuCWWavEiQOe/otcvKk5qbs2eyJcSyYhtKRVENMumi1S/aRs9XVI0EtOI3&#43;ADyQt9ZCBjQ==">
+    href="/vinc-custom-changelog.github.io/css/main.bundle.min.c7b69d587c6e0a84170781aafa032a6ec04da7ec9b534c9d0ff7fa7f4c156fd352e603342cb99e6589e162d8deb0aa29dfe6d7ce6d1395b4db916cd33931163a.css"
+    integrity="sha512-x7adWHxuCoQXB4Gq&#43;gMqbsBNp&#43;ybU0ydD/f6f0wVb9NS5gM0LLmeZYnhYtjesKop3&#43;bXzm0TlbTbkWzTOTEWOg==">
   
   
   <script
@@ -135,7 +135,7 @@
     
     
     "mainEntityOfPage": "true",
-    "wordCount": "1428"
+    "wordCount": "1496"
   }]
   </script>
 
@@ -471,7 +471,7 @@ Happy mining!&quot;</p></blockquote>
 <li>OpenGL 3.3 is now required to play the game, up from 3.2. This does not change our posted Minimum Requirements</li>
 </ul>
 <blockquote>
-<p>Developer’s Note: We do not expect the update to OpenGL version to affect many people, if any at all. Our posted Minimum Requirements has been OpenGL 4.0 since 2017, and OpenGL 3.3 turned 15 years old recently.</p></blockquote>
+<p><strong>Developer’s Note:</strong> <em>We do not expect the update to OpenGL version to affect many people, if any at all. Our posted Minimum Requirements has been OpenGL 4.0 since 2017, and OpenGL 3.3 turned 15 years old recently.</em></p></blockquote>
 <p>Minor Tweaks to Blocks, Items and Entities</p>
 <ul>
 <li>
@@ -487,54 +487,191 @@ Happy mining!&quot;</p></blockquote>
 <p>Test Instance Blocks now preserve error markers between world reloads</p>
 </li>
 <li>
-<p>Ambient lighting on entities has been adjusted to be more visually in line with blocks and other parts of the gameThe underside of flat surfaces will now be lit from that direction, instead of the opposite directionThis mainly affects models containing cubes that are either flat or &ldquo;hollow&rdquo; such as:Worn armorWorn ElytraThe outside layers on player skinsThe ribcages of Skeletons or Skeleton HorsesThe feet of Chickens or FrogsThe wings of Phantoms or the Ender DragonThe fins on fishAnd more!</p>
+<p>Ambient lighting on entities has been adjusted to be more visually in line with blocks and other parts of the gameThe underside of flat surfaces will now be lit from that direction, instead of the opposite direction This mainly affects models containing cubes that are either flat or &ldquo;hollow&rdquo; such as:</p>
+<ul>
+<li>Worn armor</li>
+<li>Worn Elytra</li>
+<li>The outside layers on player skins</li>
+<li>The ribcages of Skeletons or Skeleton Horses</li>
+<li>The feet of Chickens or Frogs</li>
+<li>The wings of Phantoms or the Ender Dragon</li>
+<li>The fins on fish</li>
+<li>And more!</li>
+</ul>
 </li>
 </ul>
 <img src="/vinc-custom-changelog.github.io/images/25w37a/lighting_1.png" alt="" style="width:600px;"/>
 <img src="/vinc-custom-changelog.github.io/images/25w37a/lighting_skell.png" alt="" style="width:600px;"/>
-<p>Game Mode Switching</p>
+
+<h3 class="relative group">Game Mode Switching 
+    <div id="game-mode-switching" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#game-mode-switching" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
 <ul>
-<li>Switching from Spectator Mode to Creative Mode no longer causes the player to stop flyingInstead, flight now only gets disabled when switching game modes if the player is near the groundA player is considered to be near the ground if there is a collidable surface (i.e. blocks, Happy Ghasts, boats&hellip;) within 1 block below themFlight will not get disabled if the player was inside a block or collidable entityThis is to prevent players from suddenly falling through the ground</li>
+<li>Switching from Spectator Mode to Creative Mode no longer causes the player to stop flying
+<ul>
+<li>Instead, flight now only gets disabled when switching game modes if the player is near the ground
+<ul>
+<li>A player is considered to be near the ground if there is a collidable surface (i.e. blocks, Happy Ghasts, boats&hellip;) within 1 block below them</li>
 </ul>
-<p>Developer&rsquo;s Note: This change is a partial revert of a bugfix from a previous snapshot. Even though the old behavior prior to the fix was unintended, the approach we took to fixing flight didn&rsquo;t quite land the way we wanted it to. In response to community feedback, we&rsquo;re trying this new approach as a less disruptive alternative.</p>
-<p>Minecraft Server Management Protocol</p>
+</li>
+<li>Flight will not get disabled if the player was inside a block or collidable entity
 <ul>
-<li>
-<p>Clients must authenticate to access the APIClients should supply anAuthorizationbearer token header with a server specific secretThe secret is configured in the server properties filemanagement-server-secret=The secret should be exactly 40 alphanumeric characters (A-Z, a-z, 0-9)The secret will be automatically generated if the server property is emptyUnauthorized requests are rejected with 401 Unauthorized</p>
-</li>
-<li>
-<p>TLS is enabled by defaultCan be disabled in the server properties filemanagement-server-tls-enabled=false Requires a keystore file to be set in the server properties filemanagement-server-tls-keystore=path/to/keystore.p12 The keystore file must be in PKCS12 formatKeystore password can be set in the following ways, in order of priorityEnvironment variable:MINECRAFT_MANAGEMENT_TLS_KEYSTORE_PASSWORDJVM argument:-Dmanagement.tls.keystore.password=Server property:management-server-tls-keystore-password=</p>
-</li>
+<li>This is to prevent players from suddenly falling through the ground</li>
 </ul>
-<p>Server Properties</p>
-<ul>
-<li>
-<p>Default value ofmanagement-server-portwas changed from25585to0, assigning an available port each time management server is started</p>
-</li>
-<li>
-<p>Added server propertymanagement-server-tls-enabledcontrolling whether the Minecraft Server Management Protocol uses TLS or notDefaults totrue</p>
-</li>
-<li>
-<p>Added server propertymanagement-server-tls-keystorecontrolling the path to the keystore file used for TLSDefaults to an empty stringA dedicated server won&rsquo;t start when TLS is enabled and no keystore is provided</p>
-</li>
-<li>
-<p>Added server propertymanagement-server-tls-keystore-passwordcontrolling the password to the keystore file used for TLSDefaults to an empty string</p>
 </li>
 </ul>
-<p>Game Rules</p>
-<ul>
-<li>AddedspawnerBlocksEnabledgame rule controlling if Spawner Blocks should be enabled or notDefaults totrue</li>
+</li>
 </ul>
-<p>Mob Spawning</p>
+<blockquote>
+<p><strong>Developer&rsquo;s Note</strong>: <em>This change is a partial revert of a bugfix from a previous snapshot. Even though the old behavior prior to the fix was unintended, the approach we took to fixing flight didn&rsquo;t quite land the way we wanted it to. In response to community feedback, we&rsquo;re trying this new approach as a less disruptive alternative.</em></p></blockquote>
+
+<h3 class="relative group">Minecraft Server Management Protocol 
+    <div id="minecraft-server-management-protocol" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#minecraft-server-management-protocol" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
 <ul>
-<li>Logic for choosing type of equipment for mobs spawning with equipment has been tweaked to add Copper as a possibilityThe initial roll to choose a type now chooses between Leather, Copper and GoldThe chance to increase an armor tier has increased from 9.5% to 10.87%</li>
+<li>
+<p>Clients must authenticate to access the API</p>
+<ul>
+<li>Clients should supply an <code>Authorization</code> bearer token header with a server specific secret</li>
+<li>The secret is configured in the server properties file
+<ul>
+<li><code>management-server-secret=</code></li>
+<li>The secret should be exactly 40 alphanumeric characters (A-Z, a-z, 0-9)</li>
+<li>The secret will be automatically generated if the server property is empty</li>
+<li>Unauthorized requests are rejected with 401 Unauthorized</li>
 </ul>
-<p>Sounds</p>
+</li>
+</ul>
+</li>
+<li>
+<p>TLS is enabled by default</p>
+<ul>
+<li>
+<p>Can be disabled in the server properties file</p>
+<ul>
+<li><code>management-server-tls-enabled=false</code></li>
+</ul>
+</li>
+<li>
+<p>Requires a keystore file to be set in the server properties file</p>
+<ul>
+<li><code>management-server-tls-keystore=path/to/keystore.p12</code></li>
+</ul>
+</li>
+<li>
+<p>The keystore file must be in PKCS12 format</p>
+</li>
+<li>
+<p>Keystore password can be set in the following ways, in order of priority</p>
+<ul>
+<li>Environment variable: <code>MINECRAFT_MANAGEMENT_TLS_KEYSTORE_PASSWORD</code></li>
+<li>JVM argument: <code>-Dmanagement.tls.keystore.password=</code></li>
+<li>Server property: <code>management-server-tls-keystore-password=</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<h3 class="relative group">Server Properties 
+    <div id="server-properties" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#server-properties" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<ul>
+<li>Default value of <code>management-server-port</code> was changed from <code>25585</code> to <code>0</code>, assigning an available port each time management server is started</li>
+<li>Added server property management-server-tls-enabled controlling whether the Minecraft Server Management Protocol uses TLS or not
+<ul>
+<li>Defaults to <code>true</code></li>
+</ul>
+</li>
+<li>Added server property <code>management-server-tls-keystore</code> controlling the path to the keystore file used for TLS
+<ul>
+<li>Defaults to an empty string</li>
+<li>A dedicated server won&rsquo;t start when TLS is enabled and no keystore is provided</li>
+</ul>
+</li>
+<li>Added server property <code>management-server-tls-keystore-password</code> controlling the password to the keystore file used for TLS
+<ul>
+<li>Defaults to an empty string</li>
+</ul>
+</li>
+</ul>
+
+<h3 class="relative group">Game Rules 
+    <div id="game-rules" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#game-rules" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<ul>
+<li>Added <code>spawnerBlocksEnabled</code> game rule controlling if Spawner Blocks should be enabled or not
+<ul>
+<li>Defaults to <code>true</code></li>
+</ul>
+</li>
+</ul>
+
+<h3 class="relative group">Mob Spawning 
+    <div id="mob-spawning" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#mob-spawning" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<ul>
+<li>Logic for choosing type of equipment for mobs spawning with equipment has been tweaked to add Copper as a possibility
+<ul>
+<li>The initial roll to choose a type now chooses between Leather, Copper and Gold</li>
+<li>The chance to increase an armor tier has increased from 9.5% to 10.87%</li>
+</ul>
+</li>
+</ul>
+
+<h3 class="relative group">Sounds 
+    <div id="sounds" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#sounds" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
 <ul>
 <li>Some sound sliders in the Music &amp; Sound Options now play a preview sound when adjusting the setting outside a world</li>
 </ul>
 <p><video src="/vinc-custom-changelog.github.io/videos/25w37a/new_sound_options.mp4" controls></video></p>
-<p>UI</p>
+
+<h3 class="relative group">UI 
+    <div id="ui" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#ui" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
 <ul>
 <li>The Resource Pack and Data Pack selection screens now have a search box</li>
 </ul>
@@ -560,20 +697,37 @@ Happy mining!&quot;</p></blockquote>
 <p>Some previously hidden debug features have been exposed to players</p>
 </li>
 </ul>
-<p>Debug features</p>
+
+<h3 class="relative group">Debug features 
+    <div id="debug-features" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#debug-features" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
 <ul>
-<li>
-<p>Some debug features that were previously removed during compilation are now preserved and can be used by players</p>
-</li>
-<li>
-<p>Individual values can be enabled with JVM properties:First, a global debug flag must be enabled with <code>-DMC_DEBUG_ENABLED</code> or <code>-DMC_DEBUG_ENABLED=true</code> Then, a specific feature can be enabled, for example <code>-DMC_DEBUG_BRAIN</code> or <code>-DMC_DEBUG_BRAIN=true</code> To get the list of all available debug properties, add<code>-DMC_DEBUG_PRINT_PROPERTIES</code></p>
+<li>Some debug features that were previously removed during compilation are now preserved and can be used by players</li>
+<li>Individual values can be enabled with JVM properties:
+<ul>
+<li>First, a global debug flag must be enabled with <code>-DMC_DEBUG_ENABLED</code> or <code>-DMC_DEBUG_ENABLED=true</code></li>
+<li>Then, a specific feature can be enabled, for example <code>-DMC_DEBUG_BRAIN</code> or <code>-DMC_DEBUG_BRAIN=true</code></li>
+<li>To get the list of all available debug properties, add <code>-DMC_DEBUG_PRINT_PROPERTIES</code></li>
+</ul>
 </li>
 </ul>
+<blockquote>
+<p>Warning: this is debug code. Handle with extreme care!</p>
+<ul>
+<li>This is an advanced feature, meant to help modders - it should not be used for normal play</li>
+<li>Features not guaranteed to work as intended</li>
+<li>It might crash your game or corrupt your worlds</li>
+<li>Individual options might be added, changed or removed without a notice</li>
+</ul></blockquote>
 <p>JVM Arg Tutorial:
 <video src="/vinc-custom-changelog.github.io/videos/25w37a/java_arg_2.mp4" controls></video>
 <img src="/vinc-custom-changelog.github.io/images/25w37a/debug_tuto_1.png" alt=""/></p>
-<blockquote>
-<p>Warning: this is debug code. Handle with extreme care! This is an advanced feature, meant to help modders - it should not be used for normal play Features not guaranteed to work as intended It might crash your game or corrupt your worlds Individual options might be added, changed or removed without a notice</p></blockquote>
 <hr>
 <ul>
 <li>F3 + F - Fog Toggle <video src="/vinc-custom-changelog.github.io/videos/25w37a/debug_key_1.mp4" controls></video></li>
@@ -736,7 +890,7 @@ Happy mining!&quot;</p></blockquote>
     
 </h2>
 <ul>
-<li>Changed name of game rule &ldquo;enableCommandBlocks&rdquo; to &ldquo;commandBlocksEnabled&rdquo;</li>
+<li>Changed name of game rule <code>enableCommandBlocks</code> to <code>commandBlocksEnabled</code></li>
 </ul>
 
 <h2 class="relative group">Resource Pack Version 69.0 
@@ -748,22 +902,48 @@ Happy mining!&quot;</p></blockquote>
     </span>        
     
 </h2>
-<p>Textures</p>
+
+<h3 class="relative group">Textures 
+    <div id="textures" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#textures" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
 <ul>
 <li>Moved the result slot of <code>gui/container/villager.png</code> up by one pixel</li>
 </ul>
-<p>Shaders &amp; Post-process Effects
-Shaders</p>
+
+<h3 class="relative group">Shaders &amp; Post-process Effects 
+    <div id="shaders--post-process-effects" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#shaders--post-process-effects" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+
+<h4 class="relative group">Shaders 
+    <div id="shaders" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#shaders" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
 <ul>
-<li>
-<p>A new <code>PER_FACE_LIGHTING</code> flag has been added to the following shaders:core/entity.vshcore/entity.fsh</p>
+<li>A new PER_FACE_LIGHTING flag has been added to the following shaders:
+<ul>
+<li><code>core/entity.vsh</code></li>
+<li><code>core/entity.fsh</code></li>
+</ul>
 </li>
-<li>
-<p>When set, cardinal lighting will be computed separately for front- and back-faces</p>
-</li>
-<li>
-<p>As we now require OpenGL 3.3, we have bumped the version of all shaders from 150 to 330</p>
-</li>
+<li>When set, cardinal lighting will be computed separately for front- and back-faces</li>
+<li>As we now require OpenGL 3.3, we have bumped the version of all shaders from <code>150</code> to <code>330</code></li>
 </ul>
 
 <h2 class="relative group">Fixed bugs in 25w37a 
