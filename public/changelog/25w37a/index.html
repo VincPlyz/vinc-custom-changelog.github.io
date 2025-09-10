@@ -135,7 +135,7 @@
     
     
     "mainEntityOfPage": "true",
-    "wordCount": "1500"
+    "wordCount": "1518"
   }]
   </script>
 
@@ -795,6 +795,40 @@ Happy mining!&quot;</p></blockquote>
 </script>
 <hr>
 <ul>
+<li>
+<p>Neighbor Update Visualizer <video src="/vinc-custom-changelog.github.io/videos/25w37a/debug_neighborupdate_visualizer.mp4" muted controls></video></p>
+</li>
+<li>
+<p>Comparing Default Redstone  to the Redstone Experiment <video src="/vinc-custom-changelog.github.io/videos/25w37a/redstone_test_comp.mp4" muted controls></video></p>
+</li>
+</ul>
+<div class="command-block">
+  <span class="command-text">-DMC_DEBUG_ENABLED=true -DMC_DEBUG_NEIGHBORSUPDATE
+</span>
+  <button class="command-copy-btn" onclick="copyCommand(this)" title="Kopieren">
+    <i class="fas fa-copy"></i> </button>
+</div>
+
+<script>
+  function copyCommand(button) {
+    const commandText = button.previousElementSibling.textContent;
+    const originalTitle = button.title; 
+    const originalIconClass = button.querySelector('i').className; 
+
+    navigator.clipboard.writeText(commandText).then(() => {
+      button.title = "Kopiert!"; 
+      button.querySelector('i').className = "fas fa-check"; 
+      setTimeout(() => {
+        button.title = originalTitle; 
+        button.querySelector('i').className = originalIconClass; 
+      }, 2000);
+    }).catch(err => {
+      console.error("Fehler beim Kopieren: ", err);
+    });
+  }
+</script>
+<hr>
+<ul>
 <li>Ctrl + F2 - Panorama Screenshot</li>
 </ul>
 <p>[Funktioniert leider (noch?) nicht]</p>
@@ -858,6 +892,35 @@ Happy mining!&quot;</p></blockquote>
 </ul>
 <div class="command-block">
   <span class="command-text">-DMC_DEBUG_ENABLED=true -DMC_DEBUG_RENDER_UI_LAYERING_RECTANGLES
+</span>
+  <button class="command-copy-btn" onclick="copyCommand(this)" title="Kopieren">
+    <i class="fas fa-copy"></i> </button>
+</div>
+
+<script>
+  function copyCommand(button) {
+    const commandText = button.previousElementSibling.textContent;
+    const originalTitle = button.title; 
+    const originalIconClass = button.querySelector('i').className; 
+
+    navigator.clipboard.writeText(commandText).then(() => {
+      button.title = "Kopiert!"; 
+      button.querySelector('i').className = "fas fa-check"; 
+      setTimeout(() => {
+        button.title = originalTitle; 
+        button.querySelector('i').className = originalIconClass; 
+      }, 2000);
+    }).catch(err => {
+      console.error("Fehler beim Kopieren: ", err);
+    });
+  }
+</script>
+<hr>
+<ul>
+<li>Stop Fluids from Spreading <video src="/vinc-custom-changelog.github.io/videos/25w37a/debug_stop_fluid_flow.mp4" muted controls></video></li>
+</ul>
+<div class="command-block">
+  <span class="command-text">-DMC_DEBUG_ENABLED=true -DMC_DEBUG_DISABLE_LIQUID_SPREADING
 </span>
   <button class="command-copy-btn" onclick="copyCommand(this)" title="Kopieren">
     <i class="fas fa-copy"></i> </button>
