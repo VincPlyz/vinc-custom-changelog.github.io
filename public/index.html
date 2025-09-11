@@ -3,8 +3,8 @@
   lang="en"
   dir="ltr"
   class="scroll-smooth"
-  data-default-appearance="light"
-  data-auto-appearance="true"><head>
+  data-default-appearance="dark"
+  data-auto-appearance="false"><head>
 	<meta name="generator" content="Hugo 0.148.2"><script src="/vinc-custom-changelog.github.io/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=vinc-custom-changelog.github.io/livereload" data-no-instant defer></script>
   <meta charset="utf-8">
   
@@ -47,8 +47,8 @@
   <link
     type="text/css"
     rel="stylesheet"
-    href="/vinc-custom-changelog.github.io/css/main.bundle.min.c7b69d587c6e0a84170781aafa032a6ec04da7ec9b534c9d0ff7fa7f4c156fd352e603342cb99e6589e162d8deb0aa29dfe6d7ce6d1395b4db916cd33931163a.css"
-    integrity="sha512-x7adWHxuCoQXB4Gq&#43;gMqbsBNp&#43;ybU0ydD/f6f0wVb9NS5gM0LLmeZYnhYtjesKop3&#43;bXzm0TlbTbkWzTOTEWOg==">
+    href="/vinc-custom-changelog.github.io/css/main.bundle.min.fd56de424ec9369e67d125a71a0b01e0ccb7980aac6e0d48355bc7d713a8feecaabd07ee4759ab58a2bd320a3fb0e9fa2737b6b4728f9b8b98d6ddcb55a5ff53.css"
+    integrity="sha512-/VbeQk7JNp5n0SWnGgsB4My3mAqsbg1INVvH1xOo/uyqvQfuR1mrWKK9Mgo/sOn6Jze2tHKPm4uY1t3LVaX/Uw==">
   
   
   <script
@@ -61,6 +61,9 @@
     
     
   
+  
+    
+    
   
   
   
@@ -75,8 +78,8 @@
       defer
       type="text/javascript"
       id="script-bundle"
-      src="/vinc-custom-changelog.github.io/js/main.bundle.min.90867e4ceecde25580f418994053fd0749d446fd0e8f0028782793ec6434fb0945ecbfe21e6a8b2f788760c0ecc3663aacb155e42e4e73d79ebaebadecd201d2.js"
-      integrity="sha512-kIZ&#43;TO7N4lWA9BiZQFP9B0nURv0OjwAoeCeT7GQ0&#43;wlF7L/iHmqLL3iHYMDsw2Y6rLFV5C5Oc9eeuuut7NIB0g=="
+      src="/vinc-custom-changelog.github.io/js/main.bundle.min.23ea3460af5452ae8f79e1d229b2694d6acd1a8f21fc49784791d34b0b171648e4bf38275b7c39a9d11f1ac8f551b76a6381522262cfc1a1df6caaf9eb86adaa.js"
+      integrity="sha512-I&#43;o0YK9UUq6PeeHSKbJpTWrNGo8h/El4R5HTSwsXFkjkvzgnW3w5qdEfGsj1UbdqY4FSImLPwaHfbKr564atqg=="
       data-copy="Copy"
       data-copied="Copied"></script>
   
@@ -182,9 +185,10 @@
 
 <link rel="stylesheet" href="https://cdn.knightlab.com/libs/juxtapose/latest/css/juxtapose.css">
 <script src="https://cdn.knightlab.com/libs/juxtapose/latest/js/juxtapose.js"></script>
-</head>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
 <body
     class="flex flex-col h-screen px-6 m-auto text-lg leading-7 max-w-7xl bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral sm:px-14 md:px-24 lg:px-32 scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600">
     <div id="the-top" class="absolute flex self-center">
@@ -244,23 +248,6 @@
     
 
     
-      <div class=" flex items-center">
-        <button
-          id="appearance-switcher"
-          aria-label="Dark mode switcher"
-          type="button"
-          class="text-base hover:text-primary-600 dark:hover:text-primary-400">
-          <div class="flex items-center justify-center dark:hidden">
-            <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
-</span>
-          </div>
-          <div class="items-center justify-center hidden dark:flex">
-            <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
-</span>
-          </div>
-        </button>
-      </div>
-    
   </nav>
 
     
@@ -282,21 +269,6 @@
       </button>
     
 
-    
-      <button
-        id="appearance-switcher-mobile"
-        aria-label="Dark mode switcher"
-        type="button"
-        class="text-base hover:text-primary-600 dark:hover:text-primary-400 ltr:mr-1 rtl:ml-1">
-        <div class="flex items-center justify-center dark:hidden">
-          <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
-</span>
-        </div>
-        <div class="items-center justify-center hidden dark:flex">
-          <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
-</span>
-        </div>
-      </button>
     
   </div>
 
@@ -336,66 +308,202 @@
 
     </div>
   </header>
-  <section class="prose dark:prose-invert w-full">
-<h3 class="relative group"><a
+  <section class="prose dark:prose-invert w-full"><details>
+  <summary>1.21.5 - Spring to Life </summary>
+
+<h3 class="relative group">1.21.5 &ndash; <del><a
+  href="/vinc-custom-changelog.github.io/changelog/1.21.5/release">Custom</a></del> - <a
+  href="https://www.minecraft.net/de-de/article/minecraft-java-edition-1-21-5"
+    target="_blank"
+  >Official</a> 
+    <div id="1215--custom---official" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1215--custom---official" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>Snapshots</p>
+<ul>
+<li>25w02a &ndash; <a
+  href="/vinc-custom-changelog.github.io/changelog/1.21.5/25w02a/">Custom</a> - <a
+  href="https://www.minecraft.net/en-us/article/minecraft-snapshot-25w02a"
+    target="_blank"
+  >Official</a></li>
+<li>25w03a &ndash; <a
+  href="/vinc-custom-changelog.github.io/changelog/1.21.5/25w03a/">Custom</a> - <a
+  href="https://www.minecraft.net/en-us/article/minecraft-snapshot-25w03a"
+    target="_blank"
+  >Official</a></li>
+<li>25w04a &ndash; <a
+  href="/vinc-custom-changelog.github.io/changelog/1.21.5/25w04a/">Custom</a> - <a
+  href="https://www.minecraft.net/en-us/article/minecraft-snapshot-25w04a"
+    target="_blank"
+  >Official</a></li>
+<li>25w05a &ndash; <a
+  href="/vinc-custom-changelog.github.io/changelog/1.21.5/25w05a/">Custom</a> - <a
+  href="https://www.minecraft.net/en-us/article/minecraft-snapshot-25w05a"
+    target="_blank"
+  >Official</a></li>
+<li>25w06a &ndash; <a
+  href="/vinc-custom-changelog.github.io/changelog/1.21.5/25w06a/">Custom</a> - <a
+  href="https://www.minecraft.net/en-us/article/minecraft-snapshot-25w06a"
+    target="_blank"
+  >Official</a></li>
+<li>25w07a &ndash; <a
+  href="/vinc-custom-changelog.github.io/changelog/1.21.5/25w07a/">Custom</a> - <a
+  href="https://www.minecraft.net/en-us/article/minecraft-snapshot-25w07a"
+    target="_blank"
+  >Official</a></li>
+<li>25w08a &ndash; <a
+  href="/vinc-custom-changelog.github.io/changelog/1.21.5/25w08a/">Custom</a> - <a
+  href="https://www.minecraft.net/en-us/article/minecraft-snapshot-25w08a"
+    target="_blank"
+  >Official</a></li>
+<li>25w09a &ndash; <a
+  href="/vinc-custom-changelog.github.io/changelog/1.21.5/25w09a/">Custom</a> - <a
+  href="https://www.minecraft.net/en-us/article/minecraft-snapshot-25w09a"
+    target="_blank"
+  >Official</a></li>
+<li>25w10a &ndash; <a
+  href="/vinc-custom-changelog.github.io/changelog/1.21.5/25w10a/">Custom</a> - <a
+  href="https://www.minecraft.net/en-us/article/minecraft-snapshot-25w10a"
+    target="_blank"
+  >Official</a></li>
+</ul>
+<p>Pre Releases</p>
+<ul>
+<li>Pre-1 &ndash; <a
+  href="/vinc-custom-changelog.github.io/changelog/1.21.5/pre-1/">Custom</a>  - <a
+  href="https://www.minecraft.net/en-us/article/minecraft-1-21-5-pre-release-1"
+    target="_blank"
+  >Official</a></li>
+</ul>
+</details>
+<details>
+  <summary>1.21.6 - Chase the Skies</summary>
+
+<h3 class="relative group">1.21.6 &ndash; <del><a
+  href="/vinc-custom-changelog.github.io/changelog/1.21.6/release">Custom</a></del> - <a
   href="https://www.minecraft.net/de-de/article/minecraft-java-edition-1-21-6"
     target="_blank"
-  >1.21.6 - Chase the Skies </a> 
-    <div id="1216---chase-the-skies" class="anchor"></div>
+  >Official</a> 
+    <div id="1216--custom---official" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1216---chase-the-skies" aria-label="Anchor">#</a>
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1216--custom---official" aria-label="Anchor">#</a>
     </span>        
     
 </h3>
+<p>Snapshots</p>
 <ul>
-<li><a
-  href="/vinc-custom-changelog.github.io/changelog/25w15a/">25w15a</a></li>
-<li><a
-  href="/vinc-custom-changelog.github.io/changelog/25w16a/">25w16a</a></li>
-<li><a
-  href="/vinc-custom-changelog.github.io/changelog/25w17a/">25w17a</a></li>
-<li><a
-  href="/vinc-custom-changelog.github.io/changelog/25w18a/">25w18a</a></li>
-<li><a
-  href="/vinc-custom-changelog.github.io/changelog/25w19a/">25w19a</a></li>
-<li><a
-  href="/vinc-custom-changelog.github.io/changelog/25w20a/">25w20a</a></li>
-<li><a
-  href="/vinc-custom-changelog.github.io/changelog/25w21a/">25w21a</a></li>
-<li><a
-  href="/vinc-custom-changelog.github.io/changelog/25w31a/">25w31a</a></li>
+<li>25w15a &ndash; <a
+  href="/vinc-custom-changelog.github.io/changelog/1.21.6/25w15a/">Custom</a> - <a
+  href="https://www.minecraft.net/en-us/article/minecraft-snapshot-25w15a"
+    target="_blank"
+  >Official</a></li>
+<li>25w16a &ndash; <a
+  href="/vinc-custom-changelog.github.io/changelog/1.21.6/25w16a/">Custom</a> - <a
+  href="https://www.minecraft.net/en-us/article/minecraft-snapshot-25w16a"
+    target="_blank"
+  >Official</a></li>
+<li>25w17a &ndash; <a
+  href="/vinc-custom-changelog.github.io/changelog/1.21.6/25w17a/">Custom</a> - <a
+  href="https://www.minecraft.net/en-us/article/minecraft-snapshot-25w17a"
+    target="_blank"
+  >Official</a></li>
+<li>25w18a &ndash; <a
+  href="/vinc-custom-changelog.github.io/changelog/1.21.6/25w18a/">Custom</a> - <a
+  href="https://www.minecraft.net/en-us/article/minecraft-snapshot-25w18a"
+    target="_blank"
+  >Official</a></li>
+<li>25w19a &ndash; <a
+  href="/vinc-custom-changelog.github.io/changelog/1.21.6/25w19a/">Custom</a> - <a
+  href="https://www.minecraft.net/en-us/article/minecraft-snapshot-25w19a"
+    target="_blank"
+  >Official</a></li>
+<li>25w20a &ndash; <a
+  href="/vinc-custom-changelog.github.io/changelog/1.21.6/25w20a/">Custom</a> - <a
+  href="https://www.minecraft.net/en-us/article/minecraft-snapshot-25w20a"
+    target="_blank"
+  >Official</a></li>
+<li>25w21a &ndash; <a
+  href="/vinc-custom-changelog.github.io/changelog/1.21.6/25w21a/">Custom</a> - <a
+  href="https://www.minecraft.net/en-us/article/minecraft-snapshot-25w21a"
+    target="_blank"
+  >Official</a></li>
 </ul>
+<p>Pre Releases</p>
+<ul>
+<li>Pre-1 &ndash; <a
+  href="/vinc-custom-changelog.github.io/changelog/1.21.6/pre-1/">Custom</a> - <a
+  href="https://www.minecraft.net/en-us/article/minecraft-1-21-6-pre-release-1"
+    target="_blank"
+  >Offcial</a></li>
+</ul>
+</details>
+<details>
+  <summary>1.21.9 - The Copper Age</summary>
 
-<h3 class="relative group"><a
+<h3 class="relative group">1.21.9 &ndash; <a
+  href="/vinc-custom-changelog.github.io/changelog/1.21.9/release">Custom</a> - <a
   href="https://www.minecraft.net/de-de/article/minecraft-java-edition-1-21-9"
     target="_blank"
-  >1.21.9 - The Copper Age</a> 
-    <div id="1219---the-copper-age" class="anchor"></div>
+  >Official</a> 
+    <div id="1219--custom---official" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1219---the-copper-age" aria-label="Anchor">#</a>
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1219--custom---official" aria-label="Anchor">#</a>
     </span>        
     
 </h3>
+<p>Snapshots</p>
 <ul>
-<li><a
-  href="/vinc-custom-changelog.github.io/changelog/25w32a/">25w32a</a></li>
-<li><a
-  href="/vinc-custom-changelog.github.io/changelog/25w33a/">25w33a</a></li>
-<li><a
-  href="/vinc-custom-changelog.github.io/changelog/25w34a/">25w34a</a></li>
-<li><a
-  href="/vinc-custom-changelog.github.io/changelog/25w35a/">25w35a</a></li>
-<li><a
-  href="/vinc-custom-changelog.github.io/changelog/25w36a/">25w36a</a></li>
-<li><a
-  href="/vinc-custom-changelog.github.io/changelog/25w36b/">25w36b</a></li>
-<li><a
-  href="/vinc-custom-changelog.github.io/changelog/25w37a/">25w37a</a></li>
+<li>25w31a &ndash; <a
+  href="/vinc-custom-changelog.github.io/changelog/1.21.9/25w31a/">Custom</a> - <a
+  href="https://www.minecraft.net/en-us/article/minecraft-snapshot-25w31a"
+    target="_blank"
+  >Official</a></li>
+<li>25w32a &ndash; <a
+  href="/vinc-custom-changelog.github.io/changelog/1.21.9/25w32a/">Custom</a> - <a
+  href="https://www.minecraft.net/en-us/article/minecraft-snapshot-25w32a"
+    target="_blank"
+  >Official</a></li>
+<li>25w33a &ndash; <a
+  href="/vinc-custom-changelog.github.io/changelog/1.21.9/25w33a/">Custom</a> - <a
+  href="https://www.minecraft.net/en-us/article/minecraft-snapshot-25w33a"
+    target="_blank"
+  >Official</a></li>
+<li>25w34a &ndash; <a
+  href="/vinc-custom-changelog.github.io/changelog/1.21.9/25w34a/">Custom</a> - <a
+  href="https://www.minecraft.net/en-us/article/minecraft-snapshot-25w34a"
+    target="_blank"
+  >Official</a></li>
+<li>25w35a &ndash; <a
+  href="/vinc-custom-changelog.github.io/changelog/1.21.9/25w35a/">Custom</a> - <a
+  href="https://www.minecraft.net/en-us/article/minecraft-snapshot-25w35a"
+    target="_blank"
+  >Official</a></li>
+<li>25w36a &ndash; <a
+  href="/vinc-custom-changelog.github.io/changelog/1.21.9/25w36a/">Custom</a> - <a
+  href="https://www.minecraft.net/en-us/article/minecraft-snapshot-25w36a"
+    target="_blank"
+  >Official</a></li>
+<li>25w36b &ndash; <a
+  href="/vinc-custom-changelog.github.io/changelog/1.21.9/25w36b/">Custom</a> - <a
+  href="https://www.minecraft.net/en-us/article/minecraft-snapshot-25w37a"
+    target="_blank"
+  >Official</a></li>
+<li>25w37a &ndash; <a
+  href="/vinc-custom-changelog.github.io/changelog/1.21.9/25w37a/">Custom</a> - <a
+  href="https://www.minecraft.net/en-us/article/minecraft-snapshot-25w38a"
+    target="_blank"
+  >Official</a></li>
 </ul>
+</details>
 <hr>
 <ul>
 <li>
@@ -437,8 +545,6 @@
       </main><footer id="site-footer" class="py-10 print:hidden">
   
   
-    
-  
   <div class="flex items-center justify-between">
     
     
@@ -450,14 +556,6 @@
     
 
     
-    
-      <p class="text-xs text-neutral-500 dark:text-neutral-400">
-        
-        
-        Powered by <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
-          href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a> &amp; <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
-          href="https://blowfish.page/" target="_blank" rel="noopener noreferrer">Blowfish</a>
-      </p>
     
   </div>
   

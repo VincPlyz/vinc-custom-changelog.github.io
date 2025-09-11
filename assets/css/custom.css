@@ -51,7 +51,6 @@ body {
   background: var(--mc-bg);
   color: var(--mc-text);
   font-family: var(--mc-default--fontlist);
-  margin: 20%;
   font-size: 1.25rem;
   line-height: 1.6;
 }
@@ -63,9 +62,8 @@ main,
 .single,
 .list {
     width: 100%;
-    max-width: 1600px;
-    margin: 0 auto;
-    padding: 3rem;
+    max-width: auto;
+    padding: 5rem;
     background: var(--mc-panel);
     color: var(--mc-text);
     border-radius: 8px;
@@ -201,4 +199,130 @@ code {
 .command-copy-btn i {
   font-size: 1.1em;
   color: rgb(255, 255, 255);
+}
+
+/*
+ * Custom CSS für das details-Element
+ */
+details {
+    background-color: var(--mc-panel);
+    border: 1px solid var(--mc-text);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+details > summary {
+    list-style: none; /* Entfernt den Standard-Pfeil */
+    font-family: var(--mc-heading-font);
+    font-size: 1.5rem;
+    color: var(--mc-accent2);
+    cursor: pointer;
+    position: relative;
+    padding-left: 2rem;
+}
+
+/* Stil des eigenen 'Pfeils' */
+details > summary::before {
+    content: '▶'; /* Ein Minecraft-ähnlicher Pfeil */
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Dreht den Pfeil, wenn das details-Element geöffnet ist */
+details[open] > summary::before {
+    transform: translateY(-50%) rotate(90deg);
+}
+
+details > summary:hover {
+    color: rgb(255, 255, 255);
+}
+
+details > p {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px dashed var(--mc-text);
+}
+
+/* Minecraft-Stil für den "Nach oben"-Pfeil */
+#top-scroller a {
+    /* Setzt die Hintergrundfarbe auf das Minecraft-Grün */
+    background-color: var(--mc-accent2) !important;
+    
+    /* Macht den Button quadratisch */
+    width: 50px !important;
+    height: 50px !important;
+    
+    /* Positioniert den Button am unteren rechten Rand */
+    bottom: 0 !important;
+    right: 0 !important;
+    
+    /* Entfernt den runden Rand */
+    border-radius: 0 !important;
+
+    /* Fügt die 3D-Ränder hinzu */
+    box-shadow: inset 0 6px 0 0 #52a535, inset 0 -6px 0 0 #2a641c !important;
+}
+
+#top-scroller a:before {
+    /* Erzeugt den weißen Pfeil */
+    background-color: var(--mc-text);
+    content: "";
+    display: block;
+    height: 18px;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-180deg);
+    width: 18px;
+    
+    /* Dies ist der wichtige Teil: Definiert die pixelige Form des Pfeils */
+    -webkit-clip-path: polygon(100% 41.67%, 50% 100%, 0 41.67%, 27.78% 41.67%, 27.78% 0, 72.22% 0, 72.22% 41.67%);
+    clip-path: polygon(100% 41.67%, 50% 100%, 0 41.67%, 27.78% 41.67%, 27.78% 0, 72.22% 0, 72.22% 41.67%);
+}
+
+/* Stil für den Figure-Container (Bild + Beschreibung) */
+figure {
+    /* Setzt eine maximale Breite, damit es zentriert werden kann */
+    max-width: 1000px; /* Oder eine andere passende Breite */
+    margin: 2rem auto; /* Zentriert die Figure und fügt vertikalen Abstand hinzu */
+    background-color: transparent; /* Der Figure-Container selbst hat keinen Hintergrund */
+    border-radius: 8px; /* Für abgerundete Ecken des gesamten Blocks */
+    overflow: hidden; /* Stellt sicher, dass abgerundete Ecken korrekt dargestellt werden */
+}
+
+/* Stil für das Bild innerhalb der Figure */
+figure img {
+    display: block; /* Entfernt zusätzlichen Platz unter dem Bild */
+    max-width: 100%; /* Stellt sicher, dass das Bild responsiv ist */
+    height: auto;
+    border-radius: 8px 8px 0 0; /* Nur die oberen Ecken des Bildes abrunden */
+}
+
+/* Stil für die Bildbeschreibung (Caption) */
+figcaption {
+    background-color: rgb(61, 57, 56) !important; /* Grauer Hintergrund */
+    padding: 0.6rem;
+    font-family: var(--mc-body-font);
+    color: var(--mc-text);
+    line-height: 1.4;
+    font-size: 0.7em;
+    text-align: left; /* Text linksbündig */
+    border-radius: 0 0 8px 8px; /* Nur die unteren Ecken der Caption abrunden */
+    margin-top: -4px; /* Verringert den Abstand zwischen Bild und Caption, falls vorhanden */
+}
+
+/* Stil für Links innerhalb der Caption */
+figcaption a, figcaption a:visited {
+    color: var(--mc-accent2); /* Grüner Linktext */
+    text-decoration: underline;
+}
+
+/* Hover-Effekt für Links innerhalb der Caption */
+figcaption a:hover {
+    color: var(--mc-text);
+    text-decoration: none;
 }

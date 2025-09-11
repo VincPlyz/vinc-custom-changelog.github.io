@@ -76,13 +76,3 @@ showWordCount: false
   Q : datadriven entity models?
   A : ![650](https://i.imgur.com/pbthNwZ.png)tl:dr: "there is a lot of stuff that would need to be done before that"
  
- ___ 
- 
- 
- Q : wie customizable wird VV sein?
- A : ![650](https://i.imgur.com/DbGGnIi.png) btw; Aperture ist IMS's neue Shader API... er hofft damit das aktuelle veraltete Optifine Shader format zu killen und Iris Shaders damit für die zukunft abzusichern und stuff wie Hardware Raytracing. DLSS, HDR etc zu implementieren je nachdem was Mojang am ende mit dem Engine rewrite vorhat
- 
- Apertures real time settings und Iris Shaders neues Settings Menu (bald benutzt jede mod Imgui... Axiom, Flashback, Iris, Veil): <div style="width: 100%; height: 0px; position: relative; padding-bottom: 56.250%;"><iframe src="https://streamable.com/e/lee3nc?quality=highest" frameborder="0" width="100%" height="100%" allowfullscreen style="width: 100%; height: 100%; position: absolute;"></iframe></div>
- 
-random text um das obsidian plugin zu verarschen
-random text um das obsidian plugin zu verarschenrandom text um das obsidian plugin zu verarschenrandom text um das obsidian plugin zu verarschenrandom text um das obsidian plugin zu verarschenrandom text um das obsidian plugin zu verarschenrandom text um das obsidian plugin zu verarschenrandom text um das obsidian plugin zu verarschenrandom text um das obsidian plugin zu verarschen

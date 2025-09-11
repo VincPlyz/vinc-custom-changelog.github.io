@@ -12,6 +12,18 @@ Dies ist eine Testseite für Hugo. Wenn du diesen Text siehst, funktioniert das 
 html beispiele
 
 
+<figure>
+  <img src="https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/screenshots/25w37a_1170x500.jpg" alt="Beschreibung des Bildes" />
+  <figcaption>
+    Eine Beschreibung des Bildes mit einem <a href="https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/screenshots/25w37a_1170x500.jpg">Link zur vollständigen Ansicht.</a>
+  </figcaption>
+</figure>
+
+
+{{< command >}}
+test
+{{< /command >}}
+
 - Video
 
 <video src="/vinc-custom-changelog.github.io/videos/25w36a/npc_1.mp4" controls></video>
