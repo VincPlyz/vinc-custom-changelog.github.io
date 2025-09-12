@@ -6,7 +6,7 @@ showWordCount: false
 date: 2025-09-09
 ---
 
-- Der meiner Meinung nach beste Text Generator: https://text.datapackhub.net/ <video src="/vinc-custom-changelog.github.io/file_share/text_generator.mp4/"  autoplay="true" loop="true" controls></video>
+- Der meiner Meinung nach beste Text Generator: https://text.datapackhub.net/ <video src="/vinc-custom-changelog.github.io/file_share/text_generator.mp4"  autoplay="true" loop="true" controls></video>
 
 ---
 
