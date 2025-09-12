@@ -3,6 +3,12 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
+    <loc>http://localhost:1313/vinc-custom-changelog.github.io/changelog/</loc>
+    <lastmod>2025-09-12T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>http://localhost:1313/vinc-custom-changelog.github.io/changelog/1.21.9/release/</loc>
     <lastmod>2025-09-09T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
@@ -10,12 +16,6 @@
   </url>
   <url>
     <loc>http://localhost:1313/vinc-custom-changelog.github.io/changelog/1.21.9/25w37a/</loc>
-    <lastmod>2025-09-09T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://localhost:1313/vinc-custom-changelog.github.io/changelog/</loc>
     <lastmod>2025-09-09T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
