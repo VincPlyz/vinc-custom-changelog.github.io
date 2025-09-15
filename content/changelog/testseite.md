@@ -9,7 +9,27 @@ showWordCount: false
 
 Dies ist eine Testseite für Hugo. Wenn du diesen Text siehst, funktioniert das Routing für einzelne Seiten!
 
-html beispiele
+http://localhost:1313/vinc-custom-changelog.github.io/changelog/testseite/
+
+https://vincplyz.github.io/vinc-custom-changelog.github.io/changelog/testseite/
+
+---
+
+# html beispiele
+
+<details class="details-inhaltsverzeichnis">
+  <summary>Folldable List </summary>
+
+Snapshots
+
+</details>
+
+<details class="details-text">
+  <summary>Folldable List </summary>
+
+Snapshots
+
+</details>
 
 
 <figure>
@@ -20,9 +40,14 @@ html beispiele
 </figure>
 
 
-{{< command >}}
-test
-{{< /command >}}
+<hr class="my-custom-hr">
+
+<hr class="dotted-line">
+
+<hr class="thin-line">
+
+
+{{< command >}} test {{< /command >}}
 
 - Video
 

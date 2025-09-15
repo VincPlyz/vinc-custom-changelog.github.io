@@ -6,7 +6,7 @@ showWordCount: falseT12:00:00+02:00
 draft: false
 ---
 
-<details>
+<details class="details-inhaltsverzeichnis">
   <summary>1.21.5 - Spring to Life </summary>
 
 ###  1.21.5 -- ~[Custom](/vinc-custom-changelog.github.io/changelog/1.21.5/release)~ - [Official](https://www.minecraft.net/de-de/article/minecraft-java-edition-1-21-5)
@@ -29,7 +29,7 @@ Pre Releases
 </details>
 
 
-<details>
+<details class="details-inhaltsverzeichnis">
   <summary>1.21.6 - Chase the Skies</summary>
 
 ###   1.21.6 -- ~[Custom](/vinc-custom-changelog.github.io/changelog/1.21.6/release)~ - [Official](https://www.minecraft.net/de-de/article/minecraft-java-edition-1-21-6)
@@ -48,7 +48,7 @@ Pre Releases
 
 </details>
 
-<details>
+<details class="details-inhaltsverzeichnis">
   <summary>1.21.9 - The Copper Age</summary>
 
 ###   1.21.9 -- [Custom](/vinc-custom-changelog.github.io/changelog/1.21.9/release) - [Official](https://www.minecraft.net/de-de/article/minecraft-java-edition-1-21-9)

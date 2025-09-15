@@ -45,6 +45,7 @@
     --mc-heading-font: 'MinecraftTen', sans-serif;
     --mc-secondary-heading-font: 'MinecraftTen', sans-serif;
     --mc-default--fontlist: var(--mc-body-font);
+    --mc-heading-2: 'MinecraftSeven';
 }
 
 body {
@@ -113,6 +114,26 @@ h3, h4, h5, h6 {
     font-family: var(--mc-secondary-heading-font);
 }
 
+/* 
+ * --- break point style
+ */
+
+/* hr {
+color: var(--mc-text);
+  border: none;
+  border-top: 1px solid var(--mc-text);
+  margin: 2rem 0;
+} */
+
+video {
+    max-width: 100%;
+    height: auto;
+    border-radius: 2px;
+    border-color: var(--mc-vanilla-green-3);
+    margin: 1rem 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
 ul {
     list-style-type: none;
     padding-left: 5px;
@@ -159,7 +180,7 @@ code {
   background-color: rgba(94, 94, 94, 0.285);
   color: var(--mc-text);
   padding: 15px 20px;
-  border-radius: 8px;
+  border-radius: 2px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -202,17 +223,17 @@ code {
 }
 
 /*
- * Custom CSS für das details-Element
+ * Custom CSS für das .details-inhaltsverzeichnis-Element
  */
-details {
+.details-inhaltsverzeichnis {
     background-color: var(--mc-panel);
-    border: 1px solid var(--mc-text);
+    border: 1.4px solid var(--mc-text);
     border-radius: 8px;
     padding: 1rem;
     margin-bottom: 1.5rem;
 }
 
-details > summary {
+.details-inhaltsverzeichnis > summary {
     list-style: none; /* Entfernt den Standard-Pfeil */
     font-family: var(--mc-heading-font);
     font-size: 1.5rem;
@@ -223,7 +244,7 @@ details > summary {
 }
 
 /* Stil des eigenen 'Pfeils' */
-details > summary::before {
+.details-inhaltsverzeichnis > summary::before {
     content: '▶'; /* Ein Minecraft-ähnlicher Pfeil */
     position: absolute;
     left: 0;
@@ -233,21 +254,80 @@ details > summary::before {
 }
 
 /* Dreht den Pfeil, wenn das details-Element geöffnet ist */
-details[open] > summary::before {
+.details-inhaltsverzeichnis[open] > summary::before {
     transform: translateY(-50%) rotate(90deg);
 }
 
-details > summary:hover {
+.details-inhaltsverzeichnis > summary:hover {
     color: rgb(255, 255, 255);
 }
 
-details > p {
+.details-inhaltsverzeichnis > p {
     margin-top: 1rem;
     padding-top: 1rem;
     border-top: 1px dashed var(--mc-text);
 }
 
-/* Minecraft-Stil für den "Nach oben"-Pfeil */
+/*
+ * Kompakte CSS-Version für das details-Element
+ */
+.details-text {
+    background-color: var(--mc-panel);
+    border-radius: 4px;
+    padding: 0.5rem;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.details-text > summary {
+    list-style: none;
+    font-family: var(--mc-heading-2);
+    font-size: 1.0rem;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    position: relative;
+    padding-left: 1.5rem;
+    font-size: 1.1em;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+/* Stil des eigenen 'Pfeils' */
+.details-text > summary::before {
+    content: '▶';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.2s ease-in-out;
+    font-size: 0.9em;
+    margin-top: 1px;
+}
+
+/* Dreht den Pfeil, wenn das details-Element geöffnet ist */
+.details-text[open] > summary::before {
+    transform: translateY(-50%) rotate(90deg);
+}
+
+.details-text > summary:hover {
+    color: rgb(192, 192, 192);
+}
+
+.details-text > p {
+    margin-top: 0.5rem; /* Außenabstand verringert */
+    padding-top: 0.5rem; /* Innenabstand verringert */
+    font-size: 1rem; /* Schriftgröße für den Text */
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+
+
+
+
+/* 
+ * Minecraft-Stil für den "Nach oben"-Pfeil 
+ */
 #top-scroller a {
     /* Setzt die Hintergrundfarbe auf das Minecraft-Grün */
     background-color: var(--mc-accent2) !important;
@@ -321,8 +401,36 @@ figcaption a, figcaption a:visited {
     text-decoration: underline;
 }
 
+
 /* Hover-Effekt für Links innerhalb der Caption */
 figcaption a:hover {
     color: var(--mc-text);
     text-decoration: none;
+}
+
+
+
+
+/* Custom --- lines */
+hr.my-custom-hr {
+  border: none;
+  height: 2px;
+  background-color: #686868;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+
+/* Eine gestrichelte Linie */
+hr.dotted-line {
+  border: none;
+  border-top: 3px dotted #333;
+  margin-top: 10px;
+}
+
+/* Eine sehr dünne, graue Linie */
+hr.thin-line {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 20px 0;
 }
