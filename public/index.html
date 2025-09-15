@@ -47,8 +47,8 @@
   <link
     type="text/css"
     rel="stylesheet"
-    href="/vinc-custom-changelog.github.io/css/main.bundle.min.acbac57692e2fea76cb9e5bf12ba94e3c143a5828c73fa7b24b54605c0d745959072b78aaa6de661421aa207ac76fd419d60cc0438081e6f807cd64d17fda850.css"
-    integrity="sha512-rLrFdpLi/qdsueW/ErqU48FDpYKMc/p7JLVGBcDXRZWQcreKqm3mYUIaogesdv1BnWDMBDgIHm&#43;AfNZNF/2oUA==">
+    href="/vinc-custom-changelog.github.io/css/main.bundle.min.fcf335616e48af3dea9ce0a94c8a84371269d3d7133f4140a04f084ef73f9bef7649891628bf39585657573aa8b1fb5b33bacad387d4095ea8dce48f03e36e2f.css"
+    integrity="sha512-/PM1YW5Irz3qnOCpTIqENxJp09cTP0FAoE8ITvc/m&#43;92SYkWKL85WFZXVzqosftbM7rK04fUCV6o3OSPA&#43;NuLw==">
   
   
   <script
@@ -305,7 +305,29 @@
 
     </div>
   </header>
-  <section class="prose dark:prose-invert w-full"><details class="details-inhaltsverzeichnis">
+  <section class="prose dark:prose-invert w-full"><div class="countdown-container">
+    <p id="demo"></p>
+</div>
+<script>
+    var countDownDate = new Date("Sep 27, 2025 19:00:00").getTime();
+    var x = setInterval(function() {
+      var now = new Date().getTime();
+      var distance = countDownDate - now;
+
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+      + minutes + "m " + seconds + "s ";
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("demo").innerHTML = "EXPIRED";
+      }
+    }, 1000);
+</script>
+<details class="details-inhaltsverzeichnis">
   <summary>1.21.5 - Spring to Life </summary>
 
 <h3 class="relative group">1.21.5 &ndash; <del><a

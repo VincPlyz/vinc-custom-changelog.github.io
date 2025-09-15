@@ -507,6 +507,39 @@ video {
 
 .alt-text-overlay.top-right {
   top: 10px;
-  /* Anpassen der Position, damit der Text nicht abgeschnitten wird */
   right: 10px;
+}
+
+
+/*====================================================
+  Countdow Timer
+======================================================*/
+.countdown-container {
+  background-image: url("https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/key-art/MCL_Fall25_KeyArt_FINAL_LOGO_1170x500.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 500px;
+}
+
+#demo {
+  color: rgb(255, 255, 255);
+  font-size: 3rem;
+  font-weight: bold;
+  font-family: var(--mc-heading-2);
+  
+  text-shadow:
+     -3px -3px 0 #000,
+     3px -3px 0 #000,
+     -3px 3px 0 #000,
+     3px 3px 0 #000,
+     
+     0px 10px 15px #000;
+    
+  margin-top: auto;
+  margin-bottom: 150px;
+  
 }

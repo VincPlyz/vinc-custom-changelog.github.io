@@ -16,6 +16,7 @@ https://vincplyz.github.io/vinc-custom-changelog.github.io/changelog/testseite/
 
 ---
 
+
 <div class="image-comp" style="--max-width: 1339px;">
   <div id="left">
     <img src="https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/screenshots/25w37a_1170x500.jpg" alt="25w37a Screenshot" />
