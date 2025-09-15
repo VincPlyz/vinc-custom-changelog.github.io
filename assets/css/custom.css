@@ -1,4 +1,38 @@
-/* Fonts – Dateien müssen in static/fonts/ liegen */
+/*====================================================
+  1. Globale Variablen & Konfiguration
+======================================================*/
+:root {
+  /* Farbvariablen */
+  --mc-bg: #181818;
+  --mc-panel: #232323;
+  --mc-accent: #ffd800;
+  --mc-accent2: #6cc349;
+  --mc-text: #fff;
+  --mc-muted: #bdbdbd;
+  --mc-news-label: #ffd800;
+  --mc-code-block: #c736ff;
+
+  --mc-core-rich-black: #000;
+  --mc-core-white: #fff;
+  --mc-vanilla-green-3: #6cc349;
+
+  /* Schriftartvariablen */
+  --mc-body-font: 'Noto Sans', sans-serif;
+  --mc-heading-font: 'MinecraftTen', sans-serif;
+  --mc-secondary-heading-font: 'MinecraftTen', sans-serif;
+  --mc-default--fontlist: var(--mc-body-font);
+  --mc-heading-2: 'MinecraftSeven';
+
+  /* Allgemeine Layout-Werte */
+  --mc-border-radius-small: 4px;
+  --mc-border-radius-large: 8px;
+  --mc-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/*====================================================
+  2. Basiselemente & Typografie
+======================================================*/
+/* Fonts */
 @font-face {
   font-family: 'MinecraftTen';
   src: url('/vinc-custom-changelog.github.io/fonts/Minecraft-Tenv2.woff2') format('woff2');
@@ -15,39 +49,7 @@
   font-display: swap;
 }
 
-:root {
-    /* Farbvariablen aus custom.css */
-    --mc-bg: #181818;
-    --mc-panel: #232323;
-    --mc-accent: #ffd800;
-    --mc-accent2: #6cc349;
-    --mc-text: #fff;
-    --mc-muted: #bdbdbd;
-    --mc-news: #232323;
-    --mc-news-label: #ffd800;
-    --mc-code-block: #c736ff;
-
-    /* Farbvariablen aus mc-components.min.css und snipped.css */
-    --mc-core-rich-black: #000;
-    --mc-core-off-black: #171615;
-    --mc-core-white: #fff;
-    --mc-core-off-white: #fcf5f1;
-    --mc-core-grey-2: #d0c5c0;
-    --mc-theme-secondary-color: var(--mc-core-grey-2);
-    --mc-vanilla-green-3: #6cc349;
-    --mc-vanilla-green-link-color: var(--mc-vanilla-green-3);
-    --mc-legends-light-blue-4: #4ad5ff;
-    --mc-legends-blue-link-color: var(--mc-legends-light-blue-4);
-    --mc-dungeons-orange-4: #ffa41f;
-
-    /* Schriftartvariablen */
-    --mc-body-font: 'Noto Sans', sans-serif;
-    --mc-heading-font: 'MinecraftTen', sans-serif;
-    --mc-secondary-heading-font: 'MinecraftTen', sans-serif;
-    --mc-default--fontlist: var(--mc-body-font);
-    --mc-heading-2: 'MinecraftSeven';
-}
-
+/* Globaler Body-Stil */
 body {
   background: var(--mc-bg);
   color: var(--mc-text);
@@ -56,126 +58,86 @@ body {
   line-height: 1.6;
 }
 
+html {
+  font-size: clamp(16px, 1vw + 0.5rem, 22px);
+}
+
+/* Links & Buttons */
+a, a:visited {
+  color: var(--mc-accent2);
+}
+
+a:hover {
+  color: var(--mc-text);
+}
+
+a:focus, button:focus {
+  outline: none;
+}
+
+/* Überschriften */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--mc-text);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  font-weight: normal;
+}
+
+h1, h2 {
+  font-family: var(--mc-heading-font);
+}
+
+h3, h4, h5, h6 {
+  font-family: var(--mc-heading-2);
+}
+
+/* Listen */
+ul {
+  list-style-type: none;
+  padding-left: 5px;
+}
+
+ul li {
+  position: relative;
+  margin-bottom: 0.5rem;
+  padding-left: 1.5rem;
+}
+
+ul li::before {
+  content: "■";
+  color: var(--mc-text);
+  font-size: 0.75em;
+  position: absolute;
+  left: 6px;
+  top: 0;
+  line-height: 2.2;
+}
+
+/* Code */
+code {
+  color: var(--mc-code-block);
+  background-color: transparent;
+}
+
+/*====================================================
+  3. Komponenten & Blöcke
+======================================================*/
+/* Haupt-Layout Container */
 .container,
 main,
 .main-content,
 .content,
 .single,
 .list {
-    width: 100%;
-    max-width: auto;
-    padding: 5rem;
-    background: var(--mc-panel);
-    color: var(--mc-text);
-    border-radius: 8px;
-    box-shadow: 0 2px 8px #000a;
+  width: 100%;
+  max-width: auto;
+  padding: 5rem;
+  background: var(--mc-panel);
+  color: var(--mc-text);
+  border-radius: var(--mc-border-radius-large);
+  box-shadow: 0 2px 8px #000a;
 }
 
-html {
-  font-size: clamp(16px, 1vw + 0.5rem, 22px);
-}
-
-/* Alle Links sind jetzt grün */
-a, a:visited {
-    color: var(--mc-accent2);
-}
-a:hover {
-    color: var(--mc-text);
-}
-
-/* Fokus-Umrandung entfernt (Achtung Barrierefreiheit) */
-a:focus, button:focus {
-    outline: none;
-}
-
-/* Überschriften */
-h1, h2, h3, h4, h5, h6 {
-    color: var(--mc-text);
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-    font-weight: normal;
-}
-
-/* H1 und H2 Überschriften verwenden MinecraftTen */
-h1, h2 {
-    font-family: 'MinecraftTen', sans-serif;
-}
-
-/* H3 bis H6 Überschriften verwenden MinecraftSeven */
-h3, h4, h5, h6 {
-    font-family: 'MinecraftSeven', sans-serif;
-}
-
-.MC_imageGridA_text_caption h4 {
-    color: var(--mc-core-white) !important;
-    font-weight: 400;
-    letter-spacing: .6px;
-    line-height: 24px;
-    padding-bottom: 2px;
-    font-family: var(--mc-secondary-heading-font);
-}
-
-/* 
- * --- break point style
- */
-
-/* hr {
-color: var(--mc-text);
-  border: none;
-  border-top: 1px solid var(--mc-text);
-  margin: 2rem 0;
-} */
-
-video {
-    max-width: 100%;
-    height: auto;
-    border-radius: 2px;
-    border-color: var(--mc-vanilla-green-3);
-    margin: 1rem 0;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-ul {
-    list-style-type: none;
-    padding-left: 5px;
-}
-
-ul li {
-    position: relative;
-    margin-bottom: 0.5rem;
-    padding-left: 1.5rem;
-}
-
-ul li::before {
-    content: "■";
-    color: var(--mc-text);
-    font-size: 0.75em;
-    position: absolute;
-    left: 6px;
-    top: 0;
-    line-height: 2.2;
-}
-
-.news-label {
-    background-color: var(--mc-news-label);
-    color: var(--mc-panel);
-    font-weight: bold;
-    padding: 0.2em 0.7em;
-    border-radius: 6px;
-    font-size: 0.9em;
-    text-transform: uppercase;
-    display: inline-block;
-    margin-bottom: 0.5em;
-    letter-spacing: 0.5px;
-}
-
-code {
-    color: var(--mc-code-block);
-    background-color: rgba(255, 255, 255, 0);
-}
-
-/*
-* Custom CSS für den Minecraft Command Block
-*/
+/* Command Block */
 .command-block {
   background-color: rgba(94, 94, 94, 0.285);
   color: var(--mc-text);
@@ -187,7 +149,7 @@ code {
   font-family: 'Minecraft-Tenv2', monospace;
   font-size: 0.95em;
   margin-bottom: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--mc-shadow);
   overflow-x: auto;
 }
 
@@ -222,196 +184,45 @@ code {
   color: rgb(255, 255, 255);
 }
 
-/*
- * Custom CSS für das .details-inhaltsverzeichnis-Element
- */
-.details-inhaltsverzeichnis {
-    background-color: var(--mc-panel);
-    border: 1.4px solid var(--mc-text);
-    border-radius: 8px;
-    padding: 1rem;
-    margin-bottom: 1.5rem;
-}
-
-.details-inhaltsverzeichnis > summary {
-    list-style: none; /* Entfernt den Standard-Pfeil */
-    font-family: var(--mc-heading-font);
-    font-size: 1.5rem;
-    color: var(--mc-accent2);
-    cursor: pointer;
-    position: relative;
-    padding-left: 2rem;
-}
-
-/* Stil des eigenen 'Pfeils' */
-.details-inhaltsverzeichnis > summary::before {
-    content: '▶'; /* Ein Minecraft-ähnlicher Pfeil */
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    transition: transform 0.2s ease-in-out;
-}
-
-/* Dreht den Pfeil, wenn das details-Element geöffnet ist */
-.details-inhaltsverzeichnis[open] > summary::before {
-    transform: translateY(-50%) rotate(90deg);
-}
-
-.details-inhaltsverzeichnis > summary:hover {
-    color: rgb(255, 255, 255);
-}
-
-.details-inhaltsverzeichnis > p {
-    margin-top: 1rem;
-    padding-top: 1rem;
-    border-top: 1px dashed var(--mc-text);
-}
-
-/*
- * Kompakte CSS-Version für das details-Element
- */
-.details-text {
-    background-color: var(--mc-panel);
-    border-radius: 4px;
-    padding: 0.5rem;
-    margin-bottom: 0px;
-    margin-top: 0px;
-}
-
-.details-text > summary {
-    list-style: none;
-    font-family: var(--mc-heading-2);
-    font-size: 1.0rem;
-    color: rgb(255, 255, 255);
-    cursor: pointer;
-    position: relative;
-    padding-left: 1.5rem;
-    font-size: 1.1em;
-    margin-bottom: 0px;
-    margin-top: 0px;
-}
-
-/* Stil des eigenen 'Pfeils' */
-.details-text > summary::before {
-    content: '▶';
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    transition: transform 0.2s ease-in-out;
-    font-size: 0.9em;
-    margin-top: 1px;
-}
-
-/* Dreht den Pfeil, wenn das details-Element geöffnet ist */
-.details-text[open] > summary::before {
-    transform: translateY(-50%) rotate(90deg);
-}
-
-.details-text > summary:hover {
-    color: rgb(192, 192, 192);
-}
-
-.details-text > p {
-    margin-top: 0.5rem; /* Außenabstand verringert */
-    padding-top: 0.5rem; /* Innenabstand verringert */
-    font-size: 1rem; /* Schriftgröße für den Text */
-    margin-bottom: 0px;
-    margin-top: 0px;
-}
-
-
-
-
-
-/* 
- * Minecraft-Stil für den "Nach oben"-Pfeil 
- */
-#top-scroller a {
-    /* Setzt die Hintergrundfarbe auf das Minecraft-Grün */
-    background-color: var(--mc-accent2) !important;
-    
-    /* Macht den Button quadratisch */
-    width: 50px !important;
-    height: 50px !important;
-    
-    /* Positioniert den Button am unteren rechten Rand */
-    bottom: 0 !important;
-    right: 0 !important;
-    
-    /* Entfernt den runden Rand */
-    border-radius: 0 !important;
-
-    /* Fügt die 3D-Ränder hinzu */
-    box-shadow: inset 0 6px 0 0 #52a535, inset 0 -6px 0 0 #2a641c !important;
-}
-
-#top-scroller a:before {
-    /* Erzeugt den weißen Pfeil */
-    background-color: var(--mc-text);
-    content: "";
-    display: block;
-    height: 18px;
-    left: 50%;
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%) rotate(-180deg);
-    width: 18px;
-    
-    /* Dies ist der wichtige Teil: Definiert die pixelige Form des Pfeils */
-    -webkit-clip-path: polygon(100% 41.67%, 50% 100%, 0 41.67%, 27.78% 41.67%, 27.78% 0, 72.22% 0, 72.22% 41.67%);
-    clip-path: polygon(100% 41.67%, 50% 100%, 0 41.67%, 27.78% 41.67%, 27.78% 0, 72.22% 0, 72.22% 41.67%);
-}
-
-/* Stil für den Figure-Container (Bild + Beschreibung) */
+/* Figure (Bild + Caption) */
 figure {
-    /* Setzt eine maximale Breite, damit es zentriert werden kann */
-    max-width: 1000px; /* Oder eine andere passende Breite */
-    margin: 2rem auto; /* Zentriert die Figure und fügt vertikalen Abstand hinzu */
-    background-color: transparent; /* Der Figure-Container selbst hat keinen Hintergrund */
-    border-radius: 8px; /* Für abgerundete Ecken des gesamten Blocks */
-    overflow: hidden; /* Stellt sicher, dass abgerundete Ecken korrekt dargestellt werden */
+  max-width: 1000px;
+  margin: 2rem auto;
+  background-color: transparent;
+  border-radius: var(--mc-border-radius-large);
+  overflow: hidden;
 }
 
-/* Stil für das Bild innerhalb der Figure */
 figure img {
-    display: block; /* Entfernt zusätzlichen Platz unter dem Bild */
-    max-width: 100%; /* Stellt sicher, dass das Bild responsiv ist */
-    height: auto;
-    border-radius: 8px 8px 0 0; /* Nur die oberen Ecken des Bildes abrunden */
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--mc-border-radius-large) var(--mc-border-radius-large) 0 0;
 }
 
-/* Stil für die Bildbeschreibung (Caption) */
 figcaption {
-    background-color: rgb(61, 57, 56) !important; /* Grauer Hintergrund */
-    padding: 0.6rem;
-    font-family: var(--mc-body-font);
-    color: var(--mc-text);
-    line-height: 1.4;
-    font-size: 0.7em;
-    text-align: left; /* Text linksbündig */
-    border-radius: 0 0 8px 8px; /* Nur die unteren Ecken der Caption abrunden */
-    margin-top: -4px; /* Verringert den Abstand zwischen Bild und Caption, falls vorhanden */
+  background-color: rgb(61, 57, 56) !important;
+  padding: 0.6rem;
+  font-family: var(--mc-body-font);
+  color: var(--mc-text);
+  line-height: 1.4;
+  font-size: 0.7em;
+  text-align: left;
+  border-radius: 0 0 var(--mc-border-radius-large) var(--mc-border-radius-large);
+  margin-top: -4px;
 }
 
-/* Stil für Links innerhalb der Caption */
 figcaption a, figcaption a:visited {
-    color: var(--mc-accent2); /* Grüner Linktext */
-    text-decoration: underline;
+  color: var(--mc-accent2);
+  text-decoration: underline;
 }
 
-
-/* Hover-Effekt für Links innerhalb der Caption */
 figcaption a:hover {
-    color: var(--mc-text);
-    text-decoration: none;
+  color: var(--mc-text);
+  text-decoration: none;
 }
 
-
-
-
-/* Custom --- lines */
+/* Horizontale Linien */
 hr.my-custom-hr {
   border: none;
   height: 2px;
@@ -420,18 +231,282 @@ hr.my-custom-hr {
   margin-bottom: 5px;
 }
 
-
-/* Eine gestrichelte Linie */
 hr.dotted-line {
   border: none;
   border-top: 3px dotted #333;
   margin-top: 10px;
 }
 
-/* Eine sehr dünne, graue Linie */
 hr.thin-line {
   border: none;
   border-top: 1px solid #ccc;
   margin: 20px 0;
 }
 
+/* Video */
+video {
+  max-width: 100%;
+  height: auto;
+  border-radius: 2px;
+  border-color: var(--mc-vanilla-green-3);
+  margin: 1rem 0;
+  box-shadow: var(--mc-shadow);
+}
+
+/* News Label */
+.news-label {
+  background-color: var(--mc-news-label);
+  color: var(--mc-panel);
+  font-weight: bold;
+  padding: 0.2em 0.7em;
+  border-radius: 6px;
+  font-size: 0.9em;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-bottom: 0.5em;
+  letter-spacing: 0.5px;
+}
+
+/* Details - Inhaltsverzeichnis */
+.details-inhaltsverzeichnis {
+  background-color: var(--mc-panel);
+  border: 1.4px solid var(--mc-text);
+  border-radius: var(--mc-border-radius-large);
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.details-inhaltsverzeichnis > summary {
+  list-style: none;
+  font-family: var(--mc-heading-font);
+  font-size: 1.5rem;
+  color: var(--mc-accent2);
+  cursor: pointer;
+  position: relative;
+  padding-left: 2rem;
+}
+
+.details-inhaltsverzeichnis > summary::before {
+  content: '▶';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.2s ease-in-out;
+}
+
+.details-inhaltsverzeichnis[open] > summary::before {
+  transform: translateY(-50%) rotate(90deg);
+}
+
+.details-inhaltsverzeichnis > summary:hover {
+  color: var(--mc-text);
+}
+
+.details-inhaltsverzeichnis > p {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px dashed var(--mc-text);
+}
+
+/* Details - Kompakt */
+.details-text {
+  background-color: var(--mc-panel);
+  border-radius: var(--mc-border-radius-small);
+  padding: 0.5rem;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+.details-text > summary {
+  list-style: none;
+  font-family: var(--mc-heading-2);
+  font-size: 1.0rem;
+  color: var(--mc-text);
+  cursor: pointer;
+  position: relative;
+  padding-left: 1.5rem;
+  font-size: 1.1em;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+.details-text > summary::before {
+  content: '▶';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.2s ease-in-out;
+  font-size: 0.9em;
+  margin-top: 1px;
+}
+
+.details-text[open] > summary::before {
+  transform: translateY(-50%) rotate(90deg);
+}
+
+.details-text > summary:hover {
+  color: var(--mc-muted);
+}
+
+.details-text > p {
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  font-size: 1rem;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+/* MC Image Grid */
+.MC_imageGridA_text_caption h4 {
+  color: var(--mc-core-white) !important;
+  font-weight: 400;
+  letter-spacing: .6px;
+  line-height: 24px;
+  padding-bottom: 2px;
+  font-family: var(--mc-secondary-heading-font);
+}
+
+/* Scroll-to-Top Button */
+#top-scroller a {
+  background-color: var(--mc-accent2) !important;
+  width: 50px !important;
+  height: 50px !important;
+  bottom: 0 !important;
+  right: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: inset 0 6px 0 0 #52a535, inset 0 -6px 0 0 #2a641c !important;
+}
+
+#top-scroller a:before {
+  background-color: var(--mc-text);
+  content: "";
+  display: block;
+  height: 18px;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(-180deg);
+  width: 18px;
+  -webkit-clip-path: polygon(100% 41.67%, 50% 100%, 0 41.67%, 27.78% 41.67%, 27.78% 0, 72.22% 0, 72.22% 41.67%);
+  clip-path: polygon(100% 41.67%, 50% 100%, 0 41.67%, 27.78% 41.67%, 27.78% 0, 72.22% 0, 72.22% 41.67%);
+}
+
+
+/*====================================================
+  Image Compare
+======================================================*/
+.image-comp {
+  position: relative;
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  border: 1px solid black;
+  overflow: hidden;
+}
+
+
+/* Rechtes Bild wird drübergelegt */
+.image-comp #right {
+  position: absolute;
+  inset: 0;
+  clip-path: inset(0 calc(100% - var(--slider-pos, 50%)) 0 0);
+  transition: none;
+}
+
+/* Bilder */
+.image-comp img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Slider */
+.image-comp input {
+  position: absolute;
+  bottom: 45%;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  -webkit-appearance: none;
+  background: transparent;
+}
+
+.image-comp::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--slider-pos, 50%);
+  width: 2px;
+  background: white;
+  transform: translateX(-50%);
+  pointer-events: none;
+  z-index: 5;
+}
+
+.image-comp::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: var(--slider-pos, 50%);
+  transform: translate(-50%, -50%);
+  width: 30px;
+  height: 30px;
+  background: white;
+  border: 2px solid black;
+  border-radius: 50%;
+  z-index: 6;
+  pointer-events: none;
+}
+  
+/* Slider-Knopf */
+.image-comp input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0);
+  border: 1px solid rgba(0, 0, 0, 0);
+  cursor: ew-resize;
+}
+
+.image-comp input:hover::-webkit-slider-thumb {
+  opacity: 1;
+}
+
+/*====================================================
+  Image Comp Overlays
+======================================================*/
+.alt-text-overlay {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: var(--mc-text);
+  padding: 5px 10px;
+  border-radius: var(--mc-border-radius-small);
+  font-family: var(--mc-body-font);
+  font-size: 0.8em;
+  z-index: 20;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  pointer-events: none;
+}
+
+.image-comp:hover .alt-text-overlay {
+  opacity: 1;
+}
+
+.alt-text-overlay.top-left {
+  top: 10px;
+  left: 10px;
+}
+
+.alt-text-overlay.top-right {
+  top: 10px;
+  /* Anpassen der Position, damit der Text nicht abgeschnitten wird */
+  right: 10px;
+}

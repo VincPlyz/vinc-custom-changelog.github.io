@@ -13,7 +13,51 @@ http://localhost:1313/vinc-custom-changelog.github.io/changelog/testseite/
 
 https://vincplyz.github.io/vinc-custom-changelog.github.io/changelog/testseite/
 
+
 ---
+
+<div class="image-comp" style="--max-width: 1339px;">
+  <div id="left">
+    <img src="https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/screenshots/25w37a_1170x500.jpg" alt="25w37a Screenshot" />
+    <span class="alt-text-overlay top-left">25w37a Screenshot</span>
+  </div>
+  <div id="right">
+    <img src="https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/screenshots/25w35a%201170x500.jpg" alt="25w35a Screenshot" />
+  </div>
+  <span class="alt-text-overlay top-right">25w35a Screenshot</span>
+  <input type="range" min="0" max="100" value="50"
+    oninput="this.parentNode.style.setProperty('--slider-pos', this.value + '%')">
+</div>
+
+---
+
+<div class="image-comp" style="--max-width: 1339px;">
+  <div id="left">
+    <img src="https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/screenshots/25w37a_1170x500.jpg" alt="" />
+  </div>
+  <div id="right">
+    <img src="https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/screenshots/25w35a%201170x500.jpg" alt="" />
+  </div>
+  <input type="range" min="0" max="100" value="50"
+    oninput="this.parentNode.style.setProperty('--slider-pos', this.value + '%')">
+</div>
+
+---
+
+<div class="image-comp" style="--max-width: 1339px;">
+  <div id="left">
+    <img src="https://i.imgur.com/XeJkWrK.png" alt="Bild 1" />
+    <span class="alt-text-overlay top-left">25w37a Screenshot</span>
+  </div>
+  <div id="right">
+    <img src="https://i.imgur.com/MqU1Uov.png" alt="Bild 2" />
+  </div>
+  <span class="alt-text-overlay top-right">25w35a Screenshot</span>
+  <input type="range" min="0" max="100" value="50"
+    oninput="this.parentNode.style.setProperty('--slider-pos', this.value + '%')">
+</div>
+
+
 
 # html beispiele
 
