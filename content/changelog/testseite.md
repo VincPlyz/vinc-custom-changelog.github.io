@@ -17,6 +17,10 @@ https://vincplyz.github.io/vinc-custom-changelog.github.io/changelog/testseite/
 
 # html beispiele
 
+<iframe frameborder="0" class="juxtapose" width="100%" height="500.00000000000006" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=4736d3fe-9244-11f0-ba1b-0e6f42328d7d"></iframe>
+
+<hr class="dotted-line">
+
 <details class="details-inhaltsverzeichnis">
   <summary>Folldable List </summary>
 

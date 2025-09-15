@@ -70,9 +70,10 @@ Snapshots
 - [Mojang FAQ](/vinc-custom-changelog.github.io/changelog/Mojang-FAQ/)
 
 
-- [Recent Bugfixes:](https://mojira-viewer.jacobsjo.eu/browse/MC-301891?jql=project%20%3D%20MC%20AND%20resolution%20%3D%20Fixed%20AND%20%22fixVersion%22%20%3D%20earliestUnreleasedVersion()%20ORDER%20BY%20created%20DESC) [Fallback-1](https://mojira-viewer.jacobsjo.eu/browse/MC-301891?jql=project+=+MC+AND+resolution+=+Fixed+AND+%22fixVersion%22+=+earliestUnreleasedVersion()+AND+%22affectedVersion%22+=+latestReleasedVersion()+ORDER+BY+resolved+DESC) [Fallback-2](https://mojira.dev/?confirmation=Confirmed&project=MC&resolution=Fixed&sort=Resolved&status=Resolved)
-
 - [Website Changelog](/vinc-custom-changelog.github.io/changelog/website-changelog/)
 
 
 - [Useful Minecraft Websites oder so](/vinc-custom-changelog.github.io/changelog/useful_minecraft_sites/)
+
+
+- [Recent Bugfixes](https://mojira-viewer.jacobsjo.eu/browse/MC-301891?jql=project%20%3D%20MC%20AND%20resolution%20%3D%20Fixed%20AND%20%22fixVersion%22%20%3D%20earliestUnreleasedVersion()%20ORDER%20BY%20created%20DESC): [Fallback-1](https://mojira-viewer.jacobsjo.eu/browse/MC-301891?jql=project+=+MC+AND+resolution+=+Fixed+AND+%22fixVersion%22+=+earliestUnreleasedVersion()+AND+%22affectedVersion%22+=+latestReleasedVersion()+ORDER+BY+resolved+DESC) -- [Fallback-2](https://mojira.dev/?confirmation=Confirmed&project=MC&resolution=Fixed&sort=Resolved&status=Resolved)
