@@ -231,6 +231,14 @@ hr.my-custom-hr {
   margin-bottom: 5px;
 }
 
+hr.custom-hr-big {
+  border: none;
+  height: 3px;
+  background-color: #686868;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
 hr.dotted-line {
   border: none;
   border-top: 3px dotted #333;
@@ -242,6 +250,7 @@ hr.thin-line {
   border-top: 1px solid #ccc;
   margin: 20px 0;
 }
+
 
 /* Video */
 video {

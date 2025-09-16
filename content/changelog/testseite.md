@@ -16,6 +16,11 @@ https://vincplyz.github.io/vinc-custom-changelog.github.io/changelog/testseite/
 
 ---
 
+### Custom Emojis:
+
+#### Java 25 Update nächste version <img src="https://cdn.7tv.app/emote/01FPK71Q0G0008ZYPTDH5TYS48/1x.webp" style="display: inline; vertical-align: middle; height: 1em;">
+
+---
 
 <div class="image-comp" style="--max-width: 1339px;">
   <div id="left">
