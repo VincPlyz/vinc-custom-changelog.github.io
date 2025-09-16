@@ -88,6 +88,9 @@ Snapshots
 - 25w36b -- [Custom](/vinc-custom-changelog.github.io/changelog/1.21.9/25w36b/) - [Official](https://www.minecraft.net/en-us/article/minecraft-snapshot-25w37a)
 - 25w37a -- [Custom](/vinc-custom-changelog.github.io/changelog/1.21.9/25w37a/) - [Official](https://www.minecraft.net/en-us/article/minecraft-snapshot-25w38a)
 
+Pre Release
+- Pre-1 -- [Custom](/vinc-custom-changelog.github.io/changelog/1.21.9/1.21.9-pre1/) - [Official](https://www.minecraft.net/en-us/article/minecraft-1-21-9-pre-release-1)
+
 </details>
 
 --- 
