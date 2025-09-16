@@ -138,7 +138,7 @@
     
     
     "mainEntityOfPage": "true",
-    "wordCount": "1092"
+    "wordCount": "1102"
   }]
   </script>
 
@@ -610,7 +610,7 @@
 </script></p>
 </li>
 <li>
-<p><code>fall_flying</code> <img src="/vinc-custom-changelog.github.io/images/pre/mannequin_standing.png"/>
+<p><code>fall_flying</code> <img src="/vinc-custom-changelog.github.io/images/pre/mannequin_fall_flying.png"/>
 <div class="command-block">
   <span class="command-text">/summon minecraft:mannequin ~ ~ ~ {pose:fall_flying}</span>
   <button class="command-copy-btn" onclick="copyCommand(this)" title="Kopieren">
@@ -692,15 +692,24 @@
     
 </h3>
 <ul>
-<li>The <code>spawnpoint</code> command now optionally takes in a <code>pitch</code> argument</li>
-<li>The <code>setworldspawn</code> command is no longer limited to the overworld
+<li>
+<p>The <code>spawnpoint</code> command now optionally takes in a <code>pitch</code> argument</p>
+</li>
+<li>
+<p>The <code>setworldspawn</code> command is no longer limited to the overworld</p>
 <ul>
 <li>This means players can respawn e.g. in the Nether when they have no bed or respawn anchor</li>
-<li>It now also takes in an optional <code>pitch</code> argument</li>
+<li>It now also takes in an optional <code>pitch</code> argument
+<video src="/vinc-custom-changelog.github.io/videos/pre/respawn_yaw.mp4" muted controls></video></li>
 </ul>
 </li>
-<li>Server commands now run from the respawn dimension by default instead of always the overworld</li>
-<li>The <code>fetchprofile</code> command now also prints a clickable text to summon a Mannequin with the resolved profile</li>
+<li>
+<p>Server commands now run from the respawn dimension by default instead of always the overworld</p>
+</li>
+<li>
+<p>The <code>fetchprofile</code> command now also prints a clickable text to summon a Mannequin with the resolved profile
+<video src="/vinc-custom-changelog.github.io/videos/pre/fetchprofile_update.mp4" muted controls></video></p>
+</li>
 </ul>
 
 <h3 class="relative group">Data Components 
@@ -727,25 +736,67 @@
 <li>If any of the fields are omitted, the value from the resolved profile is used, even if the profile resolved to the default skin</li>
 <li>New fields
 <ul>
-<li><code>texture</code> - Optional namespaced ID of the skin <code>texture</code> to use for rendering
+<li>
+<p><code>texture</code> - Optional namespaced ID of the skin <code>texture</code> to use for rendering</p>
 <ul>
 <li>The skin is specified relative to the textures folder and with a <code>.png</code> suffix</li>
 <li>e.g. <code>entity/player/wide/steve</code> will use the default wide Steve skin</li>
 </ul>
 </li>
-<li><code>cape</code> - Optional namespaced ID of the cape texture to use for rendering
+<li>
+<p><code>cape</code> - Optional namespaced ID of the cape texture to use for rendering</p>
 <ul>
 <li>When specified, uses the same format as the <code>texture</code> field</li>
 </ul>
 </li>
-<li><code>elytra</code> - Optional namespaced ID of the elytra texture to use for rendering
+<li>
+<p><code>elytra</code> - Optional namespaced ID of the elytra texture to use for rendering</p>
 <ul>
 <li>When specified, uses the same format as the <code>texture</code> field</li>
 <li>If this value is not present either as override or in player profile, Mannequins using this profile will use the cape texture, or if that is also not present, the default Elytra texture when wearing Elytra</li>
 </ul>
 </li>
-<li><code>model</code> - Optional model type, one of <code>wide</code> and <code>slim</code></li>
+<li>
+<p><code>model</code> - Optional model type, one of <code>wide</code> and <code>slim</code></p>
+</li>
+<li>
+
+<h5 class="relative group">Playerheads können nun Resourcepack texturen haben: 
+    <div id="playerheads-können-nun-resourcepack-texturen-haben" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#playerheads-k%c3%b6nnen-nun-resourcepack-texturen-haben" aria-label="Anchor">#</a>
+    </span>        
+    
+</h5>
+</li>
 </ul>
+ <img src="/vinc-custom-changelog.github.io/images/pre/player_head.png"/>
+ <div class="command-block">
+  <span class="command-text">/give @s minecraft:player_head[minecraft:profile={texture:"atlas/gui"}]</span>
+  <button class="command-copy-btn" onclick="copyCommand(this)" title="Kopieren">
+    <i class="fas fa-copy"></i> </button>
+</div>
+
+<script>
+  function copyCommand(button) {
+    const commandText = button.previousElementSibling.textContent;
+    const originalTitle = button.title; 
+    const originalIconClass = button.querySelector('i').className; 
+
+    navigator.clipboard.writeText(commandText).then(() => {
+      button.title = "Kopiert!"; 
+      button.querySelector('i').className = "fas fa-check"; 
+      setTimeout(() => {
+        button.title = originalTitle; 
+        button.querySelector('i').className = originalIconClass; 
+      }, 2000);
+    }).catch(err => {
+      console.error("Fehler beim Kopieren: ", err);
+    });
+  }
+</script>
 </li>
 </ul>
 
