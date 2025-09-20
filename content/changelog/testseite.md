@@ -7,12 +7,15 @@ showWordCount: false
 
 # Testseite
 
+
+
 Dies ist eine Testseite für Hugo. Wenn du diesen Text siehst, funktioniert das Routing für einzelne Seiten!
 
 http://localhost:1313/vinc-custom-changelog.github.io/changelog/testseite/
 
 https://vincplyz.github.io/vinc-custom-changelog.github.io/changelog/testseite/
 
+# html beispiele
 
 ---
 
@@ -63,20 +66,40 @@ https://vincplyz.github.io/vinc-custom-changelog.github.io/changelog/testseite/
     oninput="this.parentNode.style.setProperty('--slider-pos', this.value + '%')">
 </div>
 
+---
 
+{{< carousel
+"https://minecraft.wiki/images/Oak_Shelf_JE1_BE2.png?b1719&format=original|Oak|1.0|-30px|20px"
+"https://minecraft.wiki/images/Spruce_Shelf_JE1_BE2.png?8ef92&format=original|Spruce|1.0|-30px|20px"
+"https://minecraft.wiki/images/Birch_Shelf_JE1_BE2.png?bb5ca&format=original|Birch|1.0|-30px|20px"
+"https://minecraft.wiki/images/Jungle_Shelf_JE1_BE2.png?f3c01&format=original|Jungle|1.0|-30px|20px"
+"https://minecraft.wiki/images/Acacia_Shelf_JE1_BE2.png?feb1c&format=original|Acacia|1.0|-30px|20px"
+"https://minecraft.wiki/images/Dark_Oak_Shelf_JE1_BE2.png?36233&format=original|Dark Oak|1.0|-30px|20px"
+"https://minecraft.wiki/images/Mangrove_Shelf_JE1_BE2.png?662e3&format=original|Mangrove|1.0|-30px|20px"
+"https://minecraft.wiki/images/Cherry_Shelf_JE1_BE2.png?1394a&format=original|Cherry|1.0|-30px|20px"
+"https://minecraft.wiki/images/Pale_Oak_Shelf_JE1_BE2.png?01b82&format=original|Pale Oak|1.0|-30px|20px"
+"https://minecraft.wiki/images/Bamboo_Shelf_JE1_BE2.png?e92d2&format=original|Bamboo|1.0|-30px|20px"
+"https://minecraft.wiki/images/Crimson_Shelf_JE1_BE2.png?93507&format=original|Crimson|1.0|-30px|20px"
+"https://minecraft.wiki/images/Warped_Shelf_JE1_BE2.png?aee19&format=original|Warped|1.0|-30px|20px"
+>}}
 
-# html beispiele
+---
 
 <iframe frameborder="0" class="juxtapose" width="100%" height="500.00000000000006" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=4736d3fe-9244-11f0-ba1b-0e6f42328d7d"></iframe>
 
 <hr class="dotted-line">
 
+---
+
 <details class="details-inhaltsverzeichnis">
   <summary>Folldable List </summary>
+
 
 Snapshots
 
 </details>
+
+---
 
 <details class="details-text">
   <summary>Folldable List </summary>
@@ -85,6 +108,7 @@ Snapshots
 
 </details>
 
+---
 
 <figure>
   <img src="https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/screenshots/25w37a_1170x500.jpg" alt="Beschreibung des Bildes" />
@@ -93,6 +117,7 @@ Snapshots
   </figcaption>
 </figure>
 
+---
 
 <hr class="my-custom-hr">
 
@@ -100,8 +125,11 @@ Snapshots
 
 <hr class="thin-line">
 
+---
 
 {{< command >}} test {{< /command >}}
+
+---
 
 - Video
 
@@ -110,6 +138,8 @@ Snapshots
 - Images 
 
 <img src="https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/screenshots/25w35a%201170x500.jpg"/>
+
+---
 
 - Styled Text
 
@@ -127,6 +157,8 @@ Snapshots
     <label for="browser">Choose your browser from the list:</label>
 <input list="browsers" name="browser" id="browser">
 
+---
+
 <datalist id="browsers">
   <option value="Edge">
   <option value="Firefox">
@@ -135,12 +167,16 @@ Snapshots
   <option value="Safari">
 </datalist>
 
+---
+
 <nav>
   <a href="/html/">HTML</a> |
   <a href="/css/">CSS</a> |
   <a href="/js/">JavaScript</a> |
   <a href="/python/">Python</a>
 </nav>
+
+---
 
 <label for="cars">Choose a car:</label>
 <select id="cars">
@@ -154,9 +190,40 @@ Snapshots
   </optgroup>
 </select>
 
+---
+
 <search>
   <form>
     <input name="fsrch" id="fsrch" placeholder="Search W3Schools">
   </form>
 </search>
 
+---
+
+<div class="developer-note">
+ Developer's Note: The rendering changes introduced in 25w31a for entities are now expanded to affect block entities and items. Please report any issues you encounter in these areas.
+</div> 
+
+---
+
+  {{< crafting scale= 1.5
+    row_1-1="https://minecraft.wiki/images/Copper_Ingot_JE1.png?78141"
+    row_1-2="https://minecraft.wiki/images/Copper_Ingot_JE1.png?78141"
+    row_1-3="https://minecraft.wiki/images/Copper_Ingot_JE1.png?78141"
+    row_2-1="https://minecraft.wiki/images/Copper_Ingot_JE1.png?78141"
+    row_2-2="https://minecraft.wiki/images/Invicon_Chest.png?1cab7"
+    row_2-3="https://minecraft.wiki/images/Copper_Ingot_JE1.png?78141"
+    row_3-1="https://minecraft.wiki/images/Copper_Ingot_JE1.png?78141"
+    row_3-2="https://minecraft.wiki/images/Copper_Ingot_JE1.png?78141"
+    row_3-3="https://minecraft.wiki/images/Copper_Ingot_JE1.png?78141"
+    output="https://minecraft.wiki/images/Invicon_Copper_Chest.png?93e72"
+>}}
+
+---
+
+{{< gallery >}}
+<img src="https://minecraft.wiki/images/Copper_Golem_JE1_BE1.png?3c87d&format=original" class="grid-w25" style="width:140px;padding-left:20px;">
+<img src="https://minecraft.wiki/images/Exposed_Copper_Golem_JE1_BE1.png?0355f&format=original" class="grid-w25" style="width:140px;padding-left:20px;">
+<img src="https://minecraft.wiki/images/Weathered_Copper_Golem_JE1_BE1.png?6b51d&format=original" class="grid-w25" style="width:140px;padding-left:20px;">
+<img src="https://minecraft.wiki/images/Oxidized_Copper_Golem_JE1_BE1.png?6980f&format=original" class="grid-w25" style="width:140px; padding-left:20px;">
+{{< /gallery >}}

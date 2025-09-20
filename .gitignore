@@ -6,3 +6,5 @@ missing_assets_report.*
 # static/images/
 
 temp images/
+
+/.vscode/settings.json

@@ -1,0 +1,121 @@
+{{ $scContext := . }}
+<div class="mcui-wrapper" style="--mc-scale-value: {{ $scContext.Get "scale" }};">
+  <div class="mcui mcui-Crafting_Table pixel-image">
+    <div class="mcui-input">
+      {{ $recipeData := "" }}
+      {{ if $scContext.Get "data" }}
+        {{ $dataParts := split ($scContext.Get "data") "#" }}
+        {{ $fileName := index $dataParts 0 }}
+        {{ $recipeName := index $dataParts 1 }}
+        {{ $recipeData = index $.Site.Data $fileName $recipeName "recipe" }}
+      {{ end }}
+      
+      {{ range $i, $e := (seq 9) }}
+        {{ $row := add (div $i 3) 1 }}
+        {{ $col := mod $i 3 | add 1 }}
+        {{ $param := printf "row_%d-%d" $row $col }}
+        {{ $imagesParam := "" }}
+        {{ if $scContext.Get "data" }}
+          {{ $imagesParam = index $recipeData $param }}
+        {{ else }}
+          {{ $imagesParam = $scContext.Get $param }}
+        {{ end }}
+        
+        {{ if $imagesParam }}
+          {{ $imgs := "" }}
+          {{ if (reflect.IsSlice $imagesParam) }}
+            {{ $imgs = $imagesParam }}
+          {{ else }}
+            {{ $imgs = split $imagesParam "," }}
+          {{ end }}
+
+          <span class="invslot">
+            <span class="invslot-item">
+              {{ range $imgIndex, $imgString := $imgs }}
+                {{ $parts := split $imgString "|" }}
+                {{ $url := index $parts 0 }}
+                {{ $scale := "1" }}
+                {{ if gt (len $parts) 1 }}{{ $scale = index $parts 1 }}{{ end }}
+                {{ $xOffset := "0px" }}
+                {{ if gt (len $parts) 2 }}{{ $xOffset = index $parts 2 }}{{ end }}
+                {{ $yOffset := "0px" }}
+                {{ if gt (len $parts) 3 }}{{ $yOffset = index $parts 3 }}{{ end }}
+                <img src="{{ $url }}" alt="crafting-item" class="item-img {{ if eq $imgIndex 0 }}active{{ end }}" style="transform: scale({{ $scale }}) translate({{ $xOffset }}, {{ $yOffset }});" />
+              {{ end }}
+            </span>
+          </span>
+        {{ else }}
+          <span class="invslot"></span>
+        {{ end }}
+      {{ end }}
+    </div>
+    <span class="mcui-arrow"></span>
+    <div class="mcui-output">
+      <span class="invslot invslot-large">
+        <span class="invslot-item">
+          {{ $outputData := "" }}
+          {{ if $scContext.Get "data" }}
+            {{ $dataParts := split ($scContext.Get "data") "#" }}
+            {{ $fileName := index $dataParts 0 }}
+            {{ $recipeName := index $dataParts 1 }}
+            {{ $outputData = index $.Site.Data $fileName $recipeName "recipe" "output" }}
+          {{ else }}
+            {{ $outputData = $scContext.Get "output" }}
+          {{ end }}
+          
+          {{ if $outputData }}
+            {{ $outImgs := "" }}
+            {{ if (reflect.IsSlice $outputData) }}
+              {{ $outImgs = $outputData }}
+            {{ else }}
+              {{ $outImgs = split $outputData "," }}
+            {{ end }}
+
+            {{ if gt (len $outImgs) 0 }}
+              {{ range $imgIndex, $imgString := $outImgs }}
+                {{ $parts := split $imgString "|" }}
+                {{ $url := index $parts 0 }}
+                {{ $scale := "1" }}
+                {{ if gt (len $parts) 1 }}{{ $scale = index $parts 1 }}{{ end }}
+                {{ $xOffset := "0px" }}
+                {{ if gt (len $parts) 2 }}{{ $xOffset = index $parts 2 }}{{ end }}
+                {{ $yOffset := "0px" }}
+                {{ if gt (len $parts) 3 }}{{ $yOffset = index $parts 3 }}{{ end }}
+                <img src="{{ $url }}" alt="crafting-output" class="item-img {{ if eq $imgIndex 0 }}active{{ end }}" style="transform: scale({{ $scale }}) translate({{ $xOffset }}, {{ $yOffset }});" />
+              {{ end }}
+            {{ end }}
+          {{ end }}
+        </span>
+        {{ $count := "" }}
+        {{ if $scContext.Get "data" }}
+          {{ $dataParts := split ($scContext.Get "data") "#" }}
+          {{ $fileName := index $dataParts 0 }}
+          {{ $recipeName := index $dataParts 1 }}
+          {{ $count = index $.Site.Data $fileName $recipeName "recipe" "count" }}
+        {{ else }}
+          {{ $count = $scContext.Get "count" }}
+        {{ end }}
+        {{ with $count }}
+          <span class="item-count">{{ . }}</span>
+        {{ end }}
+      </span>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const allSlots = document.querySelectorAll('.invslot-item');
+    allSlots.forEach(slot => {
+      const images = slot.querySelectorAll('img');
+      if (images.length > 1) {
+        let currentIndex = 0;
+        setInterval(() => {
+          images[currentIndex].classList.remove('active');
+          currentIndex = (currentIndex + 1) % images.length;
+          images[currentIndex].classList.add('active');
+        }, 3000);
+      }
+    });
+  });
+</script>

@@ -1,0 +1,91 @@
+shelves:
+  recipe:
+    row_1-1: 
+    - https://minecraft.wiki/images/Stripped_Oak_Log_%28UD%29_JE2_BE2.png?2f50d&format=original
+    - https://minecraft.wiki/images/Stripped_Spruce_Log_%28UD%29_JE2.png?23699&format=original
+    - https://minecraft.wiki/images/Stripped_Birch_Log_%28UD%29_JE2_BE2.png?fad23&format=original
+    - https://minecraft.wiki/images/Stripped_Jungle_Log_%28UD%29_JE4_BE3.png?383df&format=original
+    - https://minecraft.wiki/images/Stripped_Acacia_Log_%28UD%29_JE2_BE2.png?7e999&format=original
+    - https://minecraft.wiki/images/Stripped_Dark_Oak_Log_%28UD%29_JE4_BE4.png?df59e&format=original
+    - https://minecraft.wiki/images/Stripped_Mangrove_Log_%28UD%29_JE1_BE1.png?29997&format=original
+    - https://minecraft.wiki/images/Stripped_Cherry_Log_%28UD%29_JE1_BE1.png?834f9&format=original
+    - https://minecraft.wiki/images/Stripped_Pale_Oak_Log_%28UD%29_JE1_BE2.png?8fa4b&format=original
+    - https://minecraft.wiki/images/Stripped_Crimson_Stem_%28UD%29_JE2_BE1.png?f35c5&format=original
+    - https://minecraft.wiki/images/Stripped_Warped_Stem_%28UD%29_JE2_BE1.png?3f73f&format=original
+    row_1-2: 
+    - https://minecraft.wiki/images/Stripped_Oak_Log_%28UD%29_JE2_BE2.png?2f50d&format=original
+    - https://minecraft.wiki/images/Stripped_Spruce_Log_%28UD%29_JE2.png?23699&format=original
+    - https://minecraft.wiki/images/Stripped_Birch_Log_%28UD%29_JE2_BE2.png?fad23&format=original
+    - https://minecraft.wiki/images/Stripped_Jungle_Log_%28UD%29_JE4_BE3.png?383df&format=original
+    - https://minecraft.wiki/images/Stripped_Acacia_Log_%28UD%29_JE2_BE2.png?7e999&format=original
+    - https://minecraft.wiki/images/Stripped_Dark_Oak_Log_%28UD%29_JE4_BE4.png?df59e&format=original
+    - https://minecraft.wiki/images/Stripped_Mangrove_Log_%28UD%29_JE1_BE1.png?29997&format=original
+    - https://minecraft.wiki/images/Stripped_Cherry_Log_%28UD%29_JE1_BE1.png?834f9&format=original
+    - https://minecraft.wiki/images/Stripped_Pale_Oak_Log_%28UD%29_JE1_BE2.png?8fa4b&format=original
+    - https://minecraft.wiki/images/Stripped_Crimson_Stem_%28UD%29_JE2_BE1.png?f35c5&format=original
+    - https://minecraft.wiki/images/Stripped_Warped_Stem_%28UD%29_JE2_BE1.png?3f73f&format=original
+    row_1-3: 
+    - https://minecraft.wiki/images/Stripped_Oak_Log_%28UD%29_JE2_BE2.png?2f50d&format=original
+    - https://minecraft.wiki/images/Stripped_Spruce_Log_%28UD%29_JE2.png?23699&format=original
+    - https://minecraft.wiki/images/Stripped_Birch_Log_%28UD%29_JE2_BE2.png?fad23&format=original
+    - https://minecraft.wiki/images/Stripped_Jungle_Log_%28UD%29_JE4_BE3.png?383df&format=original
+    - https://minecraft.wiki/images/Stripped_Acacia_Log_%28UD%29_JE2_BE2.png?7e999&format=original
+    - https://minecraft.wiki/images/Stripped_Dark_Oak_Log_%28UD%29_JE4_BE4.png?df59e&format=original
+    - https://minecraft.wiki/images/Stripped_Mangrove_Log_%28UD%29_JE1_BE1.png?29997&format=original
+    - https://minecraft.wiki/images/Stripped_Cherry_Log_%28UD%29_JE1_BE1.png?834f9&format=original
+    - https://minecraft.wiki/images/Stripped_Pale_Oak_Log_%28UD%29_JE1_BE2.png?8fa4b&format=original
+    - https://minecraft.wiki/images/Stripped_Crimson_Stem_%28UD%29_JE2_BE1.png?f35c5&format=original
+    - https://minecraft.wiki/images/Stripped_Warped_Stem_%28UD%29_JE2_BE1.png?3f73f&format=original
+    row_2-1: ""
+    row_2-2: ""
+    row_2-3: ""
+    row_3-1: 
+    - https://minecraft.wiki/images/Stripped_Oak_Log_%28UD%29_JE2_BE2.png?2f50d&format=original
+    - https://minecraft.wiki/images/Stripped_Spruce_Log_%28UD%29_JE2.png?23699&format=original
+    - https://minecraft.wiki/images/Stripped_Birch_Log_%28UD%29_JE2_BE2.png?fad23&format=original
+    - https://minecraft.wiki/images/Stripped_Jungle_Log_%28UD%29_JE4_BE3.png?383df&format=original
+    - https://minecraft.wiki/images/Stripped_Acacia_Log_%28UD%29_JE2_BE2.png?7e999&format=original
+    - https://minecraft.wiki/images/Stripped_Dark_Oak_Log_%28UD%29_JE4_BE4.png?df59e&format=original
+    - https://minecraft.wiki/images/Stripped_Mangrove_Log_%28UD%29_JE1_BE1.png?29997&format=original
+    - https://minecraft.wiki/images/Stripped_Cherry_Log_%28UD%29_JE1_BE1.png?834f9&format=original
+    - https://minecraft.wiki/images/Stripped_Pale_Oak_Log_%28UD%29_JE1_BE2.png?8fa4b&format=original
+    - https://minecraft.wiki/images/Stripped_Crimson_Stem_%28UD%29_JE2_BE1.png?f35c5&format=original
+    - https://minecraft.wiki/images/Stripped_Warped_Stem_%28UD%29_JE2_BE1.png?3f73f&format=original
+    row_3-2: 
+    - https://minecraft.wiki/images/Stripped_Oak_Log_%28UD%29_JE2_BE2.png?2f50d&format=original
+    - https://minecraft.wiki/images/Stripped_Spruce_Log_%28UD%29_JE2.png?23699&format=original
+    - https://minecraft.wiki/images/Stripped_Birch_Log_%28UD%29_JE2_BE2.png?fad23&format=original
+    - https://minecraft.wiki/images/Stripped_Jungle_Log_%28UD%29_JE4_BE3.png?383df&format=original
+    - https://minecraft.wiki/images/Stripped_Acacia_Log_%28UD%29_JE2_BE2.png?7e999&format=original
+    - https://minecraft.wiki/images/Stripped_Dark_Oak_Log_%28UD%29_JE4_BE4.png?df59e&format=original
+    - https://minecraft.wiki/images/Stripped_Mangrove_Log_%28UD%29_JE1_BE1.png?29997&format=original
+    - https://minecraft.wiki/images/Stripped_Cherry_Log_%28UD%29_JE1_BE1.png?834f9&format=original
+    - https://minecraft.wiki/images/Stripped_Pale_Oak_Log_%28UD%29_JE1_BE2.png?8fa4b&format=original
+    - https://minecraft.wiki/images/Stripped_Crimson_Stem_%28UD%29_JE2_BE1.png?f35c5&format=original
+    - https://minecraft.wiki/images/Stripped_Warped_Stem_%28UD%29_JE2_BE1.png?3f73f&format=original
+    row_3-3: 
+    - https://minecraft.wiki/images/Stripped_Oak_Log_%28UD%29_JE2_BE2.png?2f50d&format=original
+    - https://minecraft.wiki/images/Stripped_Spruce_Log_%28UD%29_JE2.png?23699&format=original
+    - https://minecraft.wiki/images/Stripped_Birch_Log_%28UD%29_JE2_BE2.png?fad23&format=original
+    - https://minecraft.wiki/images/Stripped_Jungle_Log_%28UD%29_JE4_BE3.png?383df&format=original
+    - https://minecraft.wiki/images/Stripped_Acacia_Log_%28UD%29_JE2_BE2.png?7e999&format=original
+    - https://minecraft.wiki/images/Stripped_Dark_Oak_Log_%28UD%29_JE4_BE4.png?df59e&format=original
+    - https://minecraft.wiki/images/Stripped_Mangrove_Log_%28UD%29_JE1_BE1.png?29997&format=original
+    - https://minecraft.wiki/images/Stripped_Cherry_Log_%28UD%29_JE1_BE1.png?834f9&format=original
+    - https://minecraft.wiki/images/Stripped_Pale_Oak_Log_%28UD%29_JE1_BE2.png?8fa4b&format=original
+    - https://minecraft.wiki/images/Stripped_Crimson_Stem_%28UD%29_JE2_BE1.png?f35c5&format=original
+    - https://minecraft.wiki/images/Stripped_Warped_Stem_%28UD%29_JE2_BE1.png?3f73f&format=original
+    output:
+      - https://minecraft.wiki/images/Oak_Shelf_JE1_BE2.png?b1719&format=original|1.0|-10px|3px
+      - https://minecraft.wiki/images/Spruce_Shelf_JE1_BE2.png?8ef92&format=original|1.0|-10px|3px
+      - https://minecraft.wiki/images/Birch_Shelf_JE1_BE2.png?bb5ca&format=original|1.0|-10px|3px
+      - https://minecraft.wiki/images/Jungle_Shelf_JE1_BE2.png?f3c01&format=original|1.0|-10px|3px
+      - https://minecraft.wiki/images/Acacia_Shelf_JE1_BE2.png?feb1c&format=original|1.0|-10px|3px
+      - https://minecraft.wiki/images/Dark_Oak_Shelf_JE1_BE2.png?36233&format=original|1.0|-10px|3px
+      - https://minecraft.wiki/images/Mangrove_Shelf_JE1_BE2.png?662e3&format=original|1.0|-10px|3px
+      - https://minecraft.wiki/images/Cherry_Shelf_JE1_BE2.png?1394a&format=original|1.0|-10px|3px
+      - https://minecraft.wiki/images/Pale_Oak_Shelf_JE1_BE2.png?01b82&format=original|1.0|-10px|3px
+      - https://minecraft.wiki/images/Bamboo_Shelf_JE1_BE2.png?e92d2&format=original|1.0|-10px|3px
+      - https://minecraft.wiki/images/Crimson_Shelf_JE1_BE2.png?93507&format=original|1.0|-10px|3px
+      - https://minecraft.wiki/images/Warped_Shelf_JE1_BE2.png?aee19&format=original|1.0|-10px|3px
+    count: 6

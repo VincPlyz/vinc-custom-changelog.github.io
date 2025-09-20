@@ -129,13 +129,15 @@ main,
 .single,
 .list {
   width: 100%;
-  max-width: auto;
-  padding: 5rem;
+  max-width: 1600px;   /* Vollbreit, wie du es willst */
+  margin: 0 auto;
+  padding: 2.5rem 3rem;
   background: var(--mc-panel);
   color: var(--mc-text);
   border-radius: var(--mc-border-radius-large);
   box-shadow: 0 2px 8px #000a;
 }
+
 
 /* Command Block */
 .command-block {
@@ -551,4 +553,278 @@ video {
   margin-top: auto;
   margin-bottom: 150px;
   
+}
+
+/* Fullwidth Header Image Container */
+body:has(.mc-article) .mc-header {
+  position: relative;
+  width: 100%;
+  max-height: 500px;
+  overflow: hidden;
+  margin: 0 0 2rem 0;
+}
+
+/* Image takes full width */
+body:has(.mc-article) .mc-header img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* NEWS Label Overlay on Image */
+body:has(.mc-article) .mc-header .mc-news-label {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ffffff;
+  color: #000000;
+  padding: 0.1rem 0.5rem;
+  font-family: var(--mc-heading-font);
+  font-size: 1.0rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: var(--mc-shadow);
+
+}
+
+/* Center Article Content */
+.mc-article {
+  max-width: fit-content;
+  margin: 0 auto;
+} 
+
+/* Begrenzung für Textbreite im Container */
+body:has(.mc-article) .single,
+body:has(.mc-article) .post-content,
+body:has(.mc-article) .prose {
+  max-width: 1100px;  
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.1rem; 
+  line-height: 1.5; 
+}
+
+
+/* Styling für den ersten Absatz (via Markdown Blockquote >) 
+blockquote {
+  border-left: 4px solid #3498db;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  background-color: #181717;
+  border-radius: 4px;
+} */
+
+/* Styling für die 'Developer's Note' (via custom class) */
+.developer-note {
+    border-left: 5px solid #ff4d4d;
+    padding: 10px 15px;
+    background-color: #181717;
+    font-style: italic;
+    border-radius: 4px;
+    margin: 5px 0;
+}
+
+/*====================================================
+  Crafting Table UI
+======================================================*/
+.mcui-wrapper {
+    display: inline-block;
+    margin-top: 0px;
+    margin-bottom: calc(20px * var(--mc-scale-value, 1.0));
+}
+
+/* Hauptcontainer des UIs */
+.mcui {
+    display: flex;
+    align-items: center;
+    background-color: #C6C6C6;
+    border: 2px solid;
+    border-color: #DBDBDB #5B5B5B #5B5B5B #DBDBDB;
+    padding: calc(6px * var(--mc-scale-value, 1.0));
+    transform-origin: top left;
+}
+
+.mcui-Crafting_Table .mcui-input {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: calc(4px * var(--mc-scale-value, 1.0));
+}
+
+.mcui-Crafting_Table > .mcui-arrow {
+    background: url('/vinc-custom-changelog.github.io/images/grid_layout_arrow_small.png') no-repeat;
+    width: calc(32px * var(--mc-scale-value, 1.0));
+    height: calc(26px * var(--mc-scale-value, 1.0));
+    margin: 0 calc(12px * var(--mc-scale-value, 1.0));
+    background-size: contain;
+}
+
+.mcui-Crafting_Table > .mcui-output {
+    display: flex;
+    align-items: center;
+}
+
+.invslot {
+    position: relative;
+    background: #8B8B8B;
+    border: 2px solid;
+    border-color: #373737 #FFF #FFF #373737;
+    width: calc(32px * var(--mc-scale-value, 1.0));
+    height: calc(32px * var(--mc-scale-value, 1.0));
+}
+
+.invslot-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.invslot-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: none;
+}
+
+.invslot-item img.active {
+    /* Nur das erste Bild, das die Klasse 'active' hat, anzeigen */
+    display: block;
+}
+.invslot-large {
+    width: calc(40px * var(--mc-scale-value, 1.0));
+    height: calc(40px * var(--mc-scale-value, 1.0));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.invslot-large .invslot-item {
+    width: 100%;
+    height: 100%;
+}
+
+.invslot-large .invslot-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.invslot::before, .invslot::after {
+    content: "";
+    position: absolute;
+    background-color: #8B8B8B;
+    height: 2px;
+    width: 2px;
+    pointer-events: none;
+}
+
+.invslot::before { bottom: calc(-2px * var(--mc-scale-value, 1.0)); left: calc(-2px * var(--mc-scale-value, 1.0)); }
+.invslot::after { top: calc(-2px * var(--mc-scale-value, 1.0)); right: calc(-2px * var(--mc-scale-value, 1.0)); }
+
+/* Neues Styling für die Anzahl der Items */
+.item-count {
+    position: absolute;
+    right: calc(4px * var(--mc-scale-value, 1.0)); /* Wert erhöht für mehr Abstand nach rechts */
+    bottom: calc(-3px * var(--mc-scale-value, 1.0)); /* Wert reduziert, um die Zahl anzuheben */
+    color: #FFFFFF;
+    text-shadow: 2px 2px #3F3F3F;
+    font-size: calc(18px * var(--mc-scale-value, 1.0));
+    font-weight: normal; 
+    z-index: 10;
+    font-family: var(--mc-heading-2);
+}
+
+
+
+/*====================================================
+  Pure CSS Karussell
+======================================================*/
+.pure-css-carousel {
+    position: relative;
+    max-width: 600px;
+    margin: 2rem auto;
+    overflow: hidden;
+}
+
+.carousel-list {
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    background: transparent;
+    border: 2px solid;
+    border-color: var(--mc-core-rich-black) var(--mc-core-white) var(--mc-core-white) var(--mc-core-rich-black);
+    box-shadow: var(--mc-shadow);
+}
+
+.carousel-item {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    width: 100%;
+    height: auto;
+    background: var(--mc-panel);
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.carousel-figure {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.carousel-figure img {
+    max-width: 100%;
+    height: auto;
+    image-rendering: pixelated;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+.carousel-figure figcaption {
+    font-family: var(--mc-body-font);
+    color: var(--mc-text);
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* Scrollbar für Webkit (Chrome, Safari) ausblenden */
+.carousel-list::-webkit-scrollbar {
+    display: none;
+}
+
+/* Navigationspunkte */
+.carousel-nav {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 1rem;
+}
+
+.nav-dot {
+    display: block;
+    width: 12px;
+    height: 12px;
+    background-color: var(--mc-text);
+    border: 2px solid var(--mc-panel);
+    border-radius: 50%;
+    transition: background-color 0.3s;
+    opacity: 0.5;
+}
+
+.nav-dot:hover {
+    opacity: 1;
+}
+
+/* Optional: Aktiven Punkt hervorheben (erfordert JavaScript) */
+.nav-dot.active {
+    opacity: 1;
+    background-color: var(--mc-accent2);
 }
