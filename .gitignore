@@ -8,3 +8,17 @@ missing_assets_report.*
 temp images/
 
 /.vscode/settings.json
+.vscode
+
+ignore/
+
+# Hugo Ordner
+/public/
+/resources/_gen/
+
+# Betriebssystem-Dateien
+.DS_Store
+Thumbs.db
+
+# Abhängigkeiten, falls vorhanden (z.B. node_modules)
+/node_modules/

@@ -138,7 +138,7 @@
     
     
     "mainEntityOfPage": "true",
-    "wordCount": "3815"
+    "wordCount": "3817"
   }]
   </script>
 
@@ -516,7 +516,7 @@
 <li>
 <p>Copper Chests können mit einer Normalen Chest und 8 Copper Ingots gecraftet werden</p>
 
-  <div class="mcui-wrapper" style="--mc-scale-value: 1.5;">
+  <div class="mcui-wrapper" style="--mc-scale-value: 2;">
     <div class="mcui mcui-Crafting_Table pixel-image">
       <div class="mcui-input">
         
@@ -845,18 +845,47 @@
   
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      const allSlots = document.querySelectorAll('.invslot-item');
-      allSlots.forEach(slot => {
-        const images = slot.querySelectorAll('img');
-        if (images.length > 1) {
-          let currentIndex = 0;
-          setInterval(() => {
-            images[currentIndex].classList.remove('active');
-            currentIndex = (currentIndex + 1) % images.length;
-            images[currentIndex].classList.add('active');
-          }, 3000);
+      const animatedSlots = Array.from(document.querySelectorAll('.invslot-item')).filter(slot => slot.querySelectorAll('img').length > 1);
+      
+      if (animatedSlots.length === 0) {
+        return;
+      }
+  
+      const frameDuration = 3000; 
+      let lastTime = 0; 
+  
+      function animate(currentTime) {
+        const timeElapsed = currentTime - lastTime;
+        
+        
+        if (timeElapsed >= frameDuration) {
+          lastTime = currentTime;
+  
+          animatedSlots.forEach(slot => {
+            const images = slot.querySelectorAll('img');
+            const currentActive = slot.querySelector('img.active');
+            let nextImage;
+  
+            if (currentActive) {
+              nextImage = currentActive.nextElementSibling || images[0];
+            } else {
+              
+              nextImage = images[0];
+            }
+  
+            if (currentActive) {
+              currentActive.classList.remove('active');
+            }
+            if (nextImage) {
+              nextImage.classList.add('active');
+            }
+          });
         }
-      });
+        
+        requestAnimationFrame(animate);
+      }
+  
+      requestAnimationFrame(animate);
     });
   </script>
 </li>
@@ -993,10 +1022,10 @@
   
   <div id="gallery-21e9a11ea1028035fbe082575a391e4b" class="gallery">
   
-<img src="/vinc-custom-changelog.github.io/Lightning_Rod_(U)_JE3_2649514304469309879.png" class="grid-w25" style="">
-<img src="/vinc-custom-changelog.github.io/Exposed_Lightning_Rod_(U)_JE1_2811977483320649966.png" class="grid-w25" style="">
-<img src="/vinc-custom-changelog.github.io/Weathered_Lightning_Rod_(U)_JE1_7504443500043894719.png" class="grid-w25" style="">
-<img src="/vinc-custom-changelog.github.io/Oxidized_Lightning_Rod_(U)_JE1_13465038304885091277.png" class="grid-w25" style="">
+<img src="/vinc-custom-changelog.github.io/Lightning_Rod_(U)_JE3_2649514304469309879.png" class="grid-w25" style="width:160px;">
+<img src="/vinc-custom-changelog.github.io/Exposed_Lightning_Rod_(U)_JE1_2811977483320649966.png" class="grid-w25" style="width:160px;">
+<img src="/vinc-custom-changelog.github.io/Weathered_Lightning_Rod_(U)_JE1_7504443500043894719.png" class="grid-w25" style="width:160px;">
+<img src="/vinc-custom-changelog.github.io/Oxidized_Lightning_Rod_(U)_JE1_13465038304885091277.png" class="grid-w25" style="width:160px;">
 </div>
 
 
@@ -1053,10 +1082,10 @@
   
   <div id="gallery-e5e63a17e107c2a92703d89c2f8075cf" class="gallery">
   
-<img src="/vinc-custom-changelog.github.io/Copper_Pickaxe_JE1_BE1_14295994482650526065.png" class="grid-w25" style="">
-<img src="/vinc-custom-changelog.github.io/Copper_Shovel_JE1_BE1_14399402817018631355.png" class="grid-w25" style="">
-<img src="/vinc-custom-changelog.github.io/Copper_Axe_JE1_BE1_553605568834767882.png" class="grid-w25" style="">
-<img src="/vinc-custom-changelog.github.io/Copper_Hoe_JE1_BE1_6585559149330506202.png" class="grid-w25" style="">
+<img src="/vinc-custom-changelog.github.io/Copper_Pickaxe_JE1_BE1_14295994482650526065.png" class="grid-w25" style="width:150px;">
+<img src="/vinc-custom-changelog.github.io/Copper_Shovel_JE1_BE1_14399402817018631355.png" class="grid-w25" style="width:150px;">
+<img src="/vinc-custom-changelog.github.io/Copper_Axe_JE1_BE1_553605568834767882.png" class="grid-w25" style="width:150px;">
+<img src="/vinc-custom-changelog.github.io/Copper_Hoe_JE1_BE1_6585559149330506202.png" class="grid-w25" style="width:150px;">
 </div>
 
 <ul>
@@ -1659,128 +1688,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     
                     
                     
-                    <img src="https://minecraft.wiki/images/Stripped_Crimson_Stem_%28UD%29_JE2_BE1.png?f35c5&amp;format=original" alt="crafting-item" class="item-img " style="transform: scale(1) translate(0px, 0px);" />
-                  
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    <img src="https://minecraft.wiki/images/Stripped_Warped_Stem_%28UD%29_JE2_BE1.png?3f73f&amp;format=original" alt="crafting-item" class="item-img " style="transform: scale(1) translate(0px, 0px);" />
-                  
-                </span>
-              </span>
-            
-          
-            
-            
-            
-            
-            
-              
-            
-            
-            
-              
-              
-                
-              
-    
-              <span class="invslot">
-                <span class="invslot-item">
-                  
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    <img src="https://minecraft.wiki/images/Stripped_Oak_Log_%28UD%29_JE2_BE2.png?2f50d&amp;format=original" alt="crafting-item" class="item-img active" style="transform: scale(1) translate(0px, 0px);" />
-                  
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    <img src="https://minecraft.wiki/images/Stripped_Spruce_Log_%28UD%29_JE2.png?23699&amp;format=original" alt="crafting-item" class="item-img " style="transform: scale(1) translate(0px, 0px);" />
-                  
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    <img src="https://minecraft.wiki/images/Stripped_Birch_Log_%28UD%29_JE2_BE2.png?fad23&amp;format=original" alt="crafting-item" class="item-img " style="transform: scale(1) translate(0px, 0px);" />
-                  
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    <img src="https://minecraft.wiki/images/Stripped_Jungle_Log_%28UD%29_JE4_BE3.png?383df&amp;format=original" alt="crafting-item" class="item-img " style="transform: scale(1) translate(0px, 0px);" />
-                  
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    <img src="https://minecraft.wiki/images/Stripped_Acacia_Log_%28UD%29_JE2_BE2.png?7e999&amp;format=original" alt="crafting-item" class="item-img " style="transform: scale(1) translate(0px, 0px);" />
-                  
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    <img src="https://minecraft.wiki/images/Stripped_Dark_Oak_Log_%28UD%29_JE4_BE4.png?df59e&amp;format=original" alt="crafting-item" class="item-img " style="transform: scale(1) translate(0px, 0px);" />
-                  
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    <img src="https://minecraft.wiki/images/Stripped_Mangrove_Log_%28UD%29_JE1_BE1.png?29997&amp;format=original" alt="crafting-item" class="item-img " style="transform: scale(1) translate(0px, 0px);" />
-                  
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    <img src="https://minecraft.wiki/images/Stripped_Cherry_Log_%28UD%29_JE1_BE1.png?834f9&amp;format=original" alt="crafting-item" class="item-img " style="transform: scale(1) translate(0px, 0px);" />
-                  
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    <img src="https://minecraft.wiki/images/Stripped_Pale_Oak_Log_%28UD%29_JE1_BE2.png?8fa4b&amp;format=original" alt="crafting-item" class="item-img " style="transform: scale(1) translate(0px, 0px);" />
+                    <img src="https://minecraft.wiki/images/Block_of_Stripped_Bamboo_JE3_BE2.png?f34db&amp;format=original" alt="crafting-item" class="item-img " style="transform: scale(1) translate(0px, 0px);" />
                   
                     
                     
@@ -1912,6 +1820,157 @@ document.addEventListener('DOMContentLoaded', () => {
                     
                     
                     <img src="https://minecraft.wiki/images/Stripped_Pale_Oak_Log_%28UD%29_JE1_BE2.png?8fa4b&amp;format=original" alt="crafting-item" class="item-img " style="transform: scale(1) translate(0px, 0px);" />
+                  
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <img src="https://minecraft.wiki/images/Block_of_Stripped_Bamboo_JE3_BE2.png?f34db&amp;format=original" alt="crafting-item" class="item-img " style="transform: scale(1) translate(0px, 0px);" />
+                  
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <img src="https://minecraft.wiki/images/Stripped_Crimson_Stem_%28UD%29_JE2_BE1.png?f35c5&amp;format=original" alt="crafting-item" class="item-img " style="transform: scale(1) translate(0px, 0px);" />
+                  
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <img src="https://minecraft.wiki/images/Stripped_Warped_Stem_%28UD%29_JE2_BE1.png?3f73f&amp;format=original" alt="crafting-item" class="item-img " style="transform: scale(1) translate(0px, 0px);" />
+                  
+                </span>
+              </span>
+            
+          
+            
+            
+            
+            
+            
+              
+            
+            
+            
+              
+              
+                
+              
+    
+              <span class="invslot">
+                <span class="invslot-item">
+                  
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <img src="https://minecraft.wiki/images/Stripped_Oak_Log_%28UD%29_JE2_BE2.png?2f50d&amp;format=original" alt="crafting-item" class="item-img active" style="transform: scale(1) translate(0px, 0px);" />
+                  
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <img src="https://minecraft.wiki/images/Stripped_Spruce_Log_%28UD%29_JE2.png?23699&amp;format=original" alt="crafting-item" class="item-img " style="transform: scale(1) translate(0px, 0px);" />
+                  
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <img src="https://minecraft.wiki/images/Stripped_Birch_Log_%28UD%29_JE2_BE2.png?fad23&amp;format=original" alt="crafting-item" class="item-img " style="transform: scale(1) translate(0px, 0px);" />
+                  
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <img src="https://minecraft.wiki/images/Stripped_Jungle_Log_%28UD%29_JE4_BE3.png?383df&amp;format=original" alt="crafting-item" class="item-img " style="transform: scale(1) translate(0px, 0px);" />
+                  
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <img src="https://minecraft.wiki/images/Stripped_Acacia_Log_%28UD%29_JE2_BE2.png?7e999&amp;format=original" alt="crafting-item" class="item-img " style="transform: scale(1) translate(0px, 0px);" />
+                  
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <img src="https://minecraft.wiki/images/Stripped_Dark_Oak_Log_%28UD%29_JE4_BE4.png?df59e&amp;format=original" alt="crafting-item" class="item-img " style="transform: scale(1) translate(0px, 0px);" />
+                  
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <img src="https://minecraft.wiki/images/Stripped_Mangrove_Log_%28UD%29_JE1_BE1.png?29997&amp;format=original" alt="crafting-item" class="item-img " style="transform: scale(1) translate(0px, 0px);" />
+                  
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <img src="https://minecraft.wiki/images/Stripped_Cherry_Log_%28UD%29_JE1_BE1.png?834f9&amp;format=original" alt="crafting-item" class="item-img " style="transform: scale(1) translate(0px, 0px);" />
+                  
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <img src="https://minecraft.wiki/images/Stripped_Pale_Oak_Log_%28UD%29_JE1_BE2.png?8fa4b&amp;format=original" alt="crafting-item" class="item-img " style="transform: scale(1) translate(0px, 0px);" />
+                  
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <img src="https://minecraft.wiki/images/Block_of_Stripped_Bamboo_JE3_BE2.png?f34db&amp;format=original" alt="crafting-item" class="item-img " style="transform: scale(1) translate(0px, 0px);" />
                   
                     
                     
@@ -2088,128 +2147,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     
                     
                     
-                    <img src="https://minecraft.wiki/images/Stripped_Crimson_Stem_%28UD%29_JE2_BE1.png?f35c5&amp;format=original" alt="crafting-item" class="item-img " style="transform: scale(1) translate(0px, 0px);" />
-                  
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    <img src="https://minecraft.wiki/images/Stripped_Warped_Stem_%28UD%29_JE2_BE1.png?3f73f&amp;format=original" alt="crafting-item" class="item-img " style="transform: scale(1) translate(0px, 0px);" />
-                  
-                </span>
-              </span>
-            
-          
-            
-            
-            
-            
-            
-              
-            
-            
-            
-              
-              
-                
-              
-    
-              <span class="invslot">
-                <span class="invslot-item">
-                  
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    <img src="https://minecraft.wiki/images/Stripped_Oak_Log_%28UD%29_JE2_BE2.png?2f50d&amp;format=original" alt="crafting-item" class="item-img active" style="transform: scale(1) translate(0px, 0px);" />
-                  
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    <img src="https://minecraft.wiki/images/Stripped_Spruce_Log_%28UD%29_JE2.png?23699&amp;format=original" alt="crafting-item" class="item-img " style="transform: scale(1) translate(0px, 0px);" />
-                  
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    <img src="https://minecraft.wiki/images/Stripped_Birch_Log_%28UD%29_JE2_BE2.png?fad23&amp;format=original" alt="crafting-item" class="item-img " style="transform: scale(1) translate(0px, 0px);" />
-                  
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    <img src="https://minecraft.wiki/images/Stripped_Jungle_Log_%28UD%29_JE4_BE3.png?383df&amp;format=original" alt="crafting-item" class="item-img " style="transform: scale(1) translate(0px, 0px);" />
-                  
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    <img src="https://minecraft.wiki/images/Stripped_Acacia_Log_%28UD%29_JE2_BE2.png?7e999&amp;format=original" alt="crafting-item" class="item-img " style="transform: scale(1) translate(0px, 0px);" />
-                  
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    <img src="https://minecraft.wiki/images/Stripped_Dark_Oak_Log_%28UD%29_JE4_BE4.png?df59e&amp;format=original" alt="crafting-item" class="item-img " style="transform: scale(1) translate(0px, 0px);" />
-                  
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    <img src="https://minecraft.wiki/images/Stripped_Mangrove_Log_%28UD%29_JE1_BE1.png?29997&amp;format=original" alt="crafting-item" class="item-img " style="transform: scale(1) translate(0px, 0px);" />
-                  
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    <img src="https://minecraft.wiki/images/Stripped_Cherry_Log_%28UD%29_JE1_BE1.png?834f9&amp;format=original" alt="crafting-item" class="item-img " style="transform: scale(1) translate(0px, 0px);" />
-                  
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    <img src="https://minecraft.wiki/images/Stripped_Pale_Oak_Log_%28UD%29_JE1_BE2.png?8fa4b&amp;format=original" alt="crafting-item" class="item-img " style="transform: scale(1) translate(0px, 0px);" />
+                    <img src="https://minecraft.wiki/images/Block_of_Stripped_Bamboo_JE3_BE2.png?f34db&amp;format=original" alt="crafting-item" class="item-img " style="transform: scale(1) translate(0px, 0px);" />
                   
                     
                     
@@ -2341,6 +2279,157 @@ document.addEventListener('DOMContentLoaded', () => {
                     
                     
                     <img src="https://minecraft.wiki/images/Stripped_Pale_Oak_Log_%28UD%29_JE1_BE2.png?8fa4b&amp;format=original" alt="crafting-item" class="item-img " style="transform: scale(1) translate(0px, 0px);" />
+                  
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <img src="https://minecraft.wiki/images/Block_of_Stripped_Bamboo_JE3_BE2.png?f34db&amp;format=original" alt="crafting-item" class="item-img " style="transform: scale(1) translate(0px, 0px);" />
+                  
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <img src="https://minecraft.wiki/images/Stripped_Crimson_Stem_%28UD%29_JE2_BE1.png?f35c5&amp;format=original" alt="crafting-item" class="item-img " style="transform: scale(1) translate(0px, 0px);" />
+                  
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <img src="https://minecraft.wiki/images/Stripped_Warped_Stem_%28UD%29_JE2_BE1.png?3f73f&amp;format=original" alt="crafting-item" class="item-img " style="transform: scale(1) translate(0px, 0px);" />
+                  
+                </span>
+              </span>
+            
+          
+            
+            
+            
+            
+            
+              
+            
+            
+            
+              
+              
+                
+              
+    
+              <span class="invslot">
+                <span class="invslot-item">
+                  
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <img src="https://minecraft.wiki/images/Stripped_Oak_Log_%28UD%29_JE2_BE2.png?2f50d&amp;format=original" alt="crafting-item" class="item-img active" style="transform: scale(1) translate(0px, 0px);" />
+                  
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <img src="https://minecraft.wiki/images/Stripped_Spruce_Log_%28UD%29_JE2.png?23699&amp;format=original" alt="crafting-item" class="item-img " style="transform: scale(1) translate(0px, 0px);" />
+                  
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <img src="https://minecraft.wiki/images/Stripped_Birch_Log_%28UD%29_JE2_BE2.png?fad23&amp;format=original" alt="crafting-item" class="item-img " style="transform: scale(1) translate(0px, 0px);" />
+                  
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <img src="https://minecraft.wiki/images/Stripped_Jungle_Log_%28UD%29_JE4_BE3.png?383df&amp;format=original" alt="crafting-item" class="item-img " style="transform: scale(1) translate(0px, 0px);" />
+                  
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <img src="https://minecraft.wiki/images/Stripped_Acacia_Log_%28UD%29_JE2_BE2.png?7e999&amp;format=original" alt="crafting-item" class="item-img " style="transform: scale(1) translate(0px, 0px);" />
+                  
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <img src="https://minecraft.wiki/images/Stripped_Dark_Oak_Log_%28UD%29_JE4_BE4.png?df59e&amp;format=original" alt="crafting-item" class="item-img " style="transform: scale(1) translate(0px, 0px);" />
+                  
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <img src="https://minecraft.wiki/images/Stripped_Mangrove_Log_%28UD%29_JE1_BE1.png?29997&amp;format=original" alt="crafting-item" class="item-img " style="transform: scale(1) translate(0px, 0px);" />
+                  
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <img src="https://minecraft.wiki/images/Stripped_Cherry_Log_%28UD%29_JE1_BE1.png?834f9&amp;format=original" alt="crafting-item" class="item-img " style="transform: scale(1) translate(0px, 0px);" />
+                  
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <img src="https://minecraft.wiki/images/Stripped_Pale_Oak_Log_%28UD%29_JE1_BE2.png?8fa4b&amp;format=original" alt="crafting-item" class="item-img " style="transform: scale(1) translate(0px, 0px);" />
+                  
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <img src="https://minecraft.wiki/images/Block_of_Stripped_Bamboo_JE3_BE2.png?f34db&amp;format=original" alt="crafting-item" class="item-img " style="transform: scale(1) translate(0px, 0px);" />
                   
                     
                     
@@ -2527,18 +2616,47 @@ document.addEventListener('DOMContentLoaded', () => {
     
     <script>
       document.addEventListener('DOMContentLoaded', () => {
-        const allSlots = document.querySelectorAll('.invslot-item');
-        allSlots.forEach(slot => {
-          const images = slot.querySelectorAll('img');
-          if (images.length > 1) {
-            let currentIndex = 0;
-            setInterval(() => {
-              images[currentIndex].classList.remove('active');
-              currentIndex = (currentIndex + 1) % images.length;
-              images[currentIndex].classList.add('active');
-            }, 3000);
+        const animatedSlots = Array.from(document.querySelectorAll('.invslot-item')).filter(slot => slot.querySelectorAll('img').length > 1);
+        
+        if (animatedSlots.length === 0) {
+          return;
+        }
+    
+        const frameDuration = 3000; 
+        let lastTime = 0; 
+    
+        function animate(currentTime) {
+          const timeElapsed = currentTime - lastTime;
+          
+          
+          if (timeElapsed >= frameDuration) {
+            lastTime = currentTime;
+    
+            animatedSlots.forEach(slot => {
+              const images = slot.querySelectorAll('img');
+              const currentActive = slot.querySelector('img.active');
+              let nextImage;
+    
+              if (currentActive) {
+                nextImage = currentActive.nextElementSibling || images[0];
+              } else {
+                
+                nextImage = images[0];
+              }
+    
+              if (currentActive) {
+                currentActive.classList.remove('active');
+              }
+              if (nextImage) {
+                nextImage.classList.add('active');
+              }
+            });
           }
-        });
+          
+          requestAnimationFrame(animate);
+        }
+    
+        requestAnimationFrame(animate);
       });
     </script>
 </li>
@@ -2628,10 +2746,13 @@ document.addEventListener('DOMContentLoaded', () => {
 </ul>
 </li>
 </ul>
-<blockquote>
-<p><strong>Developer’s Note:</strong> <em>Spawn chunks incur a memory and performance cost for all players and have outlived their initial technical purpose of keeping the spawn area ready for players to quickly join into.</em></p>
-<p><em>However, we also want to recognise that spawn chunks have enabled a multitude of clever contraptions and farms throughout the years, so simply removing them without having other mechanics in the game enable these designs was never an option.</em></p>
-<p><em>We believe that the niche held by spawn chunks has now been filled by alternative methods of chunk loading, such as using portals or ender pearls, particularly with the changes in this snapshot to how the game loads these chunks before the world starts ticking.</em></p></blockquote>
+<div class="developer-note">
+<strong>Developer's Note:</strong> Developer’s Note: Spawn chunks incur a memory and performance cost for all players and have outlived their initial technical purpose of keeping the spawn area ready for players to quickly join into. </div>
+<div class="developer-note">
+However, we also want to recognise that spawn chunks have enabled a multitude of clever contraptions and farms throughout the years, so simply removing them without having other mechanics in the game enable these designs was never an option. </div>
+<div class="developer-note">
+We believe that the niche held by spawn chunks has now been filled by alternative methods of chunk loading, such as using portals or ender pearls, particularly with the changes in this snapshot to how the game loads these chunks before the world starts ticking.
+</div>
 
 <h3 class="relative group">Sounds 
     <div id="sounds" class="anchor"></div>
