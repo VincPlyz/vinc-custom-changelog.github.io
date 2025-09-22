@@ -1439,18 +1439,47 @@ document.addEventListener('DOMContentLoaded', () => {
   
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      const allSlots = document.querySelectorAll('.invslot-item');
-      allSlots.forEach(slot => {
-        const images = slot.querySelectorAll('img');
-        if (images.length > 1) {
-          let currentIndex = 0;
-          setInterval(() => {
-            images[currentIndex].classList.remove('active');
-            currentIndex = (currentIndex + 1) % images.length;
-            images[currentIndex].classList.add('active');
-          }, 3000);
+      const animatedSlots = Array.from(document.querySelectorAll('.invslot-item')).filter(slot => slot.querySelectorAll('img').length > 1);
+      
+      if (animatedSlots.length === 0) {
+        return;
+      }
+  
+      const frameDuration = 3000; 
+      let lastTime = 0; 
+  
+      function animate(currentTime) {
+        const timeElapsed = currentTime - lastTime;
+        
+        
+        if (timeElapsed >= frameDuration) {
+          lastTime = currentTime;
+  
+          animatedSlots.forEach(slot => {
+            const images = slot.querySelectorAll('img');
+            const currentActive = slot.querySelector('img.active');
+            let nextImage;
+  
+            if (currentActive) {
+              nextImage = currentActive.nextElementSibling || images[0];
+            } else {
+              
+              nextImage = images[0];
+            }
+  
+            if (currentActive) {
+              currentActive.classList.remove('active');
+            }
+            if (nextImage) {
+              nextImage.classList.add('active');
+            }
+          });
         }
-      });
+        
+        requestAnimationFrame(animate);
+      }
+  
+      requestAnimationFrame(animate);
     });
   </script>
 <hr>

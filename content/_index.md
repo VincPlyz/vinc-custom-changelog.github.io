@@ -91,6 +91,7 @@ Snapshots
 Pre Release
 - Pre-1 -- [Custom](/vinc-custom-changelog.github.io/changelog/1.21.9/1.21.9-pre1/) - [Official](https://www.minecraft.net/en-us/article/minecraft-1-21-9-pre-release-1)
 - Pre-2 -- [Custom](/vinc-custom-changelog.github.io/changelog/1.21.9/1.21.9-pre2/) - [Official](https://www.minecraft.net/en-us/article/minecraft-1-21-9-pre-release-2)
+- Pre-3 -- [Custom](/vinc-custom-changelog.github.io/changelog/1.21.9/1.21.9-pre3/) - [Official](https://www.minecraft.net/en-us/article/minecraft-1-21-9-pre-release-3)
 
 </details>
 

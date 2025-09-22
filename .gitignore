@@ -1,6 +1,7 @@
 # Ignore Python scripts and reports
 *.py
 missing_assets_report.*
+scripts/
 
 # Ignore images in static/images (optional, falls nicht ins Repo)
 # static/images/
@@ -22,3 +23,4 @@ Thumbs.db
 
 # Abhängigkeiten, falls vorhanden (z.B. node_modules)
 /node_modules/
+
