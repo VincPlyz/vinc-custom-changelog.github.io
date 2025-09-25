@@ -78,16 +78,6 @@ Pre Release
 
 Release Candidate
 - 1.21.9-rc1 -- [Custom](/vinc-custom-changelog.github.io/changelog/1.21.9/1.21.9-rc1/) - [Official](https://www.minecraft.net/en-us/article/minecraft-1.21.9-release-candidate-1)
-- 1.21.9-rc1 -- [Custom](/vinc-custom-changelog.github.io/changelog/1.21.9/1.21.9-rc1/) - [Official](https://www.minecraft.net/en-us/article/minecraft-1.21.9-release-candidate-1)
-- 1.21.9-rc1 -- [Custom](/vinc-custom-changelog.github.io/changelog/1.21.9/1.21.9-rc1/) - [Official](https://www.minecraft.net/en-us/article/minecraft-1.21.9-release-candidate-1)
-- 1.21.9-rc1 -- [Custom](/vinc-custom-changelog.github.io/changelog/1.21.9/1.21.9-rc1/) - [Official](https://www.minecraft.net/en-us/article/minecraft-1.21.9-release-candidate-1)
-- 1.21.9-rc1 -- [Custom](/vinc-custom-changelog.github.io/changelog/1.21.9/1.21.9-rc1/) - [Official](https://www.minecraft.net/en-us/article/minecraft-1.21.9-release-candidate-1)
-- 1.21.9-rc1 -- [Custom](/vinc-custom-changelog.github.io/changelog/1.21.9/1.21.9-rc1/) - [Official](https://www.minecraft.net/en-us/article/minecraft-1.21.9-release-candidate-1)
-- 1.21.9-rc1 -- [Custom](/vinc-custom-changelog.github.io/changelog/1.21.9/1.21.9-rc1/) - [Official](https://www.minecraft.net/en-us/article/minecraft-1.21.9-release-candidate-1)
-- 1.21.9-rc1 -- [Custom](/vinc-custom-changelog.github.io/changelog/1.21.9/1.21.9-rc1/) - [Official](https://www.minecraft.net/en-us/article/minecraft-1.21.9-release-candidate-1)
-- 1.21.9-rc1 -- [Custom](/vinc-custom-changelog.github.io/changelog/1.21.9/1.21.9-rc1/) - [Official](https://www.minecraft.net/en-us/article/minecraft-1.21.9-release-candidate-1)
-- 1.21.9-rc1 -- [Custom](/vinc-custom-changelog.github.io/changelog/1.21.9/1.21.9-rc1/) - [Official](https://www.minecraft.net/en-us/article/minecraft-1-21-9-release-candidate-1)
-- 1.21.9-rc1 -- [Custom](/vinc-custom-changelog.github.io/changelog/1.21.9/1.21.9-rc1/) - [Official](https://www.minecraft.net/en-us/article/minecraft-1-21-9-release-candidate-1)
 
 </details>
 
