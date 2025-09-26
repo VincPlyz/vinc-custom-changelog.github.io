@@ -31,6 +31,11 @@ draft: false
 </script>
 
 
+# [-> All Official Teasers <-](/vinc-custom-changelog.github.io/changelog/live_teasers/) 
+
+
+<hr class="thin-line">
+
 <details class="details-inhaltsverzeichnis">
   <summary>1.21.6 - Chase the Skies</summary>
 

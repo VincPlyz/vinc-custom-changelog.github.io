@@ -185,6 +185,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>http://localhost:1313/vinc-custom-changelog.github.io/changelog/live_teasers/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>http://localhost:1313/vinc-custom-changelog.github.io/changelog/website-changelog/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
