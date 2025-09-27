@@ -6,7 +6,7 @@ showWordCount: falseT12:00:00+02:00
 draft: false
 ---
 
-<div class="countdown-container">
+<!-- <div class="countdown-container">
     <p id="demo"></p>
 </div>
 
@@ -29,12 +29,10 @@ draft: false
       }
     }, 1000);
 </script>
-
-
+ -->
+<!-- 
 # [-> All Official Teasers <-](/vinc-custom-changelog.github.io/changelog/live_teasers/) 
-
-
-<hr class="thin-line">
+ -->
 
 <details class="details-inhaltsverzeichnis">
   <summary>1.21.6 - Chase the Skies</summary>
@@ -86,8 +84,8 @@ Release Candidate
 </details>
 
 
-<!-- <details class="details-inhaltsverzeichnis">
-  <summary>1.21.10 - Spoiler!: <span class="spoiler" >Nautilus? </a> </span></summary>
+<details class="details-inhaltsverzeichnis">
+  <summary>1.21.10 - Mounts of Mayhem</summary>
 
 ###   1.21.10 -- [Custom](/vinc-custom-changelog.github.io/changelog/1.21.10/release) - [Official](https://www.minecraft.net/de-de/article/minecraft-java-edition-1-21-10)
 
@@ -96,7 +94,7 @@ Snapshots
 - or
 - 25w42a -- [Custom](/vinc-custom-changelog.github.io/changelog/1.21.9/25w42a/) - [Official](https://www.minecraft.net/en-us/article/minecraft-snapshot-25w42a)
 
-</details> -->
+</details>
 
 
 --- 
