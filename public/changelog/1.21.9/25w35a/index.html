@@ -42,8 +42,8 @@
   <link
     type="text/css"
     rel="stylesheet"
-    href="/vinc-custom-changelog.github.io/css/main.bundle.min.8018a30c5826190d2961b6905ce48cefb831b2ccfc04f55f30998fc6429a798eff29cad6d9ff55161e7c8dae5708d4d3a2a1d083b6e20eba1a5c96004f776a07.css"
-    integrity="sha512-gBijDFgmGQ0pYbaQXOSM77gxssz8BPVfMJmPxkKaeY7/KcrW2f9VFh58ja5XCNTToqHQg7biDroaXJYAT3dqBw==">
+    href="/vinc-custom-changelog.github.io/css/main.bundle.min.b4fda19b2847a2adb7cc5e14ee5d5fa2f5b9d572d7a16bb3545d5c7cd156d34294c84ea1b187da9f1dff3e1770a3f85f484e1f33384290b2d368a9562d32ec3b.css"
+    integrity="sha512-tP2hmyhHoq23zF4U7l1fovW51XLXoWuzVF1cfNFW00KUyE6hsYfanx3/Phdwo/hfSE4fMzhCkLLTaKlWLTLsOw==">
   
   
   <script
@@ -138,7 +138,7 @@
     
     
     "mainEntityOfPage": "true",
-    "wordCount": "1502"
+    "wordCount": "1515"
   }]
   </script>
 
@@ -560,28 +560,28 @@
 </h3>
 <p>Several server properties were removed in favour of making them into game rules, allowing these settings to be changed while the server is running.</p>
 <ul>
-<li>Removed server property allow-nether in favour of new game rule</li>
-<li>Removed server property spawn-monsters in favour of new game rule</li>
-<li>Removed server property enable-command-block in favour of new game rule</li>
+<li>Removed server property <code>allow-nether</code> in favour of new game rule</li>
+<li>Removed server property <code>spawn-monsters</code> in favour of new game rule</li>
+<li>Removed server property <code>enable-command-block</code> in favour of new game rule</li>
 <li>Removed server property pvp in favour of new game rule</li>
-<li>Added server property management-server-enabled controlling whether the new Minecraft Server Management Protocol is enabled or not
+<li>Added server property <code>management-server-enabled</code> controlling whether the new Minecraft Server Management Protocol is enabled or not
 <ul>
-<li>Defaults to false</li>
+<li>Defaults to <code>false</code></li>
 </ul>
 </li>
-<li>Added server property management-server-port controlling on what port the Minecraft Server Management Protocol is started
+<li>Added server property <code>management-server-port</code> controlling on what port the Minecraft Server Management Protocol is started
 <ul>
-<li>Defaults to 25585</li>
+<li>Defaults to <code>25585</code></li>
 </ul>
 </li>
-<li>Added server property management-server-host controlling with what host the new Minecraft Server Management Protocol is started
+<li>Added server property <code>management-server-host</code> controlling with what host the new Minecraft Server Management Protocol is started
 <ul>
-<li>Defaults to localhost</li>
+<li>Defaults to <code>localhost</code></li>
 </ul>
 </li>
-<li>Added server property status-heartbeat-interval controlling the interval the management server sends heartbeat notifications to connected clients
+<li>Added server property <code>status-heartbeat-interval</code> controlling the interval the management server sends heartbeat notifications to connected clients
 <ul>
-<li>Defaults to 0, meaning it’s disabled</li>
+<li>Defaults to <code>0</code>, meaning it’s disabled</li>
 </ul>
 </li>
 </ul>
@@ -597,43 +597,62 @@
 </h3>
 <p>Added a server management API (JSON-RPC over WebSocket) for dedicated servers</p>
 <ul>
-<li>The API is disabled by default and can be enabled in the server properties file
+<li>
+<p>The API is disabled by default and can be enabled in the server properties file</p>
 <ul>
-<li>management-server-enabled=true</li>
-<li>management-server-host=localhost</li>
-<li>management-server-port=25585</li>
+<li><code>management-server-enabled=true</code></li>
+<li><code>management-server-host=localhost</code></li>
+<li><code>management-server-port=25585</code></li>
 </ul>
 </li>
-<li>The API is accessible at ws://<management-server-host>:<management-server-port> when enabled</li>
-<li>Supports querying and updating of server state (players, allowlist, operators, settings, game rules)</li>
-<li>Sends notifications on state changes (e.g. player joins, game rule updates)</li>
-<li>Calling {&ldquo;id&rdquo;:1,&ldquo;method&rdquo;:&ldquo;rpc.discover&rdquo;} returns an API schema containing supported methods and notifications of the currently running server</li>
-<li>The Data Generator produces an API schema (json-rpc-api-schema.json) in the reports output folder mirroring the contents returned by the rpc.discover method</li>
-<li>The API adheres to the <a
+<li>
+<p>The API is accessible at <code>ws://&lt;management-server-host&gt;:&lt;management-server-port&gt;</code> when enabled</p>
+</li>
+<li>
+<p>Supports querying and updating of server state (players, allowlist, operators, settings, game rules)</p>
+</li>
+<li>
+<p>Sends notifications on state changes (e.g. player joins, game rule updates)</p>
+</li>
+<li>
+<p>Calling <code>{&quot;id&quot;:1,&quot;method&quot;:&quot;rpc.discover&quot;}</code> returns an API schema containing supported methods and notifications of the currently running server</p>
+</li>
+<li>
+<p>The Data Generator produces an API schema (<code>json-rpc-api-schema.json</code>) in the reports output folder mirroring the contents returned by the rpc.discover method</p>
+</li>
+<li>
+<p>The API adheres to the <a
   href="https://www.jsonrpc.org/specification"
     target="_blank"
-  >JSON-RPC 2.0 specification</a></li>
-<li>Uses namespaced methods and the reserved namespaces are minecraft (e.g. minecraft:players, minecraft:allowlist/add) and notification (e.g. notification:players/joined)
+  >JSON-RPC 2.0 specification</a></p>
+</li>
+<li>
+<p>Uses namespaced methods and the reserved namespaces are <code>minecraft</code> (e.g. <code>minecraft:players</code>, <code>minecraft:allowlist/add</code>) and <code>notification</code> (e.g. <code>notification:players/joined</code>)</p>
 <ul>
 <li>Extensible via custom namespaces for additional methods and events</li>
 </ul>
 </li>
-<li>Core method groups: players, allowlist, operators, server (save, stop), server settings, game rules</li>
-<li>Example method call:
+<li>
+<p>Core method groups: players, allowlist, operators, server (save, stop), server settings, game rules</p>
+</li>
+<li>
+<p>Example method call:</p>
 <ul>
-<li>Request: {&ldquo;method&rdquo;:&ldquo;minecraft:allowlist/add&rdquo;,&ldquo;id&rdquo;:1,&ldquo;params&rdquo;:[[{&ldquo;name&rdquo;:&ldquo;jeb_&rdquo;}]]}</li>
-<li>Response: {&ldquo;jsonrpc&rdquo;:&ldquo;2.0&rdquo;,&ldquo;id&rdquo;:1,&ldquo;result&rdquo;:[{&ldquo;id&rdquo;:&ldquo;853c80ef-3c37-49fd-aa49-938b674adae6&rdquo;,&ldquo;name&rdquo;:&ldquo;jeb_&rdquo;}]}</li>
+<li>Request: <code>{&quot;method&quot;:&quot;minecraft:allowlist/add&quot;,&quot;id&quot;:1,&quot;params&quot;:[[{&quot;name&quot;:&quot;jeb_&quot;}]]}</code></li>
+<li>Response: <code>{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;id&quot;:1,&quot;result&quot;:[{&quot;id&quot;:&quot;853c80ef-3c37-49fd-aa49-938b674adae6&quot;,&quot;name&quot;:&quot;jeb_&quot;}]}</code></li>
 </ul>
 </li>
-<li>Example notification:
+<li>
+<p>Example notification:</p>
 <ul>
-<li>{&ldquo;jsonrpc&rdquo;:&ldquo;2.0&rdquo;,&ldquo;method&rdquo;:&ldquo;notification:players/joined&rdquo;,&ldquo;params&rdquo;:[{&ldquo;id&rdquo;:&ldquo;853c80ef-3c37-49fd-aa49-938b674adae6&rdquo;,&ldquo;name&rdquo;:&ldquo;jeb_&rdquo;}]}</li>
+<li><code>{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;notification:players/joined&quot;,&quot;params&quot;:[{&quot;id&quot;:&quot;853c80ef-3c37-49fd-aa49-938b674adae6&quot;,&quot;name&quot;:&quot;jeb_&quot;}]}</code></li>
 </ul>
 </li>
-<li>Example error:
+<li>
+<p>Example error:</p>
 <ul>
-<li>Request: {&ldquo;method&rdquo;: &ldquo;minecraft:foo/bar&rdquo;,&ldquo;id&rdquo;: 1}</li>
-<li>Response: {&ldquo;jsonrpc&rdquo;:&ldquo;2.0&rdquo;,&ldquo;id&rdquo;:1,&ldquo;result&rdquo;:{&ldquo;jsonrpc&rdquo;:&ldquo;2.0&rdquo;,&ldquo;id&rdquo;:1,&ldquo;error&rdquo;:{&ldquo;code&rdquo;:-32601,&ldquo;message&rdquo;:&ldquo;Method not found&rdquo;,&ldquo;data&rdquo;:&ldquo;Method not found: minecraft:foo/bar&rdquo;}}}</li>
+<li>Request: <code>{&quot;method&quot;: &quot;minecraft:foo/bar&quot;,&quot;id&quot;: 1}</code></li>
+<li>Response: <code>{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;id&quot;:1,&quot;result&quot;:{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;id&quot;:1,&quot;error&quot;:{&quot;code&quot;:-32601,&quot;message&quot;:&quot;Method not found&quot;,&quot;data&quot;:&quot;Method not found: minecraft:foo/bar&quot;}}}</code></li>
 <li>Errors and error codes follow <a
   href="https://www.jsonrpc.org/specification#error_object"
     target="_blank"
@@ -652,7 +671,7 @@
     
 </h2>
 <ul>
-<li>Renamed chain to iron_chain</li>
+<li>Renamed chain to <code>iron_chain</code></li>
 </ul>
 
 <h3 class="relative group">Game Rules 
@@ -665,24 +684,24 @@
     
 </h3>
 <ul>
-<li>Added pvp game rule controlling whether players can deal damage to other players
+<li>Added <code>pvp</code> game rule controlling whether players can deal damage to other players
 <ul>
-<li>Defaults to true</li>
+<li>Defaults to <code>true</code></li>
 </ul>
 </li>
-<li>Added allowEnteringNetherUsingPortals game rule controlling if the Nether can be entered through portals
+<li>Added <code>allowEnteringNetherUsingPortals</code> game rule controlling if the Nether can be entered through portals
 <ul>
-<li>Defaults to true</li>
+<li>Defaults to <code>true</code></li>
 </ul>
 </li>
-<li>Added spawnMonsters game rule controlling if monsters should spawn naturally
+<li>Added <code>spawnMonsters</code> game rule controlling if monsters should spawn naturally
 <ul>
-<li>Defaults to true</li>
+<li>Defaults to <code>true</code></li>
 </ul>
 </li>
-<li>Added enableCommandBlocks game rule controlling if Command Blocks should be enabled or not
+<li>Added <code>enableCommandBlocks</code> game rule controlling if Command Blocks should be enabled or not
 <ul>
-<li>Defaults to true</li>
+<li>Defaults to <code>true</code></li>
 </ul>
 </li>
 </ul>
@@ -697,7 +716,7 @@
     
 </h3>
 
-<h4 class="relative group">object Text Component 
+<h4 class="relative group"><code>OBJECT</code> Text Component 
     <div id="object-text-component" class="anchor"></div>
     
     <span
@@ -710,11 +729,11 @@
 <li>This component has been updated to support displaying other non-character objects as a part of text</li>
 <li>New format:
 <ul>
-<li>object: type of object, string, see below for values</li>
-<li><type-specific>: additional fields depending on object type</li>
+<li><code>object</code>: type of object, string, see below for values</li>
+<li><code>&lt;type-specific&gt;</code>: additional fields depending on object type</li>
 </ul>
 </li>
-<li>Similarly to nbt text component object field can be omitted
+<li>Similarly to <code>nbt</code> text component <code>object</code> field can be omitted
 <ul>
 <li>However, it&rsquo;s recommended to provide it for error checking</li>
 </ul>
@@ -734,6 +753,54 @@
 <li>Behaves the same way as the object component did previously, but is now a separate object type</li>
 <li>Uses the same format as before</li>
 </ul>
+<div class="command-block">
+  <span class="command-text">/title @s title {atlas:"minecraft:blocks",sprite:"block/stone"}</span>
+  <button class="command-copy-btn" onclick="copyCommand(this)" title="Kopieren">
+    <i class="fas fa-copy"></i> </button>
+</div>
+
+<script>
+  function copyCommand(button) {
+    const commandText = button.previousElementSibling.textContent;
+    const originalTitle = button.title; 
+    const originalIconClass = button.querySelector('i').className; 
+
+    navigator.clipboard.writeText(commandText).then(() => {
+      button.title = "Kopiert!"; 
+      button.querySelector('i').className = "fas fa-check"; 
+      setTimeout(() => {
+        button.title = originalTitle; 
+        button.querySelector('i').className = originalIconClass; 
+      }, 2000);
+    }).catch(err => {
+      console.error("Fehler beim Kopieren: ", err);
+    });
+  }
+</script>
+<div class="command-block">
+  <span class="command-text">/setblock ~ ~ ~ oak_sign{front_text:{messages:[{"sprite":"block/crafting_table_top","atlas":"minecraft:blocks","color":"white"},"","",""]}}</span>
+  <button class="command-copy-btn" onclick="copyCommand(this)" title="Kopieren">
+    <i class="fas fa-copy"></i> </button>
+</div>
+
+<script>
+  function copyCommand(button) {
+    const commandText = button.previousElementSibling.textContent;
+    const originalTitle = button.title; 
+    const originalIconClass = button.querySelector('i').className; 
+
+    navigator.clipboard.writeText(commandText).then(() => {
+      button.title = "Kopiert!"; 
+      button.querySelector('i').className = "fas fa-check"; 
+      setTimeout(() => {
+        button.title = originalTitle; 
+        button.querySelector('i').className = originalIconClass; 
+      }, 2000);
+    }).catch(err => {
+      console.error("Fehler beim Kopieren: ", err);
+    });
+  }
+</script>
 
 <h5 class="relative group">player Object Type 
     <div id="player-object-type" class="anchor"></div>
@@ -760,6 +827,30 @@
 </ul>
 </li>
 </ul>
+<div class="command-block">
+  <span class="command-text">/title @s title {player:{name:stxgi}}</span>
+  <button class="command-copy-btn" onclick="copyCommand(this)" title="Kopieren">
+    <i class="fas fa-copy"></i> </button>
+</div>
+
+<script>
+  function copyCommand(button) {
+    const commandText = button.previousElementSibling.textContent;
+    const originalTitle = button.title; 
+    const originalIconClass = button.querySelector('i').className; 
+
+    navigator.clipboard.writeText(commandText).then(() => {
+      button.title = "Kopiert!"; 
+      button.querySelector('i').className = "fas fa-check"; 
+      setTimeout(() => {
+        button.title = originalTitle; 
+        button.querySelector('i').className = originalIconClass; 
+      }, 2000);
+    }).catch(err => {
+      console.error("Fehler beim Kopieren: ", err);
+    });
+  }
+</script>
 
 <h2 class="relative group">Resource Pack Version 67.0 
     <div id="resource-pack-version-670" class="anchor"></div>
@@ -782,7 +873,7 @@
 </h3>
 <p>Renamed the following block sprites:</p>
 <ul>
-<li>chain to iron_chain</li>
+<li>chain to <code>iron_chain</code></li>
 </ul>
 
 <h3 class="relative group">Item Sprites 
@@ -796,7 +887,7 @@
 </h3>
 <p>Renamed the following item sprites:</p>
 <ul>
-<li>chain to iron_chain</li>
+<li>chain to <code>iron_chain</code></li>
 </ul>
 
 <h2 class="relative group">Fixed bugs in 25w35a 

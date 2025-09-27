@@ -10,6 +10,16 @@
     <lastBuildDate>Wed, 27 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/vinc-custom-changelog.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>1.21.6 Changelog</title>
+      <link>http://localhost:1313/vinc-custom-changelog.github.io/changelog/1.21.6/</link>
+      <pubDate>Fri, 26 Sep 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/vinc-custom-changelog.github.io/changelog/1.21.6/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
       <title>1.21.9-rc1 Changelog</title>
       <link>http://localhost:1313/vinc-custom-changelog.github.io/changelog/1.21.9/1.21.9-rc1/</link>
       <pubDate>Thu, 25 Sep 2025 00:00:00 +0000</pubDate>
@@ -115,6 +125,16 @@
       <pubDate>Tue, 09 Sep 2025 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/vinc-custom-changelog.github.io/changelog/1.21.9/release/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>1.21.9 - The Copper Age</title>
+      <link>http://localhost:1313/vinc-custom-changelog.github.io/changelog/1.21.9/release_old/</link>
+      <pubDate>Tue, 09 Sep 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/vinc-custom-changelog.github.io/changelog/1.21.9/release_old/</guid>
       <description></description>
       
     </item>

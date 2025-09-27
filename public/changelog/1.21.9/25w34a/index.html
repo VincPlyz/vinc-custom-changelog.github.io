@@ -42,8 +42,8 @@
   <link
     type="text/css"
     rel="stylesheet"
-    href="/vinc-custom-changelog.github.io/css/main.bundle.min.8018a30c5826190d2961b6905ce48cefb831b2ccfc04f55f30998fc6429a798eff29cad6d9ff55161e7c8dae5708d4d3a2a1d083b6e20eba1a5c96004f776a07.css"
-    integrity="sha512-gBijDFgmGQ0pYbaQXOSM77gxssz8BPVfMJmPxkKaeY7/KcrW2f9VFh58ja5XCNTToqHQg7biDroaXJYAT3dqBw==">
+    href="/vinc-custom-changelog.github.io/css/main.bundle.min.b4fda19b2847a2adb7cc5e14ee5d5fa2f5b9d572d7a16bb3545d5c7cd156d34294c84ea1b187da9f1dff3e1770a3f85f484e1f33384290b2d368a9562d32ec3b.css"
+    integrity="sha512-tP2hmyhHoq23zF4U7l1fovW51XLXoWuzVF1cfNFW00KUyE6hsYfanx3/Phdwo/hfSE4fMzhCkLLTaKlWLTLsOw==">
   
   
   <script
@@ -138,7 +138,7 @@
     
     
     "mainEntityOfPage": "true",
-    "wordCount": "1694"
+    "wordCount": "1705"
   }]
   </script>
 
@@ -504,13 +504,13 @@
     
 </h4>
 <ul>
-<li>A new boolean field has been added to server.properties called enable-code-of-conduct
+<li>A new boolean field has been added to <code>server.properties</code> called <code>enable-code-of-conduct</code>
 <ul>
-<li>Setting it to true will make the server look for code of conduct files in the codeofconduct subfolder in the same folder as server.properties</li>
-<li>Each file in the folder should have the form &lt;language_code&gt;.txt
+<li>Setting it to <code>true</code> will make the server look for code of conduct files in the <code>codeofconduct</code> subfolder in the same folder as server.properties</li>
+<li>Each file in the folder should have the form <code>&lt;language_code&gt;.txt</code>
 <ul>
 <li>The language shown will attempt to match the player&rsquo;s language</li>
-<li>If it doesn&rsquo;t exist, the en_us code of conduct will be used</li>
+<li>If it doesn&rsquo;t exist, the <code>en_us</code> code of conduct will be used</li>
 <li>If that also doesn&rsquo;t exist, an arbitrary available entry is used</li>
 </ul>
 </li>
@@ -607,7 +607,7 @@
 </h2>
 <ul>
 <li>Player profiles in data components and block entities no longer resolve automatically</li>
-<li>Added fetchprofile command for downloading player profiles</li>
+<li>Added <code>fetchprofile</code> command for downloading player profiles</li>
 </ul>
 
 <h3 class="relative group">Block States 
@@ -620,10 +620,10 @@
     
 </h3>
 <ul>
-<li>Removed align_items_to_bottom block state property from Shelf block
+<li>Removed <code>align_items_to_bottom</code> block state property from Shelf block
 <ul>
 <li>It has been replaced with an equally named boolean field on the Shelf block entity</li>
-<li>Shelves created with this property set in the last snapshot will reset back to the default value (false)</li>
+<li>Shelves created with this property set in the last snapshot will reset back to the default value (<code>false</code>)</li>
 </ul>
 </li>
 </ul>
@@ -638,7 +638,7 @@
     
 </h3>
 
-<h4 class="relative group">Added fetchprofile 
+<h4 class="relative group">Added <code>FETCHPROFILE</code> 
     <div id="added-fetchprofile" class="anchor"></div>
     
     <span
@@ -654,14 +654,17 @@
 <li>Results will be printed only when operation finishes, but the game will keep running unpaused</li>
 </ul>
 </li>
-<li>After successful completion, a message will be printed that lets users copy the contents of a fully resolved minecraft:profile component or /give @s minecraft:player_head with said component</li>
-<li>Since the result is not known at the time of execution, this command always returns 1</li>
+<li>After successful completion, a message will be printed that lets users copy the contents of a fully resolved <code>minecraft:profile</code> component or <code>/give @s minecraft:player_head</code> with said component</li>
+<li>Since the result is not known at the time of execution, this command always returns <code>1</code></li>
 </ul>
 <p>Syntax:</p>
 <ul>
-<li>fetchprofile name <player name> - resolves profile by name (case-insensitive)</li>
-<li>fetchprofile id <uuid> - resolves profile by id</li>
+<li><code>fetchprofile name &lt;player name&gt;</code> - resolves profile by name (case-insensitive)</li>
+<li><code>fetchprofile id &lt;uuid&gt;</code> - resolves profile by id</li>
 </ul>
+<div class="developer-note">
+<strong>Developer's Note:</strong> /fetchprofile name W3eze
+</div>
 
 <h3 class="relative group">Data Components 
     <div id="data-components" class="anchor"></div>
@@ -673,7 +676,7 @@
     
 </h3>
 
-<h4 class="relative group">Modified minecraft:profile 
+<h4 class="relative group">Modified <code>MINECRAFT:PROFILE</code> 
     <div id="modified-minecraftprofile" class="anchor"></div>
     
     <span
@@ -687,15 +690,15 @@
 <li>To avoid issues with this unexpected change, the resolved value is no longer stored and contents of the profile will always remain unchanged</li>
 <li>That means this component has now two behaviors:
 <ul>
-<li>Static: when it has properties field or when both name and id are present or when both are missing
+<li>Static: when it has <code>properties</code> field or when both <code>name</code> and <code>id</code> are present or when both are missing
 <ul>
 <li>In this state, profile will always render as-is</li>
-<li>If properties field is missing, a default skin will be used (selected based on id, same as in offline mode)</li>
+<li>If <code>properties</code> field is missing, a default skin will be used (selected based on <code>id</code>, same as in offline mode)</li>
 <li>That means skin will be frozen at the moment of component creation</li>
 <li>This option is preferred for decorational uses</li>
 </ul>
 </li>
-<li>Dynamic: when it has either name or id (but not both)
+<li>Dynamic: when it has either <code>name</code> or <code>id</code> (but not both)
 <ul>
 <li>When an item containing this profile is rendered on the client side, the profile will be resolved to most recent value</li>
 <li>This means that this item will always render with current skin of targeted player
@@ -706,7 +709,7 @@
 <li>Resolution might happen with a delay, during which item will render with a default skin</li>
 <li>Profile name will replace item name only when it&rsquo;s present
 <ul>
-<li>Items with just id will show default name</li>
+<li>Items with just <code>id</code> will show default name</li>
 </ul>
 </li>
 <li>Items will dynamic profiles be distinguished from static ones with label in tooltip</li>
@@ -728,7 +731,7 @@
     
 </h3>
 
-<h4 class="relative group">Modified minecraft:skull 
+<h4 class="relative group">Modified <code>MINECRAFT:SKULL</code> 
     <div id="modified-minecraftskull" class="anchor"></div>
     
     <span
@@ -738,12 +741,36 @@
     
 </h4>
 <ul>
-<li>profile field has been changed to match minecraft:profile component
+<li><code>profile</code> field has been changed to match <code>minecraft:profile</code> component
 <ul>
 <li>That means that it also becomes immutable and is resolved only when necessary</li>
 </ul>
 </li>
 </ul>
+<div class="command-block">
+  <span class="command-text">/give @s minecraft:player_head[minecraft:profile={name:Floweryalina}]</span>
+  <button class="command-copy-btn" onclick="copyCommand(this)" title="Kopieren">
+    <i class="fas fa-copy"></i> </button>
+</div>
+
+<script>
+  function copyCommand(button) {
+    const commandText = button.previousElementSibling.textContent;
+    const originalTitle = button.title; 
+    const originalIconClass = button.querySelector('i').className; 
+
+    navigator.clipboard.writeText(commandText).then(() => {
+      button.title = "Kopiert!"; 
+      button.querySelector('i').className = "fas fa-check"; 
+      setTimeout(() => {
+        button.title = originalTitle; 
+        button.querySelector('i').className = originalIconClass; 
+      }, 2000);
+    }).catch(err => {
+      console.error("Fehler beim Kopieren: ", err);
+    });
+  }
+</script>
 
 <h3 class="relative group">Text components 
     <div id="text-components" class="anchor"></div>
@@ -768,7 +795,7 @@
     
 </h2>
 <ul>
-<li>Removed block state align_items_to_bottom from the Shelf block
+<li>Removed block state <code>align_items_to_bottom</code> from the Shelf block
 <ul>
 <li>See above for details</li>
 </ul>

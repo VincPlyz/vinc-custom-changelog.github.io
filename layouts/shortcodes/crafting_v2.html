@@ -1,0 +1,232 @@
+{{ $scContext := . }}
+{{/* Wrapper: Stellt die Skalierungsvariable bereit */}}
+{{ $scaleValue := $scContext.Get "scale" | default "1.0" }}
+<div class="mcui-wrapper" style="--mc-scale-value: {{ $scaleValue }};">
+  {{/* Haupt-UI-Container: Definiert Hintergrund und Flex-Layout */}}
+  <div class="mcui mcui-Crafting_Table pixel-image">
+    
+    {{/* INPUT GRID: 3x3 Felder */}}
+    <div class="mcui-input">
+      {{ $recipeData := "" }}
+      {{/* Daten aus externer YAML-Datei (via 'data' Parameter) laden */}}
+      {{ if $scContext.Get "data" }}
+        {{ $dataParts := split ($scContext.Get "data") "#" }}
+        {{ $fileName := index $dataParts 0 }}
+        {{ $recipeName := index $dataParts 1 }}
+        {{ $recipeData = index $.Site.Data $fileName $recipeName "recipe" }}
+      {{ end }}
+      
+      {{/* Schleife für die 9 Eingabe-Slots */}}
+      {{ range $i, $e := (seq 9) }}
+        {{ $row := add (div $i 3) 1 }}
+        {{ $col := mod $i 3 | add 1 }}
+        {{ $param := printf "row_%d-%d" $row $col }}
+        {{ $imagesParam := "" }}
+        
+        {{/* Quelle für Item-Parameter bestimmen (Daten-Datei oder direkter Shortcode-Parameter) */}}
+        {{ if $scContext.Get "data" }}
+          {{ $imagesParam = index $recipeData $param }}
+        {{ else }}
+          {{ $imagesParam = $scContext.Get $param }}
+        {{ end }}
+        
+        {{ if $imagesParam }}
+          {{ $imgs := "" }}
+          {{ if (reflect.IsSlice $imagesParam) }}
+            {{ $imgs = $imagesParam }}
+          {{ else }}
+            {{ $imgs = split $imagesParam "," }}
+          {{ end }}
+
+          {{/* INVSLOT: Der visuelle Rahmen für das Item */}}
+          <span class="invslot">
+            <span class="invslot-item">
+              {{/* Schleife über alle Items (durch Komma getrennt oder als Gruppe) */}}
+              {{ range $imgIndex, $imgString := $imgs }}
+                {{ $parts := split $imgString "|" }}
+                {{ $itemNameOrUrl := index $parts 0 }}
+                
+                {{ $urlList := slice }}
+                {{ $itemData := index $.Site.Data.items $itemNameOrUrl }}
+                {{ $itemScale := "1" }}
+                
+                {{/* LOGIK: Item-Gruppe vs. Einzel-Item-Name vs. Direkter Link */}}
+                {{ if $itemData }}
+                  {{ $itemScale = $itemData.scale | default "1" }}
+                  
+                  {{ if $itemData.items }}
+                    {{/* Item-Gruppe: Sammle alle URLs */}}
+                    {{ range $subItemName := $itemData.items }}
+                      {{ $subItemData := index $.Site.Data.items $subItemName }}
+                      {{ if $subItemData }}
+                        {{ $urlList = $urlList | append $subItemData.url }}
+                      {{ end }}
+                    {{ end }}
+                  {{ else }}
+                    {{/* Einzel-Item-Name: Füge die eine URL hinzu */}}
+                    {{ $urlList = $urlList | append $itemData.url }}
+                  {{ end }}
+                {{ else }}
+                  {{/* Direkter Link/Unübersetzter Name: Füge den String als URL hinzu */}}
+                  {{ $urlList = $urlList | append $itemNameOrUrl }}
+                {{ end }}
+                
+                {{/* Parameter aus Shortcode (z.B. "|1.5|...") überschreiben Daten */}}
+                {{ $scale := $itemScale }}
+                {{ $xOffset := "0px" }}
+                {{ $yOffset := "0px" }}
+                
+                {{ if gt (len $parts) 1 }}{{ $scale = index $parts 1 }}{{ end }}
+                {{ if gt (len $parts) 2 }}{{ $xOffset = index $parts 2 }}{{ end }}
+                {{ if gt (len $parts) 3 }}{{ $yOffset = index $parts 3 }}{{ end }}
+
+                {{/* Generiere die <img/> Tags */}}
+                {{ range $urlIndex, $url := $urlList }}
+                  {{/* Input-Items verwenden die angegebene Skalierung */}}
+                  <img src="{{ $url }}" alt="crafting-item" class="item-img {{ if and (eq $imgIndex 0) (eq $urlIndex 0) }}active{{ end }}" style="transform: scale({{ $scale }}) translate({{ $xOffset }}, {{ $yOffset }});" />
+                {{ end }}
+              {{ end }}
+            </span>
+          </span>
+        {{ else }}
+          <span class="invslot"></span>
+        {{ end }}
+      {{ end }}
+    </div>
+    
+    {{/* PFEIL */}}
+    <span class="mcui-arrow"></span>
+    
+    {{/* OUTPUT SLOT */}}
+    <div class="mcui-output">
+      <span class="invslot invslot-large">
+        <span class="invslot-item">
+          {{ $outputData := "" }}
+          {{ $outputCount := "" }}
+          
+          {{/* Logik zum Laden der Output-Daten */}}
+          {{ if $scContext.Get "data" }}
+            {{ $dataParts := split ($scContext.Get "data") "#" }}
+            {{ $fileName := index $dataParts 0 }}
+            {{ $recipeName := index $dataParts 1 }}
+            {{ $recipe := index $.Site.Data $fileName $recipeName "recipe" }}
+            {{ $outputData = $recipe.output }}
+            {{ $outputCount = $recipe.count }}
+          {{ else }}
+            {{ $outputData = $scContext.Get "output" }}
+            {{ $outputCount = $scContext.Get "count" }}
+          {{ end }}
+          
+          
+          {{ if $outputData }}
+            {{ $outImgs := slice }}
+            
+            {{/* Daten als Liste von Strings behandeln */}}
+            {{ if (reflect.IsSlice $outputData) }}
+                {{ $outImgs = $outputData }}
+            {{ else }}
+                {{ $outImgs = split $outputData "," }}
+            {{ end }}
+
+            {{ if gt (len $outImgs) 0 }}
+              {{ range $imgIndex, $imgString := $outImgs }}
+                {{ $parts := split $imgString "|" }}
+                {{ $itemNameOrUrl := index $parts 0 }}
+                
+                {{ $urlList := slice }}
+                {{ $itemData := index $.Site.Data.items $itemNameOrUrl }}
+                {{ $itemScale := "1" }}
+
+                {{/* Logik: Item-Namen für Output prüfen */}}
+                {{ if $itemData }}
+                  {{ $itemScale = $itemData.scale | default "1" }}
+                  
+                  {{ if $itemData.items }}
+                    {{ range $subItemName := $itemData.items }}
+                      {{ $subItemData := index $.Site.Data.items $subItemName }}
+                      {{ if $subItemData }}{{ $urlList = $urlList | append $subItemData.url }}{{ end }}
+                    {{ end }}
+                  {{ else }}
+                    {{ $urlList = $urlList | append $itemData.url }}
+                  {{ end }}
+                {{ else }}
+                  {{ $urlList = $urlList | append $itemNameOrUrl }}
+                {{ end }}
+
+                {{/* Skalierungs-Parameter aus Pipe setzen */}}
+                {{ $scale := $itemScale }}
+                {{ $xOffset := "0px" }}
+                {{ $yOffset := "0px" }}
+                
+                {{ if gt (len $parts) 1 }}{{ $scale = index $parts 1 }}{{ end }}
+                {{ if gt (len $parts) 2 }}{{ $xOffset = index $parts 2 }}{{ end }}
+                {{ if gt (len $parts) 3 }}{{ $yOffset = index $parts 3 }}{{ end }}
+
+                {{/* WICHTIGSTE KORREKTUR: Skaliere Output Item immer um 0.8, damit es in den großen Slot passt */}}
+                {{ $finalScale := mul (float $scale) 0.8 }}
+
+                {{/* Generiere die <img/> Tags für Output */}}
+                {{ range $urlIndex, $url := $urlList }}
+                  <img src="{{ $url }}" alt="crafting-output" class="item-img {{ if and (eq $imgIndex 0) (eq $urlIndex 0) }}active{{ end }}" style="transform: scale({{ $finalScale }}) translate({{ $xOffset }}, {{ $yOffset }});" />
+                {{ end }}
+              {{ end }}
+            {{ end }}
+          {{ end }}
+        </span>
+        
+        {{/* Item-Zähler */}}
+        {{ with $outputCount }}
+          <span class="item-count">{{ . }}</span>
+        {{ end }}
+      </span>
+    </div>
+  </div>
+</div>
+
+{{/* --- JAVASCRIPT: ANIMATION LOGIK (Unverändert) --- */}}
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Finde alle Slots, die mehr als ein Bild enthalten (für die Animation)
+    const animatedSlots = Array.from(document.querySelectorAll('.invslot-item')).filter(slot => slot.querySelectorAll('img').length > 1);
+    
+    if (animatedSlots.length === 0) {
+      return;
+    }
+
+    const frameDuration = 3000; // Dauer pro Bild in Millisekunden
+    let lastTime = 0;
+
+    function animate(currentTime) {
+      const timeElapsed = currentTime - lastTime;
+      
+      if (timeElapsed >= frameDuration) {
+        lastTime = currentTime;
+
+        animatedSlots.forEach(slot => {
+          const images = slot.querySelectorAll('img');
+          const currentActive = slot.querySelector('img.active');
+          let nextImage;
+
+          if (currentActive) {
+            // Finde das nächste Geschwisterelement oder springe zurück zum ersten Bild
+            nextImage = currentActive.nextElementSibling || images[0];
+          } else {
+            // Starte mit dem ersten Bild, falls keins aktiv ist
+            nextImage = images[0];
+          }
+
+          if (currentActive) {
+            currentActive.classList.remove('active');
+          }
+          if (nextImage) {
+            nextImage.classList.add('active');
+          }
+        });
+      }
+      
+      requestAnimationFrame(animate);
+    }
+
+    requestAnimationFrame(animate);
+  });
+</script>

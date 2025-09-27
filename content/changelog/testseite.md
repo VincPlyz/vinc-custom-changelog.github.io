@@ -68,6 +68,26 @@ https://vincplyz.github.io/vinc-custom-changelog.github.io/changelog/testseite/
 
 ---
 
+{{< crafting scale="2" data="recipes#shelves" >}}
+
+---
+
+  {{< crafting_v2 scale= 2.0
+    row_1-1="Copper_Ingot"
+    row_1-2="Copper_Ingot"
+    row_1-3="Copper_Ingot"
+    row_2-1="Copper_Ingot"
+    row_2-2="Chest"
+    row_2-3="Copper_Ingot"
+    row_3-1="Copper_Ingot"
+    row_3-2="Copper_Ingot"
+    row_3-3="Copper_Ingot"
+    output="Copper_Chest"
+>}}
+
+
+---
+
 {{< carousel
 "https://minecraft.wiki/images/Oak_Shelf_JE1_BE2.png?b1719&format=original|Oak|1.0|-30px|20px"
 "https://minecraft.wiki/images/Spruce_Shelf_JE1_BE2.png?8ef92&format=original|Spruce|1.0|-30px|20px"

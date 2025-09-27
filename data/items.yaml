@@ -1,0 +1,312 @@
+# data/items.yaml
+
+# 1. DEFINITIONEN FÜR EINZELNE ITEMS
+# Jedes Item, das Sie verwenden, muss hier definiert werden.
+# Der Schlüssel (z.B. "Copper_Ingot") ist der Name, den Sie im Shortcode verwenden.
+# Wichtig: Die URL muss der direkte Link zur Bilddatei sein.
+
+# Copper Stuff
+
+Copper_Ingot:
+  url: "https://minecraft.wiki/images/Invicon_Copper_Ingot.png"
+  scale: "1.0"
+
+Copper_Nugget:
+  url: "https://minecraft.wiki/images/Invicon_Copper_Nugget.png"
+  scale: "1.0"
+
+Copper_Bars:
+  url: "https://minecraft.wiki/images/Invicon_Copper_Bars.png"
+  scale: "1.0"
+
+Copper_Torch:
+  url: "https://minecraft.wiki/images/Invicon_Copper_Torch_JE2_BE2.png"
+  scale: "1.0"
+
+Copper_Lantern:
+  url: "https://minecraft.wiki/images/Invicon_Copper_Lantern.png"
+  scale: "1.0"
+
+Copper_Chest:
+  url: "https://minecraft.wiki/images/Invicon_Copper_Chest.png"
+  scale: "1.0"
+
+Copper_chain:
+  url: "https://minecraft.wiki/images/Invicon_Copper_Chain.png"
+  scale: "1.0"
+
+Copper_Sword:
+  url: "https://minecraft.wiki/images/Invicon_Copper_Sword.png"
+  scale: "1.0"
+
+Copper_Axe:
+  url: "https://minecraft.wiki/images/Invicon_Copper_Axe.png"
+  scale: "1.0"
+
+Copper_Pickaxe:
+  url: "https://minecraft.wiki/images/Invicon_Copper_Pickaxe.png"
+  scale: "1.0"
+
+Copper_Shovel:
+  url: "https://minecraft.wiki/images/Invicon_Copper_Shovel.png"
+  scale: "1.0"
+
+Copper_Hoe:
+  url: "https://minecraft.wiki/images/Invicon_Copper_Hoe.png"
+  scale: "1.0"
+
+Copper_Helmet:
+  url: "https://minecraft.wiki/images/Invicon_Copper_Helmet.png"
+  scale: "1.0"
+
+Copper_Chestplate:
+  url: "https://minecraft.wiki/images/Invicon_Copper_Chestplate.png"
+  scale: "1.0"
+
+Copper_Leggings:
+  url: "https://minecraft.wiki/images/Invicon_Copper_Leggings.png"
+  scale: "1.0"
+
+Copper_Boots:
+  url: "https://minecraft.wiki/images/Invicon_Copper_Boots.png"
+  scale: "1.0"
+
+# --------------
+
+Stick:
+  url: "https://minecraft.wiki/images/Invicon_Stick.png"
+  scale: "1.0"
+
+Chest:
+  url: "https://minecraft.wiki/images/Invicon_Chest.png"
+  scale: "1.0"
+
+Coal:
+  url: "https://minecraft.wiki/images/Invicon_Coal.png"
+  scale: "1.0"
+
+Charcoal:
+  url: "https://minecraft.wiki/images/Invicon_Charcoal.png"
+  scale: "1.0"
+
+# Planks
+
+Oak_Planks:
+  url: "https://minecraft.wiki/images/Invicon_Oak_Planks.png"
+  scale: "1.0"
+
+Spruce_Planks:
+  url: "https://minecraft.wiki/images/Invicon_Spruce_Planks.png"
+  scale: "1.0"
+
+Birch_Planks:
+  url: "https://minecraft.wiki/images/Invicon_Birch_Planks.png"
+  scale: "1.0"
+
+Jungle_Planks :
+  url: "https://minecraft.wiki/images/Invicon_Jungle_Planks.png"
+  scale: "1.0"
+
+Accacia_Planks:
+  url: "https://minecraft.wiki/images/Invicon_Acacia_Planks.png"
+  scale: "1.0"
+
+Dark_Oak_Planks:
+  url: "https://minecraft.wiki/images/Invicon_Dark_Oak_Planks.png"
+  scale: "1.0"
+
+Mangrove_Planks:
+  url: "https://minecraft.wiki/images/Invicon_Mangrove_Planks.png"
+  scale: "1.0"
+
+Cherry_Planks:
+  url: "https://minecraft.wiki/images/Invicon_Cherry_Planks.png"
+  scale: "1.0"
+
+Pale_Oak_Planks:
+  url: "https://minecraft.wiki/images/Invicon_Pale_Oak_Planks.png"
+  scale: "1.0"
+
+Bamboo_Planks:
+  url: "https://minecraft.wiki/images/Invicon_Bamboo_Planks.png"
+  scale: "1.0"
+
+Crimson_Planks:
+  url: "https://minecraft.wiki/images/Invicon_Crimson_Planks.png"
+  scale: "1.0"
+
+Warped_Planks:
+  url: "https://minecraft.wiki/images/Invicon_Warped_Planks.png"
+  scale: "1.0"
+
+# --------------
+
+# Stripped Log
+
+Stripped_Oak_log:
+  url: "https://minecraft.wiki/images/Invicon_Stripped_Oak_Log.png"
+  scale: "1.0"
+
+Stripped_Spruce_log:
+  url: "https://minecraft.wiki/images/Invicon_Stripped_Spruce_Log.png"
+  scale: "1.0"
+
+Stripped_Birch_log:
+  url: "https://minecraft.wiki/images/Invicon_Stripped_Birch_Log.png"
+  scale: "1.0"
+
+Stripped_Jungle_log:
+  url: "https://minecraft.wiki/images/Invicon_Stripped_Jungle_Log.png"
+  scale: "1.0"
+
+Stripped_Accacia_log:
+  url: "https://minecraft.wiki/images/Invicon_Stripped_Acacia_Log.png"
+  scale: "1.0"
+
+Stripped_Dark_Oak_log:
+  url: "https://minecraft.wiki/images/Invicon_Stripped_Dark_Oak_Log.png"
+  scale: "1.0"
+
+Stripped_Mangrove_log:
+  url: "https://minecraft.wiki/images/Invicon_Stripped_Mangrove_Log.png"
+  scale: "1.0"
+
+Stripped_Cherry_log:
+  url: "https://minecraft.wiki/images/Invicon_Stripped_Cherry_Log.png"
+  scale: "1.0"
+
+Stripped_Pale_Oak_log:
+  url: "https://minecraft.wiki/images/Invicon_Stripped_Pale_Oak_Log.png"
+  scale: "1.0"
+
+Stripped_Bamboo_log:
+  url: "https://minecraft.wiki/images/Block_of_Stripped_Bamboo_JE3_BE2.png"
+  scale: "1.0"
+
+Stripped_Crimson_log:
+  url: "https://minecraft.wiki/images/Invicon_Stripped_Crimson_Hyphae.png"
+  scale: "1.0"
+
+Stripped_Warped_log:
+  url: "https://minecraft.wiki/images/Invicon_Stripped_Warped_Hyphae.png"
+  scale: "1.0"
+
+# --------------
+
+# Shelfs
+
+Oak_Shelf:
+  url: "https://minecraft.wiki/images/Invicon_Oak_Shelf.png"
+  scale: "1.0"
+
+Spruce_Shelf:
+  url: "https://minecraft.wiki/images/Invicon_Spruce_Shelf.png"
+  scale: "1.0"
+
+Birch_Shelf:
+  url: "https://minecraft.wiki/images/Invicon_Birch_Shelf.png"
+  scale: "1.0"
+
+Jungle_Shelf:
+  url: "https://minecraft.wiki/images/Invicon_Jungle_Shelf.png"
+  scale: "1.0"
+
+Accacia_Shelf:
+  url: "https://minecraft.wiki/images/Invicon_Acacia_Shelf.png"
+  scale: "1.0"
+
+Dark_Oak_Shelf:
+  url: "https://minecraft.wiki/images/Invicon_Dark_Oak_Shelf.png"
+  scale: "1.0"
+
+Mangrove_Shelf:
+  url: "https://minecraft.wiki/images/Invicon_Mangrove_Shelf.png"
+  scale: "1.0"
+
+Cherry_Shelf:
+  url: "https://minecraft.wiki/images/Invicon_Cherry_Shelf.png"
+  scale: "1.0"
+
+Pale_Oak_Shelf:
+  url: "https://minecraft.wiki/images/Invicon_Pale_Oak_Shelf.png"
+  scale: "1.0"
+
+Bamboo_Shelf:
+  url: "https://minecraft.wiki/images/Invicon_Bamboo_Shelf.png"
+  scale: "1.0"
+
+Crimson_Shelf:
+  url: "https://minecraft.wiki/images/Invicon_Crimson_Shelf.png"
+  scale: "1.0"
+
+Warped_Shelf:
+  url: "https://minecraft.wiki/images/Invicon_Warped_Shelf.png"
+  scale: "1.0"
+
+# --------------
+
+# 2. DEFINITIONEN FÜR ITEM-GRUPPEN (z.B. chatg_planks)
+# Der Schlüssel (z.B. "chatg_planks") ist der Gruppenname, den Sie im Shortcode verwenden.
+# Die Gruppe muss eine Liste ("items:") der oben definierten Item-Namen enthalten.
+chatg_planks:
+  items:
+    - Oak_Planks
+    - Spruce_Planks
+    - Birch_Planks
+    - Jungle_Planks
+    - Accacia_Planks
+    - Dark_Oak_Planks
+    - Mangrove_Planks
+    - Cherry_Planks
+    - Pale_Oak_Planks
+    - Bamboo_Planks
+    - Crimson_Planks
+    - Warped_Planks
+  scale: ""
+
+chatg_shelfs:
+  items:
+    - Oak_Shelf
+    - Spruce_Shelf
+    - Birch_Shelf
+    - Jungle_Shelf
+    - Accacia_Shelf
+    - Dark_Oak_Shelf
+    - Mangrove_Shelf
+    - Cherry_Shelf
+    - Pale_Oak_Shelf
+    - Bamboo_Shelf
+    - Crimson_Shelf
+    - Warped_Shelf
+  scale: "1.0"
+
+chatg_stripped_log:
+  items:
+    - Stripped_Oak_log
+    - Stripped_Spruce_log
+    - Stripped_Birch_log
+    - Stripped_Jungle_log
+    - Stripped_Accacia_log
+    - Stripped_Dark_Oak_log
+    - Stripped_Mangrove_log
+    - Stripped_Cherry_log
+    - Stripped_Pale_Oak_log
+    - Stripped_Bamboo_log
+    - Stripped_Crimson_log
+    - Stripped_Warped_log
+  scale: ""
+
+# Beispiel für eine weitere Gruppe, z.B. alle Erze
+chatg_ores:
+  items:
+    - Iron_Ore
+    - Gold_Ore
+    - Diamond_Ore
+    - Emerald_Ore
+  scale: "1.0"
+
+chatg_coal:
+  items:
+    - Coal
+    - Charcoal
+  scale: "1.0"

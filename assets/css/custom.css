@@ -632,7 +632,7 @@ blockquote {
 .mcui-wrapper {
     display: inline-block;
     margin-top: 0px;
-    margin-bottom: calc(20px * var(--mc-scale-value, 1.0));
+    margin-bottom: calc(5px * var(--mc-scale-value, 1.0));
 }
 
 /* Hauptcontainer des UIs */
@@ -687,6 +687,8 @@ blockquote {
     height: 100%;
     object-fit: contain;
     display: none;
+    image-rendering: crisp-edges;
+    image-rendering: pixelated; 
 }
 
 .invslot-item img.active {
@@ -710,6 +712,8 @@ blockquote {
     width: 100%;
     height: 100%;
     object-fit: contain;
+    image-rendering: crisp-edges;
+    image-rendering: pixelated;
 }
 
 .invslot::before, .invslot::after {
@@ -721,17 +725,18 @@ blockquote {
     pointer-events: none;
 }
 
+
 .invslot::before { bottom: calc(-2px * var(--mc-scale-value, 1.0)); left: calc(-2px * var(--mc-scale-value, 1.0)); }
 .invslot::after { top: calc(-2px * var(--mc-scale-value, 1.0)); right: calc(-2px * var(--mc-scale-value, 1.0)); }
 
 /* Neues Styling für die Anzahl der Items */
 .item-count {
     position: absolute;
-    right: calc(4px * var(--mc-scale-value, 1.0)); /* Wert erhöht für mehr Abstand nach rechts */
+    right: calc(2px * var(--mc-scale-value, 1.0)); /* Wert erhöht für mehr Abstand nach rechts */
     bottom: calc(-3px * var(--mc-scale-value, 1.0)); /* Wert reduziert, um die Zahl anzuheben */
     color: #FFFFFF;
     text-shadow: 2px 2px #3F3F3F;
-    font-size: calc(18px * var(--mc-scale-value, 1.0));
+    font-size: calc(13px * var(--mc-scale-value, 1.0));
     font-weight: normal; 
     z-index: 10;
     font-family: var(--mc-heading-2);

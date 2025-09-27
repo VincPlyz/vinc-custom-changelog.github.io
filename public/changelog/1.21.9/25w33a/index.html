@@ -42,8 +42,8 @@
   <link
     type="text/css"
     rel="stylesheet"
-    href="/vinc-custom-changelog.github.io/css/main.bundle.min.8018a30c5826190d2961b6905ce48cefb831b2ccfc04f55f30998fc6429a798eff29cad6d9ff55161e7c8dae5708d4d3a2a1d083b6e20eba1a5c96004f776a07.css"
-    integrity="sha512-gBijDFgmGQ0pYbaQXOSM77gxssz8BPVfMJmPxkKaeY7/KcrW2f9VFh58ja5XCNTToqHQg7biDroaXJYAT3dqBw==">
+    href="/vinc-custom-changelog.github.io/css/main.bundle.min.b4fda19b2847a2adb7cc5e14ee5d5fa2f5b9d572d7a16bb3545d5c7cd156d34294c84ea1b187da9f1dff3e1770a3f85f484e1f33384290b2d368a9562d32ec3b.css"
+    integrity="sha512-tP2hmyhHoq23zF4U7l1fovW51XLXoWuzVF1cfNFW00KUyE6hsYfanx3/Phdwo/hfSE4fMzhCkLLTaKlWLTLsOw==">
   
   
   <script
@@ -138,7 +138,7 @@
     
     
     "mainEntityOfPage": "true",
-    "wordCount": "1244"
+    "wordCount": "1263"
   }]
   </script>
 
@@ -460,6 +460,42 @@
 <li>From time to time flashes in the sky happen</li>
 <li>When they happen skylight intensity increases flooding the dimension with purple light</li>
 </ul>
+<div style="position:relative; width:100%; height:0px; padding-bottom:57.447%"><iframe allow="fullscreen" allowfullscreen height="100%" src="https://streamable.com/e/wpvvqd?" width="100%" style="border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden;"></iframe></div>
+<ul>
+<li>End Flashes can be customized with Resourcepacks:</li>
+</ul>
+<ul>
+<li>
+<p><a
+  href="https://www.dropbox.com/scl/fi/ti2g8jpvg6uzlrsnbei9d/Secret-Snapshot-Video-RP.zip?rlkey=w2mzr27h60h9k6grpucw7dcd5&amp;st=z0ucqt7r&amp;dl=1"
+    target="_blank"
+  >Beispiel Resourcepack Download</a></p>
+<div class="command-block">
+  <span class="command-text">/execute in minecraft:the_end run tp @s 10000 200 1</span>
+  <button class="command-copy-btn" onclick="copyCommand(this)" title="Kopieren">
+    <i class="fas fa-copy"></i> </button>
+</div>
+
+<script>
+  function copyCommand(button) {
+    const commandText = button.previousElementSibling.textContent;
+    const originalTitle = button.title; 
+    const originalIconClass = button.querySelector('i').className; 
+
+    navigator.clipboard.writeText(commandText).then(() => {
+      button.title = "Kopiert!"; 
+      button.querySelector('i').className = "fas fa-check"; 
+      setTimeout(() => {
+        button.title = originalTitle; 
+        button.querySelector('i').className = originalIconClass; 
+      }, 2000);
+    }).catch(err => {
+      console.error("Fehler beim Kopieren: ", err);
+    });
+  }
+</script>
+</li>
+</ul>
 
 <h3 class="relative group">Copper Golem 
     <div id="copper-golem" class="anchor"></div>
@@ -552,8 +588,9 @@
 <li>Items in the Shelf will render in the middle of the Shelf</li>
 <li>Updated the sizes of many items in the Shelf to better fit the Shelf</li>
 </ul>
-<blockquote>
-<p><strong>Developer&rsquo;s Note:</strong> <em>Thank you for all your valuable feedback on the shelf! Seeing the many creative ways you&rsquo;ve been using this new block, we&rsquo;ve decided to revert the change from last week that positioned items at the bottom of the shelf, as we agree that having the items centered provides more creative opportunities when building.</em></p></blockquote>
+<div class="developer-note">
+<strong>Developer's Note:</strong> Thank you for all your valuable feedback on the shelf! Seeing the many creative ways you've been using this new block, we've decided to revert the change from last week that positioned items at the bottom of the shelf, as we agree that having the items centered provides more creative opportunities when building.
+</div>
 
 <h3 class="relative group">UI 
     <div id="ui" class="anchor"></div>
@@ -618,11 +655,11 @@
     
 </h3>
 <ul>
-<li>Added align_items_to_bottom block state property to the Shelf block
+<li>Added <code>align_items_to_bottom</code> block state property to the Shelf block
 <ul>
-<li>If false the items on the Shelf will ignore the vertical translation of the on_shelf item display transform and will be rendered vertically aligned to the middle of the Shelf</li>
-<li>If true the items on the Shelf will be rendered upward from the bottom of the Shelf and will respect the vertical translation of the on_shelf item display transform</li>
-<li>Default is false (items are aligned to the middle of the Shelf)</li>
+<li>If <code>false</code> the items on the Shelf will ignore the vertical translation of the <code>on_shelf</code> item display transform and will be rendered vertically aligned to the middle of the Shelf</li>
+<li>If <code>true</code> the items on the Shelf will be rendered upward from the bottom of the Shelf and will respect the vertical translation of the <code>on_shelf</code> item display transform</li>
+<li>Default is <code>false</code> (items are aligned to the middle of the Shelf)</li>
 </ul>
 </li>
 </ul>
@@ -637,7 +674,7 @@
     
 </h3>
 
-<h4 class="relative group">run_command Click Event 
+<h4 class="relative group"><code>RUN_COMMAND</code> Click Event 
     <div id="run_command-click-event" class="anchor"></div>
     
     <span
@@ -647,7 +684,7 @@
     
 </h4>
 <ul>
-<li>Previously, if the command field contained a command that required a signed message (/say, /me, /msg, /tell, /w, /teammsg, /tm), it would be silently discarded</li>
+<li>Previously, if the <code>command</code> field contained a command that required a signed message (<code>/say</code>, <code>/me</code>, <code>/msg</code>, <code>/tell</code>, <code>/w</code>, <code>/teammsg</code>, <code>/tm</code>), it would be silently discarded</li>
 <li>Instead, a screen will be shown that lets the user insert the command into the chat window or copy the command to their clipboard if the chat window can&rsquo;t be opened</li>
 </ul>
 
@@ -673,10 +710,10 @@
 <p>New field: block_effects - specifies per-block particles. Each block particle is randomly chosen according to weights. A set limit of block particles is spawned each tick from all explosions that tick.</p>
 <p>Format: List of entries:</p>
 <ul>
-<li>weight: Non-negative integer representing the random weight for this entry being chosen</li>
-<li>particle: The particle to spawn</li>
-<li>scaling: Optional scaling to apply between explosion center and block position, or 1.0 if not specified</li>
-<li>speed: Optional scaling to apply to the speed of the particle, or 1.0 if not specified</li>
+<li><code>weight</code>: Non-negative integer representing the random weight for this entry being chosen</li>
+<li><code>particle</code>: The particle to spawn</li>
+<li><code>scaling</code>: Optional scaling to apply between explosion center and block position, or <code>1.0</code> if not specified</li>
+<li><code>speed</code>: Optional scaling to apply to the speed of the particle, or <code>1.0</code> if not specified</li>
 </ul>
 
 <h3 class="relative group">Tags 
@@ -699,7 +736,7 @@
     
 </h4>
 <ul>
-<li>Added #shearable_from_copper_golem - all items that can be removed from the Copper Golem&rsquo;s head slot via Shears</li>
+<li>Added <code>#shearable_from_copper_golem</code> - all items that can be removed from the Copper Golem&rsquo;s head slot via Shears</li>
 </ul>
 
 <h2 class="relative group">Resource Pack Version 65.2 
@@ -724,7 +761,7 @@
 <ul>
 <li>Added a new texture:
 <ul>
-<li>environment/end_flash.png</li>
+<li><code>environment/end_flash.png</code></li>
 </ul>
 </li>
 </ul>
@@ -751,7 +788,7 @@
 <ul>
 <li>Added new sound event:
 <ul>
-<li>weather.end_flash</li>
+<li><code>weather.end_flash</code></li>
 </ul>
 </li>
 </ul>

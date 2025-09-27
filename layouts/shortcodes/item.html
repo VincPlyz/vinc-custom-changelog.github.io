@@ -1,0 +1,31 @@
+{{ $itemName := .Get "name" }}
+{{ $itemData := index $.Site.Data.items $itemName }}
+{{ $url := "" }}
+{{ $scale := .Get "scale" | default "1.0" }}
+{{ $class := .Get "class" | default "page-item-image" }}
+
+{{ if $itemData }}
+    {{/* Die Skalierung aus YAML wird zuerst geladen */}}
+    {{ $scale = $itemData.scale | default $scale }}
+
+    {{/* Wenn es eine Gruppe ist, nehmen wir das erste Item der Liste */}}
+    {{ if $itemData.items }}
+        {{ $firstItemName := index $itemData.items 0 }}
+        {{ $firstItemData := index $.Site.Data.items $firstItemName }}
+        {{ if $firstItemData }}
+            {{ $url = $firstItemData.url }}
+        {{ end }}
+    {{ else }}
+        {{/* Einzel-Item */}}
+        {{ $url = $itemData.url }}
+    {{ end }}
+
+    {{/* Die Skalierung aus dem Shortcode überschreibt die YAML-Skalierung, wenn sie gesetzt ist */}}
+    {{ $scale = .Get "scale" | default $scale }}
+{{ end }}
+
+{{ if $url }}
+    <img src="{{ $url }}" alt="{{ $itemName }}" class="{{ $class }}" style="transform: scale({{ $scale }});" loading="lazy">
+{{ else }}
+    {{ warnf "Item '%s' in data/items.yaml nicht gefunden." $itemName }}
+{{ end }}
