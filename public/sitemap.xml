@@ -81,6 +81,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>http://localhost:1313/vinc-custom-changelog.github.io/changelog/1.21.9/release_old/</loc>
+    <lastmod>2025-09-09T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>http://localhost:1313/vinc-custom-changelog.github.io/changelog/1.21.9/25w37a/</loc>
     <lastmod>2025-09-09T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
