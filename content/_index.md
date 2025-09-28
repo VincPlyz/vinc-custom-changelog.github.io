@@ -68,7 +68,7 @@ Snapshots
 - 25w33a -- [Custom](/vinc-custom-changelog.github.io/changelog/1.21.9/25w33a/) - [Official](https://www.minecraft.net/en-us/article/minecraft-snapshot-25w33a)
 - 25w34a -- [Custom](/vinc-custom-changelog.github.io/changelog/1.21.9/25w34a/) - [Official](https://www.minecraft.net/en-us/article/minecraft-snapshot-25w34a)
 - 25w35a -- [Custom](/vinc-custom-changelog.github.io/changelog/1.21.9/25w35a/) - [Official](https://www.minecraft.net/en-us/article/minecraft-snapshot-25w35a)
-- 25w36a -- [Custom](/vinc-custom-changelog.github.io/changelog/1.21.9/25w36a/) - [Official](https://www.minecraft.net/en-us/article/minecraft-snapshot-25w36a)
+- 25w36a -- [Custom](/vinc-custom-changelog.github.io/changelog/1.21.9/25w36b/) - [Official](https://www.minecraft.net/en-us/article/minecraft-snapshot-25w36a)
 - 25w36b -- [Custom](/vinc-custom-changelog.github.io/changelog/1.21.9/25w36b/) - [Official](https://www.minecraft.net/en-us/article/minecraft-snapshot-25w37a)
 - 25w37a -- [Custom](/vinc-custom-changelog.github.io/changelog/1.21.9/25w37a/) - [Official](https://www.minecraft.net/en-us/article/minecraft-snapshot-25w38a)
 
@@ -90,9 +90,9 @@ Release Candidate
 ###   1.21.10 -- [Custom](/vinc-custom-changelog.github.io/changelog/1.21.10/release) - [Official](https://www.minecraft.net/de-de/article/minecraft-java-edition-1-21-10)
 
 Snapshots
-- 25w41a -- [Custom](/vinc-custom-changelog.github.io/changelog/1.21.9/25w41a/) - [Official](https://www.minecraft.net/en-us/article/minecraft-snapshot-25w41a)
+- 25w40a -- [Custom](/vinc-custom-changelog.github.io/changelog/1.21.9/25w40a/) - [Official](https://www.minecraft.net/en-us/article/minecraft-snapshot-25w40a)
 - or
-- 25w42a -- [Custom](/vinc-custom-changelog.github.io/changelog/1.21.9/25w42a/) - [Official](https://www.minecraft.net/en-us/article/minecraft-snapshot-25w42a)
+- 25w41a -- [Custom](/vinc-custom-changelog.github.io/changelog/1.21.9/25w41a/) - [Official](https://www.minecraft.net/en-us/article/minecraft-snapshot-25w41a)
 
 </details>
 

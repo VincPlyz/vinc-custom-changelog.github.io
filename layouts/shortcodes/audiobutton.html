@@ -1,0 +1,35 @@
+{{ $audioURL := .Get "url" }}                                   {{ $iconClass := .Get "icon" | default "fas fa-play-circle" }}  {{ $label := .Get "label" }}                                     
+{{ $volume := .Get "volume" | default 1.0 }}                   
+
+{{ $uniqueID := $audioURL | md5 }} 
+
+<audio 
+    id="audio-player-{{ $uniqueID }}" 
+    class="audio-player-control" 
+    src="{{ $audioURL }}" 
+    preload="auto">
+</audio>
+
+{{ $hasLabel := and $label (ne $label "") }}
+
+<span 
+    onclick="stopAllAudioPlayers(); 
+             document.getElementById('audio-player-{{ $uniqueID }}').volume = {{ $volume }}; 
+             document.getElementById('audio-player-{{ $uniqueID }}').play()"
+    style="cursor: pointer; 
+           display: inline-flex; 
+           align-items: center;"
+    title="Audio abspielen: {{ if $hasLabel }}{{ $label }}{{ else }}Sound{{ end }} (Lautstärke: {{ $volume }})"
+    aria-label="Audio abspielen: {{ if $hasLabel }}{{ $label }}{{ else }}Sound{{ end }}"
+>
+    <i 
+        class="{{ $iconClass }} audio-icon" 
+        style="font-size: 1em; margin-right: 5px;"
+    ></i>
+
+    {{ if $hasLabel }}
+        <span style="font-size: 1em; line-height: 1.2; color: inherit;">
+            {{ $label }}
+        </span>
+    {{ end }}
+</span>

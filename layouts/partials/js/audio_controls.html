@@ -1,0 +1,19 @@
+<script>
+    /**
+     * Pausiert alle Audio-Elemente auf der Seite mit der Klasse 'audio-player-control'.
+     * Setzt die Abspielposition auf 0 zurück.
+     */
+    function stopAllAudioPlayers() {
+        // Sucht nach allen <audio>-Elementen mit dieser Klasse
+        const players = document.querySelectorAll('.audio-player-control');
+        
+        players.forEach(player => {
+            // Prüfen, ob das Element ein <audio>-Element ist und bereits spielt
+            if (player.tagName === 'AUDIO' && !player.paused) {
+                player.pause();
+                // Setzt die Abspielposition auf den Anfang zurück (optional, aber empfohlen)
+                player.currentTime = 0; 
+            }
+        });
+    }
+</script>

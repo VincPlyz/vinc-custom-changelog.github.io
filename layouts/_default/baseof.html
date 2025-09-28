@@ -38,6 +38,7 @@
       {{- partial "footer.html" . -}}
       {{ if site.Params.enableSearch | default false }}
         {{- partial "search.html" . -}}
+        {{ partial "js/audio_controls.html" . }}
       {{ end }}
     </div>
   </body>

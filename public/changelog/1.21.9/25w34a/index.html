@@ -42,8 +42,8 @@
   <link
     type="text/css"
     rel="stylesheet"
-    href="/vinc-custom-changelog.github.io/css/main.bundle.min.b4fda19b2847a2adb7cc5e14ee5d5fa2f5b9d572d7a16bb3545d5c7cd156d34294c84ea1b187da9f1dff3e1770a3f85f484e1f33384290b2d368a9562d32ec3b.css"
-    integrity="sha512-tP2hmyhHoq23zF4U7l1fovW51XLXoWuzVF1cfNFW00KUyE6hsYfanx3/Phdwo/hfSE4fMzhCkLLTaKlWLTLsOw==">
+    href="/vinc-custom-changelog.github.io/css/main.bundle.min.cd3fcc9db31772d8c3dafb50d221d528869f2b619f52f8ceb62c04d36493600743f44e57c16a935adc58daff42bb6f91d1f879f42d26a7a7bfd2d256f4c969d4.css"
+    integrity="sha512-zT/MnbMXctjD2vtQ0iHVKIafK2GfUvjOtiwE02STYAdD9E5XwWqTWtxY2v9Cu2&#43;R0fh59C0mp6e/0tJW9Mlp1A==">
   
   
   <script
@@ -138,7 +138,7 @@
     
     
     "mainEntityOfPage": "true",
-    "wordCount": "1705"
+    "wordCount": "1706"
   }]
   </script>
 
@@ -662,9 +662,54 @@
 <li><code>fetchprofile name &lt;player name&gt;</code> - resolves profile by name (case-insensitive)</li>
 <li><code>fetchprofile id &lt;uuid&gt;</code> - resolves profile by id</li>
 </ul>
-<div class="developer-note">
-<strong>Developer's Note:</strong> /fetchprofile name W3eze
+<div class="command-block">
+  <span class="command-text">/fetchprofile name W3eze</span>
+  <button class="command-copy-btn" onclick="copyCommand(this)" title="Kopieren">
+    <i class="fas fa-copy"></i> </button>
 </div>
+
+<script>
+  function copyCommand(button) {
+    const commandText = button.previousElementSibling.textContent;
+    const originalTitle = button.title; 
+    const originalIconClass = button.querySelector('i').className; 
+
+    navigator.clipboard.writeText(commandText).then(() => {
+      button.title = "Kopiert!"; 
+      button.querySelector('i').className = "fas fa-check"; 
+      setTimeout(() => {
+        button.title = originalTitle; 
+        button.querySelector('i').className = originalIconClass; 
+      }, 2000);
+    }).catch(err => {
+      console.error("Fehler beim Kopieren: ", err);
+    });
+  }
+</script>
+<div class="command-block">
+  <span class="command-text">/fetchprofile id f84c6a79-0a4e-45e0-879b-cd49ebd4c4e2</span>
+  <button class="command-copy-btn" onclick="copyCommand(this)" title="Kopieren">
+    <i class="fas fa-copy"></i> </button>
+</div>
+
+<script>
+  function copyCommand(button) {
+    const commandText = button.previousElementSibling.textContent;
+    const originalTitle = button.title; 
+    const originalIconClass = button.querySelector('i').className; 
+
+    navigator.clipboard.writeText(commandText).then(() => {
+      button.title = "Kopiert!"; 
+      button.querySelector('i').className = "fas fa-check"; 
+      setTimeout(() => {
+        button.title = originalTitle; 
+        button.querySelector('i').className = originalIconClass; 
+      }, 2000);
+    }).catch(err => {
+      console.error("Fehler beim Kopieren: ", err);
+    });
+  }
+</script>
 
 <h3 class="relative group">Data Components 
     <div id="data-components" class="anchor"></div>
@@ -748,7 +793,7 @@
 </li>
 </ul>
 <div class="command-block">
-  <span class="command-text">/give @s minecraft:player_head[minecraft:profile={name:Floweryalina}]</span>
+  <span class="command-text">/give @s player_head[profile={name:Floweryalina}]</span>
   <button class="command-copy-btn" onclick="copyCommand(this)" title="Kopieren">
     <i class="fas fa-copy"></i> </button>
 </div>
@@ -1204,7 +1249,24 @@
     </section>
   </div>
 </div>
+<script>
+    
 
+    function stopAllAudioPlayers() {
+        
+        const players = document.querySelectorAll('.audio-player-control');
+        
+        players.forEach(player => {
+            
+            if (player.tagName === 'AUDIO' && !player.paused) {
+                player.pause();
+                
+                player.currentTime = 0; 
+            }
+        });
+    }
+</script>
+      
     </div>
   </body>
   

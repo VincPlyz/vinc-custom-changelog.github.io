@@ -42,8 +42,8 @@
   <link
     type="text/css"
     rel="stylesheet"
-    href="/vinc-custom-changelog.github.io/css/main.bundle.min.b4fda19b2847a2adb7cc5e14ee5d5fa2f5b9d572d7a16bb3545d5c7cd156d34294c84ea1b187da9f1dff3e1770a3f85f484e1f33384290b2d368a9562d32ec3b.css"
-    integrity="sha512-tP2hmyhHoq23zF4U7l1fovW51XLXoWuzVF1cfNFW00KUyE6hsYfanx3/Phdwo/hfSE4fMzhCkLLTaKlWLTLsOw==">
+    href="/vinc-custom-changelog.github.io/css/main.bundle.min.cd3fcc9db31772d8c3dafb50d221d528869f2b619f52f8ceb62c04d36493600743f44e57c16a935adc58daff42bb6f91d1f879f42d26a7a7bfd2d256f4c969d4.css"
+    integrity="sha512-zT/MnbMXctjD2vtQ0iHVKIafK2GfUvjOtiwE02STYAdD9E5XwWqTWtxY2v9Cu2&#43;R0fh59C0mp6e/0tJW9Mlp1A==">
   
   
   <script
@@ -138,7 +138,7 @@
     
     
     "mainEntityOfPage": "true",
-    "wordCount": "1632"
+    "wordCount": "1605"
   }]
   </script>
 
@@ -439,9 +439,11 @@
   >https://www.youtube.com/watch?v=jDYmkVMtE9k</a></li>
 </ul>
 <hr>
-<p>&ldquo;Snapshot 25w36a is out and it includes mannequins, a new technical entity that is spawned with commands and can be used as an NPC. Conflicting key binds will now function together allowing you to bind a key to multiple actions. And as always, this snapshot also includes technical tweaks and bug fixes.&rdquo;</p>
 <blockquote>
-<p><strong>Developer&rsquo;s Note</strong>: <em>This snapshot brings a large change to how we collect and draw block entities and particles. We don&rsquo;t anticipate any change of behaviors so please keep an eye out and report anything suspicious as a bug, thank you!</em></p></blockquote>
+<p>&ldquo;Snapshot 25w36a is out and it includes mannequins, a new technical entity that is spawned with commands and can be used as an NPC. Conflicting key binds will now function together allowing you to bind a key to multiple actions. And as always, this snapshot also includes technical tweaks and bug fixes.&rdquo;</p></blockquote>
+<div class="developer-note">
+<strong>Developer's Note:</strong> This snapshot brings a large change to how we collect and draw block entities and particles. We don't anticipate any change of behaviors so please keep an eye out and report anything suspicious as a bug, thank you!
+</div>
 
 <h3 class="relative group">End Light Flashes 
     <div id="end-light-flashes" class="anchor"></div>
@@ -478,7 +480,6 @@
 </ul>
 </li>
 </ul>
-<p><video src="/vinc-custom-changelog.github.io/videos/25w36a/keybinds_1.mp4" muted controls></video></p>
 
 <h2 class="relative group">Changes 
     <div id="changes" class="anchor"></div>
@@ -503,7 +504,7 @@
     
 </h3>
 <ul>
-<li>Die World Border ist nun dimensionsspezifisch
+<li>The World Border is now dimension-specific
 <ul>
 <li>Das bedeutet, dass jede Dimension ihre eigene Größe, Position usw. der Worldborder haben kann.</li>
 </ul>
@@ -762,15 +763,6 @@
 </li>
 <li><code>main_hand</code> - Which hand is the main hand of the Mannequn - one of left and right</li>
 </ul>
-<ul>
-<li>
-<blockquote>
-<p>Dev-Kommentare über die Mannequins/NPCs und den „NPC“-Tag, den man nicht entfernen können soll (zumindest in Vanilla) sowie darüber, wie man sie generell in Zukunft eventuell anpassen kann.</p></blockquote>
-</li>
-</ul>
-<img src="/vinc-custom-changelog.github.io/images/25w36a/dev_about_NPC_name_6.png" alt="" style="width:600px;"/>
-<img src="/vinc-custom-changelog.github.io/images/25w36a/dev_about_NPC_name_2.png" alt="" style="width:600px;"/>
-<img src="/vinc-custom-changelog.github.io/images/25w36a/dev_about_NPC_name_5.png" alt="" style="width:600px;"/>
 <ul>
 <li>
 <p>Mannequin datapack usecase beispiele der Community:</p>
@@ -1305,7 +1297,24 @@
     </section>
   </div>
 </div>
+<script>
+    
 
+    function stopAllAudioPlayers() {
+        
+        const players = document.querySelectorAll('.audio-player-control');
+        
+        players.forEach(player => {
+            
+            if (player.tagName === 'AUDIO' && !player.paused) {
+                player.pause();
+                
+                player.currentTime = 0; 
+            }
+        });
+    }
+</script>
+      
     </div>
   </body>
   

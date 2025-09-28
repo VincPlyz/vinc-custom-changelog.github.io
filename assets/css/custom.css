@@ -851,3 +851,18 @@ blockquote {
 .spoiler2:hover, .spoiler2:hover a { 
  background-color:white; 
 }
+
+
+/* Definiert die Klasse für alle Audio-Icons */
+.audio-icon {
+    /* Fügt eine sanfte Übergangsanimation hinzu */
+    transition: color 0.2s ease-in-out; 
+    /* Stellt die anfängliche Farbe ein (z.B. dunkles Grau) */
+    color: #969696; 
+}
+
+/* Ändert die Farbe beim Überfahren mit der Maus */
+.audio-icon:hover {
+    /* Wählen Sie eine auffällige Farbe (z.B. Blau oder Grün) */
+    color: var(--mc-accent2); 
+}

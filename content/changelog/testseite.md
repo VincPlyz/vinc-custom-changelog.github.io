@@ -85,6 +85,18 @@ https://vincplyz.github.io/vinc-custom-changelog.github.io/changelog/testseite/
     output="Copper_Chest"
 >}}
 
+---
+
+# Sound buttons
+
+ - {{< audiobutton "https://minecraft.wiki/images/transcoded/End_flash1.wav/End_flash1.wav.ogg" "fas fa-volume-up" "test">}}
+ - {{< audiobutton "https://minecraft.wiki/images/transcoded/End_flash2.wav/End_flash2.wav.ogg" "fas fa-volume-up" "test2">}}
+  {{< audiobutton "https://minecraft.wiki/images/transcoded/End_flash3.wav/End_flash3.wav.ogg" "fas fa-volume-up" >}}
+  {{< audiobutton "https://minecraft.wiki/images/transcoded/End_flash4.wav/End_flash4.wav.ogg" "fas fa-volume-up" >}}
+  {{< audiobutton "https://minecraft.wiki/images/transcoded/End_flash5.wav/End_flash5.wav.ogg" "fas fa-volume-up" >}}
+
+{{< audiobutton url="https://minecraft.wiki/images/transcoded/Copper_chest_open.wav/Copper_chest_open.wav.ogg" icon="fas fa-volume-up" volume="0.1" >}}
+- {{< audiobutton url="https://minecraft.wiki/images/transcoded/Copper_chest_open.wav/Copper_chest_open.wav.ogg" icon="fas fa-volume-up" label="test" volume="0.1" >}}
 
 ---
 

@@ -1,0 +1,19 @@
+{{ $emoteName := .Get 0 }} 
+{{ $emoteURL := index .Site.Data.emotes $emoteName }}
+
+{{ if $emoteURL }}
+    <span style="display: block; margin: 0; padding: 0; line-height: 1.2em;">
+        <img 
+            src="{{ $emoteURL }}" 
+            alt="7TV Emote: {{ $emoteName }}" 
+            title="{{ $emoteName }}"
+            loading="lazy"
+            style="height: 1em; 
+                   width: auto;
+                   vertical-align: middle; 
+                   display: inline-block;"
+        >
+    </span>
+{{ else }}
+    <span title="Emote nicht gefunden: {{ $emoteName }}">{{ $emoteName }}</span>
+{{ end }}

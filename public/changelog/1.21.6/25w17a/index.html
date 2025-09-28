@@ -42,8 +42,8 @@
   <link
     type="text/css"
     rel="stylesheet"
-    href="/vinc-custom-changelog.github.io/css/main.bundle.min.b4fda19b2847a2adb7cc5e14ee5d5fa2f5b9d572d7a16bb3545d5c7cd156d34294c84ea1b187da9f1dff3e1770a3f85f484e1f33384290b2d368a9562d32ec3b.css"
-    integrity="sha512-tP2hmyhHoq23zF4U7l1fovW51XLXoWuzVF1cfNFW00KUyE6hsYfanx3/Phdwo/hfSE4fMzhCkLLTaKlWLTLsOw==">
+    href="/vinc-custom-changelog.github.io/css/main.bundle.min.cd3fcc9db31772d8c3dafb50d221d528869f2b619f52f8ceb62c04d36493600743f44e57c16a935adc58daff42bb6f91d1f879f42d26a7a7bfd2d256f4c969d4.css"
+    integrity="sha512-zT/MnbMXctjD2vtQ0iHVKIafK2GfUvjOtiwE02STYAdD9E5XwWqTWtxY2v9Cu2&#43;R0fh59C0mp6e/0tJW9Mlp1A==">
   
   
   <script
@@ -948,7 +948,24 @@ waypoint modify -entity-selector- style reset
     </section>
   </div>
 </div>
+<script>
+    
 
+    function stopAllAudioPlayers() {
+        
+        const players = document.querySelectorAll('.audio-player-control');
+        
+        players.forEach(player => {
+            
+            if (player.tagName === 'AUDIO' && !player.paused) {
+                player.pause();
+                
+                player.currentTime = 0; 
+            }
+        });
+    }
+</script>
+      
     </div>
   </body>
   
