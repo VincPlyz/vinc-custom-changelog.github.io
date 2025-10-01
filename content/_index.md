@@ -37,7 +37,7 @@ draft: false
 <details class="details-inhaltsverzeichnis">
   <summary>1.21.6 - Chase the Skies</summary>
 
-###   1.21.6 -- ~[Custom](/vinc-custom-changelog.github.io/changelog/1.21.6/release)~ - [Official](https://www.minecraft.net/de-de/article/minecraft-java-edition-1-21-6)
+###   1.21.6 -- ~[Custom](/vinc-custom-changelog.github.io/changelog/1.21.6/1.21.9)~ - [Official](https://www.minecraft.net/de-de/article/minecraft-java-edition-1-21-6)
 
 Snapshots
 - 25w15a -- [Custom](/vinc-custom-changelog.github.io/changelog/1.21.6/25w15a/) - [Official](https://www.minecraft.net/en-us/article/minecraft-snapshot-25w15a)
@@ -51,16 +51,13 @@ Snapshots
 
 Pre Releases
 - Pre-1 -- [Custom](/vinc-custom-changelog.github.io/changelog/1.21.6/pre-1/) - [Offcial](https://www.minecraft.net/en-us/article/minecraft-1-21-6-pre-release-1)
-- 1.21.9-pre2 -- [Custom](/vinc-custom-changelog.github.io/changelog/1.21.9/1.21.9-pre2/) - [Official](https://www.minecraft.net/en-us/article/minecraft-1.21.9-pre-release-2)
-- 1.21.9-pre2 -- [Custom](/vinc-custom-changelog.github.io/changelog/1.21.9/1.21.9-pre2/) - [Official](https://www.minecraft.net/en-us/article/minecraft-1.21.9-pre-release-2)
-- 1.21.9-pre1 -- [Custom](/vinc-custom-changelog.github.io/changelog/1.21.9/1.21.9-pre1/) - [Official](https://www.minecraft.net/en-us/article/minecraft-1.21.9-pre-release-1)
 
 </details>
 
 <details class="details-inhaltsverzeichnis">
   <summary>1.21.9 - The Copper Age</summary>
 
-###   1.21.9 -- [Custom](/vinc-custom-changelog.github.io/changelog/1.21.9/release) - [Official](https://www.minecraft.net/de-de/article/minecraft-java-edition-1-21-9)
+###   1.21.9 -- [Custom](/vinc-custom-changelog.github.io/changelog/1.21.9/1.21.9) - [Official](https://www.minecraft.net/de-de/article/minecraft-java-edition-1-21-9)
 
 Snapshots
 - 25w31a -- [Custom](/vinc-custom-changelog.github.io/changelog/1.21.9/25w31a/) - [Official](https://www.minecraft.net/en-us/article/minecraft-snapshot-25w31a)
