@@ -523,10 +523,10 @@ video {
 
 
 /*====================================================
-  Countdow Timer
+  Countdow Timer https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/key-art/MCL_Fall25_KeyArt_FINAL_LOGO_1170x500.png
 ======================================================*/
 .countdown-container {
-  background-image: url("https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/key-art/MCL_Fall25_KeyArt_FINAL_LOGO_1170x500.png");
+  background-image: url("/vinc-custom-changelog.github.io/images/demo.png");
   background-size: contain;
   background-repeat: no-repeat;
   

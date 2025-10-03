@@ -6,12 +6,12 @@ showWordCount: falseT12:00:00+02:00
 draft: false
 ---
 
-<!-- <div class="countdown-container">
+<div class="countdown-container">
     <p id="demo"></p>
 </div>
 
 <script>
-    var countDownDate = new Date("Sep 27, 2025 19:00:00").getTime();
+    var countDownDate = new Date("Oct 25, 2025 12:00:00").getTime();
     var x = setInterval(function() {
       var now = new Date().getTime();
       var distance = countDownDate - now;
@@ -29,10 +29,10 @@ draft: false
       }
     }, 1000);
 </script>
- -->
+
 <!-- 
 # [-> All Official Teasers <-](/vinc-custom-changelog.github.io/changelog/live_teasers/) 
- -->
+-->
 
 <details class="details-inhaltsverzeichnis">
   <summary>1.21.6 - Chase the Skies</summary>
@@ -82,13 +82,11 @@ Release Candidate
 
 
 <details class="details-inhaltsverzeichnis">
-  <summary>1.21.10 - Mounts of Mayhem</summary>
+  <summary>1.21.11 - Mounts of Mayhem</summary>
 
-###   1.21.10 -- [Custom](/vinc-custom-changelog.github.io/changelog/1.21.10/release) - [Official](https://www.minecraft.net/de-de/article/minecraft-java-edition-1-21-10)
+###   1.21.11 -- [Custom](/vinc-custom-changelog.github.io/changelog/1.21.10/release) - [Official](https://www.minecraft.net/de-de/article/minecraft-java-edition-1-21-10)
 
 Snapshots
-- 25w40a -- [Custom](/vinc-custom-changelog.github.io/changelog/1.21.9/25w40a/) - [Official](https://www.minecraft.net/en-us/article/minecraft-snapshot-25w40a)
-- or
 - 25w41a -- [Custom](/vinc-custom-changelog.github.io/changelog/1.21.9/25w41a/) - [Official](https://www.minecraft.net/en-us/article/minecraft-snapshot-25w41a)
 
 </details>
