@@ -245,6 +245,63 @@ Warped_Shelf:
 
 # --------------
 
+# Ingots
+
+Iron_Ingot:
+  url: "https://minecraft.wiki/images/Invicon_Iron_Ingot.png"
+  scale: "1.0"
+
+Gold_Ingot:
+  url: "https://minecraft.wiki/images/Invicon_Gold_Ingot.png"
+  scale: "1.0"
+
+Diamond:
+  url: "https://minecraft.wiki/images/Invicon_Diamond.png"
+  scale: "1.0"
+
+Emerald:
+  url: "https://minecraft.wiki/images/Invicon_Emerald.png"
+  scale: "1.0"
+
+
+# --------------
+
+# Blocks
+
+Stone: 
+  url: "https://minecraft.wiki/images/Invicon_Stone.png"
+  scale: "1.0"
+
+# --------------
+
+# Spears
+
+Wooden_spear:
+  url: "https://minecraft.wiki/images/Wooden_Spear.png"
+  scale: "1.0"
+
+Stone_spear:
+  url: "https://minecraft.wiki/images/Stone_Spear.png"
+  scale: "1.0"
+
+Copper_spear:
+  url: "https://minecraft.wiki/images/Copper_Spear.png"
+  scale: "1.0"
+
+Iron_spear: 
+  url: "https://minecraft.wiki/images/Iron_Spear.png"
+  scale: "1.0"
+
+Gold_spear:
+  url: "https://minecraft.wiki/images/Golden_Spear.png"
+  scale: "1.0"
+
+Diamond_spear:
+  url: "https://minecraft.wiki/images/Diamond_Spear.png"
+
+
+# --------------
+
 # 2. DEFINITIONEN FÜR ITEM-GRUPPEN (z.B. chatg_planks)
 # Der Schlüssel (z.B. "chatg_planks") ist der Gruppenname, den Sie im Shortcode verwenden.
 # Die Gruppe muss eine Liste ("items:") der oben definierten Item-Namen enthalten.
@@ -309,4 +366,26 @@ chatg_coal:
   items:
     - Coal
     - Charcoal
+  scale: "1.0"
+
+
+tool_materials:
+  items:
+    - Oak_Planks
+    - Stone
+    - Copper_Ingot
+    - Iron_Ingot
+    - Gold_Ingot
+    - Diamond
+  scale: "1.0"
+
+
+chatg_spears:
+  items:
+    - Wooden_spear
+    - Stone_spear
+    - Copper_spear
+    - Iron_spear
+    - Gold_spear
+    - Diamond_spear
   scale: "1.0"
