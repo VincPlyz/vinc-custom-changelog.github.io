@@ -86,7 +86,7 @@ Release Candidate
 <details class="details-inhaltsverzeichnis">
   <summary>1.21.11 - Mounts of Mayhem</summary>
 
-###   1.21.11 -- [Custom](/vinc-custom-changelog.github.io/changelog/1.21.10/release) - [Official](https://www.minecraft.net/de-de/article/minecraft-java-edition-1-21-10)
+###   1.21.11 -- [Custom](/vinc-custom-changelog.github.io/changelog/1.21.11/release) - [Official](https://www.minecraft.net/de-de/article/minecraft-java-edition-1-21-10)
 
 Snapshots
 - 25w41a -- [Custom](/vinc-custom-changelog.github.io/changelog/1.21.11/25w41a/) - [Official](https://www.minecraft.net/en-us/article/minecraft-snapshot-25w41a)
