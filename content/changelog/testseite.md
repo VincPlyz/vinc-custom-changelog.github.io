@@ -19,6 +19,12 @@ https://vincplyz.github.io/vinc-custom-changelog.github.io/changelog/testseite/
 
 ---
 
+### Colored Text und Hover Text
+
+<p style="color:DodgerBlue;" title="Test">Mobs können das Enchant auch benutzen:</p>
+
+---
+
 ### Custom Emojis:
 
 #### Java 25 Update nächste version <img src="https://cdn.7tv.app/emote/01FPK71Q0G0008ZYPTDH5TYS48/1x.webp" style="display: inline; vertical-align: middle; height: 1em;">
