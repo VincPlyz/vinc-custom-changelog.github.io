@@ -1,0 +1,17 @@
+{{/*
+    Datei: layouts/shortcodes/list_compare.html
+    Beschreibung: Haupt-Container für einen flexiblen visuellen Vergleich.
+    Rendert alle verschachtelten {{< list_compare_item >}} Shortcodes in einer Flexbox-Reihe.
+*/}}
+
+{{ $title := .Get "title" }}
+
+<div class="vinc-compare-block">
+    {{ if $title }}
+        <h3 class="vinc-compare-title">{{ $title }}</h3>
+    {{ end }}
+
+    <div class="vinc-compare-wrapper">
+        {{ .Inner }}
+    </div>
+</div>

@@ -1,0 +1,34 @@
+{{/*
+    Datei: layouts/shortcodes/list_compare_item.html
+    Beschreibung: Repräsentiert eine einzelne Spalte im visuellen Vergleich.
+    NEU: Fügt den label-offset Parameter hinzu.
+*/}}
+
+{{ $label := .Get "label" }}
+{{ $img := .Get "img" }}
+{{ $width := .Get "width" | default "auto" }}
+{{ $yOffset := .Get "y-offset" | default "0" }}
+{{ $labelOffset := .Get "label-offset" | default "5px" }}  <div class="vinc-compare-col">
+    
+    {{/* 1. Das Label */}}
+    <div class="vinc-compare-label">{{ $label }}</div>
+    
+    {{/* 2. Die visuelle Trennlinie */}}
+    <div class="vinc-compare-separator" 
+         style="margin-bottom: {{ $labelOffset }};">  </div>
+
+    {{/* 3. Das Bild */}}
+    <div class="vinc-compare-img-wrapper">
+        {{ with $img }}
+            <img src="{{ . }}" 
+                 alt="{{ $label }}" 
+                 class="vinc-compare-img" 
+                 style="
+                     width: {{ $width }}; 
+                     max-width: 100%;
+                     transform: translateY({{ $yOffset }}); 
+                 " 
+            />
+        {{ end }}
+    </div>
+</div>

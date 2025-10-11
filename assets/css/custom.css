@@ -852,7 +852,9 @@ blockquote {
  background-color:white; 
 }
 
-
+/*====================================================
+  Audio Button
+======================================================*/
 /* Definiert die Klasse für alle Audio-Icons */
 .audio-icon {
     /* Fügt eine sanfte Übergangsanimation hinzu */
@@ -865,4 +867,177 @@ blockquote {
 .audio-icon:hover {
     /* Wählen Sie eine auffällige Farbe (z.B. Blau oder Grün) */
     color: var(--mc-accent2); 
+}
+
+/*====================================================
+  Image List Compare
+======================================================*/
+
+/* 1. Container für den gesamten Block */
+.vinc-compare-block {
+    /* WICHTIG: Keine obere Margin, um direkt an den vorherigen Inhalt anzudocken. */
+    margin-top: 0; 
+    margin-bottom: 1.5rem; /* Abstand nach unten bleibt gleich */
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 900px; 
+    text-align: left; 
+}
+
+/* 2. Stil für den optionalen Haupttitel */
+.vinc-compare-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    /* Reduzierter Abstand nach unten (zum ersten Label/Bild) */
+    margin-bottom: 0.5rem; 
+    color: var(--color-text-main); 
+    text-align: center; 
+}
+
+/* 3. Flex-Container (Wrapper) - Unverändert */
+.vinc-compare-wrapper {
+    display: flex;
+    justify-content: flex-start; 
+    align-items: flex-start;
+    gap: 30px; 
+    padding: 0 10px;
+}
+
+/* 4. Spalten-Container (vinc-compare-col) - Unverändert */
+.vinc-compare-col {
+    flex-grow: 0; 
+    flex-shrink: 0;
+    flex-basis: auto; 
+    text-align: center; 
+}
+
+/* 5. Labels - Unverändert */
+.vinc-compare-label {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 5px; 
+    color: var(--color-text-main);
+}
+
+/* 6. Die Trennlinie - Unverändert */
+.vinc-compare-separator {
+    width: 150px; 
+    max-width: 100%;
+    height: 1px;
+    background-color: var(--color-border);
+    margin: 0 auto; 
+}
+
+/* 7. Bild-Wrapper - Unverändert */
+.vinc-compare-img-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 200px; 
+}
+
+/* 8. Stile für die Bilder - Unverändert */
+.vinc-compare-img {
+    height: auto;
+    display: block; 
+    position: relative; 
+    transition: transform 0.2s ease-out; 
+}
+
+
+/*====================================================
+ Command v2 (ENDGÜLTIGE VERSION - Vergrößerter Button)
+======================================================*/
+
+.command-block-v2 {
+    display: block; 
+    position: relative; 
+    
+    background: rgb(52, 52, 52);
+    /* Vertikales Padding des Blocks bleibt (12px oben/unten) */
+    padding: 12px 15px 12px 20px; 
+    font-family: monospace;
+    overflow: hidden; 
+    margin-bottom: 20px;
+    border-radius: 2px;
+    box-shadow: var(--mc-shadow);
+}
+
+/* --- Command text --- */
+.command-text-v2 {
+    color: #f5f5f5;
+    font-size: 0.95rem;
+    display: block; 
+    
+    /* WICHTIG: Stellt sicher, dass die Scrollbar den Button nicht berührt. */
+    /* Die 80px reservierter Platz bleiben für Sicherheit (Button + Padding + Puffer). */
+    width: calc(100% - 80px); 
+    margin-right: auto;
+    
+    padding-bottom: 5px; 
+    padding-top: 5px;
+    
+    overflow-x: auto; 
+    scrollbar-width: thin;
+    scrollbar-color: #555 #2c2c2c;
+    
+    white-space: pre-wrap;
+}
+
+/* Wenn nowrap aktiv ist */
+.command-text-v2.nowrap {
+    white-space: nowrap;
+    word-break: normal; 
+}
+
+
+/* --- Copy button (QUADRAT-FIX durch feste Größe und Flexbox-Zentrierung) --- */
+.command-copy-btn-v2 {
+    position: absolute; 
+    top: 50%; 
+    right: 20px; 
+    transform: translateY(-50%); 
+    z-index: 100; 
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 52px;  
+    height: 44px; 
+    padding: 0; 
+    
+    background-color: rgba(43, 43, 43, 0.984);
+    border: none;
+    border-radius: 5px;
+    
+    cursor: pointer;
+    color: #fff; 
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.command-copy-btn-v2:hover {
+    background-color: var(--mc-accent2); 
+    color: var(--mc-text);
+}
+
+.command-copy-btn-v2 i {
+    /* Icon-Größe leicht erhöhen, um den größeren Button auszufüllen */
+    font-size: 1.1rem; 
+    line-height: 1; 
+}
+
+
+/* --- Custom scrollbar (WebKit browsers) --- */
+.command-text-v2::-webkit-scrollbar {
+    height: 6px;
+}
+.command-text-v2::-webkit-scrollbar-track {
+    background: rgba(43, 43, 43, 0.5);
+}
+.command-text-v2::-webkit-scrollbar-thumb {
+    background: #555;
+}
+.command-text-v2::-webkit-scrollbar-thumb:hover {
+    background: #777;
 }

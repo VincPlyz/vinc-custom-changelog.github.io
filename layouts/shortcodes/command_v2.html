@@ -1,0 +1,24 @@
+<!-- layouts/shortcodes/command_v2.html -->
+<div class="command-block-v2">
+  <span class="command-text-v2{{ if eq (.Get "nowrap") "true" }} nowrap{{ end }}">{{ .Inner }}</span>
+  <button class="command-copy-btn-v2" onclick="copyCommandV2(this)" title="Kopieren">
+    <i class="fas fa-copy"></i>
+  </button>
+</div>
+
+<script>
+  function copyCommandV2(button) {
+    const commandText = button.previousElementSibling.textContent.trim();
+    const originalTitle = button.title;
+    const originalIconClass = button.querySelector('i').className;
+
+    navigator.clipboard.writeText(commandText).then(() => {
+      button.title = "Kopiert!";
+      button.querySelector('i').className = "fas fa-check";
+      setTimeout(() => {
+        button.title = originalTitle;
+        button.querySelector('i').className = originalIconClass;
+      }, 2000);
+    }).catch(err => console.error("Fehler beim Kopieren:", err));
+  }
+</script>

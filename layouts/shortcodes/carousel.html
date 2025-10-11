@@ -7,8 +7,9 @@
     overflow: hidden;
     background: #2b2b2b;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
     height: 300px; /* Ändere diese Höhe nach Belieben */
+    display: flex;
+    justify-content: var(--carousel-align, center); /* Standard: zentriert */
 }
 
 .modern-carousel-slides {
@@ -135,11 +136,15 @@
 }
 </style>
 
-<div class="modern-carousel-container">
+<div class="modern-carousel-container" 
+    style="--carousel-align: {{ .Get 0 | default "center" }}; 
+           {{ if eq (.Get 0) "flex-start" }}margin-left: 0; margin-right: auto;{{ end }}
+           {{ if eq (.Get 0) "flex-end" }}margin-left: auto; margin-right: 0;{{ end }}
+           {{ if or (eq (.Get 0) "center") (not (.Get 0)) }}margin-left: auto; margin-right: auto;{{ end }};"
+>
     <div class="modern-carousel-slides">
         {{ $globalScale := default "1" (.Get "scale") }}
-        {{ range .Params }}
-        {{ $parts := split . "|" }}
+        {{ range after 1 .Params }} {{ $parts := split . "|" }}
         {{ $url := index $parts 0 }}
         {{ $caption := "" }}
         {{ if gt (len $parts) 1 }}{{ $caption = index $parts 1 }}{{ end }}
