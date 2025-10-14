@@ -91,6 +91,7 @@ Release Candidate
 
 Snapshots
 - 25w41a -- [Custom](/vinc-custom-changelog.github.io/changelog/1.21.11/25w41a/) - [Official](https://www.minecraft.net/en-us/article/minecraft-snapshot-25w41a)
+- 25w42a -- [Custom](/vinc-custom-changelog.github.io/changelog/1.21.11/25w42a/) - [Official](https://www.minecraft.net/en-us/article/minecraft-snapshot-25w42a)
 
 </details>
 
