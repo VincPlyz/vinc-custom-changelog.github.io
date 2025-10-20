@@ -1,0 +1,115 @@
+{{/* GALLERY V2 SHORTCODE 
+  Nutzung: {{< gallery_v2 scale="1.5" item_1="Item_1|0.5" class="..." style="..." >}}
+  
+  - 'scale': Globaler Skalierungsfaktor (z.B. "1.5").
+  - Der Wert nach '|' (z.B. "Item_2|0.5") ist ein individueller Faktor.
+  - Der 'style' Parameter wird NUR auf den Container (<div>) angewendet, um Konflikte mit 'transform' zu vermeiden.
+*/}}
+
+{{ $scContext := . }}
+
+{{/* 1. PARAMETER UND STANDARDWERTE */}}
+{{ $defaultClass := $scContext.Get "class" | default "grid-w25" }}
+{{ $defaultStyle := $scContext.Get "style" | default "" }}
+{{ $globalScale := $scContext.Get "scale" | default "1.0" | float }}
+
+{{/* Optional: Nutze die gleiche ID-Logik wie der ursprüngliche Gallery-Shortcode für den Container */}}
+{{ $id := delimit (slice "gallery" (partial "functions/uid.html" .)) "-" -}}
+
+{{/* 2. SAMMLE ALLE ITEMS in einer einzigen Liste */}}
+{{ $allItemsWithSuffix := slice }}
+
+{{/* A. Liste aus dem 'items' Parameter */}}
+{{ $itemNamesParam := $scContext.Get "items" }}
+{{ if $itemNamesParam }}
+  {{ $listItems := split $itemNamesParam "," }}
+  {{ range $listItem := $listItems }}
+    {{ $allItemsWithSuffix = $allItemsWithSuffix | append (trim $listItem " ") }}
+  {{ end }}
+{{ end }}
+
+{{/* B. Items aus den nummerierten 'item_X' Parametern */}}
+{{ range (seq 1 100) }}
+  {{ $paramName := printf "item_%d" . }}
+  {{ $itemValue := $scContext.Get $paramName }}
+  
+  {{ if $itemValue }}
+    {{ $allItemsWithSuffix = $allItemsWithSuffix | append (trim $itemValue " ") }}
+  {{ else }}
+    {{ break }}
+  {{ end }}
+{{ end }}
+
+
+<div id="{{- $id -}}" 
+     class="gallery-v2-container gallery" 
+     style="{{ $defaultStyle }}"> {{/* Style nur auf den Container angewendet */}}
+  
+  {{/* 3. VERARBEITE DIE GESAMMELTE LISTE */}}
+  {{ range $inputItemWithSuffix := $allItemsWithSuffix }}
+    
+    {{ $parts := split $inputItemWithSuffix "|" }}
+    {{ $inputItem := index $parts 0 }}
+    
+    {{ $explicitScale := "" }}
+    
+    {{/* Der zweite Teil der Pipe ist die explizite Skalierung (String) */}}
+    {{ if gt (len $parts) 1 }}
+      {{ $explicitScale = index $parts 1 }}
+    {{ end }}
+    
+    {{ $urlList := slice }}
+    {{ $itemDefaultScale := "1.0" }}
+    
+    {{ if or (hasPrefix $inputItem "http://") (hasPrefix $inputItem "https://") }}
+      {{/* A. DIREKTE URL erkannt */}}
+      {{ $urlList = $urlList | append $inputItem }}
+      
+    {{ else }}
+      {{/* B. ITEM NAME ODER GRUPPE aus items.yaml */}}
+      {{ $itemData := index $.Site.Data.items $inputItem }}
+      
+      {{ if $itemData }}
+        {{/* Item-Gruppe (z.B. chatg_spears) */}}
+        {{ if $itemData.items }}
+          {{ range $subItemName := $itemData.items }}
+            {{ $subItemData := index $.Site.Data.items $subItemName }}
+            {{ if $subItemData.url }}
+              {{ $urlList = $urlList | append $subItemData.url }}
+              {{ $itemDefaultScale = $subItemData.scale | default "1.0" }}
+            {{ end }}
+          {{ end }}
+        
+        {{/* Einzel-Item (z.B. Wooden_spear) */}}
+        {{ else if $itemData.url }}
+          {{ $urlList = $urlList | append $itemData.url }}
+          {{ $itemDefaultScale = $itemData.scale | default "1.0" }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+    
+    {{/* Finaler Skalierungs-Faktor: Multiplikation der YAML-Skalierung mit der expliziten Skalierung und dem globalen Scale-Parameter */}}
+    {{ $yamlScaleFloat := float $itemDefaultScale }}
+    {{ $individualScaleFactor := 1.0 }}
+    {{ if $explicitScale }}
+      {{ $individualScaleFactor = float $explicitScale }}
+    {{ end }}
+
+    {{ $finalScaleFloat := mul $yamlScaleFloat $individualScaleFactor | mul $globalScale }}
+    
+    {{/* Der finale Inline-Style (enthält nur transform: scale()) */}}
+    {{ $inlineScaleStyle := "" }}
+    {{ if ne $finalScaleFloat 1.0 }}
+        {{ $inlineScaleStyle = printf "transform: scale(%f); transform-origin: center center;" $finalScaleFloat }}
+    {{ end }}
+    
+
+    {{/* 4. GENERIERE DIE <img> TAGS */}}
+    {{ range $url := $urlList }}
+      {{/* Anwendung der Skalierung über den Inline-Style. Beachte: $defaultStyle wird NICHT mehr hier angewendet. */}}
+      <img src="{{ $url }}" class="{{ $defaultClass }}" style="{{ $inlineScaleStyle }}" alt="{{ $inputItem }}">
+    {{ end }}
+    
+  {{ end }}
+
+</div>

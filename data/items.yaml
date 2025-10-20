@@ -277,27 +277,27 @@ Stone:
 # Spears
 
 Wooden_spear:
-  url: "https://minecraft.wiki/images/Wooden_Spear.png"
+  url: "https://minecraft.wiki/images/Wooden_Spear_JE1_BE1.png"
   scale: "1.0"
 
 Stone_spear:
-  url: "https://minecraft.wiki/images/Stone_Spear.png"
+  url: "https://minecraft.wiki/images/Stone_Spear_JE1_BE1.png"
   scale: "1.0"
 
 Copper_spear:
-  url: "https://minecraft.wiki/images/Copper_Spear.png"
+  url: "https://minecraft.wiki/images/Copper_Spear_JE1_BE1.png"
   scale: "1.0"
 
 Iron_spear: 
-  url: "https://minecraft.wiki/images/Iron_Spear.png"
+  url: "https://minecraft.wiki/images/Iron_Spear_JE1_BE1.png"
   scale: "1.0"
 
 Gold_spear:
-  url: "https://minecraft.wiki/images/Golden_Spear.png"
+  url: "https://minecraft.wiki/images/Golden_Spear_JE1_BE1.png"
   scale: "1.0"
 
 Diamond_spear:
-  url: "https://minecraft.wiki/images/Diamond_Spear.png"
+  url: "https://minecraft.wiki/images/Diamond_Spear_JE1_BE1.png"
 
 
 # --------------
