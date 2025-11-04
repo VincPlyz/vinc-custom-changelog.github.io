@@ -54,6 +54,7 @@ Snapshots
 - 25w42a -- [Custom](/vinc-custom-changelog.github.io/changelog/25w42a/25w42a/) - [Official](https://www.minecraft.net/en-us/article/minecraft-snapshot-25w42a)
 - 25w43a -- [Custom](/vinc-custom-changelog.github.io/changelog/25w43a/25w43a/) - [Official](https://www.minecraft.net/en-us/article/minecraft-snapshot-25w43a)
 - 25w44a -- [Custom](/vinc-custom-changelog.github.io/changelog/25w44a/25w44a/) - [Official](https://www.minecraft.net/en-us/article/minecraft-snapshot-25w44a)
+- 25w45a -- [Custom](/vinc-custom-changelog.github.io/changelog/25w45a/25w45a/) - [Official](https://www.minecraft.net/en-us/article/minecraft-snapshot-25w45a)
 
 Pre Releases
 - Pre-1 -- [Custom](/vinc-custom-changelog.github.io/changelog/1.21.6/pre-1/) - [Offcial](https://www.minecraft.net/en-us/article/minecraft-1-21-6-pre-release-1)
@@ -97,6 +98,7 @@ Snapshots
 - 25w42a -- [Custom](/vinc-custom-changelog.github.io/changelog/1.21.11/25w42a/) - [Official](https://www.minecraft.net/en-us/article/minecraft-snapshot-25w42a)
 - 25w43a -- [Custom](/vinc-custom-changelog.github.io/changelog/1.21.11/25w43a/) - [Official](https://www.minecraft.net/en-us/article/minecraft-snapshot-25w43a)
 - 25w44a -- [Custom](/vinc-custom-changelog.github.io/changelog/1.21.11/25w44a/) - [Official](https://www.minecraft.net/en-us/article/minecraft-snapshot-25w44a)
+- 25w45a -- [Custom](/vinc-custom-changelog.github.io/changelog/1.21.11/25w45a/) - [Official](https://www.minecraft.net/en-us/article/minecraft-snapshot-25w45a)
 
 </details>
 
