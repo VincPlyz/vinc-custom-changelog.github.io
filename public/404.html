@@ -1,10 +1,12 @@
 <!doctype html>
 <html
-  lang="en"
-  dir="ltr"
-  class="scroll-smooth"
-  data-default-appearance="dark"
-  data-auto-appearance="false"><head><script src="/vinc-custom-changelog.github.io/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=vinc-custom-changelog.github.io/livereload" data-no-instant defer></script>
+  lang="en"
+  dir="    ltr
+ "
+  class="scroll-smooth"
+  data-default-appearance="dark"
+  data-auto-appearance="false">
+<script src="/vinc-custom-changelog.github.io/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=vinc-custom-changelog.github.io/livereload" data-no-instant defer></script> <head>
   <meta charset="utf-8">
   
     <meta http-equiv="content-language" content="en">
@@ -165,19 +167,19 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 </head>
-<body
-    class="flex flex-col h-screen px-6 m-auto text-lg leading-7 max-w-7xl bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral sm:px-14 md:px-24 lg:px-32 scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600">
-    <div id="the-top" class="absolute flex self-center">
-      <a
-        class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 focus:translate-y-0 dark:bg-neutral-600"
-        href="#main-content">
-        <span class="font-bold text-primary-600 ltr:pr-2 rtl:pl-2 dark:text-primary-400">&darr;</span>
-        Skip to main content
-      </a>
-    </div>
-    
-    
-      
+  <body
+    class="flex flex-col h-screen px-6 m-auto text-lg leading-7 max-w-7xl bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral sm:px-14 md:px-24 lg:px-32 scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600">
+    <div id="the-top" class="absolute flex self-center">
+      <a
+        class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 focus:translate-y-0 dark:bg-neutral-600"
+        href="#main-content">
+        <span class="font-bold text-primary-600 ltr:pr-2 rtl:pl-2 dark:text-primary-400">&darr;</span>
+        Skip to main content
+      </a>
+    </div>
+    
+    
+      
 
 
 
@@ -262,10 +264,10 @@
 
 
 
-    
-    <div class="relative flex flex-col grow">
-      <main id="main-content" class="grow">
-        
+    
+    <div class="relative flex flex-col grow">
+      <main id="main-content" class="grow">
+        
   <h1 class="mb-3 text-4xl font-extrabold">Page Not Found 😕</h1>
   <p class="mt-8 mb-12 text-neutral-400 dark:text-neutral-500">
     Error 404
@@ -274,8 +276,9 @@
     <p>It seems that the page you've requested does not exist.</p>
   </div>
 
-        
-      </main><footer id="site-footer" class="py-10 print:hidden">
+        
+      </main>
+     <footer id="site-footer" class="py-10 print:hidden">
   
   
   <div class="flex items-center justify-between">
@@ -309,7 +312,8 @@
   
   
 </footer>
-<div
+      
+       <div
   id="search-wrapper"
   class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh] z-500"
   data-url="http://localhost:1313/vinc-custom-changelog.github.io/">
@@ -344,7 +348,7 @@
     </section>
   </div>
 </div>
-<script>
+        <script>
     
 
     function stopAllAudioPlayers() {
@@ -361,8 +365,19 @@
         });
     }
 </script>
-      
+      
+    </div>
+    
+    <div id="bug-modal-overlay" style="display:none;" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75 p-4">
+        <div id="bug-modal-content" class="relative w-full max-w-2xl max-h-full overflow-y-auto rounded-lg shadow-lg bg-neutral dark:bg-neutral-800 p-6">
+            <button id="close-modal-button" class="absolute top-3 right-3 text-2xl font-bold text-neutral-600 dark:text-neutral-400 hover:text-red-500 transition duration-150">&times;</button>
+            <div id="bug-info-display" class="pt-4 text-neutral-900 dark:text-neutral">
+                </div>
+        </div>
     </div>
-  </body>
-  
+    <script src="/js/bug-modal.js"></script>
+
+
+  </body>
+  
 </html>

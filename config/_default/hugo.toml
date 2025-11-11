@@ -70,3 +70,12 @@ enableEmoji = true
 
 [params]
   customCSS = ["css/minecraft-changelog.css"]
+
+[minify]
+  disableCSSMinify = false
+  disableHTMLMinify = false
+  disableJSMinify = false
+
+[mediaTypes]
+  [mediaTypes."text/javascript"]
+    suffixes = ["js"]

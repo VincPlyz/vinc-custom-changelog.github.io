@@ -1,15 +1,21 @@
+{{/* Shortcode: buglink.html
+    Verwendung: {{< buglink "MC-12345" "Text für den Link" >}}
+    Ruft die globale JavaScript-Funktion showBugModal() auf.
+*/}}
+
 {{ $bugID := .Get 0 | upper }}
-{{ $linkText := .Get 1 | default $bugID }} 
+{{ $linkText := .Get 1 | default $bugID }}
 
-{{ $baseUrl := .Site.BaseURL }}
-{{ $bugPath := "/mc-bug/" }} 
-{{ $targetUrl := printf "%s%s#%s" $baseUrl $bugPath $bugID }}
-
-{{/* Entferne doppelte Schrägstriche, falls BaseURL bereits mit einem Schrägstrich endet */}}
-{{ $targetUrl = replace $targetUrl "//" "/" }}
-
-{{ $link := printf `<a href="%s" target="_blank" title="Zu Bug-Report %s springen">%s</a>` 
-    $targetUrl
+{{/* Wir verwenden "return false;", um zu verhindern, dass die Seite nach oben springt */}}
+{{ $link := printf `<a 
+    href="#%s" 
+    onclick="showBugModal('%s'); return false;" 
+    title="Details für Bug %s anzeigen"
+    class="bug-link">
+    %s
+</a>` 
+    $bugID 
+    $bugID 
     $bugID 
     $linkText 
 }}
