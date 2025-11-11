@@ -108,6 +108,8 @@ Snapshots
 
 --- 
 
+- [Builtin Bug Viewer](/vinc-custom-changelog.github.io/mc-bug/)
+
 - [Old Versions](/vinc-custom-changelog.github.io/old_versions/)
 
 
