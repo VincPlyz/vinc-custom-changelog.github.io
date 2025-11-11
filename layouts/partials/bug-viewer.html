@@ -1,48 +1,24 @@
-<style>
-/* Basic styling for the bug viewer to match the Blowfish theme look and feel */
-.bug-card {
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    background-color: var(--color-background-card); /* Inherit card background from Blowfish */
-    margin-top: 20px;
-    border-left: 5px solid var(--color-primary); /* Add a splash of color */
-}
+<link rel="stylesheet" href="{{ "css/bug-viewer-custom.css" | relURL }}">
 
-.bug-header h2 a {
-    text-decoration: none;
-    color: var(--color-heading);
-    font-size: 1.5em;
-}
+<div class="bug-viewer-wrapper">
 
-.bug-details p {
-    margin: 5px 0;
-}
+    <div class="search-container">
+        <input type="text" id="bug-key-input" placeholder="MC-4, MC-100, MCPE-12345, etc." value="MC-4">
+        <button id="load-bug-button">Laden</button>
+    </div>
+    
+    <div id="bug-viewer-container">
+        <div class="bug-card">
+            <h2>MC-4 - ITEM DROPS SOMETIMES APPEAR AT THE WRONG LOCATION</h2>
+            <p><strong>Status:</strong> <span class="bug-status status-reopened">Reopened</span></p>
+            <p><strong>Reported By:</strong> Ezekiel</p>
+            <p><strong>Created On:</strong> 24.10.2012</p>
+            <hr>
+            <h3>Beschreibung</h3>
+            <p>Lade Bug Report...</p>
+        </div>
+    </div>
 
-.bug-status {
-    padding: 2px 8px;
-    border-radius: 4px;
-    color: #fff;
-    font-weight: bold;
-    display: inline-block;
-}
-
-/* Status colors (customize these) */
-.status-open, .status-new {
-    background-color: #2ECC71; /* Green */
-}
-
-.status-resolved, .status-fixed {
-    background-color: #3498DB; /* Blue */
-}
-
-.status-closed, .status-invalid {
-    background-color: #E74C3C; /* Red */
-}
-</style>
-
-<div id="bug-viewer-container">
-    <p>Loading Minecraft Bug Report (MC-4)...</p>
 </div>
 
 <script src="{{ "js/bug-viewer.js" | relURL }}" defer></script>

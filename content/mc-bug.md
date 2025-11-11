@@ -1,11 +1,11 @@
 ---
-title: "Minecraft Bug MC-4 Viewer"
-date: 2024-01-01T12:00:00+02:00
+title: ""
+showReadingTime: false
+showWordCount: false
+showDate: false
 draft: false
-layout: "single" 
+layout: "single-fullwidth" 
 # Use the 'single' layout, which is standard for Blowfish pages
 ---
-
-This page dynamically fetches and displays the details for the historic Minecraft bug **MC-4** directly from the Mojira API.
 
 {{< bugviewer >}}

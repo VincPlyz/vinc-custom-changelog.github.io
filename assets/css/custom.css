@@ -1041,3 +1041,160 @@ blockquote {
 .command-text-v2::-webkit-scrollbar-thumb:hover {
     background: #777;
 }
+
+
+/* ====================================================
+   4. Bug Viewer Spezifisches Styling (Final Version)
+   ==================================================== */
+
+/* 1. KARTEN-STYLING (Breite maximieren) */
+.bug-card {
+    /* ERHÖHT: Setzt die maximale Breite, um mehr Platz zu schaffen */
+    max-width: 1200px;
+    width: 95%; /* Auf kleineren Bildschirmen 95% Breite */
+    
+    margin: 30px auto; 
+    padding: 30px; 
+    
+    border-radius: var(--mc-border-radius-large);
+    box-shadow: var(--mc-shadow); 
+    background-color: var(--mc-panel); 
+    border: 1px solid #3d3d3d; 
+    border-left: 5px solid var(--mc-accent2); /* Grüner Akzent */
+    color: var(--mc-text);
+}
+
+/* 2. SUCHE: Kontrast und Sichtbarkeit */
+.search-container {
+    display: flex;
+    gap: 10px;
+    /* ERHÖHT: Passt die Breite an die neue bug-card an */
+    max-width: 1200px;
+    width: 95%;
+    margin: 30px auto 30px auto; 
+}
+.search-container input, .search-container button {
+    padding: 12px; 
+    border-radius: var(--mc-border-radius-small);
+    font-size: 1em;
+    font-family: var(--mc-body-font);
+}
+
+.search-container input {
+    flex-grow: 1;
+    /* Dunkler als Panel für besseren Fokus und lesbarer Text */
+    border: 1px solid #484848; 
+    background-color: #1a1a1a; 
+    color: var(--mc-text); 
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.6); 
+}
+
+.search-container button {
+    cursor: pointer;
+    background-color: var(--mc-accent); 
+    border: 1px solid var(--mc-accent);
+    color: var(--mc-core-rich-black); 
+    font-weight: bold;
+    font-family: var(--mc-heading-2);
+    transition: background-color 0.2s;
+}
+.search-container button:hover {
+    background-color: var(--mc-accent2); 
+    border-color: var(--mc-accent2);
+}
+
+/* 3. Visuelle Trennung (Problem 3: Gestrichelte Linie entfernen) */
+.bug-details {
+    /* ENTFALLEN: padding-bottom und border-bottom wurden entfernt */
+    margin-bottom: 20px;
+}
+.bug-details strong {
+    color: var(--mc-muted); 
+    font-family: var(--mc-body-font);
+    font-weight: normal;
+}
+
+/* Die horizontale Linie im HTML (die Sie nicht entfernen wollten) */
+.bug-card hr {
+    border: none;
+    height: 1px;
+    background-color: #686868; /* Heller als der Hintergrund, aber subtil */
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+/* 4. Statusfarben (Ihre genauen Wünsche) */
+.bug-status {
+    padding: 2px 8px;
+    border-radius: var(--mc-border-radius-small);
+    font-weight: bold;
+    display: inline-block;
+    color: var(--mc-core-rich-black);
+}
+
+/* Zustand: Resolved/Fixed (Grüner Text) */
+.status-resolved {
+    background-color: var(--mc-accent2); /* Grüner Tag */
+    color: var(--mc-core-rich-black); /* Schwarzer Text auf Grün */
+}
+
+/* Zustand: Reopened (Normaler weißer Text) */
+.status-reopened {
+    background-color: var(--mc-panel); /* Hintergrundfarbe des Panels */
+    color: var(--mc-text); /* Weißer Text */
+}
+
+/* Zustand: Wont Fix/Invalid (Rot) */
+.status-wont-fix, .status-invalid, .status-duplicate {
+    background-color: #E74C3C; /* Roter Tag */
+    color: var(--mc-core-rich-black); /* Schwarzer Text auf Rot */
+}
+
+/* Zustand: Offen/Triage (Neutral) */
+.status-open, .status-new {
+    background-color: #3498DB; /* Blauer Tag */
+    color: var(--mc-core-rich-black);
+}
+
+/* 5. Überschriften und Code-Blöcke (für gute Trennung) */
+.bug-description h3, .bug-description h4 {
+    color: var(--mc-accent2); 
+    text-shadow: none;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.25em; 
+    /* Klarer visueller Separator für H3/H4 */
+    border-bottom: 1px solid var(--mc-muted); 
+    padding-bottom: 3px;
+}
+
+.bug-description pre {
+    /* Konsistenz: Verwendet die Code-Farbe von custom.css */
+    background-color: #1a1a1a; 
+    color: var(--mc-code-block); 
+    padding: 15px;
+    border-radius: var(--mc-border-radius-small);
+    overflow-x: auto; 
+    margin-top: 15px;
+    font-size: 0.95em;
+    font-family: monospace;
+}
+
+/* ====================================================
+   5. Spezifische Skalierung für Bug Viewer auf großen Bildschirmen
+   ==================================================== */
+
+.bug-viewer-scale {
+    /* Reduziert die Grundschriftgröße (und damit die gesamte Skalierung) auf 80%.
+       Die 80% des 4K-Browser-Zooms entsprechen. */
+    font-size: 80%;
+}
+
+/* Optional: Medienabfrage, falls Sie die Skalierung nur für sehr große Bildschirme wünschen */
+@media (min-width: 2560px) {
+    .bug-viewer-scale {
+        /* Setzt die Skalierung auf 80%, wenn die Bildschirmbreite über 2560px liegt */
+        font-size: 80% !important;
+    }
+}
+

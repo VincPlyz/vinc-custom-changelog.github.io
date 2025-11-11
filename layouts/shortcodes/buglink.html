@@ -1,0 +1,17 @@
+{{ $bugID := .Get 0 | upper }}
+{{ $linkText := .Get 1 | default $bugID }} 
+
+{{ $baseUrl := .Site.BaseURL }}
+{{ $bugPath := "/mc-bug/" }} 
+{{ $targetUrl := printf "%s%s#%s" $baseUrl $bugPath $bugID }}
+
+{{/* Entferne doppelte Schrägstriche, falls BaseURL bereits mit einem Schrägstrich endet */}}
+{{ $targetUrl = replace $targetUrl "//" "/" }}
+
+{{ $link := printf `<a href="%s" target="_blank" title="Zu Bug-Report %s springen">%s</a>` 
+    $targetUrl
+    $bugID 
+    $linkText 
+}}
+
+{{ $link | safeHTML }}
