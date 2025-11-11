@@ -1,0 +1,7 @@
+# hugo.toml im Projektstamm
+# Diese Datei überschreibt alle gleichnamigen Einstellungen des Themes.
+
+[minify]
+  disableCSSMinify = false
+  disableHTMLMinify = false
+  disableJSMinify = false
