@@ -1,5 +1,7 @@
+(function() { // IIFE zur Vermeidung von globalen Scope-Konflikten
+
 const CONTAINER_ID = 'bug-viewer-container';
-// NEU: Verwenden Sie die URL Ihres Cloudflare Workers für den Proxy
+// Der Cloudflare Worker Proxy
 const PROXY_BASE_URL = 'https://mojira-bug-proxy.vincplyz.workers.dev'; 
 const API_PATH_PREFIX = '/api/v1/issues/'; 
 
@@ -25,10 +27,10 @@ function generateHtmlFromAdf(node) {
             html = innerContent;
             break;
         case 'heading':
-            // Verwenden Sie H4 für untergeordnete Überschriften wie "How to reproduce"
-            const level = node.attrs && node.attrs.level ? node.attrs.level : 3;
             // Wir begrenzen das Level, da H1/H2 bereits für den Titel verwendet werden
+            const level = node.attrs && node.attrs.level ? node.attrs.level : 3;
             if (level >= 3) {
+                 // Verwenden H4 für untergeordnete Überschriften
                  html = `<h4>${innerContent}</h4>`;
             } else {
                  html = `<p>${innerContent}</p>`;
@@ -64,7 +66,7 @@ function generateHtmlFromAdf(node) {
             if (node.marks && Array.isArray(node.marks)) {
                  node.marks.forEach(mark => {
                     if (mark.type === 'link' && mark.attrs?.href) {
-                        html = `<a href="${mark.attrs.href}" target="_blank">${html}</a>`;
+                        html = `<a href="${mark.attrs.href}" target="_blank" style="color: var(--mc-accent2);">${html}</a>`;
                     }
                     if (mark.type === 'strong') {
                         html = `<strong>${html}</strong>`;
@@ -89,35 +91,28 @@ function generateHtmlFromAdf(node) {
 
 /**
  * Initialisiert die Kopier-Funktionalität NUR innerhalb des übergebenen Containers.
- * Wird jedes Mal nach dem Laden eines neuen Bugs aufgerufen.
  */
 function initializeCopyButtons(containerElement) {
     if (!containerElement) return;
 
-    // Wir entfernen und fügen den Listener nicht ständig neu hinzu, 
-    // stattdessen verwenden wir Event Delegation auf dem Container.
-    // Wir müssen nur sicherstellen, dass dieser Listener einmalig außerhalb 
-    // der loadBugReport-Funktion registriert wird, aber da die DOM-Elemente 
-    // jedes Mal neu gesetzt werden, ist die Delegation am Container der beste Weg.
-    
-    containerElement.addEventListener('click', (event) => {
-        const button = event.target.closest('.copy-code-button');
-        if (button) {
-            const textToCopy = button.getAttribute('data-clipboard-text');
+    const buttons = containerElement.querySelectorAll('.copy-code-button');
+    buttons.forEach(button => {
+         button.addEventListener('click', function() {
+            const textToCopy = this.getAttribute('data-clipboard-text');
             if (textToCopy) {
-                // Clipboard API verwenden
+                // Verwenden der modernen Clipboard API
                 navigator.clipboard.writeText(textToCopy).then(() => {
-                    const originalText = button.textContent;
-                    button.textContent = 'Kopiert!';
+                    const originalText = this.textContent;
+                    this.textContent = 'Kopiert!';
                     setTimeout(() => {
-                        button.textContent = originalText;
+                        this.textContent = originalText;
                     }, 1500);
                 }).catch(err => {
                     console.error('Kopieren fehlgeschlagen:', err);
                     alert('Kopieren fehlgeschlagen. Bitte manuell kopieren.');
                 });
             }
-        }
+        });
     });
 }
 
@@ -135,59 +130,76 @@ async function loadBugReport(bugKey) {
         return;
     }
 
-    // Display loading status
-    container.innerHTML = `<p>Lade Minecraft Bug Report (${bugKey.toUpperCase()})...</p>`;
+    // Display loading status (WICHTIG: Überschreibt das gesamte Bug-Card-HTML)
+    container.innerHTML = `
+        <div class="bug-card">
+            <p><strong>Lade Minecraft Bug Report (${bugKey.toUpperCase()})...</strong></p>
+        </div>
+    `;
 
-    // NEU: Erstellt die vollständige URL für den Worker
     const PROXY_URL = `${PROXY_BASE_URL}${API_PATH_PREFIX}${bugKey.toUpperCase()}`;
-
 
     try {
         const response = await fetch(PROXY_URL);
         
+        // Fängt 404, 500 etc. vom Proxy ab
         if (!response.ok) {
-            // Fehlstatus vom Worker oder der API (z.B. 404 Not Found)
             throw new Error(`API Fehler! Status: ${response.status}.`);
         }
         
-        // NEU: Der Cloudflare Worker gibt direkt sauberes JSON zurück
-        const data = await response.json(); 
+        // --- KORREKTUR: Antwort als Text lesen und dann JSON parsen ---
+        let rawText = await response.text();
+        let data;
         
+        // NEU: Abfangen des Proxy-Fehlertexts, wenn ID nicht gefunden wird
+        if (rawText.includes("Issue not found")) {
+            throw new Error(`Bug ID "${bugKey.toUpperCase()}" wurde nicht gefunden.`);
+        }
+        
+        try {
+            // VERSUCH, den Text als JSON zu parsen
+            data = JSON.parse(rawText);
+        } catch (e) {
+            // Fängt Fehler ab, falls der Worker ungültiges JSON zurückgibt
+            throw new Error(`Fehler beim Parsen der API-Antwort: ${e.message}.`);
+        }
         
         // --- FINALE Parsing logic ---
-        // Die Mojira-API ist inkonsistent, daher prüfen wir 'fields' oder das Hauptobjekt
         const fields = data.fields || data; 
         
         const issueKey = data.key || bugKey.toUpperCase(); 
         const summary = fields?.summary || 'Zusammenfassung nicht gefunden (Feld fehlt)';
         
-        // KORRIGIERT: Abfragen der Top-Level-Eigenschaften mit Fallbacks
-        const status = fields?.status?.name || fields?.status || 'Unbekannt (Feld fehlt)';
-        const reporter = fields?.reporter?.displayName || fields?.reporter_name || 'Unbekannt (Feld fehlt)';
-        const created = fields?.created ? new Date(fields.created).toLocaleDateString() : (fields?.created_date ? new Date(fields.created_date).toLocaleDateString() : 'N/A (Feld fehlt)');
+        const status = fields?.status?.name || fields?.status || 'Unbekannt';
+        const reporter = fields?.reporter?.displayName || fields?.reporter_name || 'Unbekannt';
+        // Korrigiertes Fallback für das Erstellungsdatum
+        const created = fields?.created ? new Date(fields.created).toLocaleDateString('de-DE') : (fields?.created_date ? new Date(fields.created_date).toLocaleDateString('de-DE') : 'N/A');
         
         const rawAdfDescription = fields?.description;
-        let descriptionOutput = 'Keine Beschreibung vorhanden (Feld fehlt).';
+        let descriptionOutput = 'Keine Beschreibung vorhanden.';
 
         if (rawAdfDescription) {
             try {
+                // ADF-Parsing
                 const adfObject = JSON.parse(rawAdfDescription);
                 descriptionOutput = generateHtmlFromAdf(adfObject); 
             } catch (e) {
-                // Zeigt Raw-Daten bei Parse-Fehler
-                descriptionOutput = `<p>Fehler beim Parsen der Beschreibung:</p><pre><code>${rawAdfDescription}</code></pre>`;
+                // Zeigt RAW-Daten bei Parse-Fehler
+                descriptionOutput = `<p class="error-message">Fehler beim Parsen der Beschreibung:</p><pre><code>${rawAdfDescription}</code></pre>`;
                 console.error("ADF Parsing failed:", e);
             }
         }
-        // --- End of parsing logic ---
-
+        
+        const statusClass = status.toLowerCase().replace(/\s/g, '-');
+        
+        // --- HTML RENDERING ---
         container.innerHTML = `
             <div class="bug-card">
                 <header class="bug-header">
                     <h2><a href="https://bugs.mojang.com/browse/${issueKey}" target="_blank">${issueKey} - ${summary}</a></h2>
                 </header>
                 <div class="bug-details">
-                    <p><strong>Status:</strong> <span class="bug-status status-${status.toLowerCase().replace(/\s/g, '-')}">${status}</span></p>
+                    <p><strong>Status:</strong> <span class="bug-status status-${statusClass}">${status}</span></p>
                     <p><strong>Reported By:</strong> ${reporter}</p>
                     <p><strong>Created On:</strong> ${created}</p>
                 </div>
@@ -209,7 +221,16 @@ async function loadBugReport(bugKey) {
 
     } catch (error) {
         console.error("Failed to load bug data:", error);
-        container.innerHTML = `<p class="error-message">Fehler beim Laden des Bug Reports (${bugKey.toUpperCase()}): ${error.message}.</p>`;
+        // WICHTIG: Setze den gesamten Container-Inhalt auf die Fehlermeldung
+        container.innerHTML = `
+            <div class="bug-card">
+                <p class="error-message p-4 text-center">
+                    Fehler beim Laden des Bug Reports (${bugKey.toUpperCase()}): 
+                    <br><strong>${error.message}</strong>
+                    <br><em>Möglicherweise ist der Proxy ausgefallen oder die Bug-ID existiert nicht.</em>
+                </p>
+            </div>
+        `;
     }
 }
 
@@ -220,20 +241,16 @@ function initializeBugViewer() {
     const loadButton = document.getElementById('load-bug-button');
 
     if (!loadButton || !inputField) {
-        // Stoppt, wenn die HTML-Elemente nicht existieren
         return;
     }
     
-    let initialBugKey = inputField.value.trim() || 'MC-4'; // Standardwert: MC-4
+    let initialBugKey = inputField.value.trim() || 'MC-4'; 
 
     // 1. Analyse des URL-Hashs (#) für Direktlinks
     const urlHash = window.location.hash; 
     
     if (urlHash) {
-        // Entfernt das führende '#' und konvertiert zu Großbuchstaben
         const potentialKey = urlHash.substring(1).toUpperCase(); 
-        
-        // Prüfung, ob der Hash-Wert wie eine Bug-ID aussieht
         if (/^[A-Z]+-\d+$/i.test(potentialKey)) {
             initialBugKey = potentialKey;
         }
@@ -242,19 +259,18 @@ function initializeBugViewer() {
     // --- Event Listener und Initialisierung ---
 
     // Event Listener für den Button-Klick
-    loadButton.addEventListener('click', () => {
+    const clickHandler = () => {
         const key = inputField.value.trim();
-        // Aktualisiert den URL-Hash
         window.location.hash = key; 
         loadBugReport(key);
-    });
+    };
+    
+    loadButton.addEventListener('click', clickHandler);
 
     // Event Listener für die Enter-Taste im Eingabefeld
     inputField.addEventListener('keypress', (e) => {
         if (e.key === 'Enter') {
-            const key = inputField.value.trim();
-            window.location.hash = key;
-            loadBugReport(key);
+            clickHandler();
         }
     });
     
@@ -262,7 +278,7 @@ function initializeBugViewer() {
     inputField.value = initialBugKey;
     loadBugReport(initialBugKey);
 
-    // Fügt einen Listener hinzu, um Bugs zu laden, wenn der Hash sich ändert (z.B. durch Browser-Navigation)
+    // Fügt einen Listener hinzu, um Bugs zu laden, wenn der Hash sich ändert
     window.addEventListener('hashchange', () => {
         const hashKey = window.location.hash.substring(1).toUpperCase();
         if (hashKey && hashKey !== inputField.value.toUpperCase()) {
@@ -274,3 +290,5 @@ function initializeBugViewer() {
 
 // Initialisierung starten, wenn das DOM geladen ist
 document.addEventListener('DOMContentLoaded', initializeBugViewer);
+window.generateHtmlFromAdf = generateHtmlFromAdf;
+})(); // Ende der IIFE

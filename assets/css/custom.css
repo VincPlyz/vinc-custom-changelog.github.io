@@ -1042,6 +1042,333 @@ blockquote {
     background: #777;
 }
 
+/* ====================================================
+   4. Bug Viewer Spezifisches Styling (Final Version)
+   ==================================================== */
+
+/* 1. KARTEN-STYLING (Breite maximieren) */
+.bug-card {
+    max-width: 1200px;
+    width: 95%; 
+    margin: 30px auto; 
+    padding: 30px; 
+    border-radius: var(--mc-border-radius-large);
+    box-shadow: var(--mc-shadow); 
+    background-color: var(--mc-panel); 
+    border: 1px solid #3d3d3d; 
+    border-left: 5px solid var(--mc-accent2); /* Grüner Akzent */
+    color: var(--mc-text);
+}
+
+#bug-modal-overlay .bug-card {
+    max-width: 95vw !important; 
+}
+
+/* FIX: Bug Titel Fix: Entfernt den Schatten, richtet links aus und gibt Platz */
+.bug-card h2.bug-title {
+    color: var(--mc-accent2) !important;
+    text-shadow: none !important;
+    text-align: left !important; /* Wichtig für die Linksbündigkeit */
+    margin-bottom: 20px;
+}
+
+
+/* 2. SUCHE: Kontrast und Sichtbarkeit (Gehört zum Standalone Viewer) */
+.search-container {
+    display: flex;
+    gap: 10px;
+    max-width: 1200px;
+    width: 95%;
+    margin: 30px auto 30px auto; 
+}
+.search-container input, .search-container button {
+    padding: 12px; 
+    border-radius: var(--mc-border-radius-small);
+    font-size: 1em;
+    font-family: var(--mc-body-font);
+}
+
+.search-container input {
+    flex-grow: 1;
+    border: 1px solid #484848; 
+    background-color: #1a1a1a; 
+    color: var(--mc-text); 
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.6); 
+}
+
+.search-container button {
+    cursor: pointer;
+    background-color: var(--mc-accent); 
+    border: 1px solid var(--mc-accent);
+    color: var(--mc-core-rich-black); 
+    font-weight: bold;
+    font-family: var(--mc-heading-2);
+    transition: background-color 0.2s;
+}
+.search-container button:hover {
+    background-color: var(--mc-accent2); 
+    border-color: var(--mc-accent2);
+}
+
+/* 3. Visuelle Trennung & Metadaten-Basisstil */
+.bug-details {
+    margin-bottom: 20px;
+}
+.bug-details strong {
+    color: var(--mc-muted); 
+    font-family: var(--mc-body-font);
+    font-weight: normal;
+}
+
+.bug-card hr {
+    border: none;
+    height: 1px;
+    background-color: #686868; 
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+/* 4. Statusfarben (Konsolidiert) */
+.bug-status {
+    padding: 2px 8px;
+    border-radius: var(--mc-border-radius-small);
+    font-weight: 600;
+    font-size: 0.9em; 
+    display: inline-block;
+    color: var(--mc-core-rich-black);
+}
+
+.status-resolved, .status-fixed {
+    background-color: var(--mc-accent2); 
+}
+
+.status-reopened {
+  background-color: #e6be10; 
+  color: var(--mc-core-rich-black); 
+}
+
+.status-wont-fix, .status-invalid, .status-duplicate {
+    background-color: #E74C3C; 
+}
+
+.status-open, .status-new {
+    background-color: #3498DB; 
+}
+
+/* 5. Überschriften und Code-Blöcke */
+.bug-description h3, .bug-description h4 {
+    color: var(--mc-accent2); 
+    text-shadow: none;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.25em; 
+    border-bottom: 1px solid var(--mc-muted); 
+    padding-bottom: 3px;
+}
+
+.bug-description pre {
+    background-color: #1a1a1a; 
+    color: var(--mc-code-block); 
+    padding: 15px;
+    border-radius: var(--mc-border-radius-small);
+    overflow-x: auto; 
+    margin-top: 15px;
+    font-size: 0.95em;
+    font-family: monospace;
+}
+
+/* --- Code Block Container Styling --- */
+.code-block-container {
+    position: relative;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    background-color: #1a1a1a; 
+    padding: 1rem;
+    border-radius: var(--mc-border-radius-small);
+    color: var(--mc-code-block); 
+}
+
+.code-block-container pre {
+    padding: 0; 
+    margin: 0;
+    background-color: transparent; 
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+.copy-code-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    padding: 3px 8px;
+    background-color: var(--mc-panel);
+    color: var(--mc-text);
+    border: 1px solid var(--mc-muted);
+    border-radius: var(--mc-border-radius-small);
+    cursor: pointer;
+    font-size: 0.8em;
+    transition: background-color 0.2s;
+    z-index: 10;
+}
+.copy-code-button:hover {
+    background-color: var(--mc-accent2);
+    color: var(--mc-core-rich-black);
+}
+
+/* ====================================================
+   6. Modal Spezifisches Styling & Fixes
+   ==================================================== */
+
+/* --- 6.1 Layout Fixes (Spaltenbreite & Versionsanzeige) --- */
+
+/* FIX: Längenbegrenzung für die Metadaten-Spalte, um Quetschung zu verhindern */
+#bug-metadata-column {
+    /* Beschränkt die linke Spalte auf eine feste Breite */
+    max-width: 350px; 
+    min-width: 250px; 
+    /* Verhindert, dass die Spalte schrumpft */
+    flex-shrink: 0; 
+}
+
+/* Stellt sicher, dass die Versionsnummern schön untereinander umbrechen können */
+#bug-metadata-column .version-block strong,
+#bug-metadata-column .version-block span {
+    display: block; 
+    text-align: right; 
+    margin-top: 5px; 
+}
+
+
+.bug-details-sidebar strong {
+
+    text-align: left;
+
+    display: inline-block;
+
+    width: 100%; 
+
+    font-weight: bold; 
+
+}
+
+#bug-metadata-column .bug-details-sidebar {
+    padding-top: 0; 
+}
+
+/* FIX: Metadaten-Spalten-Zellen links ausrichten, falls sie leer sind */
+.bug-details-sidebar .bug-details {
+    /* Stellt sicher, dass alle Zellen, auch leere, gleichmäßig links ausgerichtet sind */
+    text-align: left !important;
+}
+
+/* FIX: Reduziert den Abstand oben, falls die Metadaten leer sind */
+#bug-metadata-column .bug-details-sidebar {
+    /* Reduziert den oberen Rand der Metadaten-Box im Modal */
+    margin-top: -15px; 
+}
+
+
+/* --- 6.2 Scrollbar Fixes (KORRIGIERT) --- */
+
+/* 1. Allgemeine Scrollbar-Eigenschaften (für Firefox) */
+#bug-description-column,
+#bug-metadata-column {
+    scrollbar-width: thin;
+    /* Hintergrundfarbe des Containers setzen */
+    background-color: var(--mc-panel); 
+    scrollbar-color: var(--mc-accent2) var(--mc-panel);
+    order: 2
+}
+
+/* 2. Webkit-spezifisches Styling (Chrome, Edge, Safari) */
+#bug-modal-overlay *::-webkit-scrollbar {
+    width: 8px; 
+    height: 8px;
+}
+
+/* Track (Hintergrund) */
+#bug-modal-overlay *::-webkit-scrollbar-track {
+    background: var(--mc-panel); 
+    border-radius: 10px;
+}
+
+/* Thumb (Griff) */
+#bug-modal-overlay *::-webkit-scrollbar-thumb {
+    background-color: var(--mc-accent2) !important;
+    border-radius: 10px;
+    /* Randfarbe setzen, um ihn vom Hintergrund abzuheben */
+    border: 1px solid var(--mc-accent); 
+    opacity: 1.0; 
+    transition: background-color 0.2s;
+}
+
+/* Thumb Hover-Zustand */
+#bug-modal-overlay *::-webkit-scrollbar-thumb:hover {
+    background-color: var(--mc-accent) !important; 
+}
+
+
+/* --- 6.3 Modal Schließen Button --- */
+
+#bug-modal-content {
+    position: relative;
+}
+
+#close-modal-button {
+    position: absolute; 
+    top: 0px; 
+    right: 15px; 
+    z-index: 50; 
+    font-size: 2rem; 
+    line-height: 1;
+    color: var(--mc-text); 
+    cursor: pointer;
+    background: none; 
+    border: none; 
+    padding: 5px 10px;
+    transition: color 0.15s;
+}
+
+#close-modal-button:hover {
+    color: #E74C3C; 
+}
+
+/* --- 6.4 Flex Layout Fix für Bug Modal --- */
+
+/* Stellt sicher, dass das Haupt-Layout stabil bleibt */
+#bug-modal-content {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px; /* etwas Abstand zwischen den Spalten */
+}
+
+/* Linke Spalte: darf wachsen */
+#bug-description-column {
+    flex: 1 1 auto;
+    min-width: 0; /* verhindert, dass lange Inhalte die rechte Spalte verschieben */
+}
+
+/* Rechte Spalte: feste Breite, bleibt stabil */
+#bug-metadata-column {
+    flex: 0 0 320px; /* feste Breite (anpassbar) */
+    align-self: flex-start;
+}
+
+
+/* ====================================================
+   7. Skalierung (Wie von Ihnen gewünscht)
+   ==================================================== */
+
+.bug-viewer-scale {
+    font-size: 80%;
+}
+
+@media (min-width: 2560px) {
+    .bug-viewer-scale {
+    font-size: 80% !important;
+  }
+}
 
 /* ====================================================
    4. Bug Viewer Spezifisches Styling (Final Version)
@@ -1066,86 +1393,6 @@ blockquote {
 
 #bug-modal-overlay .bug-card {
     max-width: 95vw !important; 
-}
-
-/* ====================================================
-   7. Scrollbar Styling NUR für das Modal (Hintergrund transparent)
-   ==================================================== */
-
-/* Scrollbar für Chrome, Edge, Safari (WebKit) */
-#bug-modal-overlay *::-webkit-scrollbar {
-    width: 8px; 
-    height: 8px;
-}
-
-/* Track (Hintergrund): WIRD KOMPLETT TRANSPARENT GESETZT */
-#bug-modal-overlay *::-webkit-scrollbar-track {
-    background: transparent; /* Macht den Track unsichtbar */
-    border-radius: 10px;
-}
-
-/* Thumb (Griff) NUR im Modal */
-#bug-modal-overlay *::-webkit-scrollbar-thumb {
-    /* Sie können hier 'var(--mc-accent2)' oder eine neutrale Farbe verwenden */
-    background-color: rgba(255, 255, 255, 0) !important;
-    border-radius: 10px;
-    /* WICHTIG: Die Border wird auch transparent, damit sie nicht sichtbar ist. */
-    border: 2px solid transparent; 
-}
-
-/* Thumb Hover-Zustand NUR im Modal */
-#bug-modal-overlay *::-webkit-scrollbar-thumb:hover {
-    background-color: rgba(255, 255, 255, 0) !important; 
-}
-
-/* --- Spezifisch für Firefox --- */
-/* Hier ist der Track-Hintergrund die zweite Farbe. Wir setzen ihn auf die Hintergrundfarbe des Modals. */
-#bug-description-column {
-    /* Erste Farbe: Thumb (Scroller) | Zweite Farbe: Track (Hintergrund) */
-    scrollbar-color: var(--mc-accent2) var(--mc-bg-dark); 
-    scrollbar-width: thin; 
-}
-
-/* Thumb (Griff) NUR im Modal */
-#bug-modal-overlay *::-webkit-scrollbar-thumb {
-    background-color: var(--mc-accent2); 
-    border-radius: 10px;
-    border: 2px solid transparent; 
-    /* NEU: Weniger sichtbar, wenn nicht gescrollt/gehovert wird */
-    opacity: 0.0; 
-    transition: opacity 0.3s ease-in-out; 
-}
-
-#bug-modal-content {
-    position: relative; 
-    /* Der Inhalt des Modals sollte der Bezugspunkt sein */
-}
-
-#close-modal-button {
-    /* WICHTIG: Setzt die Position relativ zu #bug-modal-content */
-    position: absolute; 
-    /* Verschiebt den Button in die obere rechte Ecke */
-    top: 15px; /* Abstand von oben (anpassen, falls der Titel zu nah ist) */
-    right: 15px; /* Abstand von rechts */
-    
-    /* Stellt sicher, dass der Button über allem liegt */
-    z-index: 50; 
-    
-    /* Visuelle Anpassungen */
-    font-size: 24px; /* Macht das X größer */
-    line-height: 1;
-    color: #fff; /* Oder Ihre Akzentfarbe */
-    cursor: pointer;
-    background: none; /* Kein Hintergrund */
-    border: none; /* Kein Rand */
-    padding: 0;
-}
-
-/* Thumb Hover-Zustand NUR im Modal */
-#bug-modal-overlay *::-webkit-scrollbar-thumb:hover {
-    background-color: var(--mc-accent); 
-    /* NEU: Volle Sichtbarkeit beim Hover */
-    opacity: 0;
 }
 
 /* 2. SUCHE: Kontrast und Sichtbarkeit */
@@ -1185,83 +1432,6 @@ blockquote {
 .search-container button:hover {
     background-color: var(--mc-accent2); 
     border-color: var(--mc-accent2);
-}
-
-/* 3. Visuelle Trennung (Problem 3: Gestrichelte Linie entfernen) */
-.bug-details {
-    /* ENTFALLEN: padding-bottom und border-bottom wurden entfernt */
-    margin-bottom: 20px;
-}
-.bug-details strong {
-    color: var(--mc-muted); 
-    font-family: var(--mc-body-font);
-    font-weight: normal;
-}
-
-/* Die horizontale Linie im HTML (die Sie nicht entfernen wollten) */
-.bug-card hr {
-    border: none;
-    height: 1px;
-    background-color: #686868; /* Heller als der Hintergrund, aber subtil */
-    margin-top: 10px;
-    margin-bottom: 20px;
-}
-
-/* 4. Statusfarben (Ihre genauen Wünsche) */
-.bug-status {
-    padding: 2px 8px;
-    border-radius: var(--mc-border-radius-small);
-    font-weight: bold;
-    display: inline-block;
-    color: var(--mc-core-rich-black);
-}
-
-/* Zustand: Resolved/Fixed (Grüner Text) */
-.status-resolved {
-    background-color: var(--mc-accent2); /* Grüner Tag */
-    color: var(--mc-core-rich-black); /* Schwarzer Text auf Grün */
-}
-
-/* Zustand: Reopened (Normaler weißer Text) */
-.status-reopened {
-    background-color: var(--mc-panel); /* Hintergrundfarbe des Panels */
-    color: var(--mc-text); /* Weißer Text */
-}
-
-/* Zustand: Wont Fix/Invalid (Rot) */
-.status-wont-fix, .status-invalid, .status-duplicate {
-    background-color: #E74C3C; /* Roter Tag */
-    color: var(--mc-core-rich-black); /* Schwarzer Text auf Rot */
-}
-
-/* Zustand: Offen/Triage (Neutral) */
-.status-open, .status-new {
-    background-color: #3498DB; /* Blauer Tag */
-    color: var(--mc-core-rich-black);
-}
-
-/* 5. Überschriften und Code-Blöcke (für gute Trennung) */
-.bug-description h3, .bug-description h4 {
-    color: var(--mc-accent2); 
-    text-shadow: none;
-    margin-top: 1.5rem;
-    margin-bottom: 0.5rem;
-    font-size: 1.25em; 
-    /* Klarer visueller Separator für H3/H4 */
-    border-bottom: 1px solid var(--mc-muted); 
-    padding-bottom: 3px;
-}
-
-.bug-description pre {
-    /* Konsistenz: Verwendet die Code-Farbe von custom.css */
-    background-color: #1a1a1a; 
-    color: var(--mc-code-block); 
-    padding: 15px;
-    border-radius: var(--mc-border-radius-small);
-    overflow-x: auto; 
-    margin-top: 15px;
-    font-size: 0.95em;
-    font-family: monospace;
 }
 
 /* ====================================================

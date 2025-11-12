@@ -1,4 +1,7 @@
-<link rel="stylesheet" href="{{ "css/bug-viewer-custom.css" | relURL }}">
+{{ $css := resources.Get "/vinc-custom-changelog.github.io/css/custom.css" }} 
+{{ if $css }} 
+<link rel="stylesheet" href="{{ $css.RelPermalink }}">
+{{ end }}
 
 <div class="bug-viewer-wrapper">
 
