@@ -1,3 +1,5 @@
+(function() { // Start der Immediately Invoked Function Expression (IIFE)
+
 // --- KONSTANTEN ---
 const PROXY_BASE_URL = 'https://mojira-bug-proxy.vincplyz.workers.dev'; 
 const API_PATH_PREFIX = '/api/v1/issues/'; 
@@ -6,103 +8,63 @@ const MODAL_CONTENT_ID = 'bug-modal-content';
 const METADATA_COLUMN_ID = 'bug-metadata-column'; 
 const DESCRIPTION_COLUMN_ID = 'bug-description-column'; 
 
-
-// --- 1. ADF-PARSING LOGIK ---
-
-function generateHtmlFromAdf(node) {
-    let html = '';
-    let innerContent = '';
-
-    if (node.content && Array.isArray(node.content)) {
-        node.content.forEach(child => {
-            innerContent += generateHtmlFromAdf(child);
-        });
-    }
-
-    switch (node.type) {
-        case 'doc':
-            html = innerContent;
-            break;
-        case 'heading':
-            html = `<h4>${innerContent}</h4>`; 
-            break;
-        case 'paragraph':
-            html = `<p>${innerContent}</p>`;
-            break;
-        case 'codeBlock':
-            html = `<pre><code>${innerContent.trim()}</code></pre>`;
-            break;
-        case 'orderedList':
-            html = `<ol>${innerContent}</ol>`;
-            break;
-        case 'bulletList':
-            html = `<ul>${innerContent}</ul>`;
-            break;
-        case 'listItem':
-            html = `<li>${innerContent}</li>`;
-            break;
-        case 'text':
-            html = node.text || '';
-            if (node.marks && Array.isArray(node.marks)) {
-                 node.marks.forEach(mark => {
-                    if (mark.type === 'link' && mark.attrs?.href) {
-                        html = `<a href="${mark.attrs.href}" target="_blank" style="color: var(--mc-accent2);">${html}</a>`;
-                    }
-                    if (mark.type === 'strong') {
-                        html = `<strong>${html}</strong>`;
-                    }
-                    if (mark.type === 'em') {
-                        html = `<em>${html}</em>`;
-                    }
-                    if (mark.type === 'code') {
-                        html = `<code>${html}</code>`; 
-                    }
-                });
-            }
-            break;
-        default:
-            html = innerContent;
-            break;
-    }
-    
-    return html;
+// WICHTIG: Die ADF-Funktion WIRD HIER NICHT NEU DEKLARIERT, 
+// sondern wird global über window.generateHtmlFromAdf erwartet!
+const generateHtmlFromAdf = window.generateHtmlFromAdf;
+if (typeof generateHtmlFromAdf !== 'function') {
+    console.error("Fehler: generateHtmlFromAdf ist im globalen Scope nicht verfügbar. Stellen Sie sicher, dass bug-viewer.js geladen ist und die Funktion exportiert.");
+    return; // Abbruch, wenn Abhängigkeit fehlt
 }
 
-// --- 2. MODAL RENDERING LOGIK (METADATEN IN LINKER SPALTE + ABSTÄNDE KORRIGIERT) ---
+
+// --- 2. MODAL RENDERING LOGIK (KORRIGIERT FÜR METADATEN-FALLBACKS) ---
 
 function generateBugModalHtml(data) {
+    // Robustheit: Versucht, 'fields' zu verwenden, andernfalls das Hauptobjekt
     const fields = data.fields || data; 
     
-    // --- DATEN SAMMELN ---
+    // --- DATEN SAMMELN (mit robusteren Fallbacks) ---
     const issueKey = data.key || 'N/A'; 
     const summary = fields?.summary || 'Zusammenfassung nicht gefunden';
     const status = fields?.status?.name || fields?.status || 'Unbekannt';
     const reporter = fields?.reporter?.displayName || fields?.reporter_name || 'Unbekannt';
-    const created = fields?.created ? new Date(fields.created).toLocaleDateString() : 'N/A';
     
+    // KORREKTUR: Priorisiere created_date, da JIRA/Proxy sie so benennen kann
+    const created = fields?.created_date ? new Date(fields.created_date).toLocaleDateString('de-DE') : (fields?.created ? new Date(fields.created).toLocaleDateString('de-DE') : 'N/A');
+    
+    const resolution = fields?.resolution?.name || fields?.resolution || 'Unresolved'; 
+    
+    // KORREKTUR: Labels direkt von 'fields' holen
     const labels = fields?.labels || [];
-    const affectsVersions = (fields?.versions || []).map(v => v.name).join(', ') || 'N/A';
-    const fixVersions = (fields?.fixVersions || []).map(v => v.name).join(', ') || 'N/A';
+    
+    // KORREKTUR: Affected Versions (versions (JIRA) oder affected_versions (Proxy))
+    const affectedVersionsArray = fields?.versions || fields?.affected_versions || [];
+    const affectsVersions = affectedVersionsArray.map(v => v.name || v).join(', ') || 'N/A';
+    
+    // KORREKTUR: Fix Versions (fixVersions (JIRA) oder fix_versions (Proxy))
+    const fixVersionsArray = fields?.fixVersions || fields?.fix_versions || [];
+    const fixVersions = fixVersionsArray.map(v => v.name || v).join(', ') || 'N/A';
     
     const rawAdfDescription = fields?.description;
     let descriptionOutput = 'Keine Beschreibung vorhanden.';
     if (rawAdfDescription) {
         try {
+            // VERWENDET DIE GLOBALE FUNKTION
             const adfObject = JSON.parse(rawAdfDescription);
             descriptionOutput = generateHtmlFromAdf(adfObject); 
         } catch (e) {
-            descriptionOutput = `<p class="error-message">Fehler beim Parsen der Beschreibung.</p>`;
+            descriptionOutput = `<p class="error-message">Fehler beim Parsen der Beschreibung. RAW Daten: ${rawAdfDescription}</p>`;
         }
     }
 
     // --- Status-Klassen-Mapping ---
     const statusLower = status.toLowerCase().replace(/\s/g, '-');
-    let statusClass = 'status-open'; // Default
+    let statusClass = 'status-open'; 
     
     const statusMap = {
         'resolved': 'status-resolved',
         'fixed': 'status-resolved',
-        'reopened': 'status-reopened',
+        'reopened': 'status-reopened', 
         'wont-fix': 'status-wont-fix',
         'invalid': 'status-invalid',
         'duplicate': 'status-duplicate',
@@ -115,13 +77,18 @@ function generateBugModalHtml(data) {
     
     // --- GENERIEREN DES METADATEN-BLOCKS FÜR DIE LINKEN SPALTE (Top-Metadaten) ---
     const topMetadataHtml = `
-        <div class="top-metadata bug-details space-y-1 mt-2 mb-6"> 
+        <div class="top-metadata bug-details space-y-2 mt-2 mb-6"> 
             
             <div class="flex flex-row space-x-2">
                 <strong>Status:</strong>
                 <span class="bug-status ${statusClass}">${status}</span>
             </div>
             
+            <div class="flex flex-row space-x-2">
+                <strong>Resolution:</strong>
+                <span>${resolution}</span>
+            </div>
+
             <div>
                 <strong>Reported By:</strong>
                 <span>${reporter}</span>
@@ -136,7 +103,7 @@ function generateBugModalHtml(data) {
     `;
 
 
-    // --- A. HTML FÜR LINKEN INHALTS-SPALTE (KOMBINIERT) ---
+    // --- A. HTML FÜR LINKEN INHALTS-SPALTE (HAUPT-INHALT) ---
     const descriptionHtml = `
         <header class="bug-header mb-2">
             <h2 class="text-2xl font-bold" style="color: var(--mc-accent2);">
@@ -156,7 +123,7 @@ function generateBugModalHtml(data) {
         </div>
     `;
     
-// --- B. HTML FÜR RECHTE METADATEN-SPALTE (NUR VERSIONEN & LABELS - RECHTSBÜNDIG) ---
+    // --- B. HTML FÜR RECHTE METADATEN-SPALTE (SIDEBAR) ---
     const metadataHtml = `
         <div class="bug-details-sidebar bug-details space-y-4 pt-2 text-right">
             
@@ -182,7 +149,7 @@ function generateBugModalHtml(data) {
 }
 
 
-// --- 3. MODAL STEUERUNGS LOGIK ---
+// --- 3. MODAL STEUERUNGS LOGIK (Keine Änderungen nötig) ---
 
 async function showBugModal(bugKey) {
     const modalOverlay = document.getElementById(MODAL_OVERLAY_ID);
@@ -195,15 +162,12 @@ async function showBugModal(bugKey) {
         return; 
     }
     
-    // Lade-Status
     descriptionColumn.innerHTML = `<p class="text-center">Lade Bug ${bugKey.toUpperCase()}...</p>`;
     metadataColumn.innerHTML = `<p class="text-center">Lade Metadaten...</p>`;
 
-    // 1. Sichtbar machen
     modalOverlay.style.display = 'flex'; 
     document.body.style.overflow = 'hidden'; 
 
-    // 2. Animation starten
     setTimeout(() => {
         modalContent.classList.remove('scale-95', 'opacity-0');
         modalContent.classList.add('scale-100', 'opacity-100');
@@ -215,27 +179,33 @@ async function showBugModal(bugKey) {
         
         if (!response.ok) throw new Error(`API Fehler! Status: ${response.status}.`);
         
-        const data = await response.json(); 
+        let rawText = await response.text();
+        
+        if (rawText.includes("Issue not found")) {
+            throw new Error(`Bug ID "${bugKey.toUpperCase()}" wurde nicht gefunden.`);
+        }
+        
+        const data = JSON.parse(rawText); 
+        
         const { metadataHtml, descriptionHtml } = generateBugModalHtml(data);
         
-        // Zuweisung zu den korrekten Spalten
         descriptionColumn.innerHTML = descriptionHtml;
         metadataColumn.innerHTML = metadataHtml; 
 
     } catch (error) {
         console.error("Ladefehler:", error);
-        descriptionColumn.innerHTML = `<p class="error-message">Fehler beim Laden des Bug Reports (${bugKey.toUpperCase()}): ${error.message}.</p>`;
+        descriptionColumn.innerHTML = `<p class="error-message">Fehler beim Laden des Bug Reports (${bugKey.toUpperCase()}): <strong>${error.message}</strong>.</p>`;
         metadataColumn.innerHTML = `<p class="error-message">Fehler.</p>`;
     }
 }
 
 
-// --- 4. MODAL SCHLIEẞEN & INITIALISIERUNG & EVENT LISTENER ---
+// --- 4. MODAL SCHLIEẞEN & INITIALISIERUNG & EVENT LISTENER (Keine Änderungen nötig) ---
 
 document.addEventListener('DOMContentLoaded', () => {
     const modal = document.getElementById(MODAL_OVERLAY_ID);
     const closeButton = document.getElementById('close-modal-button');
-    const modalTriggerLinks = document.querySelectorAll('.bug-modal-trigger');
+    const modalTriggerLinks = document.querySelectorAll('.bug-modal-trigger'); 
 
     if (!modal || !closeButton) return;
 
@@ -256,7 +226,11 @@ document.addEventListener('DOMContentLoaded', () => {
         link.addEventListener('click', function(event) {
             event.preventDefault(); 
             const bugKey = this.getAttribute('data-bug-id');
-            showBugModal(bugKey); 
+            if (bugKey) {
+                showBugModal(bugKey); 
+            } else {
+                console.error("Bug Modal Trigger fehlt data-bug-id Attribut.");
+            }
         });
     });
 
@@ -268,3 +242,5 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.key === 'Escape' && modal.style.display !== 'none') closeModal();
     });
 });
+window.showBugModal = showBugModal;
+})(); // Ende der IIFE
