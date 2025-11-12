@@ -1209,7 +1209,7 @@ blockquote {
 }
 
 .status-open {
-    background-color: #3b82f6; /* Blau */
+    background-color: #ffffff00; /* Blau */
 }
 .status-resolved, .status-fixed {
     background-color: #10b981; /* Grün */
@@ -1233,22 +1233,4 @@ blockquote {
     margin: 0;
     white-space: pre-wrap; /* Codeumbrüche erlauben */
     word-break: break-word;
-}
-
-.copy-code-button {
-    position: absolute;
-    top: 0.5rem;
-    right: 0.5rem;
-    background-color: rgba(255, 255, 255, 0.1);
-    color: #f3f4f6;
-    border: none;
-    padding: 4px 8px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 0.8em;
-    transition: background-color 0.2s;
-}
-
-.copy-code-button:hover {
-    background-color: rgba(255, 255, 255, 0.2);
 }
