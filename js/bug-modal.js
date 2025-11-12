@@ -209,11 +209,12 @@ async function showBugModal(bugKey) {
 }
 
 
-// --- 4. MODAL SCHLIEẞEN & INITIALISIERUNG ---
+// --- 4. MODAL SCHLIEẞEN & INITIALISIERUNG & EVENT LISTENER ---
 
 document.addEventListener('DOMContentLoaded', () => {
     const modal = document.getElementById(MODAL_OVERLAY_ID);
     const closeButton = document.getElementById('close-modal-button');
+    const modalTriggerLinks = document.querySelectorAll('.bug-modal-trigger'); // NEU: Wählt alle Links mit der Klasse aus
 
     if (!modal || !closeButton) return;
 
@@ -222,12 +223,23 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.style.overflow = ''; // Scrollen wieder erlauben
     };
 
+    // NEU: Fügt den Event-Listener zu ALLEN Links hinzu
+    modalTriggerLinks.forEach(link => {
+        link.addEventListener('click', function(event) {
+            // Verhindert das Springen der Seite
+            event.preventDefault(); 
+            const bugKey = this.getAttribute('data-bug-id');
+            
+            // Ruft die Funktion showBugModal() direkt auf
+            showBugModal(bugKey); 
+        });
+    });
+
     // Schließen beim Klick auf den Schließen-Button
     closeButton.addEventListener('click', closeModal);
 
     // Schließen beim Klick auf das dunkle Overlay
     modal.addEventListener('click', (e) => {
-        // Schließt nur, wenn das Overlay selbst geklickt wurde, nicht der Inhalt
         if (e.target.id === MODAL_OVERLAY_ID) {
             closeModal();
         }
@@ -239,9 +251,6 @@ document.addEventListener('DOMContentLoaded', () => {
             closeModal();
         }
     });
-    
-    // initializeCopyButtons wird durch showBugModal aufgerufen
-
 });
 
 // Machen Sie showBugModal global zugänglich, damit der Shortcode es aufrufen kann
