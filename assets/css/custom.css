@@ -1064,6 +1064,90 @@ blockquote {
     color: var(--mc-text);
 }
 
+#bug-modal-overlay .bug-card {
+    max-width: 95vw !important; 
+}
+
+/* ====================================================
+   7. Scrollbar Styling NUR für das Modal (Hintergrund transparent)
+   ==================================================== */
+
+/* Scrollbar für Chrome, Edge, Safari (WebKit) */
+#bug-modal-overlay *::-webkit-scrollbar {
+    width: 8px; 
+    height: 8px;
+}
+
+/* Track (Hintergrund): WIRD KOMPLETT TRANSPARENT GESETZT */
+#bug-modal-overlay *::-webkit-scrollbar-track {
+    background: transparent; /* Macht den Track unsichtbar */
+    border-radius: 10px;
+}
+
+/* Thumb (Griff) NUR im Modal */
+#bug-modal-overlay *::-webkit-scrollbar-thumb {
+    /* Sie können hier 'var(--mc-accent2)' oder eine neutrale Farbe verwenden */
+    background-color: rgba(255, 255, 255, 0) !important;
+    border-radius: 10px;
+    /* WICHTIG: Die Border wird auch transparent, damit sie nicht sichtbar ist. */
+    border: 2px solid transparent; 
+}
+
+/* Thumb Hover-Zustand NUR im Modal */
+#bug-modal-overlay *::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(255, 255, 255, 0) !important; 
+}
+
+/* --- Spezifisch für Firefox --- */
+/* Hier ist der Track-Hintergrund die zweite Farbe. Wir setzen ihn auf die Hintergrundfarbe des Modals. */
+#bug-description-column {
+    /* Erste Farbe: Thumb (Scroller) | Zweite Farbe: Track (Hintergrund) */
+    scrollbar-color: var(--mc-accent2) var(--mc-bg-dark); 
+    scrollbar-width: thin; 
+}
+
+/* Thumb (Griff) NUR im Modal */
+#bug-modal-overlay *::-webkit-scrollbar-thumb {
+    background-color: var(--mc-accent2); 
+    border-radius: 10px;
+    border: 2px solid transparent; 
+    /* NEU: Weniger sichtbar, wenn nicht gescrollt/gehovert wird */
+    opacity: 0.0; 
+    transition: opacity 0.3s ease-in-out; 
+}
+
+#bug-modal-content {
+    position: relative; 
+    /* Der Inhalt des Modals sollte der Bezugspunkt sein */
+}
+
+#close-modal-button {
+    /* WICHTIG: Setzt die Position relativ zu #bug-modal-content */
+    position: absolute; 
+    /* Verschiebt den Button in die obere rechte Ecke */
+    top: 15px; /* Abstand von oben (anpassen, falls der Titel zu nah ist) */
+    right: 15px; /* Abstand von rechts */
+    
+    /* Stellt sicher, dass der Button über allem liegt */
+    z-index: 50; 
+    
+    /* Visuelle Anpassungen */
+    font-size: 24px; /* Macht das X größer */
+    line-height: 1;
+    color: #fff; /* Oder Ihre Akzentfarbe */
+    cursor: pointer;
+    background: none; /* Kein Hintergrund */
+    border: none; /* Kein Rand */
+    padding: 0;
+}
+
+/* Thumb Hover-Zustand NUR im Modal */
+#bug-modal-overlay *::-webkit-scrollbar-thumb:hover {
+    background-color: var(--mc-accent); 
+    /* NEU: Volle Sichtbarkeit beim Hover */
+    opacity: 0;
+}
+
 /* 2. SUCHE: Kontrast und Sichtbarkeit */
 .search-container {
     display: flex;
