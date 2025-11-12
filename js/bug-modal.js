@@ -38,14 +38,10 @@ function generateHtmlFromAdf(node) {
             html = `<p>${innerContent}</p>`;
             break;
         case 'codeBlock':
-            const codeContent = innerContent.trim();
-            // Codeblock HTML für das Modal
+            // Nur <pre><code> ohne Button
             html = `
                 <div class="code-block-container">
-                    <button class="copy-code-button" data-clipboard-text="${codeContent.replace(/"/g, '&quot;')}">
-                        Kopieren
-                    </button>
-                    <pre><code>${codeContent}</code></pre>
+                    <pre><code>${innerContent.trim()}</code></pre>
                 </div>
             `;
             break;
