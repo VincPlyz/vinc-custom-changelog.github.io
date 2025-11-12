@@ -1198,3 +1198,57 @@ blockquote {
     }
 }
 
+/* --- Styling für den Bug-Status --- */
+.bug-status {
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 0.9em;
+    display: inline-block;
+    color: #fff; /* Textfarbe weiß */
+}
+
+.status-open {
+    background-color: #3b82f6; /* Blau */
+}
+.status-resolved, .status-fixed {
+    background-color: #10b981; /* Grün */
+}
+.status-duplicate, .status-invalid {
+    background-color: #f59e0b; /* Gelb/Orange */
+}
+
+/* --- Styling für Code-Blöcke --- */
+.code-block-container {
+    position: relative;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    background-color: #1f2937; /* Dunkler Hintergrund für Code */
+    padding: 1rem;
+    border-radius: 6px;
+    color: #f3f4f6; /* Heller Text */
+}
+
+.code-block-container pre {
+    margin: 0;
+    white-space: pre-wrap; /* Codeumbrüche erlauben */
+    word-break: break-word;
+}
+
+.copy-code-button {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #f3f4f6;
+    border: none;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8em;
+    transition: background-color 0.2s;
+}
+
+.copy-code-button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
