@@ -1,0 +1,30 @@
+{{ $id := .Get "id" }}
+{{ $width := .Get "width" | default "100%" }}
+{{ $height := .Get "height" | default "600px" }}
+
+{{/* 1. Wir suchen in data/icat/ nach dem Dateinamen, der der ID entspricht */}}
+{{ $data := index .Site.Data.icat $id }}
+
+{{/* 2. Sicherheitscheck: Existiert die Datei? */}}
+{{ if $data }}
+    <div class="icat-embed-element" style="width:{{ $width }}; height:{{ $height }};">
+        <icat-app id="icat-{{ $id }}"></icat-app>
+    </div>
+
+    <script type="text/javascript">
+    (function(){
+        window.addEventListener('load', function() {
+            const app = document.getElementById('icat-{{ $id }}');
+            if (app) {
+                app.isEmbed = true;
+                // 3. Wir wandeln die Hugo-Daten mit 'jsonify' in JavaScript-lesbares JSON um
+                app.loadAppData({{ $data | jsonify | safeJS }});
+            }
+        });
+    })()
+    </script>
+{{ else }}
+    <div style="border: 2px solid red; padding: 1rem; color: red;">
+        <strong>ICAT Fehler:</strong> Keine Konfigurationsdatei gefunden unter <code>data/icat/{{ $id }}.json</code>
+    </div>
+{{ end }}
