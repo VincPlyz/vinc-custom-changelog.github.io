@@ -56,9 +56,12 @@ Snapshots
 - 25w44a -- [Custom](/vinc-custom-changelog.github.io/changelog/25w44a/25w44a/) - [Official](https://www.minecraft.net/en-us/article/minecraft-snapshot-25w44a)
 - 25w45a -- [Custom](/vinc-custom-changelog.github.io/changelog/25w45a/25w45a/) - [Official](https://www.minecraft.net/en-us/article/minecraft-snapshot-25w45a)
 - 25w46a -- [Custom](/vinc-custom-changelog.github.io/changelog/25w46a/25w46a/) - [Official](https://www.minecraft.net/en-us/article/minecraft-snapshot-25w46a)
+- 25w46a -- [Custom](/vinc-custom-changelog.github.io/changelog/25w46a/25w46a/) - [Official](https://www.minecraft.net/en-us/article/minecraft-snapshot-25w46a)
+- 25w46a -- [Custom](/vinc-custom-changelog.github.io/changelog/25w46a/25w46a/) - [Official](https://www.minecraft.net/en-us/article/minecraft-snapshot-25w46a)
 
 Pre Releases
 - Pre-1 -- [Custom](/vinc-custom-changelog.github.io/changelog/1.21.6/pre-1/) - [Offcial](https://www.minecraft.net/en-us/article/minecraft-1-21-6-pre-release-1)
+- 1.21.11-pre1 -- [Custom](/vinc-custom-changelog.github.io/changelog/1.21.11/1.21.11-pre1/) - [Official](https://www.minecraft.net/en-us/article/minecraft-1-21-11-pre-release-1)
 
 </details>
 
@@ -101,7 +104,9 @@ Snapshots
 - 25w44a -- [Custom](/vinc-custom-changelog.github.io/changelog/1.21.11/25w44a/) - [Official](https://www.minecraft.net/en-us/article/minecraft-snapshot-25w44a)
 - 25w45a -- [Custom](/vinc-custom-changelog.github.io/changelog/1.21.11/25w45a/) - [Official](https://www.minecraft.net/en-us/article/minecraft-snapshot-25w45a)
 - 25w46a -- [Custom](/vinc-custom-changelog.github.io/changelog/1.21.11/25w46a/) - [Official](https://www.minecraft.net/en-us/article/minecraft-snapshot-25w46a)
-- 25w47a -- [Custom](/vinc-custom-changelog.github.io/changelog/1.21.11/25w47a/) - [Official](https://www.minecraft.net/en-us/article/minecraft-snapshot-25w47a)
+
+Pre Release
+- Pre-1 -- [Custom](/vinc-custom-changelog.github.io/changelog/1.21.11/1.21.11-pre1/) - [Official](https://www.minecraft.net/en-us/article/minecraft-1-21-11-pre-release-1)
 
 </details>
 
