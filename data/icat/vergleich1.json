@@ -12,11 +12,11 @@
       "id": "set-1",
       "label": "Textur-Filterung",
       "layout": "tile",
-      "zoom": 100,
+      "zoom": 97,
       
       "antiAlias": false,
       "grid": 0,
-      "looping": true,
+      "looping": false,
       "speed": 1,
       "time": 0,
       "exposure": 1,
@@ -28,9 +28,7 @@
           "id": "bild-1",
           "type": "image",
           "name": "Anisotropic",
-          "base": "Anisotropic",
           "path": "/vinc-custom-changelog.github.io/icat/Anisotropic.png",
-          "src": "/vinc-custom-changelog.github.io/icat/Anisotropic.png",
           "visible": true,
           "showInfoText": true
         },
@@ -38,9 +36,7 @@
           "id": "bild-2",
           "type": "image",
           "name": "RGSS",
-          "base": "RGSS",
           "path": "/vinc-custom-changelog.github.io/icat/RGSS.png",
-          "src": "/vinc-custom-changelog.github.io/icat/RGSS.png",
           "visible": true,
           "showInfoText": true
         },
@@ -48,9 +44,7 @@
           "id": "bild-3",
           "type": "image",
           "name": "None",
-          "base": "None",
           "path": "/vinc-custom-changelog.github.io/icat/None.png",
-          "src": "/vinc-custom-changelog.github.io/icat/None.png",
           "visible": true,
           "showInfoText": true
         }
