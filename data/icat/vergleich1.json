@@ -28,7 +28,7 @@
           "id": "bild-1",
           "type": "image",
           "name": "Anisotropic",
-          "path": "/vinc-custom-changelog.github.io/icat/Anisotropic.png",
+          "path": "/vinc-custom-changelog.github.io/icat/Anisotropic.jpg",
           "visible": true,
           "showInfoText": true
         },
@@ -36,7 +36,7 @@
           "id": "bild-2",
           "type": "image",
           "name": "RGSS",
-          "path": "/vinc-custom-changelog.github.io/icat/RGSS.png",
+          "path": "/vinc-custom-changelog.github.io/icat/RGSS.jpg",
           "visible": true,
           "showInfoText": true
         },
@@ -44,7 +44,7 @@
           "id": "bild-3",
           "type": "image",
           "name": "None",
-          "path": "/vinc-custom-changelog.github.io/icat/None.png",
+          "path": "/vinc-custom-changelog.github.io/icat/None.jpg",
           "visible": true,
           "showInfoText": true
         }
