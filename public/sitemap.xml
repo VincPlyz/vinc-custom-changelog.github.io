@@ -3,13 +3,19 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
-    <loc>http://localhost:1313/vinc-custom-changelog.github.io/changelog/1.21.11/1.21.11-pre2/</loc>
-    <lastmod>2025-11-21T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/vinc-custom-changelog.github.io/changelog/1.21.11/1.21.11-pre3/</loc>
+    <lastmod>2025-11-26T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>http://localhost:1313/vinc-custom-changelog.github.io/changelog/</loc>
+    <lastmod>2025-11-26T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:1313/vinc-custom-changelog.github.io/changelog/1.21.11/1.21.11-pre2/</loc>
     <lastmod>2025-11-21T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -209,6 +215,11 @@
   <url>
     <loc>http://localhost:1313/vinc-custom-changelog.github.io/changelog/testseite/</loc>
     <lastmod>2025-08-27T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:1313/vinc-custom-changelog.github.io/changelog/1.21.11/mom/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
