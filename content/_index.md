@@ -85,7 +85,7 @@ Release Candidate
 <details class="details-inhaltsverzeichnis">
   <summary>1.21.11 - Mounts of Mayhem</summary>
 
-###   1.21.11 -- [Custom](/vinc-custom-changelog.github.io/changelog/1.21.11/release) - [Official](https://www.minecraft.net/de-de/article/minecraft-java-edition-1-21-10)
+###   1.21.11 -- [Custom](/vinc-custom-changelog.github.io/changelog/1.21.11/1.21.11) - [Official](https://www.minecraft.net/de-de/article/minecraft-java-edition-1-21-11)
 
 Snapshots
 - 25w41a -- [Custom](/vinc-custom-changelog.github.io/changelog/1.21.11/25w41a/) - [Official](https://www.minecraft.net/en-us/article/minecraft-snapshot-25w41a)
@@ -100,6 +100,11 @@ Pre Release
 - Pre-2 -- [Custom](/vinc-custom-changelog.github.io/changelog/1.21.11/1.21.11-pre2/) - [Official](https://www.minecraft.net/en-us/article/minecraft-1-21-11-pre-release-2)
 - Pre-3 -- [Custom](/vinc-custom-changelog.github.io/changelog/1.21.11/1.21.11-pre3/) - [Official](https://www.minecraft.net/en-us/article/minecraft-1-21-11-pre-release-3)
 - Pre-4 -- [Custom](/vinc-custom-changelog.github.io/changelog/1.21.11/1.21.11-pre4/) - [Official](https://www.minecraft.net/en-us/article/minecraft-1-21-11-pre-release-4)
+
+Release Candidate
+- rc-1 -- [Custom](/vinc-custom-changelog.github.io/changelog/1.21.11/1.21.11-rc1) - [Official](https://www.minecraft.net/de-de/article/minecraft-1-21-11-release-candidate-1)
+- rc-2 -- [Custom](/vinc-custom-changelog.github.io/changelog/1.21.11/1.21.11-rc2) - [Official](https://www.minecraft.net/de-de/article/minecraft-1-21-11-release-candidate-2)
+- rc-3 -- [Custom](/vinc-custom-changelog.github.io/changelog/1.21.11/1.21.11-rc3) - [Official](https://www.minecraft.net/de-de/article/minecraft-1-21-11-release-candidate-3)
 
 </details>
 
