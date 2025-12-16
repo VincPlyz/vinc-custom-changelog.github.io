@@ -24,3 +24,5 @@ Thumbs.db
 # Abhängigkeiten, falls vorhanden (z.B. node_modules)
 /node_modules/
 
+turndown-python-main
+__pycache__

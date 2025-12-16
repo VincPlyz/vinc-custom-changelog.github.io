@@ -109,6 +109,16 @@ Release Candidate
 </details>
 
 
+<details class="details-inhaltsverzeichnis">
+  <summary>26.1</summary>
+
+###   ~26.1 -- [Custom](/vinc-custom-changelog.github.io/changelog/26.1/26.1) - [Official](https://www.minecraft.net/de-de/article/minecraft-java-edition-26-1)~
+
+Snapshots
+- Snapshot 1 -- [Custom](/vinc-custom-changelog.github.io/changelog/26.1/26.1-snapshot-1/) - [Official](https://www.minecraft.net/en-us/article/minecraft-26-1-snapshot-1)
+
+</details>
+
 --- 
 
 
