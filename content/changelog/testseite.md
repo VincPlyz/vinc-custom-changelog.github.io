@@ -148,10 +148,29 @@ Snapshots
 
 ---
 
+# Image with Description and Fullscreen Link
 <figure>
   <img src="https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/screenshots/25w37a_1170x500.jpg" alt="Beschreibung des Bildes" />
   <figcaption>
     Eine Beschreibung des Bildes mit einem <a href="https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/screenshots/25w37a_1170x500.jpg">Link zur vollständigen Ansicht.</a>
+  </figcaption>
+</figure>
+
+---
+
+# Image with Description with Custom Style
+<style>
+  figcaption.block-light {
+    padding: 10px;
+    padding-bottom: 3px;
+    text-align: center;
+  }
+</style>
+
+<figure>
+  <img src="/vinc-custom-changelog.github.io/images/26.1/snapshot-1/block_light_tint_1.png" alt="Pale Block Light">
+  <figcaption class="block-light">
+    Pale Block Light in Pale Gardens
   </figcaption>
 </figure>
 
