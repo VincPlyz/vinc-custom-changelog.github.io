@@ -89,6 +89,24 @@ Charcoal:
   url: "https://minecraft.wiki/images/Invicon_Charcoal.png"
   scale: "1.0"
 
+Name_Tag:
+  url: "https://minecraft.wiki/images/Invicon_Name_Tag.png"
+  scale: "1.0"
+
+Paper:
+  url: "https://minecraft.wiki/images/Invicon_Paper.png"
+  scale: "1.0"
+
+# Nuggets
+
+Iron_Nugget:
+  url: "https://minecraft.wiki/images/Invicon_Iron_Nugget.png"
+  scale: "1.0"
+
+Gold_Nugget:
+  url: "https://minecraft.wiki/images/Invicon_Gold_Nugget.png"
+  scale: "1.0"
+
 # Planks
 
 Oak_Planks:
@@ -388,4 +406,11 @@ chatg_spears:
     - Iron_spear
     - Gold_spear
     - Diamond_spear
+  scale: "1.0"
+
+chatg_nuggets:
+  items:
+    - Iron_Nugget
+    - Gold_Nugget
+    - Copper_Nugget
   scale: "1.0"
