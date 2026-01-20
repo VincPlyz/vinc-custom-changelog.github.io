@@ -118,6 +118,7 @@ Snapshots
 - Snapshot 1 -- [Custom](/vinc-custom-changelog.github.io/changelog/26.1/26.1-snapshot-1/) - [Official](https://www.minecraft.net/en-us/article/minecraft-26-1-snapshot-1)
 - Snapshot 2 -- [Custom](/vinc-custom-changelog.github.io/changelog/26.1/26.1-snapshot-2/) - [Official](https://www.minecraft.net/en-us/article/minecraft-26-1-snapshot-2)
 - Snapshot 3 -- [Custom](/vinc-custom-changelog.github.io/changelog/26.1/26.1-snapshot-3/) - [Official](https://www.minecraft.net/en-us/article/minecraft-26-1-snapshot-3)
+- Snapshot 4 -- [Custom](/vinc-custom-changelog.github.io/changelog/26.1/26.1-snapshot-4/) - [Official](https://www.minecraft.net/en-us/article/minecraft-26-1-snapshot-4)
 
 </details>
 
