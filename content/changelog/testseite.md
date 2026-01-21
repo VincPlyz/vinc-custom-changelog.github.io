@@ -27,6 +27,8 @@ https://vincplyz.github.io/vinc-custom-changelog.github.io/changelog/testseite/
 
 ---
 
+https://www.shutterstock.com/image-vector/work-progress-on-red-stamp-600w-2575534611.jpg
+
 ### Custom Emojis:
 
 #### Java 25 Update nächste version <img src="https://cdn.7tv.app/emote/01FPK71Q0G0008ZYPTDH5TYS48/1x.webp" style="display: inline; vertical-align: middle; height: 1em;">
