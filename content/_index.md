@@ -110,7 +110,7 @@ Release Candidate
 
 
 <details class="details-inhaltsverzeichnis">
-  <summary>26.1</summary>
+  <summary>26.1 - The Cutest Drop Yet (?)</summary>
 
 ###   ~26.1 -- [Custom](/vinc-custom-changelog.github.io/changelog/26.1/26.1) - [Official](https://www.minecraft.net/de-de/article/minecraft-java-edition-26-1)~
 
@@ -119,6 +119,7 @@ Snapshots
 - Snapshot 2 -- [Custom](/vinc-custom-changelog.github.io/changelog/26.1/26.1-snapshot-2/) - [Official](https://www.minecraft.net/en-us/article/minecraft-26-1-snapshot-2)
 - Snapshot 3 -- [Custom](/vinc-custom-changelog.github.io/changelog/26.1/26.1-snapshot-3/) - [Official](https://www.minecraft.net/en-us/article/minecraft-26-1-snapshot-3)
 - Snapshot 4 -- [Custom](/vinc-custom-changelog.github.io/changelog/26.1/26.1-snapshot-4/) - [Official](https://www.minecraft.net/en-us/article/minecraft-26-1-snapshot-4)
+- Snapshot 5 -- [Custom](/vinc-custom-changelog.github.io/changelog/26.1/26.1-snapshot-5/) - [Official](https://www.minecraft.net/en-us/article/minecraft-26-1-snapshot-5)
 
 </details>
 
