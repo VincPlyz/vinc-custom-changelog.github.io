@@ -290,6 +290,14 @@ Stone:
   url: "https://minecraft.wiki/images/Invicon_Stone.png"
   scale: "1.0"
 
+Dandelion:
+  url: "https://minecraft.wiki/images/Invicon_Dandelion.png"
+  scale: "1.0"
+
+Golden_Dandelion:
+  url: "https://minecraft.wiki/images/Invicon_Golden_Dandelion.png"
+  scale: "1.0"
+
 # --------------
 
 # Spears
