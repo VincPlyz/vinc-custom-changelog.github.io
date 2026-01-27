@@ -3,6 +3,36 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
+    <loc>http://localhost:1313/vinc-custom-changelog.github.io/changelog/26.1/26.1-snapshot-5/</loc>
+    <lastmod>2026-01-27T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:1313/vinc-custom-changelog.github.io/changelog/</loc>
+    <lastmod>2026-01-27T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:1313/vinc-custom-changelog.github.io/changelog/26.1/26.1-snapshot-4/</loc>
+    <lastmod>2026-01-20T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:1313/vinc-custom-changelog.github.io/changelog/26.1/26.1-snapshot-3/</loc>
+    <lastmod>2026-01-13T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:1313/vinc-custom-changelog.github.io/changelog/26.1/26.1-snapshot-2/</loc>
+    <lastmod>2026-01-07T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>http://localhost:1313/vinc-custom-changelog.github.io/changelog/1.21.11/</loc>
     <lastmod>2025-12-09T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
@@ -28,12 +58,6 @@
   </url>
   <url>
     <loc>http://localhost:1313/vinc-custom-changelog.github.io/changelog/1.21.11/1.21.11-rc3/</loc>
-    <lastmod>2025-12-09T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://localhost:1313/vinc-custom-changelog.github.io/changelog/</loc>
     <lastmod>2025-12-09T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -261,6 +285,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>http://localhost:1313/vinc-custom-changelog.github.io/changelog/26.1/26.1-snapshot-1/</loc>
+    <lastmod>2025-01-16T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>http://localhost:1313/vinc-custom-changelog.github.io/file_share/images/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -272,31 +302,6 @@
   </url>
   <url>
     <loc>http://localhost:1313/vinc-custom-changelog.github.io/old_versions/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://localhost:1313/vinc-custom-changelog.github.io/changelog/26.1/26.1-snapshot-1/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://localhost:1313/vinc-custom-changelog.github.io/changelog/26.1/26.1-snapshot-2/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://localhost:1313/vinc-custom-changelog.github.io/changelog/26.1/26.1-snapshot-3/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://localhost:1313/vinc-custom-changelog.github.io/changelog/26.1/26.1-snapshot-4/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://localhost:1313/vinc-custom-changelog.github.io/changelog/26.1/26.1-snapshot-5/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
