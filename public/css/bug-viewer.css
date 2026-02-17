@@ -1,0 +1,90 @@
+/* static/css/bug-viewer.css */
+
+/* 1. GLOBALE BREITENÜBERSCHREIBUNG (bricht die Beschränkungen des Blowfish Themes auf dieser Seite) */
+.full-width-content {
+    /* Setzt die maximale Breite auf 95% der Ansicht, um die Enge zu beheben */
+    max-width: 95% !important; 
+    /* Stellt sicher, dass das Padding des Themes an den Rändern nicht stört */
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+/* 2. KARTEN-STYLING (Der Haupt-Content-Container) */
+.bug-card {
+    /* Die Karte selbst wird breiter und ist zentriert */
+    max-width: 900px; /* Feste maximale Breite für eine angenehme Leseerfahrung */
+    width: 90%; /* Auf kleineren Bildschirmen 90% Breite */
+    margin: 20px auto; 
+    padding: 30px; /* Mehr Padding für Luft */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Stärkerer Schatten */
+    background-color: var(--color-background-card); 
+    border-left: 5px solid var(--color-primary); 
+    color: var(--color-text);
+}
+
+/* 3. SUCHE: Kontrast und Sichtbarkeit */
+.search-container {
+    display: flex;
+    gap: 10px;
+    /* Zentriert und passt die Suchleiste an die Breite der bug-card an */
+    max-width: 900px;
+    width: 90%;
+    margin: 20px auto 30px auto; 
+}
+.search-container input, .search-container button {
+    padding: 12px; /* Etwas größer machen */
+    border-radius: 5px;
+    /* Kontrast-Verbesserung: Hellerer Hintergrund und dunklerer Rahmen */
+    border: 1px solid #444; 
+    background-color: #333; /* Dunkelgrauer Hintergrund */
+    color: #252525; /* Heller Text */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4); 
+    font-size: 1em;
+}
+.search-container input {
+    flex-grow: 1;
+}
+.search-container button {
+    cursor: pointer;
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    color: #fff !important;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+.search-container button:hover {
+    background-color: var(--color-secondary);
+}
+
+/* 4. DETAILS und CODE */
+.bug-header h2 a {
+    color: var(--color-heading);
+    text-decoration: none;
+}
+.bug-description p {
+    line-height: 1.6;
+}
+.bug-status {
+    padding: 2px 8px;
+    border-radius: 4px;
+    color: #fff;
+    font-weight: bold;
+    display: inline-block;
+}
+.status-reopened {
+    background-color: #F39C12; 
+}
+/* Sie können hier weitere Statusfarben hinzufügen: */
+.status-closed, .status-resolved {
+    background-color: #3498DB; 
+}
+.bug-description pre {
+    background-color: #1a1a1a; /* Sehr dunkler Hintergrund für Code */
+    color: #aaffaa; /* Grünlicher Text für Code */
+    padding: 15px;
+    border-radius: 4px;
+    overflow-x: auto; 
+    margin-top: 15px;
+    font-size: 0.9em;
+}
