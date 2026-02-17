@@ -14,7 +14,7 @@ temp images/
 ignore/
 
 # Hugo Ordner
-/public/trash
+/public/
 /resources/_gen/
 
 # Betriebssystem-Dateien
