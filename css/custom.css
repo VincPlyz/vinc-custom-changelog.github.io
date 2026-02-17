@@ -1,0 +1,1320 @@
+/*====================================================
+  1. Globale Variablen & Konfiguration
+======================================================*/
+:root {
+  /* Farbvariablen */
+  --mc-bg: #181818;
+  --mc-panel: #232323;
+  --mc-accent: #ffd800;
+  --mc-accent2: #6cc349;
+  --mc-text: #fff;
+  --mc-muted: #bdbdbd;
+  --mc-news-label: #ffd800;
+  --mc-code-block: #c736ff;
+
+  --mc-core-rich-black: #000;
+  --mc-core-white: #fff;
+  --mc-vanilla-green-3: #6cc349;
+
+  /* Schriftartvariablen */
+  --mc-body-font: 'Noto Sans', sans-serif;
+  --mc-heading-font: 'MinecraftTen', sans-serif;
+  --mc-secondary-heading-font: 'MinecraftTen', sans-serif;
+  --mc-default--fontlist: var(--mc-body-font);
+  --mc-heading-2: 'MinecraftSeven';
+
+  /* Allgemeine Layout-Werte */
+  --mc-border-radius-small: 4px;
+  --mc-border-radius-large: 8px;
+  --mc-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/*====================================================
+  2. Basiselemente & Typografie
+======================================================*/
+/* Fonts */
+@font-face {
+  font-family: 'MinecraftTen';
+  src: url('/vinc-custom-changelog.github.io/fonts/Minecraft-Tenv2.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'MinecraftSeven';
+  src: url('/vinc-custom-changelog.github.io/fonts/Minecraft-Seven_v2.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Globaler Body-Stil */
+body {
+  background: var(--mc-bg);
+  color: var(--mc-text);
+  font-family: var(--mc-default--fontlist);
+  font-size: 1.25rem;
+  line-height: 1.6;
+}
+
+html {
+  font-size: clamp(16px, 1vw + 0.5rem, 22px);
+}
+
+/* Links & Buttons */
+a, a:visited {
+  color: var(--mc-accent2);
+}
+
+a:hover {
+  color: var(--mc-text);
+}
+
+a:focus, button:focus {
+  outline: none;
+}
+
+/* Überschriften */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--mc-text);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  font-weight: normal;
+}
+
+h1, h2 {
+  font-family: var(--mc-heading-font);
+}
+
+h3, h4, h5, h6 {
+  font-family: var(--mc-heading-2);
+}
+
+/* Listen */
+ul {
+  list-style-type: none;
+  padding-left: 5px;
+}
+
+ul li {
+  position: relative;
+  margin-bottom: 0.5rem;
+  padding-left: 1.5rem;
+}
+
+ul li::before {
+  content: "■";
+  color: var(--mc-text);
+  font-size: 0.75em;
+  position: absolute;
+  left: 6px;
+  top: 0;
+  line-height: 2.2;
+}
+
+/* Code */
+code {
+  color: var(--mc-code-block);
+  background-color: transparent;
+}
+
+/*====================================================
+  3. Komponenten & Blöcke
+======================================================*/
+/* Haupt-Layout Container */
+.container,
+main,
+.main-content,
+.content,
+.single,
+.list {
+  width: 100%;
+  max-width: 1600px;   /* Vollbreit, wie du es willst */
+  margin: 0 auto;
+  padding: 2.5rem 3rem;
+  background: var(--mc-panel);
+  color: var(--mc-text);
+  border-radius: var(--mc-border-radius-large);
+  box-shadow: 0 2px 8px #000a;
+}
+
+
+/* Command Block */
+.command-block {
+  background-color: rgba(94, 94, 94, 0.285);
+  color: var(--mc-text);
+  padding: 15px 20px;
+  border-radius: 2px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Minecraft-Tenv2', monospace;
+  font-size: 0.95em;
+  margin-bottom: 20px;
+  box-shadow: var(--mc-shadow);
+  overflow-x: auto;
+}
+
+.command-text {
+  flex-grow: 1;
+  margin-right: 15px;
+  word-break: break-all;
+  white-space: pre-wrap;
+}
+
+.command-copy-btn {
+  background-color: rgba(43, 43, 43, 0.984);
+  color: var(--mc-panel);
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.command-copy-btn:hover {
+  background-color: var(--mc-accent2);
+  color: var(--mc-text);
+}
+
+.command-copy-btn i {
+  font-size: 1.1em;
+  color: rgb(255, 255, 255);
+}
+
+/* Figure (Bild + Caption) */
+figure {
+  max-width: 1000px;
+  margin: 2rem auto;
+  background-color: transparent;
+  border-radius: 0; 
+  overflow: hidden;
+}
+
+figure img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 0;
+}
+
+figcaption {
+  background-color: rgb(61, 57, 56) !important;
+  padding: 0.6rem;
+  font-family: var(--mc-body-font);
+  color: var(--mc-text);
+  line-height: 1.4;
+  font-size: 0.7em;
+  text-align: left;
+  border-radius: 0;
+  margin-top: -4px;
+}
+
+figcaption a, figcaption a:visited {
+  color: var(--mc-accent2);
+  text-decoration: underline;
+}
+
+figcaption a:hover {
+  color: var(--mc-text);
+  text-decoration: none;
+}
+
+/* Horizontale Linien */
+hr.my-custom-hr {
+  border: none;
+  height: 2px;
+  background-color: #686868;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+hr.custom-hr-big {
+  border: none;
+  height: 3px;
+  background-color: #686868;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+hr.dotted-line {
+  border: none;
+  border-top: 3px dotted #333;
+  margin-top: 10px;
+}
+
+hr.thin-line {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 20px 0;
+}
+
+
+/* Video */
+video {
+  max-width: 100%;
+  height: auto;
+  border-radius: 2px;
+  border-color: var(--mc-vanilla-green-3);
+  margin: 1rem 0;
+  box-shadow: var(--mc-shadow);
+}
+
+/* News Label */
+.news-label {
+  background-color: var(--mc-news-label);
+  color: var(--mc-panel);
+  font-weight: bold;
+  padding: 0.2em 0.7em;
+  border-radius: 6px;
+  font-size: 0.9em;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-bottom: 0.5em;
+  letter-spacing: 0.5px;
+}
+
+/* Details - Inhaltsverzeichnis */
+.details-inhaltsverzeichnis {
+  background-color: var(--mc-panel);
+  border: 1.4px solid var(--mc-text);
+  border-radius: var(--mc-border-radius-large);
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.details-inhaltsverzeichnis > summary {
+  list-style: none;
+  font-family: var(--mc-heading-font);
+  font-size: 1.5rem;
+  color: var(--mc-accent2);
+  cursor: pointer;
+  position: relative;
+  padding-left: 2rem;
+}
+
+.details-inhaltsverzeichnis > summary::before {
+  content: '▶';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.2s ease-in-out;
+}
+
+.details-inhaltsverzeichnis[open] > summary::before {
+  transform: translateY(-50%) rotate(90deg);
+}
+
+.details-inhaltsverzeichnis > summary:hover {
+  color: var(--mc-text);
+}
+
+.details-inhaltsverzeichnis > p {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px dashed var(--mc-text);
+}
+
+/* Details - Kompakt */
+.details-text {
+  background-color: var(--mc-panel);
+  border-radius: var(--mc-border-radius-small);
+  padding: 0.5rem;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+.details-text > summary {
+  list-style: none;
+  font-family: var(--mc-heading-2);
+  font-size: 1.0rem;
+  color: var(--mc-text);
+  cursor: pointer;
+  position: relative;
+  padding-left: 1.5rem;
+  font-size: 1.1em;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+.details-text > summary::before {
+  content: '▶';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.2s ease-in-out;
+  font-size: 0.9em;
+  margin-top: 1px;
+}
+
+.details-text[open] > summary::before {
+  transform: translateY(-50%) rotate(90deg);
+}
+
+.details-text > summary:hover {
+  color: var(--mc-muted);
+}
+
+.details-text > p {
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  font-size: 1rem;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+/* MC Image Grid */
+.MC_imageGridA_text_caption h4 {
+  color: var(--mc-core-white) !important;
+  font-weight: 400;
+  letter-spacing: .6px;
+  line-height: 24px;
+  padding-bottom: 2px;
+  font-family: var(--mc-secondary-heading-font);
+}
+
+/* Scroll-to-Top Button */
+#top-scroller a {
+  background-color: var(--mc-accent2) !important;
+  width: 50px !important;
+  height: 50px !important;
+  bottom: 0 !important;
+  right: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: inset 0 6px 0 0 #52a535, inset 0 -6px 0 0 #2a641c !important;
+}
+
+#top-scroller a:before {
+  background-color: var(--mc-text);
+  content: "";
+  display: block;
+  height: 18px;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(-180deg);
+  width: 18px;
+  -webkit-clip-path: polygon(100% 41.67%, 50% 100%, 0 41.67%, 27.78% 41.67%, 27.78% 0, 72.22% 0, 72.22% 41.67%);
+  clip-path: polygon(100% 41.67%, 50% 100%, 0 41.67%, 27.78% 41.67%, 27.78% 0, 72.22% 0, 72.22% 41.67%);
+}
+
+
+/*====================================================
+  Image Compare
+======================================================*/
+.image-comp {
+  position: relative;
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  border: 1px solid black;
+  overflow: hidden;
+}
+
+
+/* Rechtes Bild wird drübergelegt */
+.image-comp #right {
+  position: absolute;
+  inset: 0;
+  clip-path: inset(0 calc(100% - var(--slider-pos, 50%)) 0 0);
+  transition: none;
+}
+
+/* Bilder */
+.image-comp img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Slider */
+.image-comp input {
+  position: absolute;
+  bottom: 45%;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  -webkit-appearance: none;
+  background: transparent;
+}
+
+.image-comp::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--slider-pos, 50%);
+  width: 2px;
+  background: white;
+  transform: translateX(-50%);
+  pointer-events: none;
+  z-index: 5;
+}
+
+.image-comp::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: var(--slider-pos, 50%);
+  transform: translate(-50%, -50%);
+  width: 30px;
+  height: 30px;
+  background: white;
+  border: 2px solid black;
+  border-radius: 50%;
+  z-index: 6;
+  pointer-events: none;
+}
+  
+/* Slider-Knopf */
+.image-comp input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0);
+  border: 1px solid rgba(0, 0, 0, 0);
+  cursor: ew-resize;
+}
+
+.image-comp input:hover::-webkit-slider-thumb {
+  opacity: 1;
+}
+
+/*====================================================
+  Image Comp Overlays
+======================================================*/
+.alt-text-overlay {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: var(--mc-text);
+  padding: 5px 10px;
+  border-radius: var(--mc-border-radius-small);
+  font-family: var(--mc-body-font);
+  font-size: 0.8em;
+  z-index: 20;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  pointer-events: none;
+}
+
+.image-comp:hover .alt-text-overlay {
+  opacity: 1;
+}
+
+.alt-text-overlay.top-left {
+  top: 10px;
+  left: 10px;
+}
+
+.alt-text-overlay.top-right {
+  top: 10px;
+  right: 10px;
+}
+
+
+/*====================================================
+  Countdow Timer https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/key-art/MCL_Fall25_KeyArt_FINAL_LOGO_1170x500.png
+======================================================*/
+.countdown-container {
+  background-image: url("/vinc-custom-changelog.github.io/images/demo.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 500px;
+}
+
+#demo {
+  color: rgb(255, 255, 255);
+  font-size: 3rem;
+  font-weight: bold;
+  font-family: var(--mc-heading-2);
+  
+  text-shadow:
+     -3px -3px 0 #000,
+     3px -3px 0 #000,
+     -3px 3px 0 #000,
+     3px 3px 0 #000,
+     
+     0px 10px 15px #000;
+    
+  margin-top: auto;
+  margin-bottom: 150px;
+  
+}
+
+/* Fullwidth Header Image Container */
+body:has(.mc-article) .mc-header {
+  position: relative;
+  width: 100%;
+  max-height: 500px;
+  overflow: hidden;
+  margin: 0 0 2rem 0;
+}
+
+/* Image takes full width */
+body:has(.mc-article) .mc-header img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* NEWS Label Overlay on Image */
+body:has(.mc-article) .mc-header .mc-news-label {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ffffff;
+  color: #000000;
+  padding: 0.1rem 0.5rem;
+  font-family: var(--mc-heading-font);
+  font-size: 1.0rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: var(--mc-shadow);
+
+}
+
+/* Center Article Content */
+.mc-article {
+  max-width: fit-content;
+  margin: 0 auto;
+} 
+
+/* Begrenzung für Textbreite im Container */
+body:has(.mc-article) .single,
+body:has(.mc-article) .post-content,
+body:has(.mc-article) .prose {
+  max-width: 1100px;  
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.1rem; 
+  line-height: 1.5; 
+}
+
+
+/* Styling für den ersten Absatz (via Markdown Blockquote >) 
+blockquote {
+  border-left: 4px solid #3498db;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  background-color: #181717;
+  border-radius: 4px;
+} */
+
+/* Styling für die 'Developer's Note' (via custom class) */
+.developer-note {
+    border-left: 5px solid #ff4d4d;
+    padding: 10px 15px;
+    background-color: #181717;
+    font-style: italic;
+    border-radius: 4px;
+    margin: 5px 0;
+}
+
+/*====================================================
+  Crafting Table UI
+======================================================*/
+.mcui-wrapper {
+    display: inline-block;
+    margin-top: 0px;
+    margin-bottom: calc(5px * var(--mc-scale-value, 1.0));
+}
+
+/* Hauptcontainer des UIs */
+.mcui {
+    display: flex;
+    align-items: center;
+    background-color: #C6C6C6;
+    border: 2px solid;
+    border-color: #DBDBDB #5B5B5B #5B5B5B #DBDBDB;
+    padding: calc(6px * var(--mc-scale-value, 1.0));
+    transform-origin: top left;
+}
+
+.mcui-Crafting_Table .mcui-input {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: calc(4px * var(--mc-scale-value, 1.0));
+}
+
+.mcui-Crafting_Table > .mcui-arrow {
+    background: url('/vinc-custom-changelog.github.io/images/grid_layout_arrow_small.png') no-repeat;
+    width: calc(32px * var(--mc-scale-value, 1.0));
+    height: calc(26px * var(--mc-scale-value, 1.0));
+    margin: 0 calc(12px * var(--mc-scale-value, 1.0));
+    background-size: contain;
+}
+
+.mcui-Crafting_Table > .mcui-output {
+    display: flex;
+    align-items: center;
+}
+
+.invslot {
+    position: relative;
+    background: #8B8B8B;
+    border: 2px solid;
+    border-color: #373737 #FFF #FFF #373737;
+    width: calc(32px * var(--mc-scale-value, 1.0));
+    height: calc(32px * var(--mc-scale-value, 1.0));
+}
+
+.invslot-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.invslot-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: none;
+    image-rendering: crisp-edges;
+    image-rendering: pixelated; 
+}
+
+.invslot-item img.active {
+    /* Nur das erste Bild, das die Klasse 'active' hat, anzeigen */
+    display: block;
+}
+.invslot-large {
+    width: calc(40px * var(--mc-scale-value, 1.0));
+    height: calc(40px * var(--mc-scale-value, 1.0));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.invslot-large .invslot-item {
+    width: 100%;
+    height: 100%;
+}
+
+.invslot-large .invslot-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    image-rendering: crisp-edges;
+    image-rendering: pixelated;
+}
+
+.invslot::before, .invslot::after {
+    content: "";
+    position: absolute;
+    background-color: #8B8B8B;
+    height: 2px;
+    width: 2px;
+    pointer-events: none;
+}
+
+
+.invslot::before { bottom: calc(-2px * var(--mc-scale-value, 1.0)); left: calc(-2px * var(--mc-scale-value, 1.0)); }
+.invslot::after { top: calc(-2px * var(--mc-scale-value, 1.0)); right: calc(-2px * var(--mc-scale-value, 1.0)); }
+
+/* Neues Styling für die Anzahl der Items */
+.item-count {
+    position: absolute;
+    right: calc(2px * var(--mc-scale-value, 1.0)); /* Wert erhöht für mehr Abstand nach rechts */
+    bottom: calc(-3px * var(--mc-scale-value, 1.0)); /* Wert reduziert, um die Zahl anzuheben */
+    color: #FFFFFF;
+    text-shadow: 2px 2px #3F3F3F;
+    font-size: calc(13px * var(--mc-scale-value, 1.0));
+    font-weight: normal; 
+    z-index: 10;
+    font-family: var(--mc-heading-2);
+}
+
+
+
+/*====================================================
+  Pure CSS Karussell
+======================================================*/
+.pure-css-carousel {
+    position: relative;
+    max-width: 600px;
+    margin: 2rem auto;
+    overflow: hidden;
+}
+
+.carousel-list {
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    background: transparent;
+    border: 2px solid;
+    border-color: var(--mc-core-rich-black) var(--mc-core-white) var(--mc-core-white) var(--mc-core-rich-black);
+    box-shadow: var(--mc-shadow);
+}
+
+.carousel-item {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    width: 100%;
+    height: auto;
+    background: var(--mc-panel);
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.carousel-figure {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.carousel-figure img {
+    max-width: 100%;
+    height: auto;
+    image-rendering: pixelated;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+.carousel-figure figcaption {
+    font-family: var(--mc-body-font);
+    color: var(--mc-text);
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* Scrollbar für Webkit (Chrome, Safari) ausblenden */
+.carousel-list::-webkit-scrollbar {
+    display: none;
+}
+
+/* Navigationspunkte */
+.carousel-nav {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 1rem;
+}
+
+.nav-dot {
+    display: block;
+    width: 12px;
+    height: 12px;
+    background-color: var(--mc-text);
+    border: 2px solid var(--mc-panel);
+    border-radius: 50%;
+    transition: background-color 0.3s;
+    opacity: 0.5;
+}
+
+.nav-dot:hover {
+    opacity: 1;
+}
+
+/* Optional: Aktiven Punkt hervorheben (erfordert JavaScript) */
+.nav-dot.active {
+    opacity: 1;
+    background-color: var(--mc-accent2);
+}
+
+
+
+/*====================================================
+  Spoiler Text
+======================================================*/
+.spoiler, .spoiler2, .spoiler a, .spoiler2 a{ 
+  color: black; 
+  background-color: black;
+}
+
+.spoiler:hover, .spoiler:hover a {
+  color: white;
+}
+
+.spoiler2:hover, .spoiler2:hover a { 
+ background-color:white; 
+}
+
+/*====================================================
+  Audio Button
+======================================================*/
+/* Definiert die Klasse für alle Audio-Icons */
+.audio-icon {
+    /* Fügt eine sanfte Übergangsanimation hinzu */
+    transition: color 0.2s ease-in-out; 
+    /* Stellt die anfängliche Farbe ein (z.B. dunkles Grau) */
+    color: #969696; 
+}
+
+/* Ändert die Farbe beim Überfahren mit der Maus */
+.audio-icon:hover {
+    /* Wählen Sie eine auffällige Farbe (z.B. Blau oder Grün) */
+    color: var(--mc-accent2); 
+}
+
+/*====================================================
+  Image List Compare
+======================================================*/
+
+/* 1. Container für den gesamten Block */
+.vinc-compare-block {
+    /* WICHTIG: Keine obere Margin, um direkt an den vorherigen Inhalt anzudocken. */
+    margin-top: 0; 
+    margin-bottom: 1.5rem; /* Abstand nach unten bleibt gleich */
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 900px; 
+    text-align: left; 
+}
+
+/* 2. Stil für den optionalen Haupttitel */
+.vinc-compare-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    /* Reduzierter Abstand nach unten (zum ersten Label/Bild) */
+    margin-bottom: 0.5rem; 
+    color: var(--color-text-main); 
+    text-align: center; 
+}
+
+/* 3. Flex-Container (Wrapper) - Unverändert */
+.vinc-compare-wrapper {
+    display: flex;
+    justify-content: flex-start; 
+    align-items: flex-start;
+    gap: 30px; 
+    padding: 0 10px;
+}
+
+/* 4. Spalten-Container (vinc-compare-col) - Unverändert */
+.vinc-compare-col {
+    flex-grow: 0; 
+    flex-shrink: 0;
+    flex-basis: auto; 
+    text-align: center; 
+}
+
+/* 5. Labels - Unverändert */
+.vinc-compare-label {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 5px; 
+    color: var(--color-text-main);
+}
+
+/* 6. Die Trennlinie - Unverändert */
+.vinc-compare-separator {
+    width: 150px; 
+    max-width: 100%;
+    height: 1px;
+    background-color: var(--color-border);
+    margin: 0 auto; 
+}
+
+/* 7. Bild-Wrapper - Unverändert */
+.vinc-compare-img-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 200px; 
+}
+
+/* 8. Stile für die Bilder - Unverändert */
+.vinc-compare-img {
+    height: auto;
+    display: block; 
+    position: relative; 
+    transition: transform 0.2s ease-out; 
+}
+
+
+/*====================================================
+ Command v2 (ENDGÜLTIGE VERSION - Vergrößerter Button)
+======================================================*/
+
+.command-block-v2 {
+    display: block; 
+    position: relative; 
+    
+    background: rgb(52, 52, 52);
+    /* Vertikales Padding des Blocks bleibt (12px oben/unten) */
+    padding: 12px 15px 12px 20px; 
+    font-family: monospace;
+    overflow: hidden; 
+    margin-bottom: 20px;
+    border-radius: 2px;
+    box-shadow: var(--mc-shadow);
+}
+
+/* --- Command text --- */
+.command-text-v2 {
+    color: #f5f5f5;
+    font-size: 0.95rem;
+    display: block; 
+    
+    /* WICHTIG: Stellt sicher, dass die Scrollbar den Button nicht berührt. */
+    /* Die 80px reservierter Platz bleiben für Sicherheit (Button + Padding + Puffer). */
+    width: calc(100% - 80px); 
+    margin-right: auto;
+    
+    padding-bottom: 5px; 
+    padding-top: 5px;
+    
+    overflow-x: auto; 
+    scrollbar-width: thin;
+    scrollbar-color: #555 #2c2c2c;
+    
+    white-space: pre-wrap;
+}
+
+/* Wenn nowrap aktiv ist */
+.command-text-v2.nowrap {
+    white-space: nowrap;
+    word-break: normal; 
+}
+
+
+/* --- Copy button (QUADRAT-FIX durch feste Größe und Flexbox-Zentrierung) --- */
+.command-copy-btn-v2 {
+    position: absolute; 
+    top: 50%; 
+    right: 20px; 
+    transform: translateY(-50%); 
+    z-index: 100; 
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 52px;  
+    height: 44px; 
+    padding: 0; 
+    
+    background-color: rgba(43, 43, 43, 0.984);
+    border: none;
+    border-radius: 5px;
+    
+    cursor: pointer;
+    color: #fff; 
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.command-copy-btn-v2:hover {
+    background-color: var(--mc-accent2); 
+    color: var(--mc-text);
+}
+
+.command-copy-btn-v2 i {
+    /* Icon-Größe leicht erhöhen, um den größeren Button auszufüllen */
+    font-size: 1.1rem; 
+    line-height: 1; 
+}
+
+
+/* --- Custom scrollbar (WebKit browsers) --- */
+.command-text-v2::-webkit-scrollbar {
+    height: 6px;
+}
+.command-text-v2::-webkit-scrollbar-track {
+    background: rgba(43, 43, 43, 0.5);
+}
+.command-text-v2::-webkit-scrollbar-thumb {
+    background: #555;
+}
+.command-text-v2::-webkit-scrollbar-thumb:hover {
+    background: #777;
+}
+
+
+/* ====================================================
+   4. Bug Viewer Spezifisches Styling (Final Version)
+   ==================================================== */
+
+/* 1. KARTEN-STYLING (Breite maximieren) */
+.bug-card {
+    /* ERHÖHT: Setzt die maximale Breite, um mehr Platz zu schaffen */
+    max-width: 1200px;
+    width: 95%; /* Auf kleineren Bildschirmen 95% Breite */
+    
+    margin: 30px auto; 
+    padding: 30px; 
+    
+    border-radius: var(--mc-border-radius-large);
+    box-shadow: var(--mc-shadow); 
+    background-color: var(--mc-panel); 
+    border: 1px solid #3d3d3d; 
+    border-left: 5px solid var(--mc-accent2); /* Grüner Akzent */
+    color: var(--mc-text);
+}
+
+#bug-modal-overlay .bug-card {
+    max-width: 95vw !important; 
+}
+
+/* ====================================================
+   7. Scrollbar Styling NUR für das Modal (Hintergrund transparent)
+   ==================================================== */
+
+/* Scrollbar für Chrome, Edge, Safari (WebKit) */
+#bug-modal-overlay *::-webkit-scrollbar {
+    width: 8px; 
+    height: 8px;
+}
+
+/* Track (Hintergrund): WIRD KOMPLETT TRANSPARENT GESETZT */
+#bug-modal-overlay *::-webkit-scrollbar-track {
+    background: transparent; /* Macht den Track unsichtbar */
+    border-radius: 10px;
+}
+
+/* Thumb (Griff) NUR im Modal */
+#bug-modal-overlay *::-webkit-scrollbar-thumb {
+    /* Sie können hier 'var(--mc-accent2)' oder eine neutrale Farbe verwenden */
+    background-color: rgba(255, 255, 255, 0) !important;
+    border-radius: 10px;
+    /* WICHTIG: Die Border wird auch transparent, damit sie nicht sichtbar ist. */
+    border: 2px solid transparent; 
+}
+
+/* Thumb Hover-Zustand NUR im Modal */
+#bug-modal-overlay *::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(255, 255, 255, 0) !important; 
+}
+
+/* --- Spezifisch für Firefox --- */
+/* Hier ist der Track-Hintergrund die zweite Farbe. Wir setzen ihn auf die Hintergrundfarbe des Modals. */
+#bug-description-column {
+    /* Erste Farbe: Thumb (Scroller) | Zweite Farbe: Track (Hintergrund) */
+    scrollbar-color: var(--mc-accent2) var(--mc-bg-dark); 
+    scrollbar-width: thin; 
+}
+
+/* Thumb (Griff) NUR im Modal */
+#bug-modal-overlay *::-webkit-scrollbar-thumb {
+    background-color: var(--mc-accent2); 
+    border-radius: 10px;
+    border: 2px solid transparent; 
+    /* NEU: Weniger sichtbar, wenn nicht gescrollt/gehovert wird */
+    opacity: 0.0; 
+    transition: opacity 0.3s ease-in-out; 
+}
+
+#bug-modal-content {
+    position: relative; 
+    /* Der Inhalt des Modals sollte der Bezugspunkt sein */
+}
+
+#close-modal-button {
+    /* WICHTIG: Setzt die Position relativ zu #bug-modal-content */
+    position: absolute; 
+    /* Verschiebt den Button in die obere rechte Ecke */
+    top: 15px; /* Abstand von oben (anpassen, falls der Titel zu nah ist) */
+    right: 15px; /* Abstand von rechts */
+    
+    /* Stellt sicher, dass der Button über allem liegt */
+    z-index: 50; 
+    
+    /* Visuelle Anpassungen */
+    font-size: 24px; /* Macht das X größer */
+    line-height: 1;
+    color: #fff; /* Oder Ihre Akzentfarbe */
+    cursor: pointer;
+    background: none; /* Kein Hintergrund */
+    border: none; /* Kein Rand */
+    padding: 0;
+}
+
+/* Thumb Hover-Zustand NUR im Modal */
+#bug-modal-overlay *::-webkit-scrollbar-thumb:hover {
+    background-color: var(--mc-accent); 
+    /* NEU: Volle Sichtbarkeit beim Hover */
+    opacity: 0;
+}
+
+/* 2. SUCHE: Kontrast und Sichtbarkeit */
+.search-container {
+    display: flex;
+    gap: 10px;
+    /* ERHÖHT: Passt die Breite an die neue bug-card an */
+    max-width: 1200px;
+    width: 95%;
+    margin: 30px auto 30px auto; 
+}
+.search-container input, .search-container button {
+    padding: 12px; 
+    border-radius: var(--mc-border-radius-small);
+    font-size: 1em;
+    font-family: var(--mc-body-font);
+}
+
+.search-container input {
+    flex-grow: 1;
+    /* Dunkler als Panel für besseren Fokus und lesbarer Text */
+    border: 1px solid #484848; 
+    background-color: #1a1a1a; 
+    color: var(--mc-text); 
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.6); 
+}
+
+.search-container button {
+    cursor: pointer;
+    background-color: var(--mc-accent); 
+    border: 1px solid var(--mc-accent);
+    color: var(--mc-core-rich-black); 
+    font-weight: bold;
+    font-family: var(--mc-heading-2);
+    transition: background-color 0.2s;
+}
+.search-container button:hover {
+    background-color: var(--mc-accent2); 
+    border-color: var(--mc-accent2);
+}
+
+/* 3. Visuelle Trennung (Problem 3: Gestrichelte Linie entfernen) */
+.bug-details {
+    /* ENTFALLEN: padding-bottom und border-bottom wurden entfernt */
+    margin-bottom: 20px;
+}
+.bug-details strong {
+    color: var(--mc-muted); 
+    font-family: var(--mc-body-font);
+    font-weight: normal;
+}
+
+/* Die horizontale Linie im HTML (die Sie nicht entfernen wollten) */
+.bug-card hr {
+    border: none;
+    height: 1px;
+    background-color: #686868; /* Heller als der Hintergrund, aber subtil */
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+/* 4. Statusfarben (Ihre genauen Wünsche) */
+.bug-status {
+    padding: 2px 8px;
+    border-radius: var(--mc-border-radius-small);
+    font-weight: bold;
+    display: inline-block;
+    color: var(--mc-core-rich-black);
+}
+
+/* Zustand: Resolved/Fixed (Grüner Text) */
+.status-resolved {
+    background-color: var(--mc-accent2); /* Grüner Tag */
+    color: var(--mc-core-rich-black); /* Schwarzer Text auf Grün */
+}
+
+/* Zustand: Reopened (Normaler weißer Text) */
+.status-reopened {
+    background-color: var(--mc-panel); /* Hintergrundfarbe des Panels */
+    color: var(--mc-text); /* Weißer Text */
+}
+
+/* Zustand: Wont Fix/Invalid (Rot) */
+.status-wont-fix, .status-invalid, .status-duplicate {
+    background-color: #E74C3C; /* Roter Tag */
+    color: var(--mc-core-rich-black); /* Schwarzer Text auf Rot */
+}
+
+/* Zustand: Offen/Triage (Neutral) */
+.status-open, .status-new {
+    background-color: #3498DB; /* Blauer Tag */
+    color: var(--mc-core-rich-black);
+}
+
+/* 5. Überschriften und Code-Blöcke (für gute Trennung) */
+.bug-description h3, .bug-description h4 {
+    color: var(--mc-accent2); 
+    text-shadow: none;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.25em; 
+    /* Klarer visueller Separator für H3/H4 */
+    border-bottom: 1px solid var(--mc-muted); 
+    padding-bottom: 3px;
+}
+
+.bug-description pre {
+    /* Konsistenz: Verwendet die Code-Farbe von custom.css */
+    background-color: #1a1a1a; 
+    color: var(--mc-code-block); 
+    padding: 15px;
+    border-radius: var(--mc-border-radius-small);
+    overflow-x: auto; 
+    margin-top: 15px;
+    font-size: 0.95em;
+    font-family: monospace;
+}
+
+/* ====================================================
+   5. Spezifische Skalierung für Bug Viewer auf großen Bildschirmen
+   ==================================================== */
+
+.bug-viewer-scale {
+    /* Reduziert die Grundschriftgröße (und damit die gesamte Skalierung) auf 80%.
+       Die 80% des 4K-Browser-Zooms entsprechen. */
+    font-size: 80%;
+}
+
+/* Optional: Medienabfrage, falls Sie die Skalierung nur für sehr große Bildschirme wünschen */
+@media (min-width: 2560px) {
+    .bug-viewer-scale {
+        /* Setzt die Skalierung auf 80%, wenn die Bildschirmbreite über 2560px liegt */
+        font-size: 80% !important;
+    }
+}
+
+/* --- Styling für den Bug-Status --- */
+.bug-status {
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 0.9em;
+    display: inline-block;
+    color: #fff; /* Textfarbe weiß */
+}
+
+.status-open {
+    background-color: #ffffff00; /* Blau */
+}
+.status-resolved, .status-fixed {
+    background-color: #10b981; /* Grün */
+}
+.status-duplicate, .status-invalid {
+    background-color: #f59e0b; /* Gelb/Orange */
+}
+
+/* --- Styling für Code-Blöcke --- */
+.code-block-container {
+    position: relative;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    background-color: #1f2937; /* Dunkler Hintergrund für Code */
+    padding: 1rem;
+    border-radius: 6px;
+    color: #f3f4f6; /* Heller Text */
+}
+
+.code-block-container pre {
+    margin: 0;
+    white-space: pre-wrap; /* Codeumbrüche erlauben */
+    word-break: break-word;
+}
