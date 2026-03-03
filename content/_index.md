@@ -110,7 +110,7 @@ Release Candidate
 
 
 <details class="details-inhaltsverzeichnis">
-  <summary>26.1 - The Cutest Drop Yet (?)</summary>
+  <summary>26.1 - Tiny Takeover</summary>
 
 ###   ~26.1 -- [Custom](/vinc-custom-changelog.github.io/changelog/26.1/26.1) - [Official](https://www.minecraft.net/de-de/article/minecraft-java-edition-26-1)~
 
