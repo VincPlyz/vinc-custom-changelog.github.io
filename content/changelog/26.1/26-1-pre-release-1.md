@@ -1,5 +1,5 @@
 ---
-title: "26.1 Snapshot 11 Changelog"
+title: "26.1 Pre Release 1 Changelog"
 description: ""
 showReadingTime: false
 showWordCount: false
@@ -7,15 +7,15 @@ date: 2026-03-03
 ---
 
 <div class="mc-header">
-  <img src="https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/screenshots/26.1-pre1-1170x500.jpg" alt="26.1 Snapshot 11 Header" />
+  <img src="https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/screenshots/26.1-pre1-1170x500.jpg" alt="26.1 Pre Release 1 Header" />
   <div class="mc-news-label">News</div>
 </div>
 
 <div class="mc-article">
 
-Misode Diff: https://misode.github.io/versions/?id=26-1-pre-release-1&tab=diff
+Misode Diff: https://misode.github.io/versions/?id=26.1-pre-1&tab=diff
 
-Slicedlime Videos: [Normal]() / [Technical]()
+Slicedlime Videos: [Normal](https://www.youtube.com/watch?v=a_yMZeNl_14) / [Technical](https://www.youtube.com/watch?v=LtD-CMxDW2Q)
 
 # Minecraft 26.1 Pre-Release 1
 

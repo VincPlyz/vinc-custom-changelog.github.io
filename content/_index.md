@@ -130,6 +130,7 @@ Snapshots
 
 Pre Release
 - Pre-1 -- [Custom](/vinc-custom-changelog.github.io/changelog/26.1/26-1-pre-release-1/) - [Official](https://www.minecraft.net/en-us/article/minecraft-26-1-pre-release-1)
+- Pre-2 -- [Custom](/vinc-custom-changelog.github.io/changelog/26.1/26-1-pre-release-2/) - [Official](https://www.minecraft.net/en-us/article/minecraft-26-1-pre-release-2)
 
 </details>
 
