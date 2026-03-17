@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2026 </copyright>
-    <lastBuildDate>Fri, 13 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/vinc-custom-changelog.github.io/changelog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 17 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/vinc-custom-changelog.github.io/changelog/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>26.1 Pre Release 3 Changelog</title>
+      <link>http://localhost:1313/vinc-custom-changelog.github.io/changelog/26.1/26-1-pre-release-3/</link>
+      <pubDate>Tue, 17 Mar 2026 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/vinc-custom-changelog.github.io/changelog/26.1/26-1-pre-release-3/</guid>
+      <description></description>
+      
+    </item>
     
     <item>
       <title>26.1 Pre Release 2 Changelog</title>

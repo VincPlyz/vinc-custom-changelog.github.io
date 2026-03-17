@@ -15,7 +15,7 @@ date: 2026-03-13
 
 Misode Diff: https://misode.github.io/versions/?id=26.1-pre-2&tab=diff
 
-Slicedlime Videos: [Normal]() / [Technical]()
+Slicedlime Videos: [Normal](https://www.youtube.com/watch?v=Y7tlF9tkzw8) / [Technical]()
 
 # Minecraft 26.1 Pre-Release 2
 
