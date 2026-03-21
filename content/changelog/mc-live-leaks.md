@@ -15,6 +15,11 @@ date: 2026-03-19
 
 ---
 
+<img src="/vinc-custom-changelog.github.io/images/leaks_3.png" alt="" style="width:600px;"/> 
+<img src="/vinc-custom-changelog.github.io/images/leaks_3_.png" alt="" style="width:600px;"/> 
+
+---
+
 <img src="/vinc-custom-changelog.github.io/images/leaks_4.png" alt="" style="width:600px;"/> 
 
 ---
