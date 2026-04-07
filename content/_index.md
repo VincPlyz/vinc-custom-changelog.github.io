@@ -6,7 +6,7 @@ showWordCount: falseT12:00:00+02:00
 draft: false
 ---
 
-
+<!-- 
 <div class="countdown-container">
     <p id="demo"></p>
 </div>
@@ -132,6 +132,17 @@ Pre Release
 - Pre-1 -- [Custom](/vinc-custom-changelog.github.io/changelog/26.1/26-1-pre-release-1/) - [Official](https://www.minecraft.net/en-us/article/minecraft-26-1-pre-release-1)
 - Pre-2 -- [Custom](/vinc-custom-changelog.github.io/changelog/26.1/26-1-pre-release-2/) - [Official](https://www.minecraft.net/en-us/article/minecraft-26-1-pre-release-2)
 - Pre-3 -- [Custom](/vinc-custom-changelog.github.io/changelog/26.1/26-1-pre-release-3/) - [Official](https://www.minecraft.net/en-us/article/minecraft-26-1-pre-release-3)
+
+
+</details>
+
+<details class="details-inhaltsverzeichnis">
+  <summary>26.2 - Chaos Cubed</summary>
+
+###   ~~26.2 -- [Custom](/vinc-custom-changelog.github.io/changelog/26.2/26.2) - [Official](https://www.minecraft.net/de-de/article/minecraft-java-edition-26-2)~~
+
+Snapshots
+- Snapshot 1 -- [Custom](/vinc-custom-changelog.github.io/changelog/26.2/26.2-snapshot-1/) - [Official](https://www.minecraft.net/en-us/article/minecraft-26-2-snapshot-1)
 
 </details>
 

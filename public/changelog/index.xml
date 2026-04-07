@@ -20,26 +20,6 @@
     </item>
     
     <item>
-      <title>Minecraft Live Teaser</title>
-      <link>http://localhost:1313/vinc-custom-changelog.github.io/changelog/mc-live-leaks/</link>
-      <pubDate>Thu, 19 Mar 2026 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/vinc-custom-changelog.github.io/changelog/mc-live-leaks/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Minecraft Live Teaser</title>
-      <link>http://localhost:1313/vinc-custom-changelog.github.io/changelog/mc-live-teaser/</link>
-      <pubDate>Thu, 19 Mar 2026 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/vinc-custom-changelog.github.io/changelog/mc-live-teaser/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
       <title>26.1 Pre Release 3 Changelog</title>
       <link>http://localhost:1313/vinc-custom-changelog.github.io/changelog/26.1/26-1-pre-release-3/</link>
       <pubDate>Tue, 17 Mar 2026 00:00:00 +0000</pubDate>
@@ -585,6 +565,16 @@
       <pubDate>Thu, 16 Jan 2025 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/vinc-custom-changelog.github.io/changelog/26.1/26.1-snapshot-1/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>26.2 Snapshot 1 Changelog</title>
+      <link>http://localhost:1313/vinc-custom-changelog.github.io/changelog/26.2/26.2-snapshot-1/</link>
+      <pubDate>Thu, 16 Jan 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/vinc-custom-changelog.github.io/changelog/26.2/26.2-snapshot-1/</guid>
       <description></description>
       
     </item>
