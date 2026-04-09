@@ -10,6 +10,26 @@
     <lastBuildDate>Wed, 27 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/vinc-custom-changelog.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>26.2 Snapshot 1 Changelog</title>
+      <link>http://localhost:1313/vinc-custom-changelog.github.io/changelog/26.2/26.2-snapshot-1/</link>
+      <pubDate>Tue, 07 Apr 2026 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/vinc-custom-changelog.github.io/changelog/26.2/26.2-snapshot-1/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>26.2 Snapshot 2 Changelog</title>
+      <link>http://localhost:1313/vinc-custom-changelog.github.io/changelog/26.2/26.2-snapshot-2/</link>
+      <pubDate>Tue, 07 Apr 2026 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/vinc-custom-changelog.github.io/changelog/26.2/26.2-snapshot-2/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
       <title>26.1 Release Changelog</title>
       <link>http://localhost:1313/vinc-custom-changelog.github.io/changelog/26.1/26.1/</link>
       <pubDate>Tue, 24 Mar 2026 00:00:00 +0000</pubDate>
@@ -565,16 +585,6 @@
       <pubDate>Thu, 16 Jan 2025 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/vinc-custom-changelog.github.io/changelog/26.1/26.1-snapshot-1/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>26.2 Snapshot 1 Changelog</title>
-      <link>http://localhost:1313/vinc-custom-changelog.github.io/changelog/26.2/26.2-snapshot-1/</link>
-      <pubDate>Thu, 16 Jan 2025 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/vinc-custom-changelog.github.io/changelog/26.2/26.2-snapshot-1/</guid>
       <description></description>
       
     </item>
