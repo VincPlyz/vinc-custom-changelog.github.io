@@ -144,6 +144,7 @@ Pre Release
 Snapshots
 - Snapshot 1 -- [Custom](/vinc-custom-changelog.github.io/changelog/26.2/26.2-snapshot-1/) - [Official](https://www.minecraft.net/en-us/article/minecraft-26-2-snapshot-1)
 - Snapshot 2 -- [Custom](/vinc-custom-changelog.github.io/changelog/26.2/26.2-snapshot-2/) - [Official](https://www.minecraft.net/en-us/article/minecraft-26-2-snapshot-2)
+- Snapshot 3 -- [Custom](/vinc-custom-changelog.github.io/changelog/26.2/26.2-snapshot-3/) - [Official](https://www.minecraft.net/en-us/article/minecraft-26-2-snapshot-3)
 
 </details>
 
